@@ -43,7 +43,7 @@ function setRow(data)
     for(var i=0;i<loop;i++)
     {
         statusRec= GetRecordStatus(obj[i]["status"]);
-        t.row.add( [
+        myTable.row.add( [
             obj[i]["refid"],
             obj[i]["booked_site"],
             obj[i]["src"],
