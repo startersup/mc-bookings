@@ -39,9 +39,10 @@ function setRow(data)
     var myTable = $('#mc-datatables').DataTable();
     var loop = obj.length;
     var editRec='<div class="mc-edit"></div>';
-    var statusRec = GetRecordStatus(obj[i]["status"]);
+    var statusRec ='';
     for(var i=0;i<loop;i++)
     {
+        statusRec= GetRecordStatus(obj[i]["status"]);
         t.row.add( [
             obj[i]["refid"],
             obj[i]["booked_site"],
