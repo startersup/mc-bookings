@@ -14,7 +14,7 @@
     
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body onload="get_url_response();">
 
     <!----navbar-starts----->
 <nav class="navbar navbar-default mc-dash-nav">
@@ -120,7 +120,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+    
+    <!--      <tr>
                 <td>BRT23436</td>
                 <td>Gatwick</td>
                 <td>Heathrow Airport Terminal Number 2</td>
@@ -330,6 +331,8 @@
                       <td><div class="green-status">Booked</div></td>
                 <td><div class="mc-edit"></div></td>
             </tr>
+-------->
+
         </tbody>
     </table>
 		
@@ -592,62 +595,7 @@
 } );</script>
     
     
-<script>    
-function otherFunction() {
-  document.getElementById("mc-dropdown").classList.toggle("show");
-}
 
-window.onclick = function(event) {
-  if (!event.target.matches('.mc-others-icon')) {
-    var dropdowns = document.getElementsByClassName("dropdown-set");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}</script>
-    <script>
-    
-         $(document).ready(function(){
-                                $("#myInput").on("keyup", function() {
-                                  var value = $(this).val().toLowerCase();
-                                  $("#mc-datatables tr").filter(function() {
-                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                                  });
-                                });
-                              });
-    </script>
-    
-    <script>        $(document).ready(function() {
-    $('#mc-datatables').DataTable(
-    {
-              dom: 'Bfrtip',
-          colReorder: true,
-       buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
-          "lengthChange": false,
-        "searching": false,
-         fixedHeader: true,
-         "pageLength": 50,
-         scrollY:    "700px",
-        scrollX:        true,
-         ordering:       false,
-        scrollCollapse: true,
-        paging:         true,
-        fixedColumns:   {
-            leftColumns: 1,
-            rightColumns: 1
-        },
-    }
-    );
-} );</script>
     
     <script>
     var directionsDisplay;
@@ -687,7 +635,9 @@ window.onclick = function(event) {
     };
 </script>
     
- 
+    <script src="./assets/js/datatable.js"></script>
+    <script src="./assets/js/server.js"></script>
+    
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
