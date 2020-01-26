@@ -33,8 +33,9 @@ function get_url_response()
 
 }
 
-function setRow(obj)
+function setRow(data)
 {
+    var obj = JSON.parse(data);
     var myTable = $('#mc-datatables').DataTable();
     var loop = obj.length();
     var editRec='<div class="mc-edit"></div>';
