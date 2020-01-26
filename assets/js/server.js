@@ -37,7 +37,7 @@ function setRow(data)
 {
     var obj = JSON.parse(data);
     var myTable = $('#mc-datatables').DataTable();
-    var loop = obj.length();
+    var loop = obj.length;
     var editRec='<div class="mc-edit"></div>';
     var statusRec = GetRecordStatus(obj[i]["status"]);
     for(var i=0;i<loop;i++)
