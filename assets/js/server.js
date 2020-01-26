@@ -10,7 +10,7 @@ var obj_status = JSON.parse(text);
 function get_url_response()
 {
                // document.getElementById("spinnermodal").style.display = "block";
-               var url="http://minicabee.co.uk/myadmin/myapi/func_future.php";
+               var url="https://minicabee.co.uk/myadmin/myapi/func_future.php";
                 $.ajax({
                     
                 type: 'POST',
