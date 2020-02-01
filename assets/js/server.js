@@ -14,23 +14,37 @@ var myUrl = myProtocol+'//'+mySite+'/';
 
 function pageLoad()
 {
-    SetParam('');
+    SetParam('today');
     
 }
-function SetParam()
+function SetParam(myparam)
 {
-    
-    get_url_response();
+    var mydata ={};
+    var myGetUrl='';
+    if(myparam === 'today')
+    {
+        myGetUrl = myUrl+'myapi/func_today.php';
+    }elseif(myparam === 'yesterday')
+    {
+        myGetUrl = myUrl+'myapi/func_yest.php';
+    }if(myparam === 'tommorrow')
+    {
+        myGetUrl = myUrl+'myapi/func_tmrw.php';
+    }if(myparam === 'custom')
+    {
+        myGetUrl = myUrl+'myapi/func_custom.php';
+    }
+    get_url_response(myGetUrl,mydata);
 }
-function get_url_response()
+function get_url_response(myGetUrl,mydata)
 {
                // document.getElementById("spinnermodal").style.display = "block";
                var url="https://minicabee.co.uk/myadmin/myapi/func_future.php";
                 $.ajax({
                     
                 type: 'POST',
-                url:url,
-                data: '',
+                url:myGetUrl,
+                data: mydata,
                 async:false,
                 success: function(data) 
                 { 
@@ -79,10 +93,9 @@ function GetRecordStatus(status)
 
 
 $(document).ready(function() {
-
     $('.booking').click(function() { 
         var id = $(this).attr('id');
-       alert(id);
+        SetParam(id);
     });
 
 });
