@@ -156,7 +156,7 @@ function getModalData(myload,book_id)
 }
 function setModalData(myData)
 {
-    var myObj = JSON.parse(data);
+    var myObj = JSON.parse(myData);
     document.getElementById('modal_booking_site').value=myObj["booked_site"];
     document.getElementById('modal_booking_status').value=myObj["status"];
     document.getElementById('modal_booking_pickup').value=myObj["src"];
