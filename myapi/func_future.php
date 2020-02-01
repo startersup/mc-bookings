@@ -3,7 +3,7 @@
 
 
  $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
- 
+ echo($rootfolder);
   include($rootfolder."/connection/connect.php"); 
 
     date_default_timezone_set('Europe/London');
