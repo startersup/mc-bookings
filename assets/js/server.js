@@ -191,7 +191,7 @@ function setModalData(myData)
         document.getElementById('modal_booking_time').value=myObj[0]["time"];
         document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
         document.getElementById('myModalBookId').innerHTML ='Booking Information - ( '+myObj[0]["refid"]+' )'; 
-        document.getElementById('myModalBookId').name =myObj[0]["refid"];
+        document.getElementById('myModalBookId').setAttribute("name",myObj[0]["refid"]);;
     }else if(modalPing === 'passenger_info')
     {
 
