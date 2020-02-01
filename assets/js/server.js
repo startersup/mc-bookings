@@ -130,9 +130,9 @@ $(document).ready(function() {
     
     $('.booking').click(function() { 
         var id = $(this).attr('id');
-        $("#preloader1").fadeIn();
         clearClass();
         $(this).addClass("active");
+        $("#preloader1").fadeIn();        
         SetParam(id);
     });
 
