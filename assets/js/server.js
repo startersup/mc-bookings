@@ -157,8 +157,8 @@ function clearModal()
     document.getElementById('modal_booking_date').value		='';
     document.getElementById('modal_booking_time').value		='';
     document.getElementById('modal_booking_cab_type').value =''; 
-    document.getElementById('myModalLabel2').innerHTML =''; 
-    document.getElementById('myModalLabel2').name =''; 
+    document.getElementById('myModalBookId').innerHTML =''; 
+    document.getElementById('myModalBookId').name =''; 
 
 }
 function getModalData(myload,book_id)
@@ -190,8 +190,8 @@ function setModalData(myData)
         document.getElementById('modal_booking_date').value=myObj[0]["dt"];
         document.getElementById('modal_booking_time').value=myObj[0]["time"];
         document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
-        document.getElementById('myModalLabel2').innerHTML ='Booking Information - ( '+myObj[0]["refid"]+' )'; 
-        document.getElementById('myModalLabel2').name =myObj[0]["refid"];
+        document.getElementById('myModalBookId').innerHTML ='Booking Information - ( '+myObj[0]["refid"]+' )'; 
+        document.getElementById('myModalBookId').name =myObj[0]["refid"];
     }else if(modalPing === 'passenger_info')
     {
 

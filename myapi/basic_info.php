@@ -13,7 +13,7 @@ session_start();
    
   
     
-    $sql="SELECT booked_site,status,src,des,dt,time,type from register WHERE refid = '".$book_id."' ";
+    $sql="SELECT refid,booked_site,status,src,des,dt,time,type from register WHERE refid = '".$book_id."' ";
     $result=  mysqli_query($conn,$sql);
 
  $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
