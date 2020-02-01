@@ -110,6 +110,9 @@
     
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
+<div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
  <div id="mc-display" style="display:none;padding:10px 0px 20px;margin-bottom:20px;">
 <div clas="row">
 <div class="col-md-4">
@@ -236,7 +239,9 @@
                      <div class="tab-content">
     <div id="location" class="tab-pane fade in active">
 <!--                  <div id="map"></div>-->
-        
+        <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
          <table class="table table-user-information map-info">
                   <tbody>
                       <tr>
@@ -281,6 +286,9 @@
             
             
                  <div id="passenger" class="tab-pane fade"> 
+                     <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
                    <table class="table table-user-information">
                   <tbody>
                     <tr>
@@ -354,7 +362,10 @@
                             <div id="driver" class="tab-pane fade"> 
                                 
                                 
-                                
+                                <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
+</div>
                                 
                                 <h3>Manual Allocation</h3>
                                        <table class="manalloc-table">
@@ -398,6 +409,9 @@
                          
                          
                            <div id="sms" class="tab-pane fade sms">
+                               <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
                                <p>SMS Status</p>
                                 <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
         <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
@@ -628,6 +642,16 @@ function hideshowFunction() {
     x.style.display = "none";
   }
 }
+</script>
+    
+    <script>
+    
+   $(document).ready(function(){
+    setTimeout(function() {
+		$("#preloader").fadeOut();
+	},1000);
+});
+    
 </script>
 
 

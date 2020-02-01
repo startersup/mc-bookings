@@ -262,7 +262,16 @@ body
 
 
 /*****secondary---sidebar******/
-
+.preloader{
+    background-color:#FFF;
+    height: 100%;
+	padding-top: 60px;
+	margin-left: -20px;
+	margin-top: 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
 .mc-secondary-sidebar
 {
     margin-top:90px;
