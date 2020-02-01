@@ -15,6 +15,7 @@ var modalPing='';
 
 function pageLoad()
 {
+    $("#preloader2").fadeOut();
     SetParam('today');
     
 }
@@ -109,6 +110,8 @@ function setRow(data)
             editRec
         ] ).draw( false );
     }
+    $("#preloader1").fadeOut();
+
 }
 function GetRecordStatus(status)
 {
@@ -127,6 +130,7 @@ $(document).ready(function() {
     
     $('.booking').click(function() { 
         var id = $(this).attr('id');
+        $("#preloader1").fadeIn();
         clearClass();
         $(this).addClass("active");
         SetParam(id);
@@ -136,9 +140,11 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
+        $("#preloader2").fadeIn();
+        $('#mc-open-modal').trigger('click');
         clearModal();
         getModalData('basic_info',data[0]);
-        $('#mc-open-modal').trigger('click');
+ 
     } );
 
     $('.modalToggle').click(function() { 
@@ -195,10 +201,24 @@ function setModalData(myData)
         document.getElementById('myModalBookId_temp').innerHTML = myObj[0]["refid"];
     }else if(modalPing === 'passenger_info')
     {
+        document.getElementById('modal_booking_name').value=myObj[0]["name"];
+        document.getElementById('modal_booking_mail').value=myObj[0]["mail"];
+        document.getElementById('modal_booking_num1').value=myObj[0]["num1"];
+        document.getElementById('modal_booking_num2').value=myObj[0]["num2"];
+        document.getElementById('modal_booking_address1').value=myObj[0]["address1"];
+        document.getElementById('modal_booking_address2').value=myObj[0]["address2"];
+        document.getElementById('modal_booking_dt').value=myObj[0]["dt"];
+        document.getElementById('modal_booking_tm').value=myObj[0]["time"];
+        document.getElementById('modal_booking_np').value=myObj[0]["np"];
+        document.getElementById('modal_booking_nl').value=myObj[0]["nl"];
+        document.getElementById('modal_booking_location').value=myObj[0]["location"];
+        document.getElementById('modal_booking_info').value=myObj[0]["info"];
+        document.getElementById('modal_booking_type').value=myObj[0]["type"];
+        document.getElementById('modal_booking_fare').value=myObj[0]["fare"];
 
     }
  
 
     
-
+    $("#preloader2").fadeOut();
 }
