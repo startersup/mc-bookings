@@ -11,6 +11,7 @@ var loadBooking = 'Today';
 var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol+'//'+mySite+'/';
+var modalPing='';
 
 function pageLoad()
 {
@@ -136,9 +137,16 @@ $(document).ready(function() {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
         clearModal();
-        getModalData('basic',data[0]);
+        getModalData('basic_info',data[0]);
         $('#mc-open-modal').trigger('click');
     } );
+
+    $('.modalToggle').click(function() { 
+        var id = $(this).attr('id');
+        getModalData(id,document.getElementById('myModalLabel2').name);
+    });
+
+    
 });
 function clearModal()
 {
@@ -148,7 +156,10 @@ function clearModal()
     document.getElementById('modal_booking_dropoff').value	='';
     document.getElementById('modal_booking_date').value		='';
     document.getElementById('modal_booking_time').value		='';
-    document.getElementById('modal_booking_cab_type').value ='';
+    document.getElementById('modal_booking_cab_type').value =''; 
+    document.getElementById('myModalLabel2').innerHTML =''; 
+    document.getElementById('myModalLabel2').name =''; 
+
 }
 function getModalData(myload,book_id)
 {
@@ -156,22 +167,37 @@ function getModalData(myload,book_id)
     var mydata ={};
     var myGetUrl='';
     mydata["book_id"]=book_id;
-    if(myload === 'basic')
+    if(myload === 'basic_info')
     {
+        modalPing='basic_info';
         myGetUrl = myUrl+'myapi/basic_info.php';
+    }else if(myload === 'passenger_info')
+    {
+        modalPing='passenger_info';
+        myGetUrl = myUrl+'myapi/passenger.php';
     }
     get_url_response(myGetUrl,mydata,'setModalData');
 }
 function setModalData(myData)
 {
     var myObj = JSON.parse(myData);
-    document.getElementById('modal_booking_site').value=myObj[0]["booked_site"];
-    document.getElementById('modal_booking_status').value=myObj[0]["status"];
-    document.getElementById('modal_booking_pickup').value=myObj[0]["src"];
-    document.getElementById('modal_booking_dropoff').value=myObj[0]["des"];
-    document.getElementById('modal_booking_date').value=myObj[0]["dt"];
-    document.getElementById('modal_booking_time').value=myObj[0]["time"];
-    document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
+    if(modalPing === 'basic_info')
+    {
+        document.getElementById('modal_booking_site').value=myObj[0]["booked_site"];
+        document.getElementById('modal_booking_status').value=myObj[0]["status"];
+        document.getElementById('modal_booking_pickup').value=myObj[0]["src"];
+        document.getElementById('modal_booking_dropoff').value=myObj[0]["des"];
+        document.getElementById('modal_booking_date').value=myObj[0]["dt"];
+        document.getElementById('modal_booking_time').value=myObj[0]["time"];
+        document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
+        document.getElementById('myModalLabel2').innerHTML ='Booking Information - ( '+myObj[0]["refid"]+' )'; 
+        document.getElementById('myModalLabel2').name =myObj[0]["refid"];
+    }else if(modalPing === 'passenger_info')
+    {
+
+    }
+ 
+
     
 
 }
