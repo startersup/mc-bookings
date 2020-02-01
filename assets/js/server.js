@@ -157,13 +157,13 @@ function getModalData(myload,book_id)
 function setModalData(myData)
 {
     var myObj = JSON.parse(myData);
-    document.getElementById('modal_booking_site').value=myObj["booked_site"];
-    document.getElementById('modal_booking_status').value=myObj["status"];
-    document.getElementById('modal_booking_pickup').value=myObj["src"];
-    document.getElementById('modal_booking_dropoff').value=myObj["des"];
-    document.getElementById('modal_booking_date').value=myObj["dt"];
-    document.getElementById('modal_booking_time').value=myObj["time"];
-    document.getElementById('modal_booking_cab_type').value=myObj["type"];
+    document.getElementById('modal_booking_site').value=myObj[0]["booked_site"];
+    document.getElementById('modal_booking_status').value=myObj[0]["status"];
+    document.getElementById('modal_booking_pickup').value=myObj[0]["src"];
+    document.getElementById('modal_booking_dropoff').value=myObj[0]["des"];
+    document.getElementById('modal_booking_date').value=myObj[0]["dt"];
+    document.getElementById('modal_booking_time').value=myObj[0]["time"];
+    document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
     
 
 }
