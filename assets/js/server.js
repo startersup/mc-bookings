@@ -63,11 +63,13 @@ function get_url_response(myGetUrl,mydata)
 
 function setRow(data)
 {
+
     var obj = JSON.parse(data);
     var myTable = $('#mc-datatables').DataTable();
     var loop = obj.length;
     var editRec='<div class="mc-edit"></div>';
     var statusRec ='';
+    myTable.clear().draw();
     for(var i=0;i<loop;i++)
     {
         statusRec= GetRecordStatus(obj[i]["status"]);
