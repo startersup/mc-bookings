@@ -124,11 +124,21 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
+        clearModal();
         getModalData('basic',data[0]);
         $('#mc-open-modal').trigger('click');
     } );
 });
-
+function clearModal()
+{
+    document.getElementById('modal_booking_site').value		='';
+    document.getElementById('modal_booking_status').value	='';
+    document.getElementById('modal_booking_pickup').value	='';
+    document.getElementById('modal_booking_dropoff').value	='';
+    document.getElementById('modal_booking_date').value		='';
+    document.getElementById('modal_booking_time').value		='';
+    document.getElementById('modal_booking_cab_type').value ='';
+}
 function getModalData(myload,book_id)
 {
 
@@ -143,5 +153,14 @@ function getModalData(myload,book_id)
 }
 function setModalData(myData)
 {
+    var myObj = JSON.parse(data);
+    document.getElementById('modal_booking_site').value=myObj["booked_site"];
+    document.getElementById('modal_booking_status').value=myObj["status"];
+    document.getElementById('modal_booking_pickup').value=myObj["src"];
+    document.getElementById('modal_booking_dropoff').value=myObj["des"];
+    document.getElementById('modal_booking_date').value=myObj["dt"];
+    document.getElementById('modal_booking_time').value=myObj["time"];
+    document.getElementById('modal_booking_cab_type').value=myObj["type"];
+    
 
 }
