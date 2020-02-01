@@ -94,17 +94,18 @@ function GetRecordStatus(status)
 
 
 $(document).ready(function() {
+    var jqueryTable = $('#mc-datatables').DataTable(); 
     $('.booking').click(function() { 
         var id = $(this).attr('id');
         SetParam(id);
     });
 
     $('#mc-datatables tbody').on( 'click', 'tr', function () {
-        console.log( '1.) '+table.row( this ).data() );
+        console.log( '1.) '+jqueryTable.row( this ).data() );
     } );
 
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
-        console.log('2.) '+ table.row( this ).data() );
+        console.log('2.) '+ jqueryTable.row( this ).data() );
     } );
 });
 
