@@ -33,6 +33,9 @@ function SetParam(myparam)
     }else if(myparam === 'custom')
     {
         myGetUrl = myUrl+'myapi/func_custom.php';
+    }else if(myparam === 'future')
+    {
+        myGetUrl = myUrl+'myapi/func_future.php';
     }
     get_booking_response(myGetUrl,mydata);
 }
