@@ -307,6 +307,19 @@ body
 }
 /********dashboard-sidebar*******/
 
+.button-style
+{
+      font-family: 'Montserrat', sans-serif !important; 
+      background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
 .mc-dash-sidebar
 {
     margin-top:35px;
@@ -644,6 +657,8 @@ height:30px;
 
 /*****inputs***/
 
+
+
 .selectit{
 width: 100%;
     min-height: 45px;
@@ -655,7 +670,7 @@ width: 100%;
  -webkit-appearance: none !important;
     -webkit-border-radius: 0px !important;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
 }
 

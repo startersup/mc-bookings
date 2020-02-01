@@ -12,6 +12,8 @@
 <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body onload="pageLoad();">
@@ -117,8 +119,11 @@
 <i class="fa fa-caret-down"></i>
 </div>
 </div> 
+<div class="col-md-2"> 
+<input class="input-filter" type="text" placeholder="filter" style="border:1px solid #ccc;padding:5px 10px;width:100%">    
+    </div>
 <div class="col-md-4">
-    <button class="btn btn-success">Search</button>
+    <button class="button-style">Search</button>
 </div>  
 </div>
 </div>
@@ -444,10 +449,20 @@
     
    
     
+<script>
+
+    $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+          includeSelectAllOption: true,
+        });
+    });</script>
     
+   <script>
+       
+document.getElementById('output').innerHTML = location.search;
+$(".chosen-select").chosen();</script> 
     
     <script>
-
     function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
