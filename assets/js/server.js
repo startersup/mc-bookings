@@ -115,11 +115,18 @@ function GetRecordStatus(status)
     return '<div class="'+obj_status[status]["class"]+'">'+obj_status[status]["showstatus"]+'</div>';
 }
 
-
+function clearClass()
+{
+    $('#yesterday').removeClass("active");
+    $('#today').removeClass("active");
+    $('#tommorrow').removeClass("active");
+    $('#future').removeClass("active");
+}
 $(document).ready(function() {
     
     $('.booking').click(function() { 
         var id = $(this).attr('id');
+        clearClass();
         $(this).addClass("active");
         SetParam(id);
     });
