@@ -120,6 +120,7 @@ $(document).ready(function() {
     
     $('.booking').click(function() { 
         var id = $(this).attr('id');
+        $(this).addClass("active");
         SetParam(id);
     });
 
