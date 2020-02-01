@@ -99,6 +99,13 @@ $(document).ready(function() {
         SetParam(id);
     });
 
+    $('#mc-datatables tbody').on( 'click', 'tr', function () {
+        console.log( '1.) '+table.row( this ).data() );
+    } );
+
+    $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
+        console.log('2.) '+ table.row( this ).data() );
+    } );
 });
 
 
