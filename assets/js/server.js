@@ -7,6 +7,21 @@ var text = '{'+
 ' "completed" : { "class":"green-status" , "showstatus":"Completed" }'+
           '}';
 var obj_status = JSON.parse(text);
+var loadBooking = 'Today';
+var myProtocol = window.location.protocol;
+var mySite = window.location.host;
+var myUrl = myProtocol+'//'+mySite+'/';
+
+function pageLoad()
+{
+    SetParam('');
+    
+}
+function SetParam()
+{
+    
+    get_url_response();
+}
 function get_url_response()
 {
                // document.getElementById("spinnermodal").style.display = "block";
@@ -63,6 +78,14 @@ function GetRecordStatus(status)
 }
 
 
+$(document).ready(function() {
+
+    $('.booking').click(function() { 
+        var id = $(this).attr('id');
+       alert(id);
+    });
+
+});
 
 
  
