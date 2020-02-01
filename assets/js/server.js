@@ -24,13 +24,13 @@ function SetParam(myparam)
     if(myparam === 'today')
     {
         myGetUrl = myUrl+'myapi/func_today.php';
-    }elseif(myparam === 'yesterday')
+    }else if(myparam === 'yesterday')
     {
         myGetUrl = myUrl+'myapi/func_yest.php';
-    }if(myparam === 'tommorrow')
+    }else if(myparam === 'tommorrow')
     {
         myGetUrl = myUrl+'myapi/func_tmrw.php';
-    }if(myparam === 'custom')
+    }else if(myparam === 'custom')
     {
         myGetUrl = myUrl+'myapi/func_custom.php';
     }
@@ -63,11 +63,13 @@ function get_url_response(myGetUrl,mydata)
 
 function setRow(data)
 {
+
     var obj = JSON.parse(data);
     var myTable = $('#mc-datatables').DataTable();
     var loop = obj.length;
     var editRec='<div class="mc-edit"></div>';
     var statusRec ='';
+    myTable.clear().draw();
     for(var i=0;i<loop;i++)
     {
         statusRec= GetRecordStatus(obj[i]["status"]);
@@ -92,11 +94,19 @@ function GetRecordStatus(status)
 
 
 $(document).ready(function() {
+    
     $('.booking').click(function() { 
         var id = $(this).attr('id');
         SetParam(id);
     });
 
+ 
+    $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
+        var table = $('#mc-datatables').DataTable();
+        var data =   table.row( $(this).parents('tr') ).data();
+        console.log(data[0]);
+        $('#mc-open-modal').trigger('click');
+    } );
 });
 
 
