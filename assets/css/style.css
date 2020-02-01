@@ -251,6 +251,12 @@ body
     background-color: #ffffff;
 }
 
+.mc-display
+{
+    padding:30px;
+    height:100px;
+    background-color:#f1f1f1;
+}
 
 /****dashboard-secondary****/
 
@@ -639,14 +645,14 @@ height:30px;
 /*****inputs***/
 
 .selectit{
- width: 100%;
+width: 100%;
     min-height: 45px;
     padding: 12px 20px;
     margin: 8px 0;
-    border-radius:0px !important;
     box-sizing: border-box;
     border: 1px solid #eeeeee;
-    -webkit-appearance: none;
+    border-radius:none !important;
+ -webkit-appearance: none !important;
     -webkit-border-radius: 0px !important;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
     font-family: 'Poppins', sans-serif;
