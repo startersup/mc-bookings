@@ -12,6 +12,8 @@
 <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body onload="pageLoad();">
@@ -108,6 +110,9 @@
     
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
+<div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
  <div id="mc-display" style="display:none;padding:10px 0px 20px;margin-bottom:20px;">
 <div clas="row">
 <div class="col-md-4">
@@ -117,8 +122,11 @@
 <i class="fa fa-caret-down"></i>
 </div>
 </div> 
+<div class="col-md-2"> 
+<input class="input-filter" type="text" placeholder="filter" style="border:1px solid #ccc;padding:5px 10px;width:100%">    
+    </div>
 <div class="col-md-4">
-    <button class="btn btn-success">Search</button>
+    <button class="button-style">Search</button>
 </div>  
 </div>
 </div>
@@ -231,7 +239,9 @@
                      <div class="tab-content">
     <div id="location" class="tab-pane fade in active">
 <!--                  <div id="map"></div>-->
-        
+        <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
          <table class="table table-user-information map-info">
                   <tbody>
                       <tr>
@@ -276,6 +286,9 @@
             
             
                  <div id="passenger" class="tab-pane fade"> 
+                     <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
                    <table class="table table-user-information">
                   <tbody>
                     <tr>
@@ -349,7 +362,10 @@
                             <div id="driver" class="tab-pane fade"> 
                                 
                                 
-                                
+                                <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
+</div>
                                 
                                 <h3>Manual Allocation</h3>
                                        <table class="manalloc-table">
@@ -393,6 +409,9 @@
                          
                          
                            <div id="sms" class="tab-pane fade sms">
+                               <div class="preloader" id="preloader">
+<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
+</div>
                                <p>SMS Status</p>
                                 <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
         <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
@@ -457,10 +476,20 @@
     
    
     
+<script>
+
+    $(document).ready(function() {
+        $('#multiple-checkboxes').multiselect({
+          includeSelectAllOption: true,
+        });
+    });</script>
     
+   <script>
+       
+document.getElementById('output').innerHTML = location.search;
+$(".chosen-select").chosen();</script> 
     
     <script>
-
     function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
@@ -613,6 +642,16 @@ function hideshowFunction() {
     x.style.display = "none";
   }
 }
+</script>
+    
+    <script>
+    
+   $(document).ready(function(){
+    setTimeout(function() {
+		$("#preloader").fadeOut();
+	},1000);
+});
+    
 </script>
 
 
