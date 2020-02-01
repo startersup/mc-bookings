@@ -34,9 +34,9 @@ function SetParam(myparam)
     {
         myGetUrl = myUrl+'myapi/func_custom.php';
     }
-    get_url_response(myGetUrl,mydata);
+    get_booking_response(myGetUrl,mydata);
 }
-function get_url_response(myGetUrl,mydata)
+function get_booking_response(myGetUrl,mydata)
 {
 
                 $.ajax({
@@ -56,6 +56,26 @@ function get_url_response(myGetUrl,mydata)
                  
                    // document.getElementById("spinnermodal").style.display = "none";
                   //  Server_Response_Fail(xhr.responseText); 
+                }
+                });
+
+}
+function get_url_response(myGetUrl,mydata,myfunc)
+{
+
+                $.ajax({
+                    
+                type: 'POST',
+                url:myGetUrl,
+                data: mydata,
+                async:false,
+                success: function(data) 
+                { 
+                    window[myfunc](data);                   
+                },
+                error: function(xhr) { 
+                 
+
                 }
                 });
 
@@ -104,10 +124,24 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
-        console.log(data[0]);
+        getModalData('basic',data[0]);
         $('#mc-open-modal').trigger('click');
     } );
 });
 
+function getModalData(myload,book_id)
+{
 
- 
+    var mydata ={};
+    var myGetUrl='';
+    mydata["book_id"]=book_id;
+    if(myload === 'basic')
+    {
+        myGetUrl = myUrl+'myapi/basic_.php';
+    }
+    get_url_response(myGetUrl,mydata,'setModalData');
+}
+function setModalData(myData)
+{
+
+}
