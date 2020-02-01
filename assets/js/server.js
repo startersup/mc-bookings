@@ -128,11 +128,11 @@ function clearClass()
 }
 $(document).ready(function() {
     
-    $('.booking').click(function() { 
+    $('.booking').click(function() {
+        $("#preloader1").fadeIn();  
         var id = $(this).attr('id');
         clearClass();
-        $(this).addClass("active");
-        $("#preloader1").fadeIn();        
+        $(this).addClass("active");       
         SetParam(id);
     });
 
