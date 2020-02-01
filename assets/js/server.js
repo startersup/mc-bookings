@@ -33,10 +33,13 @@ function SetParam(myparam)
     }else if(myparam === 'custom')
     {
         myGetUrl = myUrl+'myapi/func_custom.php';
+    }else if(myparam === 'future')
+    {
+        myGetUrl = myUrl+'myapi/func_future.php';
     }
-    get_url_response(myGetUrl,mydata);
+    get_booking_response(myGetUrl,mydata);
 }
-function get_url_response(myGetUrl,mydata)
+function get_booking_response(myGetUrl,mydata)
 {
 
                 $.ajax({
@@ -56,6 +59,26 @@ function get_url_response(myGetUrl,mydata)
                  
                    // document.getElementById("spinnermodal").style.display = "none";
                   //  Server_Response_Fail(xhr.responseText); 
+                }
+                });
+
+}
+function get_url_response(myGetUrl,mydata,myfunc)
+{
+
+                $.ajax({
+                    
+                type: 'POST',
+                url:myGetUrl,
+                data: mydata,
+                async:false,
+                success: function(data) 
+                { 
+                    window[myfunc](data);                   
+                },
+                error: function(xhr) { 
+                 
+
                 }
                 });
 
@@ -92,11 +115,19 @@ function GetRecordStatus(status)
     return '<div class="'+obj_status[status]["class"]+'">'+obj_status[status]["showstatus"]+'</div>';
 }
 
-
+function clearClass()
+{
+    $('#yesterday').removeClass("active");
+    $('#today').removeClass("active");
+    $('#tommorrow').removeClass("active");
+    $('#future').removeClass("active");
+}
 $(document).ready(function() {
     
     $('.booking').click(function() { 
         var id = $(this).attr('id');
+        clearClass();
+        $(this).addClass("active");
         SetParam(id);
     });
 
@@ -104,10 +135,43 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
-        console.log(data[0]);
+        clearModal();
+        getModalData('basic',data[0]);
         $('#mc-open-modal').trigger('click');
     } );
 });
+function clearModal()
+{
+    document.getElementById('modal_booking_site').value		='';
+    document.getElementById('modal_booking_status').value	='';
+    document.getElementById('modal_booking_pickup').value	='';
+    document.getElementById('modal_booking_dropoff').value	='';
+    document.getElementById('modal_booking_date').value		='';
+    document.getElementById('modal_booking_time').value		='';
+    document.getElementById('modal_booking_cab_type').value ='';
+}
+function getModalData(myload,book_id)
+{
 
+    var mydata ={};
+    var myGetUrl='';
+    mydata["book_id"]=book_id;
+    if(myload === 'basic')
+    {
+        myGetUrl = myUrl+'myapi/basic_info.php';
+    }
+    get_url_response(myGetUrl,mydata,'setModalData');
+}
+function setModalData(myData)
+{
+    var myObj = JSON.parse(myData);
+    document.getElementById('modal_booking_site').value=myObj[0]["booked_site"];
+    document.getElementById('modal_booking_status').value=myObj[0]["status"];
+    document.getElementById('modal_booking_pickup').value=myObj[0]["src"];
+    document.getElementById('modal_booking_dropoff').value=myObj[0]["des"];
+    document.getElementById('modal_booking_date').value=myObj[0]["dt"];
+    document.getElementById('modal_booking_time').value=myObj[0]["time"];
+    document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
+    
 
- 
+}

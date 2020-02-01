@@ -61,10 +61,10 @@
       <!----sub-navbar-starts----->
     <div class="mc-sub-section">
     <ul class="mc-sub-left">
-    <li><a id="yesterday" class="booking" >Yesterday Booking</a></li>   
+    <li id="yesterday" class="booking"><a >Yesterday Booking</a></li>   
      <li id="today"  class="active booking"><a>Today Booking</a></li>
-    <li><a id="tommorrow" class="booking" >Tomorrow Booking</a></li> 
-    <li><a id="future" class="booking" >Future Booking</a></li> 
+    <li id="tommorrow" class="booking"><a  >Tomorrow Booking</a></li> 
+    <li id="future" class="booking" ><a  >Future Booking</a></li> 
     <li><a  onclick="hideshowFunction()">Custom Result</a></li> 
      <li><img class="mc-sub-icons mc-others-icon" onclick="otherFunction()" data-toggle="tooltip" data-placement="right" title="More Options" src="./assets/images/icons/more.svg">
         <div id="mc-dropdown" class="dropdown-set">
@@ -241,28 +241,41 @@
                   <tbody>
                       <tr>
                       <td>Booking Source :</td>
-                      <td><input type="text" class="text" name="num1" id="id_num1" value="Gatwick WB"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_site" value="Gatwick WB"></td>
                     </tr>
                        <tr>
                       <td>Booking Status :</td>
-                      <td><input type="text" class="text" name="num1" id="id_num1" value="Booked"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_status" value="Booked"></td>
                     </tr>
                     <tr>
                       <td class="first">Pickup From :</td>
-                      <td class="first"><input type="text" class="text" name="name" id="id_name" value="Gatwick Airport"></td>
+                      <td class="first"><input type="text" class="text" name="modal_booking_pickup" id="modal_booking_pickup" value="Gatwick Airport"></td>
                     </tr>
                     <tr>
                       <td>Dropoff To :</td>
-                      <td><input type="text" class="text" name="mail" id="id_mail" value="Heathrow Airport Terminal 2"></td>
+                      <td><input type="text" class="text" name="mail" id="modal_booking_dropoff" value="Heathrow Airport Terminal 2"></td>
+                    </tr>
+                    <tr>
+                      <td>Date :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_date" value="1 hour 15 minutes"></td>
+                    </tr>
+                    <tr>
+                      <td>Time :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_time" value="1 hour 15 minutes"></td>
+                    </tr>
+                    <tr>
+                      <td>Cab Type :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_cab_type" value="1 hour 15 minutes"></td>
                     </tr>
                     <tr>
                       <td>Total Miles :</td>
-                      <td><input type="text" class="text" name="num1" id="id_num1" value="43 Miles"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value="43 Miles"></td>
                     </tr>
                        <tr>
                       <td>Journey Time :</td>
-                      <td><input type="text" class="text" name="num1" id="id_num1" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value="1 hour 15 minutes"></td>
                     </tr>
+                  
              </tbody></table>
 				</div>
             
