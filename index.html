@@ -60,7 +60,7 @@
      <li id="today"  class="active booking"><a>Today Booking</a></li>
     <li><a id="tommorrow" class="booking" >Tomorrow Booking</a></li> 
     <li><a id="future" class="booking" >Future Booking</a></li> 
-    <li><a id="custom" class="booking">Custom Result</a></li> 
+    <li><a id="custom" class="booking" onclick="HideShowFunction()">Custom Result</a></li> 
      <li><img class="mc-sub-icons mc-others-icon" onclick="otherFunction()" data-toggle="tooltip" data-placement="right" title="More Options" src="./assets/images/icons/more.svg">
         <div id="mc-dropdown" class="dropdown-set">
     <a href="#">This Week</a>
@@ -105,6 +105,9 @@
     
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
+    <div class="mc-display-custom-fields">
+    
+    </div>
 	    <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
         <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
             <tr style="border:1px solid #e4e4e4;">
@@ -426,10 +429,21 @@
     
    
     
+    
+    
+    
+    
+    <script>function HideShowFunction() {
+  var x = document.getElementById("");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}</script>
+    
     <script>
-    
-    
-    
+
     function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
@@ -573,6 +587,9 @@ AutocompleteDirectionsHandler.prototype.route = function() {
     </script>
 -->
 
+    
+    
+    
     
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initMap"
        async defer></script>
