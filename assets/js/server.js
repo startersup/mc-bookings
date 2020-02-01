@@ -24,13 +24,13 @@ function SetParam(myparam)
     if(myparam === 'today')
     {
         myGetUrl = myUrl+'myapi/func_today.php';
-    }elseif(myparam === 'yesterday')
+    }else if(myparam === 'yesterday')
     {
         myGetUrl = myUrl+'myapi/func_yest.php';
-    }if(myparam === 'tommorrow')
+    }else if(myparam === 'tommorrow')
     {
         myGetUrl = myUrl+'myapi/func_tmrw.php';
-    }if(myparam === 'custom')
+    }else if(myparam === 'custom')
     {
         myGetUrl = myUrl+'myapi/func_custom.php';
     }
