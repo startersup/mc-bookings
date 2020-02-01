@@ -150,7 +150,7 @@ function getModalData(myload,book_id)
     mydata["book_id"]=book_id;
     if(myload === 'basic')
     {
-        myGetUrl = myUrl+'myapi/basic_.php';
+        myGetUrl = myUrl+'myapi/basic_info.php';
     }
     get_url_response(myGetUrl,mydata,'setModalData');
 }
