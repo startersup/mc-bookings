@@ -124,12 +124,45 @@
 <i class="fa fa-caret-down"></i>
 </div>
 </div> 
-<div class="col-md-2"> 
-<input class="input-filter" type="text" placeholder="filter" style="border:1px solid #ccc;padding:5px 10px;width:100%">    
+
+<div id="filterList">
+
+<div class="col-md-1"> 
+<input class="input-filter" type="checkbox" value="ALL">ALL
+</div>
+
+<div class="col-md-1"> 
+<input class="input-filter" type="checkbox" value="booked">Booked
+</div>
+
+<div class="col-md-1"> 
+  <input class="input-filter" type="checkbox" value="booked-confirmed">Confirmed
+  </div>
+
+  <div class="col-md-1"> 
+    <input class="input-filter" type="checkbox" value="comitted">Allocated
     </div>
+
+    <div class="col-md-1"> 
+      <input class="input-filter" type="checkbox" value="completed">Completed
+      </div>
+
+      <div class="col-md-1"> 
+        <input class="input-filter" type="checkbox" value="cancelled">Cancelled
+        </div>
+
+</div>
+
+  
+
+
 <div class="col-md-4">
-    <button class="button-style">Search</button>
+
+  <input class="input-filter" type="hidden" id ="filter_out" placeholder="filter">    
+   
+    <button class="button-style">Add</button>
 </div>  
+
 </div>
 </div>
 	    <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">

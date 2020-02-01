@@ -6,6 +6,8 @@ var text = '{'+
 ' "cancelled" : { "class":"green-status" , "showstatus":"Cancelled" },'+
 ' "completed" : { "class":"green-status" , "showstatus":"Completed" }'+
           '}';
+var text_filter_name ='ALL Booked Confirmed Allocated Completed Cancelled';
+var text_filter_value = 'ALL booked booked-confirmed comitted completed cancelled';
 var obj_status = JSON.parse(text);
 var loadBooking = 'Today';
 var myProtocol = window.location.protocol;
@@ -136,6 +138,26 @@ $(document).ready(function() {
         SetParam(id);
     });
 
+    // $( "#filter_inp" ).keyup(function() {
+
+    //     var temp_arr=document.getElementById("filter_inp").value.split(" ");
+    //     if (strlen > 0) {
+    //         document.getElementById("livesearch").style.border = "1px solid #A5ACB2";
+    //         document.getElementById("livesearch").style.padding = "5px 15px";
+    //     }
+    //     if (strlen == 0) {
+    
+    //         document.getElementById("livesearch").style.border = "";
+    //         document.getElementById("livesearch").style.padding = "";
+    //     }
+    //     var strlist = "";
+    //     for (var i = 0; i < strlen; i++) {
+    //         strlist = strlist + '<p onclick="setlivedata(this)" id="' + filterData[i] + '" class="' + data[i].unit + '"  >' + data[i].name + "<br>";
+    
+    //     }
+    //     document.getElementById("livesearch").innerHTML = strlist;
+        
+    //   });
  
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
@@ -222,3 +244,19 @@ function setModalData(myData)
     
     $("#preloader2").fadeOut();
 }
+function date_format_db(x)
+{
+   
+    var d = new Date(x), 
+    month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear(); 
+        
+        return(year+"-"+month+"-"+day)
+}
+// var temp = document.getElementById("fromto").innerHTML;
+   
+// var d = temp.split(" - ");
+
+// mydata['from']=date_format_db(d[0]);
+// mydata['to']=date_format_db(d[1]);
