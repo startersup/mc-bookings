@@ -138,26 +138,21 @@ $(document).ready(function() {
         SetParam(id);
     });
 
-    // $( "#filter_inp" ).keyup(function() {
+    $( "#filter_all" ).click(function() {
 
-    //     var temp_arr=document.getElementById("filter_inp").value.split(" ");
-    //     if (strlen > 0) {
-    //         document.getElementById("livesearch").style.border = "1px solid #A5ACB2";
-    //         document.getElementById("livesearch").style.padding = "5px 15px";
-    //     }
-    //     if (strlen == 0) {
-    
-    //         document.getElementById("livesearch").style.border = "";
-    //         document.getElementById("livesearch").style.padding = "";
-    //     }
-    //     var strlist = "";
-    //     for (var i = 0; i < strlen; i++) {
-    //         strlist = strlist + '<p onclick="setlivedata(this)" id="' + filterData[i] + '" class="' + data[i].unit + '"  >' + data[i].name + "<br>";
-    
-    //     }
-    //     document.getElementById("livesearch").innerHTML = strlist;
-        
-    //   });
+        if (this.checked) {
+            for(var i=1; i<=5;i++)
+            {
+
+                document.getElementById(i).disabled =false;
+            }
+        }
+        else{
+
+            document.getElementById(i).disabled =true;
+        }
+
+      });
  
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
