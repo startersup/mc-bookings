@@ -143,7 +143,7 @@ $(document).ready(function() {
 
     $('.modalToggle').click(function() { 
         var id = $(this).attr('id');
-        getModalData(id,document.getElementById('myModalLabel2').name);
+        getModalData(id,document.getElementById('myModalBookId_temp').innerHTML);
     });
 
     
@@ -174,6 +174,7 @@ function getModalData(myload,book_id)
     }else if(myload === 'passenger_info')
     {
         modalPing='passenger_info';
+        document.getElementById('myModalBookId_temp').innerHTML
         myGetUrl = myUrl+'myapi/passenger.php';
     }
     get_url_response(myGetUrl,mydata,'setModalData');
