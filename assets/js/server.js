@@ -38,8 +38,7 @@ function SetParam(myparam)
 }
 function get_url_response(myGetUrl,mydata)
 {
-               // document.getElementById("spinnermodal").style.display = "block";
-               var url="https://minicabee.co.uk/myadmin/myapi/func_future.php";
+
                 $.ajax({
                     
                 type: 'POST',
