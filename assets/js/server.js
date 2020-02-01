@@ -25,7 +25,7 @@ function get_url_response()
                      //window[functionName](data);
                 },
                 error: function(xhr) { 
-                    alert("fail")
+                 
                    // document.getElementById("spinnermodal").style.display = "none";
                   //  Server_Response_Fail(xhr.responseText); 
                 }
@@ -61,3 +61,8 @@ function GetRecordStatus(status)
 
     return '<div class="'+obj_status[status]["class"]+'">'+obj_status[status]["showstatus"]+'</div>';
 }
+
+
+
+
+ 
