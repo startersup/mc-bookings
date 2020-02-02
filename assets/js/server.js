@@ -17,12 +17,12 @@ var modalPing='';
 
 function pageLoad()
 {
-    document.getElementById("spinnermodal").style.display = "none";
     SetParam('today');
     
 }
 function SetParam(myparam)
 {
+    document.getElementById("spinnermodal").style.display = "block";
     var mydata ={};
     var myGetUrl='';
     if(myparam === 'today')
@@ -45,7 +45,6 @@ function SetParam(myparam)
 }
 function get_booking_response(myGetUrl,mydata)
 {
-    document.getElementById("spinnermodal").style.display = "block";
                 $.ajax({
                     
                 type: 'POST',
