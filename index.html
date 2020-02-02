@@ -80,7 +80,7 @@
             
             <li>
 </li>
-            <li><button class="mc-add-btn" data-toggle="modal" data-target="#newbooking-bar"> <img class="mc-button-icons" src="./assets/images/icons/add.svg"> Add Booking</button></li></ul>
+            <li><button class="mc-add-btn" data-toggle="modal" data-target="#newbooking-bar"> <img class="mc-button-icons" src="./assets/images/icons/add.svg"> `Add Booking</button></li></ul>
     </div>
     
       <!----sub-navbar-ends----->
@@ -110,11 +110,6 @@
     
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
-
-<div class="preloader" id="preloader1">
-<img src="https://gtscab.com/image/bookingprogressimage.gif" style="position: absolute;top:20%;left:40%;">
-</div>
-
  <div id="mc-display" style="display:none;padding:10px 0px 20px;margin-bottom:20px;">
 <div clas="row">
 <div class="col-md-4">
@@ -171,7 +166,7 @@
     </table>
 		
         </div>
-</div>
+    
       <!---mainbar-starts----->
     
 <!---modals-section------>
@@ -480,7 +475,6 @@
 			</div><!-- modal-content -->
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->
-
     <!---modals-section------>
     
 <script>$(document).ready(function() {
@@ -645,15 +639,11 @@ function hideshowFunction() {
 }
 </script>
     
-    <script>
-    
-   $(document).ready(function(){
-    setTimeout(function() {
-		$("#preloader").fadeOut();
-	},1000);
-});
-    
-</script>
+   <script>$(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(350).css({'overflow':'visible'});
+})</script>
 
 
     
