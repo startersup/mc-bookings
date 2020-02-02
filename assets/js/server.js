@@ -138,18 +138,7 @@ $(document).ready(function() {
 
     $( "#filter_all" ).click(function() {
 
-        if (this.checked) {
-            for(var i=1; i<=5;i++)
-            {
-
-                document.getElementById(i).disabled =false;
-            }
-        }
-        else{
-
-            document.getElementById(i).disabled =true;
-        }
-
+        filterCheckBox(this);
       });
  
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
@@ -168,6 +157,22 @@ $(document).ready(function() {
 
     
 });
+function filterCheckBox(ele)
+{
+
+    alert(this.checked);
+    // if (this.checked) {
+    //     for(var i=1; i<=5;i++)
+    //     {
+
+    //         document.getElementById(i).disabled =false;
+    //     }
+    // }
+    // else{
+
+    //     document.getElementById(i).disabled =true;
+    // }
+}
 function clearModal()
 {
     document.getElementById('modal_booking_site').value		='';
