@@ -160,18 +160,21 @@ $(document).ready(function() {
 function filterCheckBox(ele)
 {
 
-    alert(this.checked);
-    // if (this.checked) {
-    //     for(var i=1; i<=5;i++)
-    //     {
+    if (this.checked) {
+        for(var i=1; i<=5;i++)
+        {
 
-    //         document.getElementById(i).disabled =false;
-    //     }
-    // }
-    // else{
+            document.getElementById(i).disabled = true
+        }
+    }
+    else{
 
-    //     document.getElementById(i).disabled =true;
-    // }
+        for(var i=1; i<=5;i++)
+        {
+
+            document.getElementById(i).disabled = false;
+        }
+    }
 }
 function clearModal()
 {
