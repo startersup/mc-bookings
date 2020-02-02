@@ -155,8 +155,44 @@ $(document).ready(function() {
         getModalData(id,document.getElementById('myModalBookId_temp').innerHTML);
     });
 
+    $('.filter_load').click(function() { 
+
+        searchByFilter();
+    });
+
+
     
 });
+function searchByFilter()
+{
+    var mydata={};
+    if(document.getElementById('filter_all').checked)
+    {
+        mydata["status"]=document.getElementById('filter_all').value;
+    }else{
+        var temp='temp'
+        for(var i=1; i<=5;i++)
+        {
+            if(document.getElementById(i).checked)
+            {
+                temp=temp+','+document.getElementById(i).value;
+            }
+        }
+
+        mydata["status"]=temp;
+    }
+
+    var temp1 = document.getElementById("fromto").innerHTML;
+
+    var d = temp1.split(" - ");
+
+    mydata['from']=date_format_db(d[0]);
+    mydata['to']=date_format_db(d[1]);
+
+    var myGetUrl = myUrl+'myapi/custom.php';
+
+get_booking_response(myGetUrl,mydata);
+}
 function filterCheckBox(ele)
 {
 
