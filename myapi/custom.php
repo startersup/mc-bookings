@@ -13,7 +13,7 @@ session_start();
     $status=$_POST["status"];
 
    
-  $sql = "SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt>= '".$check."' AND dt<= '".$check."'";
+  $sql = "SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt>= '".$from."' AND dt<= '".$to."'";
 
   if($status !== "ALL")
   {
