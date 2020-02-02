@@ -152,7 +152,11 @@ $(document).ready(function() {
 
     $('.modalToggle').click(function() { 
         var id = $(this).attr('id');
-        getModalData(id,document.getElementById('myModalBookId_temp').innerHTML);
+        if((id === 'bidding') )
+        {
+            getModalData(id,document.getElementById('myModalBookId_temp').innerHTML);
+        }
+        
     });
 
     $('#filter_load').click(function() { 
@@ -252,14 +256,10 @@ function getModalData(myload,book_id)
     {
         modalPing='basic_info';
         myGetUrl = myUrl+'myapi/basic_info.php';
-    }else if(myload === 'passenger_info')
-    {
-        modalPing='passenger_info';
-        document.getElementById('myModalBookId_temp').innerHTML
-        myGetUrl = myUrl+'myapi/passenger.php';
     }
     get_url_response(myGetUrl,mydata,'setModalData');
 }
+var objModaldata={};
 function setModalData(myData)
 {
     var myObj = JSON.parse(myData);
@@ -274,8 +274,7 @@ function setModalData(myData)
         document.getElementById('modal_booking_cab_type').value=myObj[0]["type"];
         document.getElementById('myModalBookId').innerHTML ='Booking Information - ( '+myObj[0]["refid"]+' )'; 
         document.getElementById('myModalBookId_temp').innerHTML = myObj[0]["refid"];
-    }else if(modalPing === 'passenger_info')
-    {
+   
         document.getElementById('modal_booking_name').value=myObj[0]["name"];
         document.getElementById('modal_booking_mail').value=myObj[0]["mail"];
         document.getElementById('modal_booking_num1').value=myObj[0]["num1"];
@@ -290,8 +289,8 @@ function setModalData(myData)
         document.getElementById('modal_booking_info').value=myObj[0]["info"];
         document.getElementById('modal_booking_type').value=myObj[0]["type"];
         document.getElementById('modal_booking_fare').value=myObj[0]["fare"];
-
     }
+    
  
 
 
