@@ -12,9 +12,9 @@
    $date= date("Y-m-d");
 
     
-    $sql="SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt> '".$check."' and status != 'cancelled' ";
+    $sql="SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt> '".$date."' and status != 'cancelled' ";
   
-  echo($sql);
+ // echo($sql);
     $result=  mysqli_query($conn,$sql);
 
   while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
@@ -26,7 +26,7 @@ if($temp==null)
 {
    $temp=array();
 }
-  // echo  json_encode($temp);
+   echo  json_encode($temp);
 ?>
 
  
