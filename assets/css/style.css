@@ -82,8 +82,8 @@ body
     margin-top: 5px;
     font-family: 'Montserrat', sans-serif;
     padding: 0px 8px;
-    font-size:12px;
-    font-weight:600;
+    font-size:13px;
+    font-weight:500;
 }
 
 .navbar-default .navbar-nav>li:hover .mc-dropdown-content {
