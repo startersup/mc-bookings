@@ -160,7 +160,7 @@ $(document).ready(function() {
 function filterCheckBox(ele)
 {
 
-    if (this.checked) {
+    if (ele.checked) {
         for(var i=1; i<=5;i++)
         {
 
