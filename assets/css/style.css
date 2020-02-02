@@ -190,7 +190,16 @@ body
     display:inline;
     list-style-type: none;
 }
-
+#filterList ul
+{
+    list-style-type: none;
+    display: inline;
+}
+#filterList ul li
+{
+    display:inline-block;
+    padding:0px 10px;
+}
 
 .mc-sub-right
 {
