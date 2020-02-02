@@ -32,6 +32,7 @@ session_start();
      {
 
       $temp[]=$row2;
+      echo  json_encode($row2);
      }
 
   echo  json_encode($temp);
