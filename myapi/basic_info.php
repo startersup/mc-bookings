@@ -20,7 +20,7 @@ session_start();
     
     $sql2="SELECT process.jobid, process.drvid, process.bid,process.fare,driver.name FROM process INNER JOIN driver ON process.drvid=driver.id WHERE process.jobid ='".$book_id."'";
     $result2=  mysqli_query($conn,$sql2);
-
+echo($sql2."<br>");
 
  $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
 
@@ -28,13 +28,12 @@ session_start();
      $temp[]=$row;
 
      $i=0;
-     while($row2= mysqli_fetch_array($result2,MYSQLI_ASSOC))
+     while( $row2= mysqli_fetch_array($result2,MYSQLI_ASSOC))
      {
-
-      $temp[]=$row2;
-      echo ($i);
-      $i++;
-     }
+        ech0($i."<br>");
+        $temp[]=$row2;
+        $i++;
+   }
 
   echo  json_encode($temp);
 
