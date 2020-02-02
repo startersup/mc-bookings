@@ -155,7 +155,7 @@ $(document).ready(function() {
         getModalData(id,document.getElementById('myModalBookId_temp').innerHTML);
     });
 
-    $('.filter_load').click(function() { 
+    $('#filter_load').click(function() { 
 
         searchByFilter();
     });
