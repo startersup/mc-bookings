@@ -18,7 +18,7 @@ session_start();
     $result=  mysqli_query($conn,$sql);
 
     
-    $sql2="SELECT process.jobid, process.drvid, process.bid,process.fare,driver.name FROM process INNER JOIN driver ON process.drvid=driver.id WHERE process.jobid ='".$bookid."'";
+    $sql2="SELECT process.jobid, process.drvid, process.bid,process.fare,driver.name FROM process INNER JOIN driver ON process.drvid=driver.id WHERE process.jobid ='".$book_id."'";
     $result2=  mysqli_query($conn,$sql2);
 
 
