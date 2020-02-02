@@ -17,12 +17,12 @@ var modalPing='';
 
 function pageLoad()
 {
-    $("#preloader2").fadeOut();
     SetParam('today');
     
 }
 function SetParam(myparam)
 {
+    document.getElementById("spinnermodal").style.display = "block";
     var mydata ={};
     var myGetUrl='';
     if(myparam === 'today')
@@ -45,7 +45,6 @@ function SetParam(myparam)
 }
 function get_booking_response(myGetUrl,mydata)
 {
-
                 $.ajax({
                     
                 type: 'POST',
@@ -112,7 +111,7 @@ function setRow(data)
             editRec
         ] ).draw( false );
     }
-    $("#preloader1").fadeOut();
+    document.getElementById("spinnermodal").style.display = "none";
 
 }
 function GetRecordStatus(status)
@@ -131,7 +130,6 @@ function clearClass()
 $(document).ready(function() {
     
     $('.booking').click(function() {
-        $("#preloader1").fadeIn();  
         var id = $(this).attr('id');
         clearClass();
         $(this).addClass("active");       
@@ -157,7 +155,6 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
-        $("#preloader2").fadeIn();
         $('#mc-open-modal').trigger('click');
         clearModal();
         getModalData('basic_info',data[0]);
@@ -182,6 +179,23 @@ function clearModal()
     document.getElementById('modal_booking_cab_type').value =''; 
     document.getElementById('myModalBookId').innerHTML =''; 
     document.getElementById('myModalBookId').name =''; 
+
+    document.getElementById('modal_booking_name').value=		'';
+    document.getElementById('modal_booking_mail').value=		'';
+    document.getElementById('modal_booking_num1').value=		'';
+    document.getElementById('modal_booking_num2').value=		'';
+    document.getElementById('modal_booking_address1').value=	'';
+    document.getElementById('modal_booking_address2').value=	'';
+    document.getElementById('modal_booking_dt').value=			'';
+    document.getElementById('modal_booking_tm').value=			'';
+    document.getElementById('modal_booking_np').value=			'';
+    document.getElementById('modal_booking_nl').value=			'';
+    document.getElementById('modal_booking_location').value=	'';
+    document.getElementById('modal_booking_info').value=		'';
+    document.getElementById('modal_booking_type').value=		'';
+    document.getElementById('modal_booking_fare').value=		'';
+
+
 
 }
 function getModalData(myload,book_id)
@@ -236,8 +250,7 @@ function setModalData(myData)
     }
  
 
-    
-    $("#preloader2").fadeOut();
+
 }
 function date_format_db(x)
 {
