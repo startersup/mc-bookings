@@ -27,10 +27,15 @@ session_start();
      
      $temp[]=$row;
 
-     $row2= mysqli_fetch_array($result2,MYSQLI_ASSOC);
+     
+     while($row2= mysqli_fetch_array($result2,MYSQLI_ASSOC))
+     {
+
+      $temp2[]=$row2;
+     }
 
      
-     $temp[]=$row2;
+     $temp[]=$temp2;
 
   echo  json_encode($temp);
 
