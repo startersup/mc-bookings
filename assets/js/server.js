@@ -89,7 +89,7 @@ function get_url_response(myGetUrl,mydata,myfunc)
 function setRow(data)
 {
 	var myTable = $('#mc-datatables').DataTable();
-	myTable.clear().draw();
+	myTable.destroy();
           var result = JSON.parse(data);
             $('#mc-datatables').DataTable({
                
