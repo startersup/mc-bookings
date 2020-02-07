@@ -88,15 +88,19 @@ function get_url_response(myGetUrl,mydata,myfunc)
 }
 function setRow(data)
 {
+	var myTable = $('#mc-datatables').DataTable();
+	myTable.clear().draw();
           var result = JSON.parse(data);
-            $('#example').DataTable({
+            $('#mc-datatables').DataTable({
                
                 "data": result,
                 "columns" : [
                         { "data": "refid" },
+			{ "data": "booking_site" },
                         { "data": "src" },
                         { "data": "des" },
                         { "data": "dt" },
+			{ "data": "type" },
                         { "data": "fare" },
                         { "data": "status" },
 		         {data: null,
