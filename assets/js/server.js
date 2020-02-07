@@ -86,7 +86,63 @@ function get_url_response(myGetUrl,mydata,myfunc)
                 });
 
 }
+function setRow(data)
+{
+          var result = JSON.parse(data);
+            $('#example').DataTable({
+               
+                "data": result,
+                "columns" : [
+                        { "data": "refid" },
+                        { "data": "src" },
+                        { "data": "des" },
+                        { "data": "dt" },
+                        { "data": "fare" },
+                        { "data": "status" },
+		         {data: null,
+        defaultContent: '<div class="mc-edit"></div>'
+    }
+                   ]
+            });
+setStatus();
+}
+function setStatus()
+{
 
+var table = $('#example').DataTable(); 
+table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+    var data = this.data();
+	var myClass = '';
+	var myDiv='<div class="myClass">myStatus</div>';
+	if(data.status == 'completed')
+	{
+	myDiv=myDiv.replace("myStatus", "Completed");
+	myDiv=myDiv.replace("myClass", "mc-cl-Completed");
+	}else if(data.status == 'booked')
+	{
+	myDiv=myDiv.replace("myStatus", "Booked");
+	myDiv=myDiv.replace("myClass", "mc-cl-Booked");
+	}else if(data.status == 'booked-confirmed')
+	{
+		myDiv=myDiv.replace("myStatus", "Confirmed");
+	myDiv=myDiv.replace("myClass", "mc-cl-Confirmed");
+	}else if(data.status == 'cancelled')
+	{
+			myDiv=myDiv.replace("myStatus", "Cancelled");
+	myDiv=myDiv.replace("myClass", "mc-cl-Cancelled");
+	}else if(data.status == 'comitted')
+	{
+			myDiv=myDiv.replace("myStatus", "Comitted");
+	myDiv=myDiv.replace("myClass", "mc-cl-Comitted");
+	}
+	data.status=myDiv;
+	 this.data(data);
+	
+	}	);
+	
+}
+
+/*
 function setRow(data)
 {
 
@@ -113,7 +169,7 @@ function setRow(data)
     }
     document.getElementById("spinnermodal").style.display = "none";
 
-}
+} */
 function GetRecordStatus(status)
 {
 
