@@ -14,7 +14,14 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol+'//'+mySite+'/';
 var modalPing='';
-
+function startLoader()
+{
+	document.getElementById("spinnermodal").style.display = "block";
+}
+function stopLoader()
+{
+document.getElementById("spinnermodal").style.display = "none";
+}
 function pageLoad()
 {
     SetParam('today');
@@ -22,7 +29,7 @@ function pageLoad()
 }
 function SetParam(myparam)
 {
-    document.getElementById("spinnermodal").style.display = "block";
+    startLoader();
     var mydata ={};
     var myGetUrl='';
     if(myparam === 'today')
@@ -143,7 +150,7 @@ table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
 	 this.data(data);
 	
 	}	);
-	
+stopLoader();	
 }
 
 /*
