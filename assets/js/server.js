@@ -96,7 +96,7 @@ function setRow(data)
                 "data": result,
                 "columns" : [
                         { "data": "refid" },
-			{ "data": "booking_site" },
+			{ "data": "booked_site" },
                         { "data": "src" },
                         { "data": "des" },
                         { "data": "dt" },
