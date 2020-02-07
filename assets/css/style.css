@@ -280,7 +280,11 @@ body
 
 /****dashboard-secondary****/
 
-
+.mc-invoice-list
+{
+padding:30px!important; border:1px solid #f2f6fc !important;
+    background-color:#f2f6fc;
+}
 /*****secondary---sidebar******/
 .preloader{
     background-color:#FFF;
@@ -334,10 +338,79 @@ body
     color:#6e22c6;
     font-weight:500;
 }
+
+/********dashboard-sidebar*******/
+
+
+.mc-teritory-sidebar
+{
+    margin-top:90px;
+    margin-left:65px;
+    position: fixed;
+  background: #fff;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    border-right:1px solid #f6f6f6;
+    height: 100%;
+    width: 400px;
+    float: left;
+    z-index:0;
+    height: 100vh;
+    list-style: none;
+    padding:20px 0px;
+}
+
+.report-width
+{
+    max-width:350px;
+    margin:0 auto;
+}
+
+.mc-teritory-sidebar ul
+{
+    display:inline;
+    margin: 0; 
+    padding: 0;
+    list-style-type: none;
+}
+.mc-teritory-sidebar ul li
+{
+    margin-top:20px;
+    display: inline-block;
+    padding:0px 30px 0px 0px;
+}
+
+.mc-teritory-sidebar ul li a
+{
+      font-size:14px !important;
+         color: #000000 !important;
+    font-weight:500;
+    text-decoration: none;
+     font-family: 'Montserrat', sans-serif; 
+}
 /********dashboard-sidebar*******/
 
 
 
+/***daterangepicker-css****/
+
+#fromto, .ranges ul li, .drp-selected, .cancelBtn, .applyBtn
+{
+    font-weight:500;
+    text-decoration: none;
+     font-family: 'Montserrat', sans-serif;  
+}
+.daterangepicker .ranges li.active, .daterangepicker td.active, .daterangepicker td.active:hover
+{
+    background-color:#6e22c6 !important;
+}
+.daterangepicker td.in-range
+{
+    background-color:#f2ebf8;
+}
+.btn-primary
+{
+    background-color:#6e22c6 !important;  
+}
 /*preloader*/
 
 #preloader {
