@@ -533,7 +533,7 @@ height:30px;
     font-size:12px;
         z-index: 0;
 }
-.green-status
+.mc-cl-Comitted
 {
  background: rgb(127, 165, 255);
     border:1px solid rgb(127, 165, 255);
@@ -551,7 +551,7 @@ height:30px;
     color: #fff!important;
     text-transform: uppercase;
 }
-.red-status
+.mc-cl-Cancelled
 {
  background: rgb(127, 165, 255);
     text-align: center;
@@ -568,7 +568,57 @@ height:30px;
     color: #fff!important;
     text-transform: uppercase;
 }
-
+.mc-cl-Confirmed
+{
+ background: rgb(127, 165, 255);
+    text-align: center;
+        background: #70e0ac;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-align: center;
+    color: #fff!important;
+    text-transform: uppercase;
+}
+.mc-cl-Booked
+{
+ background: rgb(127, 165, 255);
+    text-align: center;
+        background: #e1ff9e;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-align: center;
+    color: #000!important;
+    text-transform: uppercase;
+}
+.mc-cl-Completed
+{
+ background: rgb(127, 165, 255);
+    text-align: center;
+        background: #0dad0d;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-align: center;
+    color: #000!important;
+    text-transform: uppercase;
+}
 .dataTables_info
 {
      font-size:13px;
