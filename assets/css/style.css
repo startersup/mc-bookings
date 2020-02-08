@@ -698,6 +698,10 @@ height:30px;
 a.paginate_button
 {
     color:#000000 !important;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4px;
+    font-size:13px;
 }
 .table
 {
