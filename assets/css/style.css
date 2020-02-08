@@ -1116,3 +1116,26 @@ width: 100%;
     z-index: 10;
 }
 
+
+
+
+
+/******empty_states images****/
+.empty_states
+{
+    max-width:550px;
+    margin:0 auto;
+}
+.empty_states p
+{
+    text-align: center;
+    font-weight:600;
+    padding:10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.empty_image
+{
+    max-width:600px;
+    width:100%;
+}
