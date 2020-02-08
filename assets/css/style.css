@@ -292,7 +292,7 @@ padding:30px!important; border:1px solid #f2f6fc !important;
 padding:20px 10px;
     max-width:400px;
     border:1px solid #f1f1f1;
-         font-family: 'Montserrat', sans-serif;
+         font-family: 'Montserrat', sans-serif; 
     width:100%;
 }
 
@@ -309,6 +309,8 @@ padding:20px 10px;
 .preview-bar tbody tr td
 {
     padding:10px;
+    cursor:pointer;
+    border-bottom:1px solid #f1f1f1;
 }
 /*****secondary---sidebar******/
 .preloader{
