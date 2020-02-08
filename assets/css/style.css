@@ -582,6 +582,7 @@ height:30px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
+    border:1px solid #909090;
     color: #fff!important;
     text-transform: uppercase;
 }
@@ -599,6 +600,7 @@ height:30px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.16);
     color: #000!important;
     text-transform: uppercase;
 }
@@ -702,6 +704,15 @@ a.paginate_button
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.4px;
     font-size:13px;
+}
+#fromto, .ranges ul li, .drp-selected, .cancelBtn, .applyBtn
+{
+    font-size:12px !important;
+}
+.paginate_button.current
+{
+background-color: #6e22c6 !important;
+    color:#ffffff !important;
 }
 .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date
 {
