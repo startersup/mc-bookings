@@ -213,14 +213,15 @@ $(document).ready(function() {
     $('#mc-datatables tbody').on( 'click', '.mc-edit', function () {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
-        $('#mc-open-modal').trigger('click');
-        clickModal();
+       // $('#mc-open-modal').trigger('click');
+       document.getElementById('mc-open-modal').click();
+        clickModal(data[0]);
  
     } );
-function clickModal()
+function clickModal(data)
 {
     clearModal();
-    getModalData('basic_info',data[0]);
+    getModalData('basic_info',data);
 }
     $('.modalToggle').click(function() { 
         var id = $(this).attr('id');
@@ -276,7 +277,8 @@ function filterCheckBox(ele)
         for(var i=1; i<=5;i++)
         {
 
-            document.getElementById(i).disabled = true
+            document.getElementById(i).disabled = true;
+            document.getElementById(i).checked = false;;
         }
     }
     else{
