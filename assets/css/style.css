@@ -710,6 +710,7 @@ a.paginate_button
 .paginate_button.current
 {
 background-color: #6e22c6 !important;
+    color:#ffffff !important;
 }
 .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date
 {
