@@ -101,6 +101,8 @@ function setRow(data)
             $('#mc-datatables').DataTable({
                
                 "data": result,
+                "lengthChange": false,
+                "searching": false,
                 "columns" : [
                         { "data": "refid" },
 			{ "data": "booked_site" },
