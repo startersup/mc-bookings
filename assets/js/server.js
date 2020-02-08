@@ -214,11 +214,14 @@ $(document).ready(function() {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
         $('#mc-open-modal').trigger('click');
-        clearModal();
-        getModalData('basic_info',data[0]);
+        clickModal();
  
     } );
-
+function clickModal()
+{
+    clearModal();
+    getModalData('basic_info',data[0]);
+}
     $('.modalToggle').click(function() { 
         var id = $(this).attr('id');
         if((id === 'bidding') )
