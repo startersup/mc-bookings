@@ -39,7 +39,7 @@ $(document).ready(function() {
     lengthChange: false,
     searching: false,
     fixedHeader: true,
-    pageLength: 25,
+    pageLength: 50,
     scrollY: "700px",
     scrollX: true,
     ordering: false,
