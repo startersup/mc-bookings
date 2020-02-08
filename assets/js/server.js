@@ -101,6 +101,8 @@ function setRow(data)
             $('#mc-datatables').DataTable({
                
                 "data": result,
+                "lengthChange": false,
+                "searching": false,
                 "columns" : [
                         { "data": "refid" },
 			{ "data": "booked_site" },
@@ -120,7 +122,7 @@ setStatus();
 function setStatus()
 {
 
-var table = $('#example').DataTable(); 
+var table = $('#mc-datatables').DataTable(); 
 table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
     var data = this.data();
 	var myClass = '';
@@ -212,11 +214,14 @@ $(document).ready(function() {
         var table = $('#mc-datatables').DataTable();
         var data =   table.row( $(this).parents('tr') ).data();
         $('#mc-open-modal').trigger('click');
-        clearModal();
-        getModalData('basic_info',data[0]);
+        clickModal();
  
     } );
-
+function clickModal()
+{
+    clearModal();
+    getModalData('basic_info',data[0]);
+}
     $('.modalToggle').click(function() { 
         var id = $(this).attr('id');
         if((id === 'bidding') )
