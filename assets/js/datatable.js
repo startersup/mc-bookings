@@ -44,7 +44,7 @@ $(document).ready(function() {
     scrollX: true,
     ordering: false,
     scrollCollapse: true,
-    paging: false,
+    paging: true,
           "language": {
       "emptyTable": "Sorry No Bookings Available"
     },
