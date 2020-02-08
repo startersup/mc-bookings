@@ -961,6 +961,10 @@ width: 100%;
      padding:5px !important;
      font-size:14px;
 }
+.bolder
+{
+    font-weight:700;
+}
 /***tooltip***/
 
 
