@@ -25,10 +25,11 @@ function get_response(myGetUrl, mydata) {
   }
 
 
-function setList(myObj)
+function setList(myData)
 {
+    var myObj = JSON.parse(myData);
     var temp ='';
-    for(var i=1;i<myObj.length;i++)
+    for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
         temp=temp+'<td>'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
