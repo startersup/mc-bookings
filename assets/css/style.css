@@ -582,6 +582,7 @@ height:30px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
+    border:1px solid #909090;
     color: #fff!important;
     text-transform: uppercase;
 }
@@ -599,6 +600,7 @@ height:30px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.16);
     color: #000!important;
     text-transform: uppercase;
 }
