@@ -31,9 +31,12 @@ function setList(myData)
     var temp ='';
     for(var i=0;i<myObj.length;i++)
     {
+        if(!(myObj[i].drvid === ''))
+        {
         temp=temp+'<tr>';
         temp=temp+'<td>'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
+        }
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
