@@ -298,8 +298,8 @@ function setModalData(myData) {
       myObj[0]["address2"];
     document.getElementById("modal_booking_dt").value = myObj[0]["dt"];
     document.getElementById("modal_booking_tm").value = myObj[0]["time"];
-    document.getElementById("modal_booking_np").value = myObj[0]["np"];
-    document.getElementById("modal_booking_nl").value = myObj[0]["nl"];
+    document.getElementById("modal_booking_np").value = myObj[0]["passenger"];
+    document.getElementById("modal_booking_nl").value = myObj[0]["luggage"];
     document.getElementById("modal_booking_location").value =
       myObj[0]["location"];
     document.getElementById("modal_booking_info").value = myObj[0]["info"];
