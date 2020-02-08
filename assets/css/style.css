@@ -384,7 +384,7 @@ padding:20px 10px;
       box-shadow: 0 1px 5px rgba(0,0,0,.06);
     border-right:1px solid #f6f6f6;
     height: 100%;
-    width: 400px;
+    width: 350px;
     float: left;
     z-index:0;
     height: 100vh;
@@ -394,7 +394,7 @@ padding:20px 10px;
 
 .report-width
 {
-    max-width:350px;
+    max-width:320px;
     margin:0 auto;
 }
 
