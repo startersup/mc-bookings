@@ -305,6 +305,10 @@ padding:20px 10px;
 {
     padding:10px !important;
 }
+.preview-bar tbody tr:hover
+{
+    background-color: rgba(224, 224, 224, 0.26);
+}
 
 .preview-bar tbody tr td
 {
