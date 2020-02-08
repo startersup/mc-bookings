@@ -538,11 +538,11 @@ height:30px;
  background: rgb(127, 165, 255);
     border:1px solid rgb(127, 165, 255);
     text-align: center;
-        background: #4ba3ff;
+        background: #779ef9;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 9px;
     font-weight: 700;
@@ -555,28 +555,28 @@ height:30px;
 {
  background: rgb(127, 165, 255);
     text-align: center;
-        background: #dc7171;
+        background: #ff6d6d;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #fff!important;
+    color: #fff !important;
     text-transform: uppercase;
 }
 .mc-cl-Confirmed
 {
  background: rgb(127, 165, 255);
     text-align: center;
-        background: #70e0ac;
+        background: #5fada6;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 9px;
     font-weight: 700;
@@ -592,8 +592,8 @@ height:30px;
         background: #e1ff9e;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 9px;
     font-weight: 700;
@@ -609,14 +609,14 @@ height:30px;
         background: #0dad0d;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #000!important;
+    color: #fff!important;
     text-transform: uppercase;
 }
 .dataTables_info
@@ -698,6 +698,14 @@ height:30px;
 a.paginate_button
 {
     color:#000000 !important;
+    text-decoration: none !important;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4px;
+    font-size:13px;
+}
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date
+{
+    background-color:transparent !important;
 }
 .table
 {
