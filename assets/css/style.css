@@ -691,8 +691,13 @@ height:30px;
 .paginate_button
 {
     padding:10px;
-    border:1px solid #f4f4f4;
-    background-color:#f6f6f6;
+       border: 1px solid #d2d1d1;
+    background-color: #dcdcdc;
+    cursor:pointer;
+}
+.paginate_button a
+{
+    color:#000000;
 }
 .table
 {
