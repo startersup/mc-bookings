@@ -703,6 +703,10 @@ a.paginate_button
     letter-spacing: 0.4px;
     font-size:13px;
 }
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date
+{
+    background-color:transparent !important;
+}
 .table
 {
     margin-bottom:0px !important;
