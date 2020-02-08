@@ -703,9 +703,13 @@ a.paginate_button
     letter-spacing: 0.4px;
     font-size:13px;
 }
+#fromto, .ranges ul li, .drp-selected, .cancelBtn, .applyBtn
+{
+    font-size:12px !important;
+}
 .paginate_button.current
 {
-background: #6e22c6 !important;
+background-color: #6e22c6 !important;
 }
 .daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date
 {
