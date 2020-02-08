@@ -17,11 +17,10 @@ session_start();
 
   if($status !== "ALL")
   {
-    $sql = $sql +" AND status IN " $status;
+    $sql = $sql +" AND status IN "+ $status;
   }
     
-  //  $sql="SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt= '".$check."' and status != 'cancelled' ";
-    $result=  mysqli_query($conn,$sql);
+   $result=  mysqli_query($conn,$sql);
     
     
     while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
