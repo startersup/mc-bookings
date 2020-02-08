@@ -1,7 +1,7 @@
 var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
-
+var myInvoice='';
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -9,17 +9,34 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-        setRow(data);
-        // document.getElementById("spinnermodal").style.display = "none";
-        //window[functionName](data);
+          if(myInvoice == 'driver')
+          {
+            setList(data);
+          }else{
+
+          }
+        
+       
       },
       error: function(xhr) {
-        // document.getElementById("spinnermodal").style.display = "none";
-        //  Server_Response_Fail(xhr.responseText);
+        
       }
     });
   }
 
+
+function setList(myObj)
+{
+    var temp ='';
+    for(var i=1;i<myObj.length;i++)
+    {
+        temp=temp+'<tr>';
+        temp=temp+'<td>'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'</tr>';
+    }
+
+    document.getElementById("driver-inv-table").innerHTML=temp;
+}
   $(document).ready(function() {
 
   $("#get_details").click(function() {
@@ -46,7 +63,14 @@ $('#driver').change(function() {
 function getInvoice()
 {
     var mydata={};
-
+    if(document.getElementById('all').checked === true)
+    {
+        myInvoice=document.getElementById('all').value;
+    }else if(document.getElementById('driver').checked === true)
+    {
+        myInvoice=document.getElementById('driver').value;
+    }
+    mydata["for"]=myInvoice;
     var temp1 = document.getElementById("fromto").innerHTML;
 
     var d = temp1.split(" - ");
