@@ -246,16 +246,16 @@ function searchByFilter()
     {
         mydata["status"]=document.getElementById('filter_all').value;
     }else{
-        var temp='temp'
+        var temp='(\'temp\'';
         for(var i=1; i<=5;i++)
         {
             if(document.getElementById(i).checked)
             {
-                temp=temp+','+document.getElementById(i).value;
+                temp=temp+',\''+document.getElementById(i).value+'\'';
             }
         }
 
-        mydata["status"]=temp;
+        mydata["status"]=temp+')';
     }
 
     var temp1 = document.getElementById("fromto").innerHTML;
