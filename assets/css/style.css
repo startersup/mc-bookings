@@ -691,11 +691,11 @@ height:30px;
 .paginate_button
 {
     padding:10px;
-       border: 1px solid #d2d1d1;
-    background-color: #dcdcdc;
+   border: 1px solid #e6e6e6;
+    background-color: #efefef;
     cursor:pointer;
 }
-.paginate_button a
+a.paginate_button
 {
     color:#000000 !important;
 }
