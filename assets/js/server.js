@@ -120,7 +120,7 @@ setStatus();
 function setStatus()
 {
 
-var table = $('#example').DataTable(); 
+var table = $('#mc-datatables').DataTable(); 
 table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
     var data = this.data();
 	var myClass = '';
