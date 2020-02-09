@@ -902,31 +902,43 @@ background-color: #6e22c6 !important;
 
 /*****inputs***/
 
-
+.mc-input-select {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    min-height: 30px;
+    border: none;
+    margin: 8px 0px;
+    color: #000000 !important;
+    font-size: 13px !important;
+    box-sizing: border-box;
+}
 
 .selectit{
 width: 100%;
     min-height: 45px;
     padding: 12px 20px;
     margin: 8px 0;
+     font-size: 13px !important;
     box-sizing: border-box;
-    border: 1px solid #eeeeee;
+      color: #000000 !important;
     border-radius:none !important;
  -webkit-appearance: none !important;
     -webkit-border-radius: 0px !important;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
+    border: 1px solid #d0d9e2!important;
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
+       background-color: rgba(243, 243, 243, 0.61);
 }
 
 
 .controls {
     margin: 8px 0;
-    border: 1px solid #eeeeee;
-    background-color: #ffffff;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
-    color: #000000;
+    background-color: rgba(243, 243, 243, 0.61);
+    border: 1px solid #d0d9e2!important;
+    color: #000000 !important;
     width:100%;
+     font-size: 13px !important;
     padding: 12px 20px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;

@@ -16,6 +16,9 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
     <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -222,15 +225,55 @@
   </ul>
 				</div>
 
-				<div class="modal-body">
+				<div class="modal-body"> 
   <div class="tab-content">
     <div id="book-location" class="tab-pane fade in active">
                   <div id="map"></div>
  <input id="origin-input" class="controls" type="text"
-            placeholder="Enter an origin location">
+            placeholder="Enter Pickup postcode / Location" autocomplete="off">
 
         <input id="destination-input" class="controls" type="text"
-            placeholder="Enter a destination location">
+            placeholder="Enter a Dropoff Postcode / Location" autocomplete="off">
+        
+        
+        <input id="datetimepicker" class="controls" type="text"
+            placeholder="pickup Date and Time" autocomplete="off">
+        
+        <div class="row">
+        <div class="col-md-6">
+            <select name="passenger" id="np" class="selectit" autocomplete="off">
+  <option value="1">1 Passenger</option>
+  <option value="2">2 Passengers</option>
+  <option value="3">3 Passengers</option>
+  <option value="4">4 Passengers</option>   
+  <option value="5">5 Passengers</option>
+  <option value="6">6 Passengers</option>
+  <option value="7">7 Passengers</option>
+  <option value="8">8 Passengers</option>
+  <option value="9">9 Passengers</option>
+  <option value="10">10 Passengers</option>
+</select>
+            </div>
+            <div class="col-md-6">
+            <select name="Luggage" id="nl" class="selectit" autocomplete="off">
+  <option value="0">0 Luggage</option>
+  <option value="1">1 Luggage</option>
+  <option value="2">2 Luggages</option>
+  <option value="3">3 Luggages</option>
+  <option value="4">4 Luggages</option>   
+  <option value="5">5 Luggages</option>
+  <option value="6">6 Luggages</option>
+  <option value="7">7 Luggages</option>
+  <option value="8">8 Luggages</option>
+  <option value="9">9 Luggages</option>
+  <option value="10">10 Luggages</option>
+</select>
+            </div>
+        </div>
+         <input id="fare" class="controls" type="text"
+            placeholder="Enter Fare" autocomplete="off">
+
+        <button class="mc-cta">Next ></button>
       </div></div>
 				</div>
 
@@ -488,7 +531,19 @@
 } );</script>
     
    
+<script>
+    $(document).ready(function() {
+        $.datetimepicker.setLocale('pt-EN');
+        $('#datetimepicker').datetimepicker({
+            // var u="60:00";
+            datepicker: true,
+            allowTimes: [
+                '00:00', '00:15', '00:30', '00:45', '01:00', '01:15', '01:30', '01:45', '02:00', '02:15', '02:30', '02:45', '03:00', '03:15', '03:30', '03:45', '04:00', '04:15', '04:30', '04:45', '05:00', '05:15', '05:30', '05:45', '06:00', '06:15', '06:30', '06:45', '07:00', '07:15', '07:30', '07:45', '08:00', '08:15', '08:30', '08:45', '09:00', '09:15', '09:30', '09:45', '10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '13:00', '13:15', '13:30', '13:45', '14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45', '16:00', '16:15', '16:30', '16:45', '17:00', '17:15', '17:30', '17:45', '18:00', '18:15', '18:30', '18:45', '19:00', '19:15', '19:30', '19:45', '20:00', '20:15', '20:30', '20:45', '21:00', '21:15', '21:30', '21:45', '22:00', '22:15', '22:30', '22:45', '23:00', '23:15', '23:30', '23:45'
+            ]
+        });
 
+    });
+</script>
     
     <script>
     function initMap() {
