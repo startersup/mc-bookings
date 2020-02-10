@@ -40,6 +40,7 @@ function setList(myData)
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
+    
             $('.cl-Driver').click(function() {
   GetDriverInvoice(this);
         
