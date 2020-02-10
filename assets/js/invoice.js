@@ -1,9 +1,7 @@
 var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
-var myInvoice='';
-var lastFrom='';
-var lastTo='';
+var mydataInv={};
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -11,10 +9,10 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(myInvoice == 'driver')
+          if(mydata["for"] == 'driver' && mydata["id"] == '')
           {
             setList(data);
-          }else{
+          }else if(mydata["for"] == 'driver' && mydata["id"] != ''){
 
           }
         
@@ -71,17 +69,14 @@ $('#driver').change(function() {
 });
 function GetDriverInvoice(element)
 {
-   var mydata={};
-    mydata["from"] =lastFrom;
-    mydata["to"] =    lastTo;
-    mydata["ïd"]=element.id;
+     mydataInv["ïd"]=element.id;
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
-    get_response(myGetUrl, mydata);
+    get_response(myGetUrl, mydataInv);
 }
 function getInvoice()
 {
-    var mydata={};
+    var mydataInv={};
     if(document.getElementById('all').checked === true)
     {
         myInvoice=document.getElementById('all').value;
@@ -89,18 +84,17 @@ function getInvoice()
     {
         myInvoice=document.getElementById('driver').value;
     }
-    mydata["for"]=myInvoice;
+    mydataInv["for"]=myInvoice;
     var temp1 = document.getElementById("fromto").innerHTML;
 
     var d = temp1.split(" - ");
   
-    mydata["from"] = date_format_db(d[0]);
-    mydata["to"] = date_format_db(d[1]);
-  lastFrom=mydata["from"];
-  lastTo=mydata["to"];
+    mydataInv["from"] = date_format_db(d[0]);
+    mydataInv["to"] = date_format_db(d[1]);
+	mydataInv["ïd"]='';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
-    get_response(myGetUrl, mydata);
+    get_response(myGetUrl, mydataInv);
 }
 
 function date_format_db(x) {
