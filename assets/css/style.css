@@ -600,8 +600,8 @@ background-color: #ffe3e3de;
 }
 .mc-cl-Confirmed
 {
-background-color: #e3fff8de;
-    border: 1px solid #abf1ea;
+background-color: #E7FAEC;
+    border: 1px solid #63cc7f;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
@@ -611,7 +611,7 @@ background-color: #e3fff8de;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #02acb5!important;
+    color: #018c59!important;
     text-transform: uppercase;
 }
 .mc-cl-Booked
