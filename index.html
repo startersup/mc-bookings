@@ -644,16 +644,28 @@
 </script>
     
     <script>
-    function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    mapTypeControl: false,
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13
-  });
+  
+    var directionsDisplay;
+    var directionsService;
+    var map;
 
-  new AutocompleteDirectionsHandler(map);
-}
-	    
+    function initMap() {
+      directionsService = new google.maps.DirectionsService;
+        var myLatLng = {lat: 51.5287352, lng: -0.3817888};
+      var chicgo = new google.maps.LatLng(51.5287352, -0.3817888);
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center:myLatLng
+      });
+      directionsDisplay = new google.maps.DirectionsRenderer({
+        map: map
+      });
+      calcRoute();
+      
+      
+   
+    }
+
     function calcRoute() {
       var start = "Gatwick, UK";
       var end =  "heathrow";
@@ -668,6 +680,7 @@
         }
       });
     };
+  
 
 /**
  * @constructor
