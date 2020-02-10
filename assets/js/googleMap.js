@@ -5,7 +5,7 @@
 
         autocomplete = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */
-            (document.getElementById('destination-input')), {
+            (document.getElementById('autocomplete')), {
                 types: ['geocode'],
                 componentRestrictions: {
                     country: 'uk'
@@ -22,7 +22,7 @@
 
         autocomplete2 = new google.maps.places.Autocomplete(
             /** @type {!HTMLInputElement} */
-            (document.getElementById('origin-input')), {
+            (document.getElementById('autocomplete2')), {
                 types: ['geocode'],
                 componentRestrictions: {
                     country: 'uk'
@@ -141,41 +141,6 @@
 
     }
 
-
-     
-    var directionsDisplay;
-    var directionsService;
-    var map;
-
-    function initMap() {
-      directionsService = new google.maps.DirectionsService;
-        var myLatLng = {lat: 51.5287352, lng: -0.3817888};
-      var chicgo = new google.maps.LatLng(51.5287352, -0.3817888);
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center:myLatLng
-      });
-      directionsDisplay = new google.maps.DirectionsRenderer({
-        map: map
-      });
-     
-   initAutocomplete();
-    }
-
-    function calcRoute() {
-      var start = "Gatwick, UK";
-      var end =  "heathrow";
-      var request = {
-        origin: start,
-        destination: end,
-        travelMode: google.maps.TravelMode.DRIVING
-      };
-      directionsService.route(request, function(result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-          directionsDisplay.setDirections(result);
-        }
-      });
-    };
 
     $(document).ready(function() {
         $.datetimepicker.setLocale('pt-EN');

@@ -915,8 +915,8 @@ width: 100%;
     margin: 8px 0;
      font-size: 13px !important;
     box-sizing: border-box;
+    border-radius:3px;
       color: #000000 !important;
-    border-radius:none !important;
  -webkit-appearance: none !important;
     -webkit-border-radius: 0px !important;
     border: 1px solid #d0d9e2!important;
@@ -926,18 +926,19 @@ width: 100%;
 
 
 .controls {
-    margin: 8px 0;
-    background-color: rgba(243, 243, 243, 0.61);
+margin: 8px 0;
+    background-color: rgba(255, 255, 255, 0.94);
     border: 1px solid #d0d9e2!important;
     color: #000000 !important;
-    width:100%;
-     font-size: 13px !important;
-    padding: 12px 20px;
+    width: 100%;
+    border-radius: 3px;
+    font-size: 13px !important;
+    padding: 9px 20px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    min-height: 45px;
+    min-height: 40px;
     outline: none;
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .dark-controls {

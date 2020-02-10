@@ -230,11 +230,9 @@
     <div id="book-location" class="tab-pane fade in active">
                   <div id="map"></div>
 	    <button onclick="calcRoute();">Click it</button>
- <input id="origin-input" class="controls" type="text"
-            placeholder="Enter Pickup postcode / Location" autocomplete="off">
+ <input id="autocomplete" class="controls" type="text" placeholder="Enter Pickup Location or Postcode " name="pick" required="" autocomplete="off">
 
-        <input id="destination-input" class="controls" type="text"
-            placeholder="Enter a Dropoff Postcode / Location" autocomplete="off">
+   <input id="autocomplete3" class="controls" type="text" placeholder="Enter Drop Location or Postcode " name="drop" required="" autocomplete="off">
         
         
         <input id="datetimepicker" class="controls" type="text"
@@ -629,7 +627,149 @@
 } );</script>
    
     
+<script>
+    var placeSearch, autocomplete, autocomplete2, autocomplete3, autocomplete4;
 
+    function initAutocomplete() {
+
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+
+
+        autocomplete2 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete2')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete2.addListener('place_changed', fillInAddress);
+
+
+        autocomplete3 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete3')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete3.addListener('place_changed', fillInAddress);
+
+
+        autocomplete4 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete4')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete4.addListener('place_changed', fillInAddress);
+
+
+    }
+
+
+    function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+        var place = autocomplete2.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+        var place = autocomplete3.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+        var place = autocomplete4.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+
+    }
+</script>
 
 <script>
 function hideshowFunction() {
@@ -679,10 +819,7 @@ $(function() {
 });
 </script>
     
-    
-    
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initMap"
-       async defer></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initAutocomplete" async defer></script> 
    
     <script src="./assets/js/datatable.js"></script>
     <script src="./assets/js/server.js"></script>
