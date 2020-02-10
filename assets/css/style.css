@@ -568,73 +568,66 @@ height:30px;
 }
 .mc-cl-Comitted
 {
- background: rgb(127, 165, 255);
-    border:1px solid rgb(127, 165, 255);
-    text-align: center;
-        background: #779ef9;
+background-color: #ffe3e3de;
+    border: 1px solid #edabf1;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #fff!important;
+    color: #560079!important;
     text-transform: uppercase;
 }
 .mc-cl-Cancelled
 {
- background: rgb(127, 165, 255);
-    text-align: center;
-        background: #ff6d6d;
+ background-color: #ffeeec;
+    border: 1px solid #f3baba;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #fff !important;
+    color: #e40808!important;
     text-transform: uppercase;
 }
 .mc-cl-Confirmed
 {
- background: rgb(127, 165, 255);
-    text-align: center;
-        background: #5fada6;
+background-color: #e3fff8de;
+    border: 1px solid #abf1ea;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    border:1px solid #909090;
-    color: #fff!important;
+    color: #02acb5!important;
     text-transform: uppercase;
 }
 .mc-cl-Booked
 {
- background: rgb(127, 165, 255);
-    text-align: center;
-        background: #e1ff9e;
+background-color: #e3ecffde;
+    border: 1px solid #abb7f1;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.16);
-    color: #000!important;
+    color: #0228b5!important;
     text-transform: uppercase;
 }
 .mc-cl-Completed
