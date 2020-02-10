@@ -1,7 +1,7 @@
 var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
-var myInvoice='';
+var mydataInv={};
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -9,11 +9,11 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(myInvoice == 'driver')
+          if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
           {
             setList(data);
-          }else{
-
+          }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
+		setInvoiceTable(data);
           }
         
        
@@ -33,13 +33,33 @@ function setList(myData)
     {
         if(!(myObj[i].drvid === ''))
         {
-        temp=temp+'<tr>';
-        temp=temp+'<td>'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<tr onclick="GetDriverInvoice(this);" id="'+myObj[i].drvid+'" >';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
         }
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
+    
+        
+}
+function setInvoiceTable(myData)
+{
+    var myObj = JSON.parse(myData);
+    var temp ='';
+    for(var i=0;i<myObj.length;i++)
+    {
+      /*  if(!(myObj[i].drvid === ''))
+        {
+        temp=temp+'<tr onclick="GetDriverInvoice(this);" id="'+myObj[i].drvid+'" >';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'</tr>';
+        } */
+    }
+
+    document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
+    
+        
 }
   $(document).ready(function() {
 
@@ -54,6 +74,8 @@ function setList(myData)
         
 });
 
+  
+
 $('#driver').change(function() {
     if(this.checked) {
         document.getElementById('all').checked = false;
@@ -63,10 +85,16 @@ $('#driver').change(function() {
 
 
 });
-
+function GetDriverInvoice(element)
+{
+     mydataInv["ïd"]=element.id;
+    var myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  
+    get_response(myGetUrl, mydataInv);
+}
 function getInvoice()
 {
-    var mydata={};
+
     if(document.getElementById('all').checked === true)
     {
         myInvoice=document.getElementById('all').value;
@@ -74,17 +102,17 @@ function getInvoice()
     {
         myInvoice=document.getElementById('driver').value;
     }
-    mydata["for"]=myInvoice;
+    mydataInv["for"]=myInvoice;
     var temp1 = document.getElementById("fromto").innerHTML;
 
     var d = temp1.split(" - ");
   
-    mydata["from"] = date_format_db(d[0]);
-    mydata["to"] = date_format_db(d[1]);
-  
+    mydataInv["from"] = date_format_db(d[0]);
+    mydataInv["to"] = date_format_db(d[1]);
+	mydataInv["ïd"]='e';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
-    get_response(myGetUrl, mydata);
+    get_response(myGetUrl, mydataInv);
 }
 
 function date_format_db(x) {
