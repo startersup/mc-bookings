@@ -2,6 +2,8 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var myInvoice='';
+var lastFrom='';
+var lastTo='';
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -33,7 +35,7 @@ function setList(myData)
     {
         if(!(myObj[i].drvid === ''))
         {
-        temp=temp+'<tr onclick="GetDriverInvoice(this);" >';
+        temp=temp+'<tr onclick="GetDriverInvoice(this);" id="'+myObj[i].drvid+'" >';
         temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
         }
@@ -69,7 +71,13 @@ $('#driver').change(function() {
 });
 function GetDriverInvoice(element)
 {
-    console.log(element);
+   var mydata={};
+    mydata["from"] =lastFrom;
+    mydata["to"] =    lastTo;
+    mydata["ïd"]=element.id;
+    var myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  
+    get_response(myGetUrl, mydata);
 }
 function getInvoice()
 {
@@ -88,7 +96,8 @@ function getInvoice()
   
     mydata["from"] = date_format_db(d[0]);
     mydata["to"] = date_format_db(d[1]);
-  
+  lastFrom=mydata["from"];
+  lastTo=mydata["to"];
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydata);
