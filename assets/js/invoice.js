@@ -54,9 +54,12 @@ function setList(myData)
         
 });
         $('.cl-Driver').click(function() {
-   GetDriverInvoice(this);
+  
         
 });
+       $("#preview-bar").delegate("tr.rows", "click", function(){
+       GetDriverInvoice(this);
+    });
 
 $('#driver').change(function() {
     if(this.checked) {
