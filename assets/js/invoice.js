@@ -40,6 +40,10 @@ function setList(myData)
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
+            $('.cl-Driver').click(function() {
+  GetDriverInvoice(this);
+        
+});
 }
   $(document).ready(function() {
 
@@ -53,13 +57,8 @@ function setList(myData)
     }
         
 });
-        $('.cl-Driver').click(function() {
+
   
-        
-});
-       $("#preview-bar").delegate("tr.rows", "click", function(){
-       GetDriverInvoice(this);
-    });
 
 $('#driver').change(function() {
     if(this.checked) {
