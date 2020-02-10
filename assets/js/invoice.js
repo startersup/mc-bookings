@@ -9,10 +9,10 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(mydataInv["for"] == 'driver' && mydataInv["id"] == '')
+          if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
           {
             setList(data);
-          }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != ''){
+          }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
 		setInvoiceTable(data);
           }
         
@@ -109,7 +109,7 @@ function getInvoice()
   
     mydataInv["from"] = date_format_db(d[0]);
     mydataInv["to"] = date_format_db(d[1]);
-	mydataInv["ïd"]='';
+	mydataInv["ïd"]='e';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);
