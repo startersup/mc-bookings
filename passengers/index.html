@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
     <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body onload="pageLoad();">
 
@@ -28,7 +28,7 @@
   <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="display: block;background-color: rgba(255, 255, 255, 0.79);min-width: 1500px;top:45px;left:65px;border:none;">
     <div class="modal11-content">
       <div class="loader" style="position:absolute;top:300px;left:650px;">
-        <centre> <img src="./assets/images/myLoader.gif"></centre> 
+        <centre> <img src="../assets/images/myLoader.gif"></centre> 
           
       </div>
       
@@ -48,10 +48,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav mc-dash-mid">
-        <li class="active"><a class="mc-load" href="/passengers/">Passengers</a></li>
+        <li class="active"><a class="mc-load" href="../passengers/">Passengers</a></li>
         <li><a class="mc-load" href="#">Drivers</a></li>
         <li><a class="mc-load" href="#">Partners</a></li>
-        <li><a class="mc-load" href="invoice.html">Invoice</a></li>
+        <li><a class="mc-load" href="../invoice.html">Invoice</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
@@ -66,7 +66,7 @@
                 </div>
         </li>
         <li><a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a></li>
-          <li><a href="#"><img src="./assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
+          <li><a href="#"><img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
       </ul>
     </div>
   </div>
@@ -76,18 +76,7 @@
       <!----sub-navbar-starts----->
     <div class="mc-sub-section">
     <ul class="mc-sub-left">
-    <li id="yesterday" class="booking"><a >Yesterday Booking</a></li>   
-     <li id="today"  class="active booking"><a>Today Booking</a></li>
-    <li id="tommorrow" class="booking"><a  >Tomorrow Booking</a></li> 
-    <li id="future" class="booking" ><a  >Future Booking</a></li> 
-    <li><a  onclick="hideshowFunction()">Custom Result</a></li> 
-     <li><img class="mc-sub-icons mc-others-icon" onclick="otherFunction()" data-toggle="tooltip" data-placement="right" title="More Options" src="./assets/images/icons/more.svg">
-        <div id="mc-dropdown" class="dropdown-set">
-    <a href="#">This Week</a>
-    <a href="#">This Month</a>
-    <a href="#">Custom Date</a>
-  </div>
-        </li> 
+   <li  class="bolder">Passenger Database</li>
 
     </ul>
         
@@ -95,7 +84,7 @@
             
             <li>
 </li>
-            <li><button class="mc-add-btn" data-toggle="modal" data-target="#newbooking-bar"> <img class="mc-button-icons" src="./assets/images/icons/add.svg"> Add Booking</button></li></ul>
+            <li><button class="mc-add-btn" data-toggle="modal" data-target="#newbooking-bar"> <img class="mc-button-icons" src="../assets/images/icons/add.svg"> Add Passenger</button></li></ul>
     </div>
     
       <!----sub-navbar-ends----->
@@ -105,13 +94,13 @@
     <!----sidebar-starts----->
     <div class="mc-dash-sidebar">
     <ul>
-        <li><a href="./"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Dashboard" src="./assets/images/icons/analytics.svg"></a></li>     
-    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Bookings" src="./assets/images/icons/bookings.svg"></li>  
-  <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Company" src="./assets/images/icons/company.svg"></li> 
-   <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Tracking" src="./assets/images/icons/track.svg"></li> 
-      <li><a href="../marketing/email-marketing"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Marketing" src="./assets/images/icons/marketing.svg"></a></li> 
-    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Chatting" src="./assets/images/icons/chat.svg"></li> 
-     <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="settings" src="./assets/images/icons/gear.svg"></li>       
+        <li><a href="./"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Dashboard" src="../assets/images/icons/analytics.svg"></a></li>     
+    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Bookings" src="../assets/images/icons/bookings.svg"></li>  
+  <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Company" src="../assets/images/icons/company.svg"></li> 
+   <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Tracking" src="../assets/images/icons/track.svg"></li> 
+      <li><a href="../marketing/email-marketing"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Marketing" src="../assets/images/icons/marketing.svg"></a></li> 
+    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Chatting" src="../assets/images/icons/chat.svg"></li> 
+     <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="settings" src="../assets/images/icons/gear.svg"></li>       
    </ul>
      
 </div>
@@ -125,51 +114,17 @@
     
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
- <div id="mc-display" style="display:none;padding:10px 0px 20px;margin-bottom:20px;">
-<div clas="row">
-<div class="col-md-4">
-     <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-    <i class="fa fa-calendar"></i>&nbsp;
-    <span id="fromto" ></span> 
-<i class="fa fa-caret-down"></i>
-</div>
-</div> 
-<div class="col-md-5"> 
-<div id="filterList">
-    <ul>
-    <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all" > ALL</li>
-        <li><input class="input-filter" type="checkbox" value="booked" id="1" > Booked</li>
-        <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirm</li>
-        <li>    <input class="input-filter" type="checkbox" value="comitted" id="3" > Allocated</li>
-        <li><input class="input-filter" type="checkbox" value="completed" id="4"> Complete</li>
-        <li><input class="input-filter" type="checkbox" value="cancelled" id="5" > Cancelled</li>
-        <input class="input-filter" type="hidden" value="" id="filter_checklist" >
-    </ul>
-</div>
-    </div>
-
-        <div class="col-md-1">
-
-            <button class="button-style" id="filter_load" >Load</button>
-        </div>  
-
-</div>
-
-  
-
-</div>
-</div>
 	    <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
         <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
             <tr style="border:1px solid #e4e4e4;">
-                <th>Booking Id</th>
-                <th>Booking Source</th>
-                <th>Pickup From</th>
-                <th>Dropoff To</th>
-                <th>Date & Time</th>
-                  <th>Cab Type</th>
-                <th>Total Fare</th>
-                <th>Status</th>
+                <th>Passenger Id</th>
+                <th>Passenger Name</th>
+                <th>Passenger Email </th>
+                <th>Passenger Contact</th>
+                <th>Alternate Contact</th>
+                  <th>No.of Bookings</th>
+                <th>Booking Value</th>
+                <th>Passenger Category</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -177,8 +132,8 @@
    
         </tbody>
     </table>
-		
         </div>
+</div>
     
       <!---mainbar-starts----->
     
@@ -204,182 +159,6 @@
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->
      <!--Notification Modal -->
-    
-    
-    
-    
-    
-    
-        <!--NewBooking Modal -->
-	<div class="modal right fade" id="newbooking-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-
-				<div class="modal-header">
-					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
-					<h4 class="modal-title" id="myModalLabel2">New Booking</h4>
-                      <ul class="nav nav-pills mc-info-tabs">
-    <li class="active"><a data-toggle="pill" href="#book-location">Booking Location</a></li>
-    <li><a data-toggle="pill" href="#passenger-info">Passenger Info</a></li>
-    <li><a data-toggle="pill" href="#confirmation">confirmation</a></li>
-  </ul>
-				</div>
-
-				<div class="modal-body"> 
-  <div class="tab-content">
-    <div id="book-location" class="tab-pane fade in active">
-                  <div id="map"></div>
- <input id="origin-input" class="controls" type="text"
-            placeholder="Enter Pickup postcode / Location" autocomplete="off">
-
-        <input id="destination-input" class="controls" type="text"
-            placeholder="Enter a Dropoff Postcode / Location" autocomplete="off">
-        
-        
-        <input id="datetimepicker" class="controls" type="text"
-            placeholder="pickup Date and Time" autocomplete="off">
-        
-        <div class="row">
-        <div class="col-md-6">
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-            </div>
-            <div class="col-md-6">
-            <select name="Luggage" id="nl" class="selectit" autocomplete="off">
-  <option value="0">0 Luggage</option>
-  <option value="1">1 Luggage</option>
-  <option value="2">2 Luggages</option>
-  <option value="3">3 Luggages</option>
-  <option value="4">4 Luggages</option>   
-  <option value="5">5 Luggages</option>
-  <option value="6">6 Luggages</option>
-  <option value="7">7 Luggages</option>
-  <option value="8">8 Luggages</option>
-  <option value="9">9 Luggages</option>
-  <option value="10">10 Luggages</option>
-</select>
-            </div>
-        </div>
-                    <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="saloon">Saloon</option>
-  <option value="Estate">Estate</option>
-  <option value="MPV 4">MPV 4</option>
-  <option value="MPV 6">MPV 6</option>   
-  <option value="7 seater">7 Seater</option>
-  <option value="9 Seater">9 Seater</option>
-
-</select>
-         <input id="fare" class="controls" type="text"
-            placeholder="Enter Fare" autocomplete="off">
-
-        <button class="mc-cta" data-toggle="pill" href="#passenger-info">Next ></button>
-      </div>
-                    
-         
-      
-                       <div id="passenger-info" class="tab-pane fade"> 
-
-        
-                    <label for="name">Passenger Name</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Name" autocomplete="off">
-                    
-                            <label for="name">Passenger Email</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Passenger Email" autocomplete="off">
-                    
-                
-                               <label for="name">Passenger Contact</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Passenger Contact" autocomplete="off">
-                    
-                      <label for="name">Alternate Contact</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Alternate Contact" autocomplete="off">
-                    
-                            <label for="name">Full Pickup Address</label>
-                      <input class="controls" type="text"
-            placeholder="eg: 124 colin street, crawley" autocomplete="off">
-                   
-                                       <label for="name">Full Dropoff Address</label>
-                      <input class="controls" type="text"
-            placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
-            
-                  <div class="row">
-                  <div class="col-md-6">
-                              <label for="name">Adults</label>
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-                      </div>    
-                                   <div class="col-md-6">
-                              <label for="name">Infants</label>
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-                      </div> 
-                  </div>
-                        
-                  <label for="name">Flight Details</label>
-                      <input class="controls" type="text"
-            placeholder="eg: Easyjet EZYT54" autocomplete="off">
-            
-                        <label for="name">Special Information</label>
-                      <input class="controls" type="text"
-            placeholder="eg: dogs with me " autocomplete="off">
-            
-                           
-                            <button class="mc-cta" data-toggle="pill" href="#confirmation">Next ></button>
-                       </div>
-      
-      
-      
-         <div id="confirmation" class="tab-pane fade"> 
-        <input type="checkbox" name="vehicle1" value="Bike">
-  <label for="vehicle1">Email Confirmation</label><br><br>
-  <input type="checkbox" name="vehicle2" value="Car">
-  <label for="vehicle2"> SMS Confirmation</label><br><br>
-        <button class="mc-cta">Book Now</button>      
-      </div>
-      
-                    
-    </div>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-     <!--NewBooking Modal -->
-    
-    
     
     
     
@@ -628,182 +407,11 @@
 } );</script>
     
    
-<script>
-    $(document).ready(function() {
-        $.datetimepicker.setLocale('pt-EN');
-        $('#datetimepicker').datetimepicker({
-            // var u="60:00";
-            datepicker: true,
-            allowTimes: [
-                '00:00', '00:15', '00:30', '00:45', '01:00', '01:15', '01:30', '01:45', '02:00', '02:15', '02:30', '02:45', '03:00', '03:15', '03:30', '03:45', '04:00', '04:15', '04:30', '04:45', '05:00', '05:15', '05:30', '05:45', '06:00', '06:15', '06:30', '06:45', '07:00', '07:15', '07:30', '07:45', '08:00', '08:15', '08:30', '08:45', '09:00', '09:15', '09:30', '09:45', '10:00', '10:15', '10:30', '10:45', '11:00', '11:15', '11:30', '11:45', '12:00', '12:15', '12:30', '12:45', '13:00', '13:15', '13:30', '13:45', '14:00', '14:15', '14:30', '14:45', '15:00', '15:15', '15:30', '15:45', '16:00', '16:15', '16:30', '16:45', '17:00', '17:15', '17:30', '17:45', '18:00', '18:15', '18:30', '18:45', '19:00', '19:15', '19:30', '19:45', '20:00', '20:15', '20:30', '20:45', '21:00', '21:15', '21:30', '21:45', '22:00', '22:15', '22:30', '22:45', '23:00', '23:15', '23:30', '23:45'
-            ]
-        });
 
-    });
-</script>
     
-    <script>
-    function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    mapTypeControl: false,
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13
-  });
-
-  new AutocompleteDirectionsHandler(map);
-}
-
-/**
- * @constructor
- */
-function AutocompleteDirectionsHandler(map) {
-  this.map = map;
-  this.originPlaceId = null;
-  this.destinationPlaceId = null;
-  this.travelMode = 'DRIVING';
-  this.directionsService = new google.maps.DirectionsService;
-  this.directionsRenderer = new google.maps.DirectionsRenderer;
-  this.directionsRenderer.setMap(map);
-
-  var originInput = document.getElementById('origin-input');
-  var destinationInput = document.getElementById('destination-input');
-  var modeSelector = document.getElementById('mode-selector');
-
-  var originAutocomplete = new google.maps.places.Autocomplete(originInput);
-  originAutocomplete.setFields(['place_id']);
-
-  var destinationAutocomplete =
-      new google.maps.places.Autocomplete(destinationInput);
-  // Specify just the place data fields that you need.
-  destinationAutocomplete.setFields(['place_id']);
-
-  this.setupClickListener('changemode-walking', 'WALKING');
-  this.setupClickListener('changemode-transit', 'TRANSIT');
-  this.setupClickListener('changemode-driving', 'DRIVING');
-
-  this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-  this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(
-      destinationInput);
-  this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
-}
-
-// Sets a listener on a radio button to change the filter type on Places
-// Autocomplete.
-AutocompleteDirectionsHandler.prototype.setupClickListener = function(
-    id, mode) {
-  var radioButton = document.getElementById(id);
-  var me = this;
-
-  radioButton.addEventListener('click', function() {
-    me.travelMode = mode;
-    me.route();
-  });
-};
-
-AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
-    autocomplete, mode) {
-  var me = this;
-  autocomplete.bindTo('bounds', this.map);
-
-  autocomplete.addListener('place_changed', function() {
-    var place = autocomplete.getPlace();
-
-    if (!place.place_id) {
-      window.alert('Please select an option from the dropdown list.');
-      return;
-    }
-    if (mode === 'ORIG') {
-      me.originPlaceId = place.place_id;
-    } else {
-      me.destinationPlaceId = place.place_id;
-    }
-    me.route();
-  });
-};
-
-AutocompleteDirectionsHandler.prototype.route = function() {
-  if (!this.originPlaceId || !this.destinationPlaceId) {
-    return;
-  }
-  var me = this;
-
-  this.directionsService.route(
-      {
-        origin: {'placeId': this.originPlaceId},
-        destination: {'placeId': this.destinationPlaceId},
-        travelMode: this.travelMode
-      },
-      function(response, status) {
-        if (status === 'OK') {
-          me.directionsRenderer.setDirections(response);
-        } else {
-          window.alert('Directions request failed due to ' + status);
-        }
-      });
-};
-</script>
-<!--
-
-        <script>
-        var directionsDisplay;
-        var directionsService;
-        var map;
-
-        function initMap() {
-          directionsService = new google.maps.DirectionsService;
-            var myLatLng = {lat: 51.5287352, lng: -0.3817888};
-          var chicgo = new google.maps.LatLng(51.5287352, -0.3817888);
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16,
-            center:myLatLng,
-               disableDefaultUI: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP 
-          });
-          directionsDisplay = new google.maps.DirectionsRenderer({
-            map: map
-          });
-          calcRoute();
 
 
-        }
-        function calcRoute() {
-          var start = "Gatwick Road, Crawley, Gatwick, UK";
-          var end =  "Heathrow East Terminal, Inner Ring East, Longford, Hounslow, UK";
-          var request = {
-            origin: start,
-            destination: end,
-            travelMode: google.maps.TravelMode.DRIVING
-          };
-          directionsService.route(request, function(result, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-              directionsDisplay.setDirections(result);
-            }
-          });
-        };
-    </script>
--->
 
-<script>
-function hideshowFunction() {
-  var x = document.getElementById("mc-display");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
-    
-<!--
-   <script>$(window).on('load', function() { // makes sure the whole site is loaded 
-  $('#status').fadeOut(); // will first fade out the loading animation 
-  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-  $('body').delay(350).css({'overflow':'visible'});
-})</script>
--->
 
 
     
@@ -834,10 +442,6 @@ $(function() {
 });
 </script>
     
-    
-    
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initMap"
-       async defer></script>
    
     
     <script src="./assets/js/datatable.js"></script>
