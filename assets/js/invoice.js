@@ -94,7 +94,7 @@ function GetDriverInvoice(element)
 }
 function getInvoice()
 {
-    var mydataInv={};
+
     if(document.getElementById('all').checked === true)
     {
         myInvoice=document.getElementById('all').value;
