@@ -633,18 +633,19 @@ background-color: #e3ecffde;
 .mc-cl-Completed
 {
 background-color: #E7FAEC;
-    border: 1px solid #A9DEB7;
+    border: 1px solid #5eb174;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size:10px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
     color: #02b875!important;
     text-transform: uppercase;
+}
 }
 .dataTables_info
 {
