@@ -794,10 +794,6 @@ background-color: #6e22c6 !important;
    background-color:transparent;
 }
 
-.table>tbody>tr:hover
-{
-   background: #f9f6ff!important; 
-}
 .table-user-information > tbody > tr > td:first-child {
     text-align: left;
     width: 35%;
