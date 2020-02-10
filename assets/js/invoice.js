@@ -34,7 +34,7 @@ function setList(myData)
         if(!(myObj[i].drvid === ''))
         {
         temp=temp+'<tr>';
-        temp=temp+'<td>'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td class="cl-Driver">'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
         }
     }
@@ -53,6 +53,10 @@ function setList(myData)
     }
         
 });
+        $('.cl-Driver').change(function() {
+   GetDriverInvoice(this);
+        
+});
 
 $('#driver').change(function() {
     if(this.checked) {
@@ -63,7 +67,10 @@ $('#driver').change(function() {
 
 
 });
-
+function GetDriverInvoice(element)
+{
+    console.log(element);
+}
 function getInvoice()
 {
     var mydata={};
