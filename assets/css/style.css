@@ -778,6 +778,10 @@ background-color: #6e22c6 !important;
     font-size:12.5px;
     border-top: 1px solid rgba(221, 221, 221, 0.38);
 }
+.table>tbody>tr>td .even
+{
+        background: #f9f6ff!important;
+}
 #driver h3
 {
      font-family: 'Montserrat', sans-serif;
