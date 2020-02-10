@@ -53,7 +53,7 @@ function setList(myData)
     }
         
 });
-        $('.cl-Driver').change(function() {
+        $('.cl-Driver').click(function() {
    GetDriverInvoice(this);
         
 });
