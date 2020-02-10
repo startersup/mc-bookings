@@ -13,7 +13,7 @@ function get_response(myGetUrl, mydata) {
           {
             setList(data);
           }else if(mydata["for"] == 'driver' && mydata["id"] != ''){
-
+		setInvoiceTable(data);
           }
         
        
@@ -40,6 +40,24 @@ function setList(myData)
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
+    
+        
+}
+function setInvoiceTable(myData)
+{
+    var myObj = JSON.parse(myData);
+    var temp ='';
+    for(var i=0;i<myObj.length;i++)
+    {
+      /*  if(!(myObj[i].drvid === ''))
+        {
+        temp=temp+'<tr onclick="GetDriverInvoice(this);" id="'+myObj[i].drvid+'" >';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'</tr>';
+        } */
+    }
+
+    document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
     
         
 }
