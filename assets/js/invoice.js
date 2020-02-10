@@ -33,18 +33,15 @@ function setList(myData)
     {
         if(!(myObj[i].drvid === ''))
         {
-        temp=temp+'<tr>';
-        temp=temp+'<td class="cl-Driver">'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<tr onclick="GetDriverInvoice(this);" >';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
         }
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
     
-            $('.cl-Driver').click(function() {
-  GetDriverInvoice(this);
         
-});
 }
   $(document).ready(function() {
 
