@@ -654,42 +654,20 @@
   new AutocompleteDirectionsHandler(map);
 }
 	    
-	    
     function calcRoute() {
       var start = "Gatwick, UK";
       var end =  "heathrow";
       var request = {
         origin: start,
         destination: end,
-        travelMode: google.
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      s.TravelMode.DRIVING
+        travelMode: google.maps.TravelMode.DRIVING
       };
       directionsService.route(request, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
           directionsDisplay.setDirections(result);
         }
       });
-    }
+    };
 
 /**
  * @constructor
