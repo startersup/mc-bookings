@@ -11,7 +11,7 @@ session_start();
     $from=$_POST["from"];
     $to=$_POST["to"];
     $for=$_POST["for"];
-    $driverId=$_POST["drivid"];
+    $driverId=$_POST["id"];
 // $from="2020-1-1";
 // $to="2020-1-31";
 // $status="('temp','booked','booked-confirmed')";
