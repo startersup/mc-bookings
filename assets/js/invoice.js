@@ -9,10 +9,10 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(mydata["for"] == 'driver' && mydata["id"] == '')
+          if(mydataInv["for"] == 'driver' && mydataInv["id"] == '')
           {
             setList(data);
-          }else if(mydata["for"] == 'driver' && mydata["id"] != ''){
+          }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != ''){
 		setInvoiceTable(data);
           }
         
