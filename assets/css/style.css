@@ -639,19 +639,18 @@ height:30px;
 }
 .mc-cl-Completed
 {
- background: rgb(127, 165, 255);
-    text-align: center;
-        background: #0dad0d;
+background-color: #E7FAEC;
+    border: 1px solid #A9DEB7;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size:10px;
     font-weight: 700;
     letter-spacing: .3px;
     text-align: center;
-    color: #fff!important;
+    color: #02b875!important;
     text-transform: uppercase;
 }
 .dataTables_info
@@ -984,31 +983,27 @@ width: 100%;
 
 /*****mc-buttons******/
 .mc-add-btn {
-  background-color:#f2f2f2;
-   border: 1px solid rgba(134, 34, 251, 0.12156862745098039);
-    -ms-transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-    transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
-    font-weight: 500;
-    font-family: "Graphik Web","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  border: 1px solid #cfd7df;
+    background: linear-gradient(to bottom,#f7f7f7,#f5f7f9);
+    border-radius: 4px;
+    display: inline-block;
+    color: #12344d;
     text-align: center;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .3px;
+    text-decoration: none;
     vertical-align: middle;
+    min-width: 22px;
     text-transform: capitalize;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
+    overflow: visible;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
     user-select: none;
     white-space: nowrap;
-    overflow: hidden;
-    padding: 0 18px;
-    margin-right: 18px;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    display: inline-block;
-    -ms-transition: border 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s;
-    transition: border 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s;
-    font-size: 1.4rem;
-    height: 36px;
-    line-height: 34px;
 }
 
 .buttongreen {
