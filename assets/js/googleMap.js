@@ -15,7 +15,7 @@
       directionsDisplay = new google.maps.DirectionsRenderer({
         map: map
       });
-      initAutocomplete()
+    //  initAutocomplete()
       
    
     }
@@ -100,7 +100,7 @@
         // fields in the form.
         autocomplete4.addListener('place_changed', fillInAddress);
 
-
+        initMap();
     }
 
 
