@@ -15,7 +15,8 @@
       directionsDisplay = new google.maps.DirectionsRenderer({
         map: map
       });
-    //  initAutocomplete()
+      initAutocomplete();
+      
       
    
     }
@@ -35,7 +36,7 @@
       });
     };
 
-
+    
     function initAutocomplete() {
 
         autocomplete = new google.maps.places.Autocomplete(
@@ -100,7 +101,7 @@
         // fields in the form.
         autocomplete4.addListener('place_changed', fillInAddress);
 
-        initMap();
+
     }
 
 
