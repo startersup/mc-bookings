@@ -1250,7 +1250,7 @@ border: 0.5px solid #cfd7df;
       height:90vh;
       position: relative;
       overflow-y: auto;
-      border-right: solid 1px #999999;
+      border-right: solid 1px #e5e5e5;
   }
 
   .mc-passenger-info h3
