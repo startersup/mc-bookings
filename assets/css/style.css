@@ -915,23 +915,34 @@ width: 100%;
     margin: 8px 0;
      font-size: 13px !important;
     box-sizing: border-box;
-    border-radius:3px;
       color: #000000 !important;
  -webkit-appearance: none !important;
     -webkit-border-radius: 3px !important;
-    border: 1px solid #d0d9e2!important;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom: 1px solid #d0d9e2!important;
     font-family: 'Montserrat', sans-serif;
        background-color: #ffffff;
+}
+.bordered{
+    border: 1px solid #d0d9e2 !important;
+}
+.bottom-bordered
+{
+    border-bottom: 1px solid #d0d9e2 !important;  
 }
 
 
 .controls {
 margin: 8px 0;
     background-color: rgba(255, 255, 255, 0.94);
-    border: 1px solid #d0d9e2!important;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom: 1px solid #d0d9e2!important;
     color: #000000 !important;
     width: 100%;
-    border-radius: 3px;
     font-size: 13px !important;
     padding: 9px 20px;
     box-sizing: border-box;
@@ -1005,7 +1016,7 @@ border: 0.5px solid #cfd7df;
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 13px 20px;
+    padding: 9px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -1237,6 +1248,7 @@ border: 0.5px solid #cfd7df;
       background-color:#ffffff;
       height:90vh;
       overflow-y: auto;
+      border-right:1px solid #e3e3e3;
   }
 
   .mc-passenger-info h3
@@ -1246,4 +1258,8 @@ border: 0.5px solid #cfd7df;
     font-size:20px;
     text-align: center;
     padding:10px 0px;   
+  }
+  .mc-driver-alloc
+  {
+      padding-bottom:20px;
   }
