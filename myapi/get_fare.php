@@ -50,8 +50,9 @@ $totaltime=number_format($totaltime,2);
 $distance=number_format($distance,2);
 $time=number_format($time,2);
 
+$mytime=$hrstime." hrs ".$mintime." mins";
 $response["totaldistance"]=$distance;
-$response["totaltime"]=$time;
+$response["totaltime"]=$mytime;
  $row=0;
  
  // echo($distance);

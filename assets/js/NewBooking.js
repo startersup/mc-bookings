@@ -10,14 +10,23 @@ function get_response(myGetUrl, mydata) {
       async: false,
       success: function(data) {
          
-       console.log(data);
+       setEstimate(data);
       },
       error: function(xhr) {
         
       }
     });
   }
+function setEstimate(obj)
+{
 
+    var myObj = JSON.parse(obj);
+    document.getElementById('route_miles').innerHTML=myObj["totaldistance"];
+    document.getElementById('route_time').innerHTML=myObj["totaltime"];
+    var temp=document.getElementById('cabType').value;
+    document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
+
+}
   function GetFare()
   {
 
