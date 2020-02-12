@@ -9,14 +9,19 @@ include($rootfolder."/connection/connect.php");
 $origin=$_POST["src"];
 $destination=$_POST["des"];
 
-$destination="Heathrow Airport London (LHR), Longford, UK";
-$origin="Gatwick Airport, LGW (LGW), Horley, Gatwick, UK";
+//$destination="Heathrow Airport London (LHR), Longford, UK";
+//$origin="Gatwick Airport, LGW (LGW), Horley, Gatwick, UK";
     
+        $origin =urlencode($origin);
+    $destination = urlencode($destination);
 $q = "https://maps.googleapis.com/maps/api/directions/json?origin=".$origin."&destination=".$destination."&key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE"; 
+
+
 $json = file_get_contents($q);
     
 
 $details = json_decode($json);
+
 
 $distance=$details->routes[0]->legs[0]->distance->value;
     
@@ -45,7 +50,8 @@ $totaltime=number_format($totaltime,2);
 $distance=number_format($distance,2);
 $time=number_format($time,2);
 
-echo($totaldistance."<br>".$totaltime."<br>".$distance."<br>".$time);
+$response["totaldistance"]=$distance;
+$response["totaltime"]=$time;
  $row=0;
  
  // echo($distance);
@@ -222,9 +228,7 @@ $response["partner"]=$partnerlist;
 $response["rating"]=$partnerRating;
 $response["time"]=$partnerTime;
 $response["special"]=$partnerSpecial;
-$response["via"]=$_SESSION[$sessionparams]["via"];
-$response["pick"]=$_SESSION[$sessionparams]["pick"];
-$response["drop"]=$_SESSION[$sessionparams]["drop"];
+
 
 echo(json_encode($response));
 
