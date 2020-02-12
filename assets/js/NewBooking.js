@@ -26,9 +26,12 @@ function setEstimate(obj)
     var temp=document.getElementById('cabType').value;
     document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
 
+    
+    document.getElementById("spinnermodal").style.display = "none";
 }
   function GetFare()
   {
+    document.getElementById("spinnermodal").style.display = "block";
 
     var mydata={};
     if(document.getElementById('destination-input').value === '' || document.getElementById('origin-input').value === '')
