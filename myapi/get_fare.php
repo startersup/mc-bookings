@@ -9,7 +9,8 @@ include($rootfolder."/connection/connect.php");
 $origin=$_POST["src"];
 $destination=$_POST["des"];
 
-
+$destination="Heathrow Airport London (LHR), Longford, UK";
+$origin="Gatwick Airport, LGW (LGW), Horley, Gatwick, UK";
     
 $q = "https://maps.googleapis.com/maps/api/directions/json?origin=".$origin."&destination=".$destination."&key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE"; 
 $json = file_get_contents($q);
@@ -44,7 +45,7 @@ $totaltime=number_format($totaltime,2);
 $distance=number_format($distance,2);
 $time=number_format($time,2);
 
-
+echo($totaldistance."<br>".$totaltime."<br>".$distance."<br>".$time);
  $row=0;
  
  // echo($distance);
