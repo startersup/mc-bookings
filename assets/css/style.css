@@ -1016,7 +1016,7 @@ border: 0.5px solid #cfd7df;
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 9px 20px;
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -1202,7 +1202,8 @@ border: 0.5px solid #cfd7df;
 
 /****new-booking***/
 #wrapper { position: relative; }
-#over_map { position: absolute;background-color:#ffffff;top:0px;left:0px;max-width: 800px;width:100%;padding:10px; }
+#over_map { position: absolute;color:#ffffff;background-color: #5853b4;
+    top:0px;left:0px;max-width: 800px;width:100%;padding:10px; }
 #map {
     max-width: 800px;
     width:100%;
@@ -1265,6 +1266,7 @@ border: 0.5px solid #cfd7df;
   {background-color:#ffffff;
       padding-bottom:30px;
       position: fixed;
+      margin-right:10px;
       margin-top:10px;
       top:90px;
       z-index:1;
