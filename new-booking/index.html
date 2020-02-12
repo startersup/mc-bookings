@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <title>New Booking | Minicabee Travel Solutions</title>
+  <meta charset="utf-8">
+   <link rel="icon" href="./images/favicon.png" type="image/x-icon"  sizes="16x16" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body onload="pageLoad();">
+
+    <!----navbar-starts----->
+<nav class="navbar navbar-default mc-dash-nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Minicabee <span></span> Pickme UK</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav mc-dash-mid">
+        <li class="active"><a class="mc-load" href="../passengers/">Passengers</a></li>
+        <li><a class="mc-load" href="#">Drivers</a></li>
+        <li><a class="mc-load" href="#">Partners</a></li>
+        <li><a class="mc-load" href="../invoice.html">Invoice</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
+            <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
+                <div class="mc-dropdown-content mc-bx-shdw">
+                <ul class="mc-drop-desc">
+                    <li>Help Docs</li>
+                    <li>Feedback</li>
+                     <li>Raise Ticket</li>
+                    <li>Live Chat</li>
+                </ul>
+                </div>
+        </li>
+        <li><a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a></li>
+          <li><a href="#"><img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>  <!----navbar-ends----->
+    
+    
+      <!----sub-navbar-starts----->
+    <div class="mc-sub-section">
+    <ul class="mc-sub-left">
+   <li  class="bolder">New Booking</li>
+
+    </ul>
+    
+          
+    </div>
+    
+      <!----sub-navbar-ends----->
+    
+    
+    
+    <!----sidebar-starts----->
+    <div class="mc-dash-sidebar">
+    <ul>
+        <li><a href="./"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Dashboard" src="../assets/images/icons/analytics.svg"></a></li>     
+    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Bookings" src="../assets/images/icons/bookings.svg"></li>  
+  <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Company" src="../assets/images/icons/company.svg"></li> 
+   <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Tracking" src="../assets/images/icons/track.svg"></li> 
+      <li><a href="../marketing/email-marketing"><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Marketing" src="../assets/images/icons/marketing.svg"></a></li> 
+    <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="Chatting" src="../assets/images/icons/chat.svg"></li> 
+     <li><img class="mc-icons" data-toggle="tooltip" data-placement="right" title="settings" src="../assets/images/icons/gear.svg"></li>       
+   </ul>
+     
+</div>
+        
+<!----Sidebar-ends----->    
+    
+    
+    
+    
+    <!---mainbar-starts----->
+    
+    <div class="mc-dash-mainbar">
+<div class="mc-mainbar-components" STYLE="width: calc(100% - 6px);">
+    <div class="row">
+        <div class="col-md-4 row-three">
+    <div id="wrapper">
+        <div id="map"></div>
+          <div id="over_map" class="over-the-map">
+          <div class="mc-distance"><i class="fa fa-road"></i> <span>Distance</span><br/> 123 Miles</div>
+          <div class="mc-time"><i class="fa fa-clock-o"></i> <span>Journey Time</span><br/> 54 Mins</div>
+          <div class="mc-fare"><i class="fa fa-gbp"></i> <span>Apprx fare</span><br/> 54  GBP</div>
+        </div></div>
+    
+        <input id="origin-input" class="controls" type="text"
+        placeholder="Enter Pickup Postcode" name="pick" required><br>
+        <input id="destination-input" class="controls" type="text"
+        placeholder="Enter Dropoff Postcode" name="drop" required>
+
+        <div class="row">
+            <div class="col-md-6">
+                <select name="passenger" id="np" class="selectit" autocomplete="off">
+      <option value="1">1 Passenger</option>
+      <option value="2">2 Passengers</option>
+      <option value="3">3 Passengers</option>
+      <option value="4">4 Passengers</option>   
+      <option value="5">5 Passengers</option>
+      <option value="6">6 Passengers</option>
+      <option value="7">7 Passengers</option>
+      <option value="8">8 Passengers</option>
+      <option value="9">9 Passengers</option>
+      <option value="10">10 Passengers</option>
+    </select>
+                </div>
+                <div class="col-md-6">
+                <select name="Luggage" id="nl" class="selectit" autocomplete="off">
+      <option value="0">0 Luggage</option>
+      <option value="1">1 Luggage</option>
+      <option value="2">2 Luggages</option>
+      <option value="3">3 Luggages</option>
+      <option value="4">4 Luggages</option>   
+      <option value="5">5 Luggages</option>
+      <option value="6">6 Luggages</option>
+      <option value="7">7 Luggages</option>
+      <option value="8">8 Luggages</option>
+      <option value="9">9 Luggages</option>
+      <option value="10">10 Luggages</option>
+    </select>
+                </div>
+            </div>
+                        <select name="passenger" id="np" class="selectit" autocomplete="off">
+      <option value="saloon">Saloon</option>
+      <option value="Estate">Estate</option>
+      <option value="MPV 4">MPV 4</option>
+      <option value="MPV 6">MPV 6</option>   
+      <option value="7 seater">7 Seater</option>
+      <option value="9 Seater">9 Seater</option>
+    
+    </select>
+<button style="width:100%;" class="mc-cta">Calculate Fare </button>
+
+    </div>
+
+    <div class="col-md-4 row-three">
+<div class="mc-passenger-info">
+    <h3>Booking Information</h3>
+
+<label for="web">Booking Website</label>
+<select name="passenger" id="np" class="selectit" autocomplete="off">
+    <option>www.gatwick-airporttaxis.com</option>
+    <option>www.heathrow-airporttaxis.co.uk.com</option>
+</select>
+
+        <label for="name">Passenger Name</label>
+        <input class="controls" type="text"
+placeholder="Enter Name" autocomplete="off">
+      
+              <label for="name">Passenger Email</label>
+        <input class="controls" type="text"
+placeholder="Enter Passenger Email" autocomplete="off">
+      
+  
+                 <label for="name">Passenger Contact</label>
+        <input class="controls" type="text"
+placeholder="Enter Passenger Contact" autocomplete="off">
+      
+        <label for="name">Alternate Contact</label>
+        <input class="controls" type="text"
+placeholder="Enter Alternate Contact" autocomplete="off">
+      
+              <label for="name">Full Pickup Address</label>
+        <input class="controls" type="text"
+placeholder="eg: 124 colin street, crawley" autocomplete="off">
+     
+                         <label for="name">Full Dropoff Address</label>
+        <input class="controls" type="text"
+placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
+
+    <div class="row">
+    <div class="col-md-6">
+                <label for="name">Adults</label>
+<select name="passenger" id="np" class="selectit" autocomplete="off">
+<option value="1">1 Passenger</option>
+<option value="2">2 Passengers</option>
+<option value="3">3 Passengers</option>
+<option value="4">4 Passengers</option>   
+<option value="5">5 Passengers</option>
+<option value="6">6 Passengers</option>
+<option value="7">7 Passengers</option>
+<option value="8">8 Passengers</option>
+<option value="9">9 Passengers</option>
+<option value="10">10 Passengers</option>
+</select>
+        </div>    
+                     <div class="col-md-6">
+                <label for="name">Infants</label>
+<select name="passenger" id="np" class="selectit" autocomplete="off">
+<option value="1">1 Passenger</option>
+<option value="2">2 Passengers</option>
+<option value="3">3 Passengers</option>
+<option value="4">4 Passengers</option>   
+<option value="5">5 Passengers</option>
+<option value="6">6 Passengers</option>
+<option value="7">7 Passengers</option>
+<option value="8">8 Passengers</option>
+<option value="9">9 Passengers</option>
+<option value="10">10 Passengers</option>
+</select>
+        </div> 
+    </div>
+          
+    <label for="name">Flight Details</label>
+        <input class="controls" type="text"
+placeholder="eg: Easyjet EZYT54" autocomplete="off">
+
+          <label for="name">Special Information</label>
+        <input class="controls" type="text"
+placeholder="eg: dogs with me " autocomplete="off">
+    </div>
+</div>
+</div>
+
+    
+      <!---mainbar-starts----->
+    
+<!---modals-section------>
+    
+    <!--Notification Modal -->
+	<div class="modal right fade" id="notification-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<h4 class="modal-title" id="myModalLabel2">Notifications</h4>
+				</div>
+
+				<div class="modal-body">
+                    <ul>
+                    <li></li>
+                    </ul>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+     <!--Notification Modal -->
+    
+
+    <!---modals-section------>
+    
+<script>$(document).ready(function() {
+    $('img').tooltip()
+} );</script>
+    
+   
+
+    
+
+
+<script>function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      mapTypeControl: false,
+      center: {lat: 51.5074, lng: 0.1278},
+      zoom: 10,
+      disableDefaultUI: true
+    });
+
+    new AutocompleteDirectionsHandler(map);
+  }
+
+   /**
+    * @constructor
+   */
+  function AutocompleteDirectionsHandler(map) {
+    this.map = map;
+    this.originPlaceId = null;
+    this.destinationPlaceId = null;
+    this.travelMode = 'DRIVING';
+    var originInput = document.getElementById('origin-input');
+    var destinationInput = document.getElementById('destination-input');
+    var modeSelector = document.getElementById('mode-selector');
+    this.directionsService = new google.maps.DirectionsService;
+    this.directionsDisplay = new google.maps.DirectionsRenderer;
+    this.directionsDisplay.setMap(map);
+
+    var originAutocomplete = new google.maps.places.Autocomplete(
+        originInput, {placeIdOnly: true}
+    );
+       originAutocomplete.setComponentRestrictions(
+        {'country': ['uk']});
+    var destinationAutocomplete = new google.maps.places.Autocomplete(
+        destinationInput, {placeIdOnly: true});
+     destinationAutocomplete.setComponentRestrictions(
+        {'country': ['uk']});
+    this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+    this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+  }
+  AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
+    var radioButton = document.getElementById(id);
+    var me = this;
+    radioButton.addEventListener('click', function() {
+      me.travelMode = mode;
+      me.route();
+    });
+  };
+
+  AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
+    var me = this;
+    autocomplete.bindTo('bounds', this.map);
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+      if (!place.place_id) {
+        window.alert("Please select an option from the dropdown list.");
+        return;
+      }
+      if (mode === 'ORIG') {
+        me.originPlaceId = place.place_id;
+      } else {
+        me.destinationPlaceId = place.place_id;
+      }
+      me.route();
+    });
+
+  };
+
+  AutocompleteDirectionsHandler.prototype.route = function() {
+    if (!this.originPlaceId || !this.destinationPlaceId) {
+      return;
+    }
+    var me = this;
+
+    this.directionsService.route({
+      origin: {'placeId': this.originPlaceId},
+      destination: {'placeId': this.destinationPlaceId},
+      travelMode: this.travelMode
+    }, function(response, status) {
+      if (status === 'OK') {
+        me.directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  };
+</script>
+
+
+    
+
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initMap"
+    async defer></script>
+    
+    <script src="./assets/js/server.js"></script>
+
+
+    
+    </body>
+  
+   
+</html>
+
+
