@@ -10,7 +10,7 @@ function get_response(myGetUrl, mydata) {
       async: false,
       success: function(data) {
          
-       
+       console.log(data);
       },
       error: function(xhr) {
         
