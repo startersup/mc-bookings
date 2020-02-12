@@ -5,7 +5,25 @@ body
     background-color: #f7f8f9;
     overflow-x: hidden;
 }
-
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 /********dashboard-navbar*******/
 
@@ -63,9 +81,9 @@ body
      color:#ffffff !important;
     font-size:12px;
     font-weight:600;
-    cursor: pointer
+    cursor: pointer;
     text-transform: uppercase;
-    background-color: #5912ab7a  ;
+    background-color: #5912ab7a;
 }
 #filterList ul
 {
@@ -646,7 +664,6 @@ background-color: #E7FAEC;
     color: #02b875!important;
     text-transform: uppercase;
 }
-}
 .dataTables_info
 {
      font-size:13px;
@@ -886,7 +903,6 @@ background-color: #5853b4 !important;
     transition: 0.3s ease;
     background: url(/assets/images/icons/edit.svg) center/contain no-repeat;
 }
-}
 /*****dashboard datatables****/
 
 
@@ -1113,7 +1129,7 @@ border: 0.5px solid #cfd7df;
 /*Right*/
 	.modal.right.fade .modal-dialog {
 		right: -500px;
-         box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1)
+         box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1);
 		-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
 		   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
 		     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
