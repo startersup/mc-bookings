@@ -20,8 +20,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
     <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="./assets/js/NewBooking.js"></script>
+ 
 </head>
-<body onload="pageLoad();">
+<body >
 
     <!----navbar-starts----->
 <nav class="navbar navbar-default mc-dash-nav">
@@ -153,7 +155,7 @@
       <option value="9 Seater">9 Seater</option>
     
     </select>
-<button style="width:100%;" class="mc-cta">Calculate Fare </button>
+<button style="width:100%;" onclick="GetFare();" class="mc-cta">Calculate Fare </button>
 
     </div>
 
