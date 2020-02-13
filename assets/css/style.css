@@ -1235,6 +1235,10 @@ border: 0.5px solid #cfd7df;
       z-index:0 !important;
       border:1px solid rgb(230, 230, 230);
   }
+  .over-the-map h5
+  {
+      font-size:12px;
+  }
   .mc-distance, .mc-time
   {
       width:33.3%;
