@@ -125,7 +125,7 @@
         <input id="destination-input" class="controls" type="text"
         placeholder="Enter Dropoff Postcode" name="drop" required>
 
-        <div class="row">
+    <!--    <div class="row">
             <div class="col-md-6">
                 <select name="passenger" id="np" class="selectit" autocomplete="off">
       <option value="1">1 Passenger</option>
@@ -155,7 +155,7 @@
       <option value="10">10 Luggages</option>
     </select>
                 </div>
-            </div>
+            </div> -->
                         <select name="cabType" id="cabType" class="selectit" autocomplete="off">
       <option value="Saloon">Saloon</option>
       <option value="Estate">Estate</option>
@@ -174,34 +174,39 @@
     <h3>Booking Information</h3>
 
 <label for="web">Booking Website</label>
-<select name="passenger" id="np" class="selectit" autocomplete="off">
+<select name="passenger" id="booked_site" class="selectit" autocomplete="off">
     <option>www.gatwick-airporttaxis.com</option>
     <option>www.heathrow-airporttaxis.co.uk.com</option>
 </select>
 
+<label for="name">Fare</label>
+<input class="controls" type="text" id="fare"
+placeholder="Enter Fare" onkeypress="MaskedDecimal(this,5,2)" autocomplete="off">
+
+
         <label for="name">Passenger Name</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="name"
 placeholder="Enter Name" autocomplete="off">
       
               <label for="name">Passenger Email</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="mail"
 placeholder="Enter Passenger Email" autocomplete="off">
       
   
                  <label for="name">Passenger Contact</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="mobile1"
 placeholder="Enter Passenger Contact" autocomplete="off">
       
         <label for="name">Alternate Contact</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="mobile2"
 placeholder="Enter Alternate Contact" autocomplete="off">
       
               <label for="name">Full Pickup Address</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="address1"
 placeholder="eg: 124 colin street, crawley" autocomplete="off">
      
                          <label for="name">Full Dropoff Address</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="address2"
 placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
 
     <div class="row">
@@ -222,7 +227,8 @@ placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
         </div>    
                      <div class="col-md-6">
                 <label for="name">Infants</label>
-<select name="passenger" id="np" class="selectit" autocomplete="off">
+<select name="passenger" id="np2" class="selectit" autocomplete="off">
+<option value="0">0 Passenger</option>
 <option value="1">1 Passenger</option>
 <option value="2">2 Passengers</option>
 <option value="3">3 Passengers</option>
@@ -235,14 +241,33 @@ placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
 <option value="10">10 Passengers</option>
 </select>
         </div> 
+
+        <div class="col-md-6">
+          <label for="name">Luggages</label>
+<select name="passenger" id="nl" class="selectit" autocomplete="off">
+  <option value="0">0 Luggages</option>
+  <option value="1">1 Luggages</option>
+  <option value="2">2 Luggages</option>
+  <option value="3">3 Luggages</option>
+  <option value="4">4 Luggages</option>   
+  <option value="5">5 Luggages</option>
+  <option value="6">6 Luggages</option>
+  <option value="7">7 Luggages</option>
+  <option value="8">8 Luggages</option>
+  <option value="9">9 Luggages</option>
+  <option value="10">10 Luggages</option>
+</select>
+  </div> 
+
+
     </div>
           
     <label for="name">Flight Details</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="location"
 placeholder="eg: Easyjet EZYT54" autocomplete="off">
 
           <label for="name">Special Information</label>
-        <input class="controls" type="text"
+        <input class="controls" type="text" id="info"
 placeholder="eg: dogs with me " autocomplete="off">
     </div>
 </div>

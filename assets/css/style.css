@@ -27,7 +27,10 @@ body
 
 /********dashboard-navbar*******/
 
-
+.errStyle
+{
+    border : 1px red solid;
+}
 .mc-dash-nav
 {
     background: #5853b4;
