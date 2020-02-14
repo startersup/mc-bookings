@@ -13,7 +13,7 @@ session_start();
  $dfare=number_format($dfare,2); 
  }else
  {
-	 $dfare = $_POST["dfare"]
+	 $dfare = $_POST["dfare"];
  }
 
       $code=0;
@@ -46,8 +46,9 @@ if($check==0)
 
 $ref=$ran;
     
+$sql="INSERT INTO `register` (`refid`, `name`, `mail`, `num1`, `num2`, `location`, `info`, `pay`, `src`, `des`,`address1`,`address2`, `dt`, `time`, `passenger`, `luggage`, `type`, `infants`, `jtime`, `fare`, `status`, `via`, `dfare`, `mg`, `ceat`, `miles`,`booked_site`,`drvid`) VALUES ($ref, $_POST['name'], $_POST['mail'], $_POST['mobile1'], $_POST['mobile2'], $_POST['location'], $_POST['info'], $_POST['pay'], $_POST['origin-input'], $_POST['destination-input'],$_POST['address1'],$_POST['address2'], $_POST['date'], $_POST['time'], $_POST['np'], $_POST['nl'], $_POST['cabType'], $_POST['np2'], $_POST['time'], $_POST['fare'], $status, $_POST['via'], $dfare, $_POST['meet'], $_POST['child'], $_POST['distance'],$_POST['booked_site'],$_POST['drvid'])";
 
- user= mysqli_query(conn,"INSERT INTO `register` (`refid`, `name`, `mail`, `num1`, `num2`, `location`, `info`, `pay`, `src`, `des`,`address1`,`address2`, `dt`, `time`, `passenger`, `luggage`, `type`, `infants`, `jtime`, `fare`, `status`, `via`, `dfare`, `mg`, `ceat`, `miles`,`booked_site`,`drvid`) VALUES ('ref', '$_POST["name"]', '$_POST["mail"]', '$_POST["mobile1"]', '$_POST["mobile2"]', '$_POST["location"]', '$_POST["info"]', '$_POST["pay"]', '$_POST["origin-input"]', '$_POST["destination-input"]','$_POST["address1"]','$_POST["address2"]', '$_POST["date"]', '$_POST["time"]', '$_POST["np"]', '$_POST["nl"]', '$_POST["cabType"]', '$_POST["np2"]', '$_POST["time"]', '$_POST["fare"]', '$status', '$_POST["via"]', '$dfare', '$_POST["meet"]', '$_POST["child"]', '$_POST["distance"]','$_POST["booked_site"]','$_POST["drvid"]')") ;
+ $user= mysqli_query(conn,$sql) ;
  
  if($user)
  {
