@@ -40,7 +40,12 @@ function get_response(myGetUrl, mydata) {
       }
     });
   }
-
+function showStatus(obj)
+{
+	myObj= JSON.parse(obj);
+	alert(myObj["status"]+" "+myObj["message"]);
+	
+}
   function bookNow()
   {
 
