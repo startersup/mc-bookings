@@ -156,7 +156,7 @@
     </select>
                 </div>
             </div> -->
-                        <select name="cabType" id="cabType" class="selectit" autocomplete="off">
+                        <select name="cabType" id="cabType" onchange="setEstimate();" class="selectit" autocomplete="off">
       <option value="Saloon">Saloon</option>
       <option value="Estate">Estate</option>
       <option value="MPV-4">MPV 4</option>
@@ -175,13 +175,13 @@
 
 <label for="web">Booking Website</label>
 <select name="passenger" id="booked_site" class="selectit" autocomplete="off">
-    <option>www.gatwick-airporttaxis.com</option>
-    <option>www.heathrow-airporttaxis.co.uk.com</option>
+    <option value="minicabee.co.uk">minicabee.co.uk</option>
+    <option value="britannia-taxis.com">britannia-taxis.com</option>
 </select>
 
 <label for="name">Fare</label>
 <input class="controls" type="text" id="fare"
-placeholder="Enter Fare" onkeypress="MaskedDecimal(this,5,2)" autocomplete="off">
+placeholder="Enter Fare" onkeyup="MaskedDecimal(this,5,2);" autocomplete="off">
 
 
         <label for="name">Passenger Name</label>
@@ -195,11 +195,11 @@ placeholder="Enter Passenger Email" autocomplete="off">
   
                  <label for="name">Passenger Contact</label>
         <input class="controls" type="text" id="mobile1"
-placeholder="Enter Passenger Contact" autocomplete="off">
+placeholder="Enter Passenger Contact" onkeyup="MaskedNumber(this, 15)" autocomplete="off">
       
         <label for="name">Alternate Contact</label>
         <input class="controls" type="text" id="mobile2"
-placeholder="Enter Alternate Contact" autocomplete="off">
+placeholder="Enter Alternate Contact" onkeyup="MaskedNumber(this, 15);" autocomplete="off">
       
               <label for="name">Full Pickup Address</label>
         <input class="controls" type="text" id="address1"
@@ -280,12 +280,14 @@ placeholder="eg: dogs with me " autocomplete="off">
             <tbody>
 
                 <tr>
-       <td><input type="text" class="controls bordered" required="required" id="amt" name="amt" placeholder="Enter Driver Name"> </td>
-       <td><input type="text" class="controls bordered" required="required" id="amt" name="amt" placeholder="Enter Amount"></td>
+       <td><input type="text" class="controls bordered"  id="drvid_get" value="" name="amt" placeholder="Enter Driver Name"><input type="hidden"   id="drvid" value="" name="amt" > </td>
+       <td><input type="text" class="controls bordered"  id="dfare" name="amt" placeholder="Enter Amount"></td>
        <td><button class="buttongreen" onclick="manual_alloc();">Allocate </button></td>
      </tr>
           </tbody> 
            </table>
+		   
+		   <button class="buttongreen" onclick="bookNow();">Book Now </button
     </div>
 
 <div class="mc-booking-sms">
