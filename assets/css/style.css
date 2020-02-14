@@ -85,7 +85,6 @@ body
     font-size:12px;
     font-weight:600;
     cursor: pointer;
-    text-transform: uppercase;
     background-color: #480093;
 }
 #filterList ul
