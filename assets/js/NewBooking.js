@@ -6,6 +6,7 @@ var myId =["origin-input","destination-input","cabType","booked_site","fare","na
 var myMandId =["origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","address1","address2","np","np2","nl"];
 var myClearId=["route_fare","route_time","route_miles","origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","mobile2","address1","address2","np","np2","nl","location","info","drvid","dfare"];
 var myDataBook={};
+var myFareObj={};
 function get_response(myGetUrl, mydata) {
  
     $.ajax({
@@ -14,8 +15,25 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-         
-       setEstimate(data);
+         myFareObj= JSON.parse(data);
+       setEstimate();
+	   
+      },
+      error: function(xhr) {
+        
+      }
+    });
+  }
+  
+  function get_Booking(myGetUrl, mydata) {
+ 
+    $.ajax({
+      type: "POST",
+      url: myGetUrl,
+      data: mydata,
+      async: false,
+      success: function(data) {
+        showStatus(data)	   
       },
       error: function(xhr) {
         
@@ -26,13 +44,19 @@ function get_response(myGetUrl, mydata) {
   function bookNow()
   {
 
-    if(mandCheck())
+    if(checkSrc())
     {
-        checkSrc();
+        if(mandCheck())
+		{
+			var mydata ={};
         for(var i=0;i<myId.length;i++)
         {
-
+			var temp= myId[i];
+			mydata[temp]=document.getElementById(temp).value;
         }
+		var myGetUrl = myUrl + "myapi/book.php";
+  		get_Booking(myGetUrl, mydata);
+		}
     }
   }
   function checkSrc()
@@ -75,14 +99,21 @@ function get_response(myGetUrl, mydata) {
 
       return Boolean(x); 
   }
-function setEstimate(obj)
+function setEstimate()
 {
 
-    var myObj = JSON.parse(obj);
+    var myObj=myFareObj;
+	 if(document.getElementById('origin-input').value != myDataBook["src"] || document.getElementById('destination-input').value != myDataBook["des"] || (myObj.length === 0))
+      {
+        myAlert("Please Click the Calculate Fare")
+      }else
+    {
     document.getElementById('route_miles').innerHTML=myObj["totaldistance"];
     document.getElementById('route_time').innerHTML=myObj["totaltime"];
     var temp=document.getElementById('cabType').value;
     document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
+	document.getElementById('fare').innerHTML=myObj[temp]["ofare"][0];
+	}
 
 
     document.getElementById("spinnermodal").style.display = "none";
