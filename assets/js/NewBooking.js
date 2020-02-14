@@ -117,7 +117,7 @@ function setEstimate()
     document.getElementById('route_time').innerHTML=myObj["totaltime"];
     var temp=document.getElementById('cabType').value;
     document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
-	document.getElementById('fare').innerHTML=myObj[temp]["ofare"][0];
+	document.getElementById('fare').value=myObj[temp]["ofare"][0];
 	}
 
 
