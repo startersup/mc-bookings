@@ -78,6 +78,13 @@ function setRow(data) {
     data: result,
     lengthChange: false,
     searching: false,
+    dom: 'Bfrtip',
+    buttons: [
+        'copyHtml5',
+        'excelHtml5',
+        'csvHtml5',
+        'pdfHtml5'
+    ],
     columns: [
       { data: "refid" },
       { data: "booked_site" },
@@ -88,10 +95,6 @@ function setRow(data) {
       { data: "fare" },
       { data: "status" },
       { data: null, defaultContent: '<div class="mc-edit"></div>' }
-    ],
-    dom: 'Bfrtip',
-    buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
     ]
   });
   setStatus();
