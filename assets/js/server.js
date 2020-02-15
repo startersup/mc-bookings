@@ -16,16 +16,19 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
 function startLoader() {
-  document.getElementById("spinnermodal").style.display = "block";
+  //document.getElementById("spinnermodal").style.display = "block";
+
+    $("#spinnermodal").fadeIn();
 }
 function stopLoader() {
-  document.getElementById("spinnermodal").style.display = "none";
+  //document.getElementById("spinnermodal").style.display = "none";
+
+    $("#spinnermodal").fadeOut();
 }
 function pageLoad() {
   SetParam("today");
 }
 function SetParam(myparam) {
-  startLoader();
   var mydata = {};
   var myGetUrl = "";
   if (myparam === "today") {
@@ -173,9 +176,10 @@ function clearClass() {
 }
 $(document).ready(function() {
   $(".booking").click(function() {
-    var id = $(this).attr("id");
-    clearClass();
     $(this).addClass("active");
+    startLoader();
+    var id = $(this).attr("id");
+    clearClass();   
     SetParam(id);
   });
 
