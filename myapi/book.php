@@ -69,18 +69,31 @@ if($check==0)
 
 
 }
+if($meet == "")
+{
+    $meet="0";
+}
+if($child =="")
+{
+    $child="0";
+}
 
 $ref=$ran;
+
+if($fare == "")
+{
+    $fare ="0";
+}
     
 $sql="INSERT INTO `register` (`refid`, `name`, `mail`, `num1`, `num2`, `location`, `info`, `pay`, `src`, `des`,`address1`,`address2`, `dt`, `time`, `passenger`, `luggage`, `type`, `infants`, `jtime`, `fare`, `status`, `via`, `dfare`, `mg`, `ceat`, `miles`,`booked_site`,`drvid`) 
-VALUES ($ref, '$name', '$mail', '$mobile1', '$mobile2', '$location', '$info', '$pay', '$origin_input', '$destination_input','$address1','$address2', '$date', '$time', '$np', '$nl', '$cabType', '$np2', '$time', '$fare', $status, '$via', $dfare, '$meet', '$child', '$distance','$booked_site','$drvid')";
- echo($sql);
- $user= mysqli_query(conn,$sql) ;
+VALUES ('$ref', '$name', '$mail', '$mobile1', '$mobile2', '$location', '$info', '$pay', '$origin_input', '$destination_input','$address1','$address2', '$date', '$time', '$np', '$nl', '$cabType', '$np2', '$time', $fare, '$status', '$via', $dfare, $meet, $child, '$distance','$booked_site','$drvid')";
+
+ $user= mysqli_query($conn,$sql) ;
  
  if($user)
  {
 	 $temp["status"]="success";
-	 $temp["message"]="Your Booking Id is "+$ref;
+	 $temp["message"]="Your Booking Id is ".$ref;
  }
 else{
 		 $temp["status"]="fail";
