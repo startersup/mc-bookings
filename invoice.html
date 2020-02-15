@@ -12,6 +12,8 @@
 <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<link data-require="fontawesome@4.5.0" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -71,7 +73,7 @@
             
             <li>
 </li>
-            <li><a href="create-email-template.html"><button class="mc-add-btn"> <img class="mc-button-icons" src="../../assets/images/icons/print.svg"> Print  Invoice</button></a></li></ul>
+            <li><a id='btn' onclick='printDiv();'><button class="mc-add-btn" > <img class="mc-button-icons"  src="../../assets/images/icons/print.svg"> Print  Invoice</button></a></li></ul>
     </div>
     
       <!----sub-navbar-ends----->
@@ -139,7 +141,7 @@ $(".mc-cta").click(function() {
     <div class="preview-viewer">
     <div class="container3">
         <div class="top" style="margin-top:20px;">
-            <div class="invoice-box" id="preview-export" style="max-width:2000px;padding:30px;background-color:#ffffff;border:1px solid #eee;box-shadow:0 0 10px rgba(0, 0, 0, .15);font-size:16px;line-height:24px;font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;color:#555;">
+            <div class="invoice-box" id='DivIdToPrint' style="max-width:2000px;padding:30px;background-color:#ffffff;border:1px solid #eee;box-shadow:0 0 10px rgba(0, 0, 0, .15);font-size:16px;line-height:24px;font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;color:#555;">
                 <table cellpadding="0" cellspacing="0" style="width:100%;line-height:inherit;text-align:left;border-collapse:collapse;border-spacing:0;">
 <tr class="top" style="margin-top:20px;">
 <td colspan="4" style="padding: 5px;
@@ -181,7 +183,7 @@ $(".mc-cta").click(function() {
         <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Date & Time</th>
          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Total Fare</th>
          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Driver Fare</th>
-          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Minicabee </th>
+          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Commission</th>
     </tr>
 
 
@@ -265,6 +267,28 @@ $(".mc-cta").click(function() {
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->    
 
+
+
+<script>
+function printDiv() 
+{
+
+  var divToPrint=document.getElementById('DivIdToPrint');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
+}
+</script>
+
+
 <script>$(document).ready(function() {
     $('img').tooltip()
 } );</script>
@@ -316,13 +340,24 @@ $(function() {
     cb(start, end);
 });
 </script>
-    
+   
+   <style>
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact !important;
+      }
+   .tickettable th{
+      background-color: #555 !important; 
+      color: #000000 !important;
+    }
+  }
+  </style>
     
     
       
     
 </body> 
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE&callback=initMap"></script>
+  
    
 </html>
 
