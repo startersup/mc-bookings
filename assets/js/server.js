@@ -80,7 +80,10 @@ function setRow(data) {
     searching: false,
     dom: 'Bfrtip',
     buttons: [
-        'copy', 'csv', 'excel', 'pdf', 'print'
+        'copyHtml5',
+        'excelHtml5',
+        'csvHtml5',
+        'pdfHtml5'
     ],
     columns: [
       { data: "refid" },
