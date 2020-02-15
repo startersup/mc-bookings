@@ -84,11 +84,9 @@
     </div>
     
       <!----sub-navbar-ends----->
-    <div class="mc-alert-box">
+    <div class=" mc-alert-box alert-dismissible">
       <div class="mc-alert-status color-green"><p>Success</p></div>
-      <div class="mc-alert-desc"><p> hII there</p></div>
-
-
+      <div class="mc-alert-desc ">     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p> hII there</p></div>
     </div>
     
     
@@ -362,7 +360,13 @@ placeholder="eg: dogs with me " autocomplete="off">
     
 <script>$(document).ready(function() {
     $('img').tooltip()
-} );</script>
+} );
+
+$("#close").click(function(){
+  $(".mc-alert-box").hide();
+});
+
+</script>
     
    
 
