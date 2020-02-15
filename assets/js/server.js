@@ -88,6 +88,10 @@ function setRow(data) {
       { data: "fare" },
       { data: "status" },
       { data: null, defaultContent: '<div class="mc-edit"></div>' }
+    ],
+    dom: 'Bfrtip',
+    buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
     ]
   });
   setStatus();
