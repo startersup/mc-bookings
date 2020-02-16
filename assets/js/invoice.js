@@ -91,7 +91,7 @@ $('#driver').change(function() {
 });
 function GetDriverInvoice(element)
 {
-     mydataInv["ïd"]=element.id;
+     mydataInv["id"]=element.id;
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);
