@@ -16,11 +16,11 @@ session_start();
 // $to="2020-1-31";
 // $status="('temp','booked','booked-confirmed')";
    
-   if(($for == "driver") && ($driverId == ""))
+   if(($for == "driver") && ($driverId == "e"))
   {
     $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address as daddress FROM driver where id IN(select distinct drvid from register where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
  
-  }else  if(($for == "driver") && ($driverId !== ""))
+  }else  if(($for == "driver") && ($driverId !== "e"))
   {
    $sql=" SELECT register.refid,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."') and (driver.id ='".$driverId."')";
   }
