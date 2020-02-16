@@ -1345,7 +1345,11 @@ position: absolute;
 margin-top:100px;
   }
 
-
+  .tickettable td{
+    padding: 10px;
+        border: 1px solid #ccc;
+    }
+    
 
 
 

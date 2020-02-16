@@ -24,8 +24,19 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="text/javascript" src="./assets/js/invoice.js"></script>
 </head>
-<body>
+<body onload="stopLoader();">
 
+  
+  <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="display: block;background-color: rgba(255, 255, 255, 0.79);min-width: 1500px;top:45px;left:65px;border:none;">
+    <div class="modal11-content">
+      <div class="loader" style="position:absolute;top:300px;left:650px;">
+        <centre> <img src="./assets/images/myLoader.gif"></centre> 
+          
+      </div>
+      
+    </div>
+  
+  </div>
     <!----navbar-starts----->
 <nav class="navbar navbar-default mc-dash-nav">
   <div class="container-fluid">
@@ -74,7 +85,9 @@
             <li>
 </li>
             <li><a id='btn' onclick='printDiv();'><button class="mc-add-btn" > <img class="mc-button-icons"  src="../../assets/images/icons/print.svg"> Print  Invoice</button></a></li></ul>
-    </div>
+            <li><a id='btn' onclick='SendEmail();'><button class="mc-add-btn" > <img class="mc-button-icons"  src="../../assets/images/icons/print.svg"> Send Invoice</button></a></li></ul>
+
+          </div>
     
       <!----sub-navbar-ends----->
     
@@ -111,15 +124,7 @@
         <li> <button  type="button" class="mc-cta" id="get_details" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Fetching Details">Get Now</button></li>
     </ul>
    
-<script>
-$(".mc-cta").click(function() {
-    var $btn = $(this);
-    $btn.button('loading');
-    setTimeout(function () {
-        $btn.button('reset');
-    }, 1000);
-});            
-</script>
+
     <div clsss="mc-invoice-list">
           <table class="preview-bar">
 <thead>
@@ -151,8 +156,8 @@ $(".mc-cta").click(function() {
                             <img src="https://minicabee.co.uk/assets/images/logo.png" style="width:100%; max-width:200px !important;">
 </td>
 
-                          <td style="text-align:right !important;padding:5px;vertical-align:top;padding-bottom:20px;">
-                            Invoice #: 3443223<br> Created: 03 February 2020<br> Due: 7 February 2020
+                          <td style="text-align:right !important;padding:5px;vertical-align:top;padding-bottom:20px;" id="InvoiceDetails">
+                            
                           </td>
                         </tr></table>
 </td>
@@ -162,8 +167,8 @@ $(".mc-cta").click(function() {
   vertical-align: top;">
                       <table style="border-collapse:collapse;border-spacing:0;width:100%;line-height:inherit;text-align:left;"><tr>
 <td style="padding: 5px;
-  vertical-align: top;">
-                           Mr. Mohammed Riyas<br> BRT1234
+  vertical-align: top;"  id="BasicDriverInfo">
+                           Mr. -------s<br> ---------
                           </td>
 
                           <td style="float:right !important;padding:5px;vertical-align:top;">
@@ -174,22 +179,25 @@ $(".mc-cta").click(function() {
                   </tr>
 </table>
 <table class="tickettable purchase-table"  style="border-collapse:collapse;border-spacing:0;max-width:1425px;width:100%;line-height:inherit;text-align:left;margin-top:40px;font-family:'Nunito', sans-serif;font-size:14px;letter-spacing:0.2px;">
-	<tbody style="max-height:300px !important;
-  overflow-y: scroll;" id="InvoiceTable">
-<tr class="header" >
-<th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Booking Id</th>
-        <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Pickup From</th>
-        <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Dropoff To</th>
-        <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Date & Time</th>
-         <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Total Fare</th>
-         <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Driver Fare</th>
-          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Commission</th>
-    </tr>
 
+  <thead class="header" >
+    <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Booking Id</th>
+            <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Pickup From</th>
+            <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Dropoff To</th>
+            <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Date & Time</th>
+             <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Total Fare</th>
+             <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Driver Fare</th>
+              <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Commission</th>
+  </thead>
+    
+<tbody style="max-height:300px !important;
+  overflow-y: scroll;" id="InvoiceTable">
 
 </tbody></table>
      
-    <table class="tickettable purchase-table" id="tickettable" style="border-collapse:collapse;border-spacing:0;max-width:300px;width:100%;line-height:inherit;text-align:left;margin-top:40px;font-family:'Nunito', sans-serif;font-size:14px;letter-spacing:0.2px;"><tbody style="max-height:300px !important;
+    <table class="tickettable purchase-table" id="tickettable" style="border-collapse:collapse;border-spacing:0;max-width:300px;width:100%;line-height:inherit;text-align:left;margin-top:40px;font-family:'Nunito', sans-serif;font-size:14px;letter-spacing:0.2px;">
+    
+    <tbody style="max-height:300px !important;
   overflow-y: scroll;">
         <tr class="header">
 <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Description</th>
