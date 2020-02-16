@@ -100,7 +100,7 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
-    setDate(myObj.no);
+    setDate(myTemp.no);
     stopLoader();
         
 }
