@@ -47,6 +47,7 @@ function setInvoiceTable(myData)
 {
     var myObj = JSON.parse(myData);
     var temp ='';
+
     for(var i=0;i<myObj.length;i++)
     {
       /*  if(!(myObj[i].drvid === ''))
