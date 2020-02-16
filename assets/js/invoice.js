@@ -77,16 +77,16 @@ function setInvoiceTable(myData)
     for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
-        temp=temp+'<td >'+myObj[i].refid+'</td>';
-        temp=temp+'<td >'+myObj[i].src+'</td>';
-        temp=temp+'<td >'+myObj[i].des+'</td>';
-        temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
-        temp=temp+'<td >'+myObj[i].fare+'</td>';
-        temp=temp+'<td >'+myObj[i].dfare+'</td>';
-        temp=temp+'<td >'+myObj[i].commision+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].refid+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].src+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].des+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].dt+' '+myObj["0"][i].time+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].fare+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].dfare+'</td>';
+        temp=temp+'<td >'+myObj["0"][i].commision+'</td>';
         temp=temp+'</tr>';
-        total_fare= total_fare + parseFloat(myObj[i].fare);
-        total_dfare =total_dfare + parseFloat(myObj[i].dfare);
+        total_fare= total_fare + parseFloat(myObj["0"][i].fare);
+        total_dfare =total_dfare + parseFloat(myObj["0"][i].dfare);
         
     }
 
@@ -101,6 +101,13 @@ function setInvoiceTable(myData)
     stopLoader();
         
 }
+function SendEmail()
+{
+  mydataInv["mdata"]=document.getElementById("DivIdToPrint").innerHTML;
+  var myGetUrl = myUrl + "myapi/EmailInvoice.php";  
+  get_response(myGetUrl, mydataInv);
+
+}
 function setDate(InvNo)
 {
   // Now any Date object can be declared 
@@ -109,7 +116,7 @@ var today = new Date();
 var date = new Date();
 today.setDate(today.getDate() + 7);
 document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> Created:'+today_date+'<br> '+today.toShortFormat();
-
+ mydataInv["invno"]=InvNo;
 }
   $(document).ready(function() {
 
@@ -139,6 +146,8 @@ function GetDriverInvoice(element)
 {
   startLoader();
      mydataInv["id"]=element.id;
+     mydataInv["mdata"]='e';
+  mydataInv["invno"]='e';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);
@@ -160,7 +169,9 @@ function getInvoice()
   
     mydataInv["from"] = date_format_db(d[0]);
     mydataInv["to"] = date_format_db(d[1]);
-	mydataInv["id"]='e';
+  mydataInv["id"]='e';
+  mydataInv["mdata"]='e';
+  mydataInv["invno"]='e';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);

@@ -26,10 +26,9 @@ session_start();
  $invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
  $temp_result=mysqli_query($conn,$invid_sql);
  $row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
- $invno= preg_replace("/[a-zA-Z]/", "", $temp)."/". (date("Y")-2000)."/".$row1["num"];
+ $invno= preg_replace("/[a-zA-Z]/", "", $driverId)."/". (date("Y")-2000)."/".$row1["num"];
  $temp["no"] =$invno;
-   $insert_sql= "INSERT INTO `invoice` (`drvid`, `start`, `end`, `status`,`id`) VALUES ('$driverId', '$from','$to' , 'created','$invno')";
-   mysqli_query($conn,$insert_sql);
+  
 }
   else if($for == "ALL")
   {
