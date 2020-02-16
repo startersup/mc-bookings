@@ -70,9 +70,9 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
     document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
     document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
-    document.getElementById("DrvTotalPay").innerHTML='£'+total_fare-total_dfare;
+    document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
 
-    document.getElementById("BasicDriverInfo").innerHTML=total_dfare;
+    document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
 
         
 }
