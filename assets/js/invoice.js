@@ -47,6 +47,8 @@ function setInvoiceTable(myData)
 {
     var myObj = JSON.parse(myData);
     var temp ='';
+    var total_fare=0;
+    var total_dfare=0;
     document.getElementById("InvoiceTable").innerHTML='';
     for(var i=0;i<myObj.length;i++)
     {
@@ -59,11 +61,19 @@ function setInvoiceTable(myData)
         temp=temp+'<td >'+myObj[i].dfare+'</td>';
         temp=temp+'<td >'+myObj[i].commision+'</td>';
         temp=temp+'</tr>';
+        total_fare= total_fare + parseFloat(myObj[i].fare);
+        total_dfare =total_dfare + parseFloat(myObj[i].dfare);
         
     }
 
     document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
-    
+    document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
+    document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
+    document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
+    document.getElementById("DrvTotalPay").innerHTML='£'+total_fare-total_dfare;
+
+    document.getElementById("BasicDriverInfo").innerHTML=total_dfare;
+
         
 }
   $(document).ready(function() {
