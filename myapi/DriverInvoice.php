@@ -43,7 +43,7 @@ session_start();
        
        $temp1[]=$row;
   }
-  if($temp1=null)
+  if($temp1==null)
 {
    $temp1=array();
 }
