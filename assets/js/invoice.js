@@ -50,12 +50,15 @@ function setInvoiceTable(myData)
 
     for(var i=0;i<myObj.length;i++)
     {
-      /*  if(!(myObj[i].drvid === ''))
-        {
-        temp=temp+'<tr onclick="GetDriverInvoice(this);" id="'+myObj[i].drvid+'" >';
+        temp=temp+'<tr>';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
         temp=temp+'</tr>';
-        } */
+        
     }
 
     document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
