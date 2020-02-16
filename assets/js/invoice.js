@@ -47,16 +47,17 @@ function setInvoiceTable(myData)
 {
     var myObj = JSON.parse(myData);
     var temp ='';
-
+    document.getElementById("InvoiceTable").innerHTML='';
     for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
-        temp=temp+'<td >'+myObj[i].drvid+' - '+myObj[i].dname+'</td>';
+        temp=temp+'<td >'+myObj[i].refid+'</td>';
+        temp=temp+'<td >'+myObj[i].src+'</td>';
+        temp=temp+'<td >'+myObj[i].des+'</td>';
+        temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
+        temp=temp+'<td >'+myObj[i].fare+'</td>';
+        temp=temp+'<td >'+myObj[i].dfare+'</td>';
+        temp=temp+'<td >'+myObj[i].commision+'</td>';
         temp=temp+'</tr>';
         
     }
