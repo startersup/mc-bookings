@@ -12,7 +12,7 @@ date_default_timezone_set('Europe/London');
   $driverId=$_POST["id"];
   $invno=$_POST["invno"];
 
-$invno= "INSERT INTO `invoice` (`drvid`, `start`, `end`, `status`,`id`) VALUES ('$driverId', '$from','$to' , 'sent','$invno')";
+$insert_sql= "INSERT INTO `invoice` (`drvid`, `start`, `end`, `status`,`id`) VALUES ('$driverId', '$from','$to' , 'sent','$invno')";
 mysqli_query($conn,$insert_sql);
 
 $subject = "Your Invoice (".$invno.")";
@@ -25,7 +25,7 @@ $headers .= "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
 
 $message="Your Invoice for the period : ".$from." to ".$to." is attached with below link. <br>";
-$message=$message."https://minicabee.co.uk/myInvoice/?id".$invno;
+$message=$message."https://minicabee.co.uk/myInvoice/?id=".$invno;
 
 $smail=mail("deepakdazzler6@gmail.com",$subject,$message,$headers);
 
