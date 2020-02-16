@@ -40,8 +40,19 @@ function setList(myData)
     }
 
     document.getElementById("driver-inv-table").innerHTML=temp;
-    
+    stopLoader();
         
+}
+
+function startLoader() {
+  //document.getElementById("spinnermodal").style.display = "block";
+
+    $("#spinnermodal").fadeIn();
+}
+function stopLoader() {
+  //document.getElementById("spinnermodal").style.display = "none";
+
+    $("#spinnermodal").fadeOut();
 }
 function setInvoiceTable(myData)
 {
@@ -73,7 +84,7 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
-
+    stopLoader();
         
 }
   $(document).ready(function() {
@@ -102,6 +113,7 @@ $('#driver').change(function() {
 });
 function GetDriverInvoice(element)
 {
+  startLoader();
      mydataInv["id"]=element.id;
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
@@ -109,7 +121,7 @@ function GetDriverInvoice(element)
 }
 function getInvoice()
 {
-
+  startLoader();
     if(document.getElementById('all').checked === true)
     {
         myInvoice=document.getElementById('all').value;
