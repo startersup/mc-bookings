@@ -79,16 +79,16 @@ function setInvoiceTable(myData)
     for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
-        temp=temp+'<td >'+myObj["0"][i].refid+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].src+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].des+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].dt+' '+myObj["0"][i].time+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].fare+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].dfare+'</td>';
-        temp=temp+'<td >'+myObj["0"][i].commision+'</td>';
+        temp=temp+'<td >'+myObj[i][i].refid+'</td>';
+        temp=temp+'<td >'+myObj[i][i].src+'</td>';
+        temp=temp+'<td >'+myObj[i][i].des+'</td>';
+        temp=temp+'<td >'+myObj[i][i].dt+' '+myObj[i][i].time+'</td>';
+        temp=temp+'<td >'+myObj[i][i].fare+'</td>';
+        temp=temp+'<td >'+myObj[i][i].dfare+'</td>';
+        temp=temp+'<td >'+myObj[i][i].commision+'</td>';
         temp=temp+'</tr>';
-        total_fare= total_fare + parseFloat(myObj["0"][i].fare);
-        total_dfare =total_dfare + parseFloat(myObj["0"][i].dfare);
+        total_fare= total_fare + parseFloat(myObj[i][i].fare);
+        total_dfare =total_dfare + parseFloat(myObj[i][i].dfare);
         
     }
 
