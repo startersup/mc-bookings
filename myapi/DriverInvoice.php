@@ -41,13 +41,13 @@ session_start();
     while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
     {
        
-       $temp[]=$row;
+       $temp1[]=$row;
   }
-  if($temp==null)
+  if($temp1=null)
 {
-   $temp=array();
+   $temp1=array();
 }
-
+$temp["list"]=$temp1;
   echo  json_encode($temp);
 
   ?>

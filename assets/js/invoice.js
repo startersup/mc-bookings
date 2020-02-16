@@ -69,7 +69,8 @@ function stopLoader() {
 }
 function setInvoiceTable(myData)
 {
-    var myObj = JSON.parse(myData);
+    var myTemp= JSON.parse(myData);
+    var myObj=myTemp["list"];
     var temp ='';
     var total_fare=0;
     var total_dfare=0;
