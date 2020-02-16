@@ -68,6 +68,7 @@ function stopLoader() {
 
     $("#spinnermodal").fadeOut();
 }
+
 function setInvoiceTable(myData)
 {
     var myTemp= JSON.parse(myData);
@@ -79,16 +80,16 @@ function setInvoiceTable(myData)
     for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
-        temp=temp+'<td >'+myObj[i][i].refid+'</td>';
-        temp=temp+'<td >'+myObj[i][i].src+'</td>';
-        temp=temp+'<td >'+myObj[i][i].des+'</td>';
-        temp=temp+'<td >'+myObj[i][i].dt+' '+myObj[i][i].time+'</td>';
-        temp=temp+'<td >'+myObj[i][i].fare+'</td>';
-        temp=temp+'<td >'+myObj[i][i].dfare+'</td>';
-        temp=temp+'<td >'+myObj[i][i].commision+'</td>';
+        temp=temp+'<td >'+myObj[i].refid+'</td>';
+        temp=temp+'<td >'+myObj[i].src+'</td>';
+        temp=temp+'<td >'+myObj[i].des+'</td>';
+        temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
+        temp=temp+'<td >'+myObj[i].fare+'</td>';
+        temp=temp+'<td >'+myObj[i].dfare+'</td>';
+        temp=temp+'<td >'+myObj[i].commision+'</td>';
         temp=temp+'</tr>';
-        total_fare= total_fare + parseFloat(myObj[i][i].fare);
-        total_dfare =total_dfare + parseFloat(myObj[i][i].dfare);
+        total_fare= total_fare + parseFloat(myObj[i].fare);
+        total_dfare =total_dfare + parseFloat(myObj[i].dfare);
         
     }
 
