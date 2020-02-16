@@ -113,7 +113,7 @@ function getInvoice()
   
     mydataInv["from"] = date_format_db(d[0]);
     mydataInv["to"] = date_format_db(d[1]);
-	mydataInv["ïd"]='e';
+	mydataInv["id"]='e';
     var myGetUrl = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);
