@@ -97,18 +97,18 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
-    setDate();
+    setDate(myObj.no);
     stopLoader();
         
 }
-function setDate()
+function setDate(InvNo)
 {
   // Now any Date object can be declared 
 var today = new Date();
  var today_date= today.toShortFormat();
 var date = new Date();
 today.setDate(today.getDate() + 7);
-var temp ='Invoice #: 3443223<br> Created:'+today_date+'<br> '+today.toShortFormat();
+document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> Created:'+today_date+'<br> '+today.toShortFormat();
 
 }
   $(document).ready(function() {

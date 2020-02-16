@@ -5,7 +5,7 @@ session_start();
  $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
  
   include($rootfolder."/connection/connect.php"); 
-
+  date_default_timezone_set('Europe/London');
 
   
     $from=$_POST["from"];
@@ -23,7 +23,14 @@ session_start();
   }else  if(($for == "driver") && ($driverId !== "e"))
   {
    $sql=" SELECT register.refid,register.src,register.des,register.dt,register.time,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."') and (driver.id ='".$driverId."')";
-  }
+ $invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
+ $temp_result=mysqli_query($conn,$invid_sql);
+ $row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
+ $invno= preg_replace("/[a-zA-Z]/", "", $temp)."/". (date("Y")-2000)."/".$row1["num"];
+ $temp["no"] =$invno;
+   $insert_sql= "INSERT INTO `invoice` (`drvid`, `start`, `end`, `status`,`id`) VALUES ('$driverId', '$from','$to' , 'created','$invno')";
+   mysqli_query($conn,$insert_sql);
+}
   else if($for == "ALL")
   {
     $sql=" SELECT register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";

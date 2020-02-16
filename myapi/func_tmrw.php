@@ -12,7 +12,7 @@
    $date= date("Y-m-d", strtotime(' +1 day'));
     $check=$date;
     
-
+    
    
     $sql="SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt= '".$check."' and status != 'cancelled' ";
   $result=  mysqli_query($conn,$sql);
@@ -27,6 +27,7 @@ if($temp==null)
 {
    $temp=array();
 }
+
   echo  json_encode($temp);
 ?>
 
