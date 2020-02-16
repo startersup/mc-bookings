@@ -27,7 +27,8 @@ function get_response(myGetUrl, mydata) {
 
 function setList(myData)
 {
-    var myObj = JSON.parse(myData);
+  var myTemp= JSON.parse(myData);
+  var myObj=myTemp["list"];
     var temp ='';
     for(var i=0;i<myObj.length;i++)
     {
