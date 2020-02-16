@@ -43,6 +43,19 @@ function setList(myData)
     stopLoader();
         
 }
+Date.prototype.toShortFormat = function() {
+
+  var month_names =["January","february","March",
+                    "April","May","June",
+                    "July","August","September",
+                    "October","November","December"];
+  
+  var day = this.getDate();
+  var month_index = this.getMonth();
+  var year = this.getFullYear();
+  
+  return "" + day + "-" + month_names[month_index] + "-" + year;
+}
 
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
@@ -84,8 +97,19 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
+    setDate();
     stopLoader();
         
+}
+function setDate()
+{
+  // Now any Date object can be declared 
+var today = new Date();
+ var today_date= today.toShortFormat();
+var date = new Date();
+today.setDate(today.getDate() + 7);
+var temp ='Invoice #: 3443223<br> Created:'+today_date+'<br> '+today.toShortFormat();
+
 }
   $(document).ready(function() {
 
