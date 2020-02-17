@@ -26,11 +26,11 @@ session_start();
  $invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
  $temp_result=mysqli_query($conn,$invid_sql);
  $row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
- $invno= preg_replace("/[a-zA-Z]/", "", $driverId)."/". (date("Y")-2000)."/".$row1["num"];
+ $invno= "INV".preg_replace("/[a-zA-Z]/", "", $driverId)."/". (date("Y")-2000)."/".$row1["num"];
  $temp["no"] =$invno;
   
 }
-  else if($for == "ALL")
+  else if($for == "all")
   {
     $sql=" SELECT register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
   }

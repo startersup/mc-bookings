@@ -20,7 +20,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+        
   <link rel="stylesheet" href="./assets/css/style.css">
   <script type="text/javascript" src="./assets/js/invoice.js"></script>
 </head>
@@ -81,7 +82,7 @@
     </ul>
         
         <ul class="mc-sub-right">
-            <li><a id='btn' onclick='printDiv();'><button class="mc-add-btn" > <img class="mc-button-icons"  src="../../assets/images/icons/print.svg"> Print  Invoice</button></a></li>
+            <li><a id='btn' onclick='printDiv();'><button class="mc-add-btn" id="downloadPdf" > <img class="mc-button-icons"  src="../../assets/images/icons/print.svg"> Print  Invoice</button></a></li>
             <li><a id='btn' onclick='SendEmail();'><button class="mc-add-btn" > <img class="mc-button-icons"  src="../../assets/images/icons/email.svg"> Send Invoice</button></a></li></ul>
           </div>
     
@@ -115,7 +116,7 @@
 <i class="fa fa-caret-down"></i>
 </div>
     <ul>
-    <li><a> <input type="checkbox" id="all" name="job-list" value="ALL"> Cumulative Job List</a></li>
+    <li><a> <input type="checkbox" id="all" name="job-list" value="all"> Cumulative Job List</a></li>
     <li><a><input type="checkbox" id="driver"  name="job-list" value="driver"> Drivers List</a></li>
         <li> <button  type="button" class="mc-cta" id="get_details" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Fetching Details">Get Now</button></li>
     </ul>
@@ -142,6 +143,7 @@
     <div class="preview-viewer">
     <div class="container3">
         <div class="top" style="margin-top:20px;">
+          <div id="downloadEditor"></div>
             <div class="invoice-box" id='DivIdToPrint' style="max-width:2000px;padding:30px;background-color:#ffffff;border:1px solid #eee;box-shadow:0 0 10px rgba(0, 0, 0, .15);font-size:16px;line-height:24px;font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;color:#555;">
                 <table cellpadding="0" cellspacing="0" style="width:100%;line-height:inherit;text-align:left;border-collapse:collapse;border-spacing:0;">
 <tr class="top" style="margin-top:20px;">

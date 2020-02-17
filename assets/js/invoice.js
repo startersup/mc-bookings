@@ -2,6 +2,16 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
+
+var doc = new jsPDF();
+var specialElementHandlers = {
+  '#downloadEditor': function (element, renderer) {
+      return true;
+  }
+};
+
+
+
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -9,11 +19,14 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
+           if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
           {
             setList(data);
           }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
 		setInvoiceTable(data);
+          }else if(mydataInv["for"] == 'all')
+          {
+            setAllTable(data);
           }
         
        
@@ -104,6 +117,42 @@ function setInvoiceTable(myData)
     stopLoader();
         
 }
+
+function setAllTable(myData)
+{
+  var myTemp= JSON.parse(myData);
+  var myObj=myTemp["list"];
+  var temp ='';
+  var total_fare=0;
+  var total_dfare=0;
+  document.getElementById("InvoiceTable").innerHTML='';
+  for(var i=0;i<myObj.length;i++)
+  {
+      temp=temp+'<tr>';
+      temp=temp+'<td >'+myObj[i].refid+'</td>';
+      temp=temp+'<td >'+myObj[i].src+'</td>';
+      temp=temp+'<td >'+myObj[i].des+'</td>';
+      temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
+      temp=temp+'<td >'+myObj[i].fare+'</td>';
+      temp=temp+'<td >'+myObj[i].dfare+'</td>';
+      temp=temp+'<td >'+myObj[i].commision+'</td>';
+      temp=temp+'</tr>';
+      total_fare= total_fare + parseFloat(myObj[i].fare);
+      total_dfare =total_dfare + parseFloat(myObj[i].dfare);
+      
+  }
+
+  document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
+  document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
+  document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
+  document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
+  document.getElementById("DrvTotalPay").innerHTML='£'+parseFloat(total_fare-total_dfare);
+
+  document.getElementById("BasicDriverInfo").innerHTML='';
+  setDate(myTemp.no);
+  stopLoader();
+      
+}
 function SendEmail()
 {
   mydataInv["mdata"]=document.getElementById("DivIdToPrint").innerHTML;
@@ -134,7 +183,13 @@ document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> C
         
 });
 
-  
+$('#downloadPdf').click(function () {
+  doc.fromHTML($('#DivIdToPrint').html(), 15, 15, {
+      'width': 170,
+          'elementHandlers': specialElementHandlers
+  });
+  doc.save('sample-file.pdf');
+});
 
 $('#driver').change(function() {
     if(this.checked) {
@@ -164,6 +219,10 @@ function getInvoice()
     }else if(document.getElementById('driver').checked === true)
     {
         myInvoice=document.getElementById('driver').value;
+    }else {
+      stopLoader();
+      myAlert('Please Select an category');
+      return '';
     }
     mydataInv["for"]=myInvoice;
     var temp1 = document.getElementById("fromto").innerHTML;
@@ -187,4 +246,9 @@ function date_format_db(x) {
       year = d.getFullYear();
   
     return year + "-" + month + "-" + day;
+  }
+
+  function myAlert(msg)
+  {
+    alert(msg);
   }
