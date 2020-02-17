@@ -204,8 +204,8 @@ function getInvoice()
     {
         myInvoice=document.getElementById('driver').value;
     }else {
-      startLoader();
-      alert('Please Select an category');
+      stopLoader();
+      myAlert('Please Select an category');
       return '';
     }
     mydataInv["for"]=myInvoice;
@@ -230,4 +230,9 @@ function date_format_db(x) {
       year = d.getFullYear();
   
     return year + "-" + month + "-" + day;
+  }
+
+  function myAlert(msg)
+  {
+    alert(msg);
   }
