@@ -2,6 +2,16 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
+
+
+var specialElementHandlers = {
+  '#downloadEditor': function (element, renderer) {
+      return true;
+  }
+};
+
+
+
 function get_response(myGetUrl, mydata) {
     $.ajax({
       type: "POST",
@@ -173,7 +183,13 @@ document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> C
         
 });
 
-  
+$('#downloadPdf').click(function () {
+  doc.fromHTML($('#DivIdToPrint').html(), 15, 15, {
+      'width': 170,
+          'elementHandlers': specialElementHandlers
+  });
+  doc.save('sample-file.pdf');
+});
 
 $('#driver').change(function() {
     if(this.checked) {
