@@ -14,7 +14,7 @@ function get_response(myGetUrl, mydata) {
             setList(data);
           }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
 		setInvoiceTable(data);
-          }else if(mydataInv["for"] == 'driver')
+          }else if(mydataInv["for"] == 'all')
           {
             setAllTable(data);
           }
@@ -111,6 +111,7 @@ function setInvoiceTable(myData)
 function setAllTable(x)
 {
     console.log(x);
+    stopLoader();
 }
 function SendEmail()
 {
