@@ -9,11 +9,14 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-          if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
+           if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
           {
             setList(data);
           }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
 		setInvoiceTable(data);
+          }else if(mydataInv["for"] == 'driver')
+          {
+            setAllTable(data);
           }
         
        
@@ -103,6 +106,11 @@ function setInvoiceTable(myData)
     setDate(myTemp.no);
     stopLoader();
         
+}
+
+function setAllTable(x)
+{
+    console.log(x);
 }
 function SendEmail()
 {
