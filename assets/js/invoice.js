@@ -108,10 +108,40 @@ function setInvoiceTable(myData)
         
 }
 
-function setAllTable(x)
+function setAllTable(myData)
 {
-    console.log(x);
-    stopLoader();
+  var myTemp= JSON.parse(myData);
+  var myObj=myTemp["list"];
+  var temp ='';
+  var total_fare=0;
+  var total_dfare=0;
+  document.getElementById("InvoiceTable").innerHTML='';
+  for(var i=0;i<myObj.length;i++)
+  {
+      temp=temp+'<tr>';
+      temp=temp+'<td >'+myObj[i].refid+'</td>';
+      temp=temp+'<td >'+myObj[i].src+'</td>';
+      temp=temp+'<td >'+myObj[i].des+'</td>';
+      temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
+      temp=temp+'<td >'+myObj[i].fare+'</td>';
+      temp=temp+'<td >'+myObj[i].dfare+'</td>';
+      temp=temp+'<td >'+myObj[i].commision+'</td>';
+      temp=temp+'</tr>';
+      total_fare= total_fare + parseFloat(myObj[i].fare);
+      total_dfare =total_dfare + parseFloat(myObj[i].dfare);
+      
+  }
+
+  document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
+  document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
+  document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
+  document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
+  document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
+
+  document.getElementById("BasicDriverInfo").innerHTML='';
+  setDate(myTemp.no);
+  stopLoader();
+      
 }
 function SendEmail()
 {
