@@ -3,7 +3,7 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
 
-
+var doc = new jsPDF();
 var specialElementHandlers = {
   '#downloadEditor': function (element, renderer) {
       return true;
