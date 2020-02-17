@@ -203,6 +203,10 @@ function getInvoice()
     }else if(document.getElementById('driver').checked === true)
     {
         myInvoice=document.getElementById('driver').value;
+    }else {
+
+      alert('Please Select an category');
+      return '';
     }
     mydataInv["for"]=myInvoice;
     var temp1 = document.getElementById("fromto").innerHTML;
