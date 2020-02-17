@@ -204,7 +204,7 @@ function getInvoice()
     {
         myInvoice=document.getElementById('driver').value;
     }else {
-
+      startLoader();
       alert('Please Select an category');
       return '';
     }
