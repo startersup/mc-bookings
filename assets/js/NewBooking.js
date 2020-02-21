@@ -40,6 +40,11 @@ function get_response(myGetUrl, mydata) {
       }
     });
   }
+
+  unction setLoad()
+  {
+    $("#myAlert").fadeOut();
+  }
 function showStatus(obj)
 {
 	myObj= JSON.parse(obj);
@@ -56,7 +61,7 @@ function showStatus(obj)
   else{
     $("#myAlert_class").addClass('color-red');
   }
-  
+  $("#myAlert").fadeIn();
 }
   function bookNow()
   {
@@ -182,6 +187,6 @@ function MaskedNumber(ele, num) {
   $("#myAlert_class").removeClass('color-red');
  
     $("#myAlert_class").addClass('color-red');
-  
+    $("#myAlert").fadeIn();
   
   }
