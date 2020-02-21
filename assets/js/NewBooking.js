@@ -44,6 +44,7 @@ function get_response(myGetUrl, mydata) {
   function setLoad()
   {
     $("#myAlert").fadeOut();
+    console.log('sdjkds');
   }
 function showStatus(obj)
 {
