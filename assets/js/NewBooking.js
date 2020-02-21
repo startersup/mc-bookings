@@ -44,7 +44,7 @@ function get_response(myGetUrl, mydata) {
   function setLoad()
   {
     $("#myAlert").fadeOut();
-    console.log('sdjkds');
+   
   }
 function showStatus(obj)
 {
@@ -182,7 +182,7 @@ function MaskedNumber(ele, num) {
   function myAlert(msg)
   {
 
-  $("#myAlert_status").html("Alert"));
+  $("#myAlert_status").html("Alert");
   $("#myAlert_msg").html(msg);
   $("#myAlert_class").removeClass('color-green');
   $("#myAlert_class").removeClass('color-red');
