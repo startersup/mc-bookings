@@ -191,3 +191,8 @@ function MaskedNumber(ele, num) {
     $("#myAlert").fadeIn();
   
   }
+
+  function closeModal()
+  {
+    $("#myAlert").fadeOut();
+  }
