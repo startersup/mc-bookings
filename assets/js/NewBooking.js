@@ -43,8 +43,20 @@ function get_response(myGetUrl, mydata) {
 function showStatus(obj)
 {
 	myObj= JSON.parse(obj);
-	alert(myObj["status"]+" "+myObj["message"]);
-	
+	// alert(myObj["status"]+" "+myObj["message"]);
+  
+  $("#myAlert_status").html(myObj["status"]);
+  $("#myAlert_msg").html(myObj["message"]);
+  $("#myAlert_class").removeClass('color-green');
+  $("#myAlert_class").removeClass('color-red');
+  if(myObj["status"] === 'success' )
+  {
+    $("#myAlert_class").addClass('color-green');
+  }
+  else{
+    $("#myAlert_class").addClass('color-red');
+  }
+  
 }
   function bookNow()
   {
@@ -163,5 +175,13 @@ function MaskedNumber(ele, num) {
 
   function myAlert(msg)
   {
-    alert(msg);
+
+  $("#myAlert_status").html("Alert"));
+  $("#myAlert_msg").html(msg);
+  $("#myAlert_class").removeClass('color-green');
+  $("#myAlert_class").removeClass('color-red');
+ 
+    $("#myAlert_class").addClass('color-red');
+  
+  
   }
