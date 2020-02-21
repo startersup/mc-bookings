@@ -41,7 +41,7 @@ function get_response(myGetUrl, mydata) {
     });
   }
 
-  unction setLoad()
+  function setLoad()
   {
     $("#myAlert").fadeOut();
   }
