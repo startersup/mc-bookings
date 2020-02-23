@@ -3,12 +3,6 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
 
-var doc = new jsPDF();
-var specialElementHandlers = {
-  '#downloadEditor': function (element, renderer) {
-      return true;
-  }
-};
 
 
 
@@ -183,13 +177,7 @@ document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> C
         
 });
 
-$('#downloadPdf').click(function () {
-  doc.fromHTML($('#DivIdToPrint').html(), 15, 15, {
-      'width': 170,
-          'elementHandlers': specialElementHandlers
-  });
-  doc.save('sample-file.pdf');
-});
+  
 
 $('#driver').change(function() {
     if(this.checked) {

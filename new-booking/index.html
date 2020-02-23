@@ -23,7 +23,7 @@
   <script src="../assets/js/NewBooking.js"></script>
  
 </head>
-<body >
+<body onload="setLoad();">
 
   <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="display: block;background-color: rgba(255, 255, 255, 0.79);min-width: 1500px;top:45px;left:65px;border:none;">
     <div class="modal11-content">
@@ -84,9 +84,9 @@
     </div>
     
       <!----sub-navbar-ends----->
-    <div class=" mc-alert-box alert-dismissible">
-      <div class="mc-alert-status color-green"><p>Success</p></div>
-      <div class="mc-alert-desc ">     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p> hII there</p></div>
+    <div class=" mc-alert-box alert-dismissible" id="myAlert">
+      <div class="mc-alert-status color-green" id="myAlert_color" ><p id="myAlert_status" >Success</p></div>
+      <div class="mc-alert-desc " >     <a href="#" onclick="closeModal();" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="myAlert_msg"> hII there</p></div>
     </div>
     
     
