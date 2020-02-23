@@ -1245,20 +1245,21 @@ border: 0.5px solid #cfd7df;
 /******empty_states images****/
 .empty_states
 {
-    max-width:550px;
+    max-width:700px;
     margin:0 auto;
 }
 .empty_states p
 {
     text-align: center;
     font-weight:600;
+    margin-top: -50px;
     padding:10px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .empty_image
 {
-    max-width:600px;
+    max-width:700px;
     width:100%;
 }
 
