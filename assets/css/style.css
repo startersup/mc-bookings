@@ -1239,6 +1239,46 @@ border: 0.5px solid #cfd7df;
 }
 
 
+/****tooltips****/
+
+.mc-dash-sidebar ul li:hover  .tooltiptext
+{
+display: block;
+}
+
+
+.tooltip-col {
+    position: relative;
+}
+
+.tooltiptext {
+    display: none;
+    width: 100px;
+    height:auto;
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    top:0;
+    border-top-right-radius:3px ;
+    border-bottom-right-radius:3px ;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding:5px 10px;
+    position: absolute;
+    z-index: 0;
+    font-size:12px;
+    left:40px;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
 
 
 
