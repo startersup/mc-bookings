@@ -118,7 +118,7 @@
     <ul>
     <li><a> <input type="checkbox" id="all" name="job-list" value="all"> Cumulative Job List</a></li>
     <li><a><input type="checkbox" id="driver"  name="job-list" value="driver"> Drivers List</a></li>
-        <li> <button  type="button" class="mc-cta" id="get_details" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Fetching Details">Get Now</button></li>
+        <li> <button  type="button" class="mc-cta" id="get_details" >Get Now</button></li>
     </ul>
    
 
@@ -140,11 +140,11 @@
     
     <div class="mc-dash-mainbar" style="margin-left:420px;">
 <div class="mc-mainbar-components">
-    <div class="preview-viewer">
+    <div class="preview-viewer" style="display:none;">
     <div class="container3">
         <div class="top" style="margin-top:20px;">
           <div id="downloadEditor"></div>
-            <div class="invoice-box" id='DivIdToPrint' style="max-width:2000px;padding:30px;background-color:#ffffff;border:1px solid #eee;box-shadow:0 0 10px rgba(0, 0, 0, .15);font-size:16px;line-height:24px;font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;color:#555;">
+            <div class="invoice-box" id='DivIdToPrint'  style="max-width:2000px;padding:30px;background-color:#ffffff;border:1px solid #eee;box-shadow:0 0 10px rgba(0, 0, 0, .15);font-size:16px;line-height:24px;font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;color:#555;">
                 <table cellpadding="0" cellspacing="0" style="width:100%;line-height:inherit;text-align:left;border-collapse:collapse;border-spacing:0;">
 <tr class="top" style="margin-top:20px;">
 <td colspan="4" style="padding: 5px;
@@ -166,7 +166,7 @@
                       <table style="border-collapse:collapse;border-spacing:0;width:100%;line-height:inherit;text-align:left;"><tr>
 <td style="padding: 5px;
   vertical-align: top;"  id="BasicDriverInfo">
-                           Mr. -------s<br> ---------
+                           Mr. -------<br> ---------
                           </td>
 
                           <td style="float:right !important;padding:5px;vertical-align:top;">
@@ -241,12 +241,12 @@
 }
 </style>
     </div>
-<!--
-	  <div class="empty_states">
+
+	  <div class="empty_states" style="display:block">
      <img class="empty_image" src="/assets/images/empty-states/invoice_empty.png">
           <p>Sorry No Preview Available</p>
        </div>
--->
+
         </div>
 
       <!---mainbar-starts----->
@@ -319,6 +319,14 @@ window.onclick = function(event) {
 }</script>
     
     
+    <script>
+    $(document).ready(function(){
+  $("#get_details").click(function(){
+    $(".empty_states").css("display", "none");
+    $(".preview-viewer").css("display", "block");
+  });
+});
+    </script>
     
  <script type="text/javascript">
 $(function() {
