@@ -32,7 +32,7 @@ session_start();
 }
   else if($for == "all")
   {
-    $sql=" SELECT register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
+    $sql=" SELECT register.dt,register.time,register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
   }
    //echo($sql."<br>") ;
    $result=  mysqli_query($conn,$sql);
