@@ -27,8 +27,8 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script type="text/javascript" src="./assets/js/invoice.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="text/javascript" src="../assets/js/invoice.js"></script>
 </head>
 
 <body onload="stopLoader();">
@@ -38,7 +38,7 @@
     style="display: block;background-color: rgba(255, 255, 255, 0.79);min-width: 1500px;top:45px;left:65px;border:none;">
     <div class="modal11-content">
       <div class="loader" style="position:absolute;top:300px;left:650px;">
-        <centre> <img src="./assets/images/myLoader.gif"></centre>
+        <centre> <img src="../assets/images/myLoader.gif"></centre>
 
       </div>
 
@@ -54,13 +54,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="./"><img src="./assets/icons/fleet.png">Minicabee Travel Solutions<span></span></a>
+        <a class="navbar-brand" href="../"><img class="mc-nav-logo" src="../assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav mc-dash-mid">
-          <li class="active"><a class="mc-load" href="./index.html">Passengers</a></li>
-          <li><a class="mc-load" href="./drivers/">Drivers</a></li>
-          <li><a class="mc-load" href="./partners">Partners</a></li>
+          <li class="active"><a class="mc-load" href="../passengers/">Passengers</a></li>
+          <li><a class="mc-load" href="../drivers/">Drivers</a></li>
+          <li><a class="mc-load" href="../partners/">Partners</a></li>
+          <li><a class="mc-load" href="./invoice/">Invoice</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
               <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
@@ -74,7 +75,7 @@
                   </div>
           </li>
           <li><a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a></li>
-            <li><a href="#"><img src="./assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
+            <li><a href="#"><img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
         </ul>
       </div>
     </div>
@@ -336,7 +337,7 @@
     </div>
 
     <div class="empty_states" style="display:block">
-      <img class="empty_image" src="./assets/images/empty-states/mc_empty_states.png">
+      <img class="empty_image" src="../assets/images/empty-states/mc_empty_states.png">
       <p>Sorry No Preview Available</p>
     </div>
 
