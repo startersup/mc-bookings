@@ -740,15 +740,19 @@ background-color: #E7FAEC;
 }
 .dt-button
 {
-    border-radius: 3px;
-    border: 1px solid #39b2c2;
-    color: #39b2c2;
+    border: 1px solid #39c289;
+    color: #39c289;
     letter-spacing: .5px;
     cursor: pointer;
      font-family: 'Montserrat', sans-serif;
     font-size:12px;
-    padding:5px 15px;
+    padding:5px 20px;
     font-weight:600;
+}
+.dt-button:hover
+{
+background-color: #39c289;
+color:#ffffff;
 }
 .mc-datatables
 {
