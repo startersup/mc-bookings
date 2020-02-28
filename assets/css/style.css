@@ -1160,7 +1160,7 @@ margin: 8px 0;
 }
 .modal-backdrop.in
 {
-    opacity:0;
+    opacity:1;
 }
 	.modal.left .modal-dialog,
 	.modal.right .modal-dialog {
