@@ -1324,7 +1324,9 @@ display: block;
 }
 
 /****new-booking***/
-#wrapper { position: relative; }
+#wrapper {     position: fixed;
+    width: 30%;
+ }
 #over_map { position: absolute;color:#ffffff;background-color: #4e009f;
     top:0px;left:0px;max-width: 800px;width:100%;padding:10px; }
 #map {
