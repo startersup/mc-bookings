@@ -24,7 +24,35 @@ function get_response(myGetUrl, mydata) {
       }
     });
   }
+
+  function get_driver(myGetUrl, mydata) {
+ 
+    $.ajax({
+      type: "POST",
+      url: myGetUrl,
+      data: mydata,
+      async: false,
+      success: function(data) {
+        
+       setDriver(data);
+	   
+      },
+      error: function(xhr) {
+        
+      }
+    });
+  }
   
+  function setDriver(data)
+  {
+    driverList= JSON.parse(data);
+    var content ='';
+    for(var i=0;i<driverList;i++)
+    {
+      content = content + '<option value="'+driverList[i]['id']+'"> '+driverList[i]['name']+'</option>';
+    }
+    document.getElementById('drvid').innerHTML =content;
+  }
   function get_Booking(myGetUrl, mydata) {
  
     $.ajax({
@@ -44,7 +72,9 @@ function get_response(myGetUrl, mydata) {
   function setLoad()
   {
     $("#myAlert").fadeOut();
-   
+    var myGetUrl = myUrl + "myapi/book.php";
+    var myData ={};
+    get_driver(myGetUrl,myData)
   }
 function showStatus(obj)
 {
