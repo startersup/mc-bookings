@@ -957,7 +957,7 @@ width: 100%;
     border-left:none;
     border-bottom: 1px solid #d0d9e2!important;
     font-family: 'Montserrat', sans-serif;
-       background-color: #ffffff;
+       background-color: #f4f4f4;
 }
 .mc-alert-box
 {
@@ -1017,7 +1017,7 @@ padding:20px;
 
 .controls {
 margin: 8px 0;
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color:#f4f4f4;
     border-top:none;
     border-right:none;
     border-left:none;
@@ -1025,7 +1025,7 @@ margin: 8px 0;
     color: #000000 !important;
     width: 100%;
     font-size: 13px !important;
-    padding: 9px 20px;
+    padding: 9px 0px 9px 10px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     min-height: 40px;
@@ -1037,7 +1037,7 @@ margin: 8px 0;
     margin: 8px 0;
     width:100%;
     border: 1px solid #eeeeee;
-    background-color: #f5f6f7;
+    background-color: #eaeaea;
     color: #000000;
     font-size:13px;
     font-weight:400;
