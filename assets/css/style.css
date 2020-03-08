@@ -959,17 +959,16 @@ width: 100%;
     font-family: 'Montserrat', sans-serif;
        background-color: #f4f4f4;
 }
-.mc-alert-box
-{
+.mc-alert-box {
     background-color: #ffffff;
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
     position: absolute;
     z-index: 20;
-    top:20px;
-    display:flex;
-    right:30px;
-    max-width:500px;
-    width:100%;
+    top: 46px;
+    display: flex;
+    right: 30px;
+    max-width: 400px;
+    width: 100%;
     border: 1px solid #d0d9e2!important;
 }
 .mc-alert-box p
