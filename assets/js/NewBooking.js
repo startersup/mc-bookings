@@ -2,11 +2,25 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
-var myId =["origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","mobile2","address1","address2","np","np2","nl","location","info","drvid","dfare"];
-var myMandId =["origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","address1","address2","np","np2","nl"];
-var myClearId=["route_fare","route_time","route_miles","origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","mobile2","address1","address2","np","np2","nl","location","info","drvid","dfare"];
+var myId =["origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","mobile2","address1","address2","np","np2","nl","location","info","drvid","dfare","date","time"];
+var myMandId =["origin-input","destination-input","cabType",,"datetimepicker","booked_site","fare","name","mail","mobile1","address1","address2","np","np2","nl"];
+var myClearId=["route_fare","route_time","route_miles","origin-input","destination-input","cabType","booked_site","fare","name","mail","mobile1","mobile2","address1","address2","np","np2","nl","location","info","drvid","dfare","datetimepicker"];
 var myDataBook={};
 var myFareObj={};
+
+function DateSplitter()
+{
+    var myval = document.getElementById('datetimepicker').value; 
+   
+    if(myval !== '')
+    {
+      var myVals = myval.split(' ');
+      document.getElementById('date').value = =myVals[0].replace("/","-");
+      document.getElementById('time').value = =myVals[1];
+    }
+ 
+
+}
 function get_response(myGetUrl, mydata) {
  
     $.ajax({
@@ -41,6 +55,8 @@ function get_response(myGetUrl, mydata) {
         
       }
     });
+
+
   }
   
   function setDriver(data)
@@ -52,6 +68,8 @@ function get_response(myGetUrl, mydata) {
       content = content + '<option value="'+driverList[i]['id']+'"> '+driverList[i]['name']+'</option>';
     }
     document.getElementById('drvid').innerHTML =content;
+
+    $("#myAlert").fadeOut();
   }
   function get_Booking(myGetUrl, mydata) {
  
@@ -71,7 +89,7 @@ function get_response(myGetUrl, mydata) {
 
   function setLoad()
   {
-    $("#myAlert").fadeOut();
+    
     var myGetUrl = myUrl + "myapi/book.php";
     var myData ={};
     get_driver(myGetUrl,myData)
@@ -107,7 +125,8 @@ function showStatus(obj)
 			var temp= myId[i];
 			mydata[temp]=document.getElementById(temp).value;
         }
-		var myGetUrl = myUrl + "myapi/book.php";
+    var myGetUrl = myUrl + "myapi/book.php";
+    
   		get_Booking(myGetUrl, mydata);
 		}
     }
