@@ -64,7 +64,7 @@ function get_response(myGetUrl, mydata) {
   {
     driverList= JSON.parse(data);
     var content ='';
-    for(var i=0;i<driverList;i++)
+    for(var i=0;i<driverList.length;i++)
     {
       content = content + '<option value="'+driverList[i]['id']+'"> '+driverList[i]['name']+'</option>';
     }
