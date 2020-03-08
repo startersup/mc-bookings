@@ -15,8 +15,8 @@ function DateSplitter()
     if(myval !== '')
     {
       var myVals = myval.split(' ');
-      document.getElementById('date').value = =myVals[0].replace("/","-");
-      document.getElementById('time').value = =myVals[1];
+      document.getElementById('date').value = myVals[0].replace("/","-");
+      document.getElementById('time').value = myVals[1];
     }
  
 
