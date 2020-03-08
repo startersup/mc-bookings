@@ -16,6 +16,7 @@ function DateSplitter()
     {
       var myVals = myval.split(' ');
       document.getElementById('date').value = myVals[0].replace("/","-");
+      document.getElementById('date').value = document.getElementById('date').value.replace("/","-");
       document.getElementById('time').value = myVals[1];
     }
  
@@ -68,8 +69,7 @@ function get_response(myGetUrl, mydata) {
       content = content + '<option value="'+driverList[i]['id']+'"> '+driverList[i]['name']+'</option>';
     }
     document.getElementById('drvid').innerHTML =content;
-
-    $("#myAlert").fadeOut();
+    document.getElementById("spinnermodal").style.display = "none";
   }
   function get_Booking(myGetUrl, mydata) {
  
@@ -90,7 +90,9 @@ function get_response(myGetUrl, mydata) {
   function setLoad()
   {
     
-    var myGetUrl = myUrl + "myapi/book.php";
+    $("#myAlert").fadeOut();
+    document.getElementById("spinnermodal").style.display = "block";
+    var myGetUrl = myUrl + "myapi/alldriver.php";
     var myData ={};
     get_driver(myGetUrl,myData)
   }
@@ -210,8 +212,7 @@ function MaskedNumber(ele, num) {
 }
   function GetFare()
   {
-    
-
+   
     if(document.getElementById('destination-input').value === '' || document.getElementById('origin-input').value === '')
     {
         myAlert('Please Fill the PickUp and Drop Points');
