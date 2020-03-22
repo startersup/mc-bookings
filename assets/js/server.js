@@ -206,6 +206,10 @@ $(document).ready(function() {
     }
   });
 
+  $("#BookingUpdate").click(function() {
+    
+  });
+
   $("#filter_load").click(function() {
     searchByFilter();
   });

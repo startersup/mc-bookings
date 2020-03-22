@@ -17,29 +17,34 @@ else
 {
     date_default_timezone_set('Europe/London');
     
-    $src = $_REQUEST['start'];
-    $des = $_REQUEST['end']; 
-    $via = $_REQUEST['via'];
-    $pdate= $_REQUEST['dt'];
-    $ptime= $_REQUEST['pt'];
-    $np = $_REQUEST['np']; 
-    $nl=$_REQUEST['nl']; 
-    $type=$_REQUEST['type']; 
-    $time=$_REQUEST['time'];
-    $agency= $_REQUEST['agency'];
-    $fare=$_REQUEST['fare'];
-    $name=$_REQUEST['name'];
-    $mail=$_REQUEST['mail'];
-    $num1=$_REQUEST['number1'];
-    $num2=$_REQUEST['number2'];
-    $pick=$_REQUEST['pickup'];
-    $info=$_REQUEST['info'];
-    $pm=$_REQUEST['payment'];
-    $via=$_REQUEST['via'];
-    $add1=$_REQUEST['address1'];
-    $add2=$_REQUEST['address2'];
-    $extra=$_REQUEST['check'];
-    $child=$_REQUEST['child'];
+   
+   
+    $id=$_REQUEST['id'];
+  
+  $date= date("Y-m-d");
+    $today=$date;
+
+
+    $sql="SELECT * from register WHERE refid ='".$id."'  ";
+
+
+  $result=  mysqli_query($conn,$sql);
+  
+$row1["status"]="null";
+ 
+  
+  while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
+  {
+     
+        $row1=$row;
+    }
+
+
+  
+ 
+  
+// echo("<br><br>");
+  echo  json_encode($row1);
 
 }
 
