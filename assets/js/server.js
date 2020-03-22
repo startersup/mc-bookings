@@ -176,10 +176,11 @@ function clearClass() {
 }
 $(document).ready(function() {
   $(".booking").click(function() {
+    clearClass();  
     $(this).addClass("active");
     startLoader();
     var id = $(this).attr("id");
-    clearClass();   
+     
     SetParam(id);
   });
 
