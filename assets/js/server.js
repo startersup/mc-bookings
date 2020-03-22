@@ -209,7 +209,7 @@ $(document).ready(function() {
       var val = this.value;
       myData[key]=val;
     });
-
+    myData["refid"] = document.getElementById("myModalBookId_temp").innerHTML;
     var myGetUrl = myUrl + "myapi/UpdateBooking.php";
     
     get_url_response(myGetUrl, myData, "UpdationAlert");
