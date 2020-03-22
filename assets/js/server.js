@@ -18,12 +18,12 @@ var modalPing = "";
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
 
-    $("#spinnermodal").fadeIn();
+    $("#spinnermodal").fadeIn(3500);
 }
 function stopLoader() {
   //document.getElementById("spinnermodal").style.display = "none";
 
-    $("#spinnermodal").fadeOut();
+    $("#spinnermodal").fadeOut(200);
 }
 function pageLoad() {
   SetParam("today");
