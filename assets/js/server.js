@@ -209,13 +209,21 @@ $(document).ready(function() {
       var val = this.value;
       myData[key]=val;
     });
+
+    var myGetUrl = myUrl + "myapi/UpdateBooking.php";
     
+    get_url_response(myGetUrl, myData, "UpdationAlert");
   });
 
   $("#filter_load").click(function() {
     searchByFilter();
   });
 });
+
+function UpdationAlert(myData)
+{
+  console.log(myData);
+}
 function searchByFilter() {
   var mydata = {};
   if (document.getElementById("filter_all").checked) {
