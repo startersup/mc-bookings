@@ -57,6 +57,7 @@ else{
 
 }
 
+echo json_encode($row);
 mysqli_close($conn);
 
 ?>
