@@ -2,10 +2,10 @@
 function loadDriver() {
     var tempData = {};
     var url = myUrl + "myapi/driver.php";
-    get_url_response(url,    tempData, "setPassenger");
+    get_url_response(url,    tempData, "setDriver");
   }
   
-  function setPassenger(data) {
+  function setDriver(data) {
       var myTable = $("#mc-datatables").DataTable();
       myTable.destroy();
       var result = JSON.parse(data);
