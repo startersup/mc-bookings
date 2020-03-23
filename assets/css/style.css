@@ -31,11 +31,6 @@ body
 {
     border : 1px red solid;
 }
-<<<<<<< HEAD
-.mc-nav-logo
-{
-    max-width:80px;
-=======
 .navbar-brand
 {
     display:flex;
@@ -48,7 +43,6 @@ body
 .mc-nav-logo
 {
     max-width:60px;
->>>>>>> parent of 399cc62... driver
 }
 .mc-dash-nav
 {
