@@ -33,6 +33,7 @@ echo  json_encode($temp);
 
 mysqli_close($conn);
 
+}
 ?>
 
 
