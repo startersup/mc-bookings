@@ -23,7 +23,6 @@ function setPassenger(data) {
         { data: "num2" },
         { data: "tcount"},
         { data:"tfare" },
-        { data: null },
         { data: null }
       ],
       "fnRowCallback": function (nRow, aData, iDisplayIndex) {
