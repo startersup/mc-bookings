@@ -31,9 +31,24 @@ body
 {
     border : 1px red solid;
 }
+<<<<<<< HEAD
 .mc-nav-logo
 {
     max-width:80px;
+=======
+.navbar-brand
+{
+    display:flex;
+    padding:8px 0px;
+}
+.mc-buyer-name
+{
+    margin-top:8px;
+}
+.mc-nav-logo
+{
+    max-width:60px;
+>>>>>>> parent of 399cc62... driver
 }
 .mc-dash-nav
 {
@@ -62,7 +77,7 @@ body
 .navbar-default .navbar-brand span
 {
     border-right:1px solid #ffffff;
-    margin:0px 10px;
+    margin: 0px 15px 0px 3px;
 }
 .navbar-default .navbar-brand:hover
 {
@@ -736,6 +751,11 @@ background-color: #E7FAEC;
     padding:5px 15px;
     font-weight:600;
 }
+.dt-button:hover
+{
+    background-color:#e7e7e7;
+    transition: all 0.8s;
+}
 .mc-datatables
 {
     height: -moz-calc(100% - 50px);
@@ -793,10 +813,11 @@ background-color: #4e009f !important;
     font-size:12.5px;
     border-top: 1px solid rgba(221, 221, 221, 0.38);
 }
-.table>tbody>tr.even
+/* .table>tbody>tr.even
 {
         background: #f9f6ff!important;
-}
+} */
+
 #driver h3
 {
      font-family: 'Montserrat', sans-serif;
@@ -910,8 +931,6 @@ background-color: #4e009f !important;
 
 
 
-
-
 /*****inputs***/
 
 .mc-input-select {
@@ -940,26 +959,29 @@ width: 100%;
     border-top:none;
     border-right:none;
     border-left:none;
-    border-bottom: 1px solid #d0d9e2!important;
+    border: 1px solid #d0d9e2!important;
     font-family: 'Montserrat', sans-serif;
-       background-color: #ffffff;
+       background-color: #f4f4f4;
 }
-.mc-alert-box
-{
+.mc-alert-box {
     background-color: #ffffff;
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
     position: absolute;
     z-index: 20;
-    top:20px;
-    display:flex;
-    right:30px;
-    max-width:500px;
-    width:100%;
+    top: 46px;
+    display: flex;
+    right: 30px;
+    max-width: 400px;
+    width: 100%;
     border: 1px solid #d0d9e2!important;
 }
 .mc-alert-box p
 {
-    padding:20px 10px;
+    padding:5px 10px;
+}
+.myAlert_status
+{
+    margin-top:15px;
 }
 .color-red
 {
@@ -1002,15 +1024,15 @@ padding:20px;
 
 .controls {
 margin: 8px 0;
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color:#f4f4f4;
     border-top:none;
     border-right:none;
     border-left:none;
-    border-bottom: 1px solid #d0d9e2!important;
+    border: 1px solid #d0d9e2!important;
     color: #000000 !important;
     width: 100%;
     font-size: 13px !important;
-    padding: 9px 20px;
+    padding: 9px 0px 9px 10px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     min-height: 40px;
@@ -1022,7 +1044,7 @@ margin: 8px 0;
     margin: 8px 0;
     width:100%;
     border: 1px solid #eeeeee;
-    background-color: #f5f6f7;
+    background-color: #f4f4f4;
     color: #000000;
     font-size:13px;
     font-weight:400;
@@ -1055,11 +1077,11 @@ margin: 8px 0;
 
 /*****mc-buttons******/
 .mc-add-btn {
-border: 0.5px solid #cfd7df;
-    background: linear-gradient(to bottom,#f7f7f7,#f5f7f9);
+    border: 0.5px solid #d80014;
+    background: #f15463;
     border-radius: 0px;
     display: inline-block;
-    color: #12344d;
+    color: #ffffff;
     text-align: center;
     padding: 6px 12px;
     font-size: 12px;
@@ -1145,7 +1167,8 @@ border: 0.5px solid #cfd7df;
 }
 .modal-backdrop.in
 {
-    opacity:0;
+    opacity:0.5;
+    background-color:#000000;
 }
 	.modal.left .modal-dialog,
 	.modal.right .modal-dialog {
@@ -1243,31 +1266,74 @@ border: 0.5px solid #cfd7df;
 }
 
 
+/****tooltips****/
+
+.mc-dash-sidebar ul li:hover  .tooltiptext
+{
+display: block;
+}
+
+
+.tooltip-col {
+    position: relative;
+}
+
+.tooltiptext {
+    display: none;
+    width: 100px;
+    height:auto;
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    top:0;
+    border-top-right-radius:3px ;
+    border-bottom-right-radius:3px ;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding:5px 10px;
+    position: absolute;
+    z-index: 0;
+    font-size:12px;
+    left:40px;
+}
+
+.tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
 
 
 
 /******empty_states images****/
 .empty_states
 {
-    max-width:550px;
+    max-width:700px;
     margin:0 auto;
 }
 .empty_states p
 {
     text-align: center;
     font-weight:600;
+    margin-top: -50px;
     padding:10px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .empty_image
 {
-    max-width:600px;
+    max-width:700px;
     width:100%;
 }
 
 /****new-booking***/
-#wrapper { position: relative; }
+#wrapper {     position: fixed;
+    width: 30%;
+ }
 #over_map { position: absolute;color:#ffffff;background-color: #4e009f;
     top:0px;left:0px;max-width: 800px;width:100%;padding:10px; }
 #map {
@@ -1335,7 +1401,6 @@ border: 0.5px solid #cfd7df;
   .mc-driver-alloc
   {background-color:#ffffff;
       padding-bottom:30px;
-      position: fixed;
       margin-right:10px;
       margin-top:10px;
       top:90px;
@@ -1343,15 +1408,15 @@ border: 0.5px solid #cfd7df;
   }
   .mc-booking-sms
   {
-      height:calc(100%-40px);
+      /* height:calc(100%-40px);
       top:80px;
 position: absolute;
-margin-top:100px;
+margin-top:100px; */
   }
 
   .tickettable td{
     padding: 10px;
-        border: 1px solid rgb(224, 224, 224);
+    border: 1px solid #f1f1f1;
     }
     .dataTables_wrapper
     {
