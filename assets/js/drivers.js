@@ -21,7 +21,7 @@ function loadDriver() {
           { data: "mail" },
           { data: "num1" },
           { data: "num2" },
-          { data: ""},
+          { data: null},
           { data:"status" },
           { data: null ,defaultContent: '<button class="mc-add-btn" >Delete</button>'}
         ],
