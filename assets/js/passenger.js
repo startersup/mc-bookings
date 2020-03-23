@@ -2,7 +2,7 @@
 function loadPassenger() {
   var tempData = {};
   var url = myUrl + "myapi/passengerList.php";
-  get_url_response(myGetUrl,    tempData, "setPassenger");
+  get_url_response(url,    tempData, "setPassenger");
 }
 
 function setPassenger(data) {
