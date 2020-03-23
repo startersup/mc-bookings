@@ -19,7 +19,7 @@ function loadDriver() {
           { data: null },
           { data: "name" },
           { data: "e_mail" },
-          { data: "mobile1" },
+          { data: "mobile" },
           { data: "mobile2" },
           { data: null},
           { data:"status" },
