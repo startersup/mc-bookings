@@ -18,12 +18,12 @@ var modalPing = "";
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
 
-    $("#spinnermodal").fadeIn();
+  $("#spinnermodal").fadeIn(3500);
 }
 function stopLoader() {
   //document.getElementById("spinnermodal").style.display = "none";
 
-    $("#spinnermodal").fadeOut();
+  $("#spinnermodal").fadeOut(200);
 }
 function pageLoad() {
   SetParam("today");
@@ -81,13 +81,8 @@ function setRow(data) {
     data: result,
     lengthChange: false,
     searching: false,
-    dom: 'Bfrtip',
-    buttons: [
-        'copyHtml5',
-        'excelHtml5',
-        'csvHtml5',
-        'pdfHtml5'
-    ],
+    dom: "Bfrtip",
+    buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
     columns: [
       { data: "refid" },
       { data: "booked_site" },
@@ -176,10 +171,11 @@ function clearClass() {
 }
 $(document).ready(function() {
   $(".booking").click(function() {
+    clearClass();
     $(this).addClass("active");
     startLoader();
     var id = $(this).attr("id");
-    clearClass();   
+
     SetParam(id);
   });
 
@@ -205,10 +201,29 @@ $(document).ready(function() {
     }
   });
 
+  $("#BookingUpdate").click(function() {
+    var myData={};
+    $("#passenger :input").each(function(e) {
+     
+     var key = this.name;
+      var val = this.value;
+      myData[key]=val;
+    });
+    myData["refid"] = document.getElementById("myModalBookId_temp").innerHTML;
+    var myGetUrl = myUrl + "myapi/UpdateBooking.php";
+    
+    get_url_response(myGetUrl, myData, "UpdationAlert");
+  });
+
   $("#filter_load").click(function() {
     searchByFilter();
   });
 });
+
+function UpdationAlert(myData)
+{
+  console.log(myData);
+}
 function searchByFilter() {
   var mydata = {};
   if (document.getElementById("filter_all").checked) {
@@ -377,39 +392,35 @@ function setModalData(myData) {
     document.getElementById("id_number1").value = number1_data;
     document.getElementById("id_number2").value = number2_data;
 
-//End of message part
-    if(myObj.length>0 && myObj[0].status != 'comitted')
-    {
-        setBid(myObj);
-    }else{
-        var temp ='';
-            temp=temp+'<tr>';
-            temp=temp+'<td>'+myObj[0].drvid+'</td>';
-            temp=temp+'<td>'+myObj[0].dname+'</td>';
-            temp=temp+'<td>'+myObj[0].dfare+'</td>';
-            temp=temp+'<td>Allocated</td>';
-            temp=temp+'</tr>';
-     
-        document.getElementById("Allocate_Table").innerHTML=temp;
+    //End of message part
+    if (myObj.length > 0 && myObj[0].status != "comitted") {
+      setBid(myObj);
+    } else {
+      var temp = "";
+      temp = temp + "<tr>";
+      temp = temp + "<td>" + myObj[0].drvid + "</td>";
+      temp = temp + "<td>" + myObj[0].dname + "</td>";
+      temp = temp + "<td>" + myObj[0].dfare + "</td>";
+      temp = temp + "<td>Allocated</td>";
+      temp = temp + "</tr>";
+
+      document.getElementById("Allocate_Table").innerHTML = temp;
     }
   }
 }
 
-function setBid(myObj)
-{
-    
-    var temp ='';
-    for(var i=1;i<myObj.length;i++)
-    {
-        temp=temp+'<tr>';
-        temp=temp+'<td>'+myObj[i].drvid+'</td>';
-        temp=temp+'<td>'+myObj[i].name+'</td>';
-        temp=temp+'<td>'+myObj[i].bid+'</td>';
-        temp=temp+'<td><a class="myAllocate">Allocate</a></td>';
-        temp=temp+'</tr>';
-    }
+function setBid(myObj) {
+  var temp = "";
+  for (var i = 1; i < myObj.length; i++) {
+    temp = temp + "<tr>";
+    temp = temp + "<td>" + myObj[i].drvid + "</td>";
+    temp = temp + "<td>" + myObj[i].name + "</td>";
+    temp = temp + "<td>" + myObj[i].bid + "</td>";
+    temp = temp + '<td><a class="myAllocate">Allocate</a></td>';
+    temp = temp + "</tr>";
+  }
 
-    document.getElementById("Allocate_Table").innerHTML=temp;
+  document.getElementById("Allocate_Table").innerHTML = temp;
 }
 function date_format_db(x) {
   var d = new Date(x),
