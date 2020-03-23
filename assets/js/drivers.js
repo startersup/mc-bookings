@@ -18,9 +18,9 @@ function loadDriver() {
         columns: [
           { data: null },
           { data: "name" },
-          { data: "mail" },
-          { data: "num1" },
-          { data: "num2" },
+          { data: "e_mail" },
+          { data: "mobile1" },
+          { data: "mobile2" },
           { data: null},
           { data:"status" },
           { data: null ,defaultContent: '<button class="mc-add-btn" >Delete</button>'}
