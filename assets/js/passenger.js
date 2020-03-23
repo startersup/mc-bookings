@@ -25,7 +25,11 @@ function setPassenger(data) {
         { data:"tfare" },
         { data: null },
         { data: null }
-      ]
+      ],
+      "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+        $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
+        return nRow;
+    }
     });
     
   }
