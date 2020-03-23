@@ -21,8 +21,8 @@ function setPassenger(data) {
         { data: "mail" },
         { data: "num1" },
         { data: "num2" },
-        { data: tcount},
-        { data:tfare },
+        { data: "tcount"},
+        { data:"tfare" },
         { data: null },
         { data: null }
       ]
