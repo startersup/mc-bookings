@@ -1,7 +1,7 @@
 
 function loadDriver() {
     var tempData = {};
-    var url = myUrl + "myapi/driver.php";
+    var url = myUrl + "myapi/DriverList.php";
     get_url_response(url,    tempData, "setDriver");
   }
   
