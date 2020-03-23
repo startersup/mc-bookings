@@ -17,7 +17,7 @@ else
 {
 date_default_timezone_set('Europe/London');
 
-$sql="SELECT name,mail,num1,num2 from `register` WHERE status = 'completed' ";
+$sql="SELECT name,mail,num1,num2, ROUND(SUM(fare), 2) as tfare,count(*) as tcount from `register` WHERE status = 'completed' group by num1 ";
 $result= mysqli_query($conn,$sql);
 while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 {
