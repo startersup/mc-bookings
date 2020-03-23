@@ -23,7 +23,7 @@ function setPassenger(data) {
         { data: "num2" },
         { data: "tcount"},
         { data:"tfare" },
-        { data: null ,defaultContent: '<button class="mc-add-btn" >Delete</button>'}
+        { data: null ,defaultContent: '<button>Delete</button>'}
       ],
       "fnRowCallback": function (nRow, aData, iDisplayIndex) {
         $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
