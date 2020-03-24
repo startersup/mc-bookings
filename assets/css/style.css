@@ -216,8 +216,7 @@ body
     color:#999999;
 }
 .mc-notifications-head li h5
-{
-    float:right;
+{padding-top:10px;
     position: relative;
 }
 @keyframes fadeInRight {
