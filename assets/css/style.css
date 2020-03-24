@@ -192,7 +192,28 @@ body
 {
     background-color: #f2f6f7;
 }
-
+.mc-notifications-head
+{
+    margin:0;
+    padding:0;
+}
+.mc-notifications-head li
+{
+    padding:15px;
+    -webkit-box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
+    box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
+}
+.mc-notifications-head li h3{
+    font-size:22px;
+    color:#000000;
+    font-weight:bold;
+    
+}
+.mc-notifications-head li p
+{
+    font-size:16px;
+    color:#999999;
+}
 @keyframes fadeInRight {
    0% {
       opacity: 0;
