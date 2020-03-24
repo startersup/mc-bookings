@@ -205,15 +205,19 @@ body
     box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
 }
 .mc-notifications-head li h3{
-    font-size:22px;
+    font-size:20px;
     color:#000000;
     font-weight:bold;
     
 }
 .mc-notifications-head li p
 {
-    font-size:16px;
+    font-size:15px;
     color:#999999;
+}
+.mc-notifications-head li h5
+{
+    float:right;
 }
 @keyframes fadeInRight {
    0% {
