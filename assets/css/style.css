@@ -218,6 +218,7 @@ body
 .mc-notifications-head li h5
 {
     float:right;
+    position: relative;
 }
 @keyframes fadeInRight {
    0% {
