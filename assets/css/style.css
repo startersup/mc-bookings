@@ -201,8 +201,8 @@ body
 .mc-notifications-head li
 {
     padding:15px;
-    -webkit-box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
-    box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
+    border:1px solid #cccccc; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
 }
 .mc-notifications-head li h3{
     font-size:20px;
