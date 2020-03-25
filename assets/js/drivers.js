@@ -6,10 +6,10 @@ function loadDriver() {
   }
   
   function setDriver(data) {
-      var myTable = $("##mc-datatables").DataTable();
+      var myTable = $("#mc-datatables").DataTable();
       myTable.destroy();
       var result = JSON.parse(data);
-      $("##mc-datatables").DataTable({
+      $("#mc-datatables").DataTable({
         data: result,
         lengthChange: false,
         searching: false,
@@ -36,7 +36,7 @@ function loadDriver() {
     }
 
     function setDriverStatus() {
-        var table = $("##mc-datatables").DataTable();
+        var table = $("#mc-datatables").DataTable();
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();
           var myClass = "";
