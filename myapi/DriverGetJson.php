@@ -7,7 +7,9 @@ session_start();
   include($rootfolder."/connection/connect.php"); 
 
 
-   
+   $id=$_POST["id"];
+   $table=$_POST["table"];
+   $session_id=$_SESSION[""];
     $sql="SELECT id,concat(name,' (',password,')') as tempname,mobile,mobile2,e_mail,status from driver ";
   
   $result=  mysqli_query($conn,$sql);
@@ -23,8 +25,7 @@ if($temp==null)
 }
   echo  json_encode($temp);
 
+
   mysqli_close($conn);
 
   ?>
-
- 

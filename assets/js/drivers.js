@@ -6,10 +6,10 @@ function loadDriver() {
   }
   
   function setDriver(data) {
-      var myTable = $("#mc-datatables-drivers").DataTable();
+      var myTable = $("#mc-datatables").DataTable();
       myTable.destroy();
       var result = JSON.parse(data);
-      $("#mc-datatables-drivers").DataTable({
+      $("#mc-datatables").DataTable({
         data: result,
         lengthChange: false,
         searching: false,
@@ -22,7 +22,7 @@ function loadDriver() {
           { data: "e_mail" },
           { data: "mobile" },
           { data: "mobile2" },
-          { data: null},
+      //    { data: null},
           { data:"status" },
           { data: null ,defaultContent: '<button class="mc-add-btn" >Change</button>'}
         ],
@@ -32,11 +32,11 @@ function loadDriver() {
           return nRow;
       }
       });
-      setDriverStatus()
+      setDriverStatus();
     }
 
     function setDriverStatus() {
-        var table = $("#mc-datatables-drivers").DataTable();
+        var table = $("#mc-datatables").DataTable();
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();
           var myClass = "";
