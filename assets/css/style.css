@@ -1052,7 +1052,15 @@ padding:20px;
     border-bottom: 1px solid #d0d9e2 !important;  
 }
 
-
+.mc-notify-badge
+{
+    position: absolute;
+    background-color: #ff0000;
+    padding: 0px 2px;
+    font-size: 12px;
+    right: 10px;
+    border-radius: 50%;
+}
 .controls {
 margin: 8px 0;
     background-color:#f4f4f4;
