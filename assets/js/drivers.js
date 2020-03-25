@@ -40,7 +40,7 @@ function loadDriver() {
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();
           var myClass = "";
-          var myDiv = '<div class="myClass">myStatus</div>';
+          var myDiv = '<div class="mc-edit"></div>';
           if (data.status == "0") {
             myDiv = myDiv.replace("myStatus", "Not Active");
             myDiv = myDiv.replace("myClass", "mc-Drv-Active");
