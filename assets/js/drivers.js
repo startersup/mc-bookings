@@ -24,7 +24,7 @@ function loadDriver() {
           { data: "mobile2" },
       //    { data: null},
           { data:"status" },
-          { data: null ,defaultContent: '<div class="mc-edit"></div>}
+          { data: null ,defaultContent: '<div class="mc-edit"></div>'}
         ],
         "fnRowCallback": function (nRow, aData, iDisplayIndex) {
           $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
