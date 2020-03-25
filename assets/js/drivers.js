@@ -18,7 +18,7 @@ function loadDriver() {
         columns: [
           { data: null },
           { data: "id" },
-          { data: "name" },
+          { data: "tempname" },
           { data: "e_mail" },
           { data: "mobile" },
           { data: "mobile2" },

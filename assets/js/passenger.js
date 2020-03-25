@@ -6,10 +6,10 @@ function loadPassenger() {
 }
 
 function setPassenger(data) {
-    var myTable = $("#mc-datatables").DataTable();
+    var myTable = $("#mc-datatables-passenger").DataTable();
     myTable.destroy();
     var result = JSON.parse(data);
-    $("#mc-datatables").DataTable({
+    $("#mc-datatables-passenger").DataTable({
       data: result,
       lengthChange: false,
       searching: false,
