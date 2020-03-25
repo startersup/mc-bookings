@@ -32,7 +32,7 @@ function loadDriver() {
           return nRow;
       }
       });
-      setDriverStatus()
+      setDriverStatus();
     }
 
     function setDriverStatus() {
