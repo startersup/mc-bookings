@@ -16,16 +16,21 @@ function loadDriver() {
         dom: "Bfrtip",
         buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
         columns: [
-       
+          { data: null },
           { data: "id" },
           { data: "tempname" },
           { data: "e_mail" },
           { data: "mobile" },
           { data: "mobile2" },
-          { data: null},
+      //    { data: null},
           { data:"status" },
-          { data: null ,defaultContent: '<button class="mc-add-btn" >Change</button>'}
-        ] 
+          { data: null ,defaultContent: '<div class="mc-edit"></div>}
+        ],
+        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+          $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
+
+          return nRow;
+      }
       });
       setDriverStatus();
     }
@@ -35,7 +40,7 @@ function loadDriver() {
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();
           var myClass = "";
-          var myDiv = '<div class="mc-edit"></div>';
+          var myDiv = '<div class="myClass">myStatus</div>';
           if (data.status == "0") {
             myDiv = myDiv.replace("myStatus", "Not Active");
             myDiv = myDiv.replace("myClass", "mc-Drv-Active");
