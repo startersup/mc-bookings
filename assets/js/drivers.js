@@ -26,7 +26,7 @@ function loadDriver() {
           { data:"status" },
           { data: null ,defaultContent: '<button class="mc-add-btn" >Change</button>'}
         ],
-        "fnRowCallbackDriver": function (nRow, aData, iDisplayIndex) {
+        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
           $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
 
           return nRow;
