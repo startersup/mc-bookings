@@ -6,10 +6,10 @@ function loadDriver() {
   }
   
   function setDriver(data) {
-      var myTable = $("#mc-datatables").DataTable();
+      var myTable = $("#mc-datatables-drivers").DataTable();
       myTable.destroy();
       var result = JSON.parse(data);
-      $("#mc-datatables").DataTable({
+      $("#mc-datatables-drivers").DataTable({
         data: result,
         lengthChange: false,
         searching: false,
@@ -26,7 +26,7 @@ function loadDriver() {
           { data:"status" },
           { data: null ,defaultContent: '<button class="mc-add-btn" >Change</button>'}
         ],
-        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+        "fnRowCallbackDriver": function (nRow, aData, iDisplayIndex) {
           $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
 
           return nRow;
@@ -36,7 +36,7 @@ function loadDriver() {
     }
 
     function setDriverStatus() {
-        var table = $("#mc-datatables").DataTable();
+        var table = $("#mc-datatables-drivers").DataTable();
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();
           var myClass = "";
