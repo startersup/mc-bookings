@@ -192,7 +192,42 @@ body
 {
     background-color: #f2f6f7;
 }
-
+.mc-notifications-head
+{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+.mc-notifications-head li
+{
+    padding:15px;
+  margin:10px 0px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
+}
+.mc-notifications-head li h3{
+    font-size:20px;
+    color:#000000;
+    font-weight:bold;
+    
+}
+.mc-Drv-Active
+{
+    padding: 5px 10px;
+    border: 1px solid #b6f5be;
+    border-radius: 4px;
+    background-color: #62ff742e;
+    color: #04ce1c;
+    text-align: center;
+}
+.mc-notifications-head li p
+{
+    font-size:15px;
+    color:#999999;
+}
+.mc-notifications-head li h5
+{padding-top:10px;
+    position: relative;
+}
 @keyframes fadeInRight {
    0% {
       opacity: 0;
