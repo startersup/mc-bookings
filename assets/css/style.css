@@ -1271,6 +1271,24 @@ font-family: 'Montserrat', sans-serif;
     background-color: #E8F0FE;
     padding: 10px;
 }
+.mc-document-name
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    transition: all 0.3s;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;  
+}
+.mc-document-name p
+{
+    text-align: center;
+    font-weight:bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size:16px;
+}
 .fc-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 7px 10px 0 rgba(0,0,0,.1);
@@ -1278,6 +1296,10 @@ font-family: 'Montserrat', sans-serif;
 .mc-card:hover .mc-floatable {
     opacity: 1;
 }
+.mc-card:hover .mc-document-name
+{
+    opacity:0;
+} 
 .mc-flex
 {
     display:flex;
