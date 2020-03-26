@@ -1131,6 +1131,11 @@ margin: 8px 0;
 .driverinfotable h3
 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 800;
+    color: #3e4348;
+    padding: 10px;
 }
 .mc-coveringAreasTable
 {
@@ -1154,19 +1159,20 @@ font-family: 'Montserrat', sans-serif;
 .mc-reject-button
 {
 
-    padding: 4px 8px;
+    padding: 5px 10px;
     background-color: #EE5A24!important;
     border: 1px solid #EE5A24!important;
-    border: none;
+    font-size: 12px;
     border-radius: 2px;
-    color: #333;
+    margin-left: 10px;
+    color: #ffffff;
 }
 .mc-approve-button
 {
-    padding: 4px 8px;
+    padding: 5px 10px;
     background-color: #ebeef0;
     border: 1px solid #ebeef0!important;
-    border: none;
+    font-size: 12px;
     border-radius: 2px;
     color: #333;
 }
