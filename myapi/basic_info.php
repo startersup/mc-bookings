@@ -9,7 +9,7 @@ session_start();
 
   
     $book_id=$_POST["book_id"];
-
+echo("POST => ".$_POST["book_id"]." => REQUEST => ".$_REQUEST["book_id"]);
     
     $sql ="SELECT register.refid,register.booked_site,register.status,register.src,register.des,register.name,register.mail,register.num1,register.num2,register.location,register.info,register.pay,register.address1,register.address2,register.dt,register.time,register.passenger,register.luggage,register.type,register.fare,register.dfare,register.drvid,driver.name as dname,driver.mobile as dnum1,driver.mobile2 as dnum2 FROM register INNER JOIN driver ON register.drvid=driver.id WHERE register.refid ='".$book_id."' ";
    echo($sql."<br>");
