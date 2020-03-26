@@ -197,7 +197,7 @@
                     <ul class="nav nav-pills mc-info-tabs">
     <li id="basic_info" class="active modalToggle"><a data-toggle="pill"  href="#driverinfo">Driver Info</a></li>
     <li id="passenger_info" class="modalToggle"><a data-toggle="pill" href="#covering">Covering Areas</a></li>
-    <li id="driver_info" class="modalToggle" ><a data-toggle="pill" href="#driver">Driver Info</a></li>
+    <li id="driver_info" class="modalToggle" ><a data-toggle="pill" href="#driverdoc">Driver Info</a></li>
   </ul>
 				</div>
 
@@ -250,8 +250,21 @@
                       <td>Vehicle Plate Number :</td>
                       <td><input type="text" name="nl" id="modal_booking_nl" class="text" value=""></td>
                     </tr>
+                    <tr>
+                      <td>Vehicle insurance :</td>
+                      <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Vehicle MOT :</td>
+                      <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Vehicle  :</td>
+                      <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
+                    </tr>
                    </tbody></table>
-				</div>
+        </div>
+        
             
             
                  <div id="covering" class="tab-pane fade"> 
@@ -271,92 +284,13 @@
                          
                          
                          
-                            <div id="driver" class="tab-pane fade"> 
-                                
+                            <div id="driverdoc" class="tab-pane fade"> 
+                                 
+                              <h3>Driver Documents</h3>
+                              
 
                   
-                                <h3>Manual Allocation</h3>
-                                       <table class="manalloc-table">
-               <tbody>
-
-                   <tr>
-          <td><input type="text" class="controls" required="required" id="amt" name="amt" placeholder="Enter Driver Name"> </td>
-          <td><input type="text" class="controls" required="required" id="amt" name="amt" placeholder="Enter Amount"></td>
-          <td><button class="buttongreen" onclick="manual_alloc();">Allocate </button></td>
-        </tr>
-             </tbody> 
-              </table>
-                                
-                     <h3>Drivers Bidded</h3>
-                                
-                      <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
-        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
-            <tr style="border:1px solid #e4e4e4;">
-                <th>Driver Id</th>
-                <th>Driver Name</th>
-                <th>Bidded Amount</th>
-                <th>Action</th>
-                
-            </tr>
-        </thead>
-        <tbody id="Allocate_Table">
-        </tbody>
-      </table>
                          </div>
-                         
-                         
-                           <div id="sms" class="tab-pane fade sms">
-                          <!--- future requirement     <p>SMS Status</p>
-                                <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
-        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
-            <tr style="border:1px solid #e4e4e4;">
-               
-                <th>Driver</th>
-                <th>Contact Number</th>
-                <th>Status</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Azhwar Khan</td>
-                <td>07818065914</td>
-                <td>Sent</td>
-               
-            </tr>
-                 <tr>
-                <td>Amila Jhonson</td>
-                <td>073894639332</td>
-                <td>Sent</td>
-               
-            </tr>
-                          </tbody></table>  --->
-                               <div class="row">
-                  <div class="col-md-12">
-                    <p class="sms">Passenger Details</p>
-        <input type="text" class="dark-controls" id="id_number1" name="number1"  value="" placeholder="Enter Contact Number">     
-           <textarea class="dark-controls" rows="9" id="id_message1" name="message1" style="width:100%;min-height:200px;"></textarea>
-       
-        
-        </div>
-
-           <div class="col-md-12">
-            
-                
-                       <p class="sms" style="padding:10px;margin-top:10px;">Driver Details</p>
-                       
-                
-                       
-        <input type="text" class="dark-controls" id="id_number2" name="number2" value=""placeholder="Enter Contact Number">     
-           <textarea class="dark-controls" rows="9" id="id_message2" name="message2" style="width:100%;min-height:200px;"></textarea>
-          
-      </div>
-
-    <center> <button class="mc-cta" id="send_sms">SEND NOW</button></center> 
-    </div>
-                         </div>
-                         
-                
                     </div>
                 
                 </div>
