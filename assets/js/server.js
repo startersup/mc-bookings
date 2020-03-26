@@ -18,7 +18,7 @@ var modalPing = "";
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
 
-  $("#spinnermodal").fadeIn(3500);
+  $("#spinnermodal").fadeIn(200);
 }
 function stopLoader() {
   //document.getElementById("spinnermodal").style.display = "none";
@@ -303,38 +303,38 @@ function setModalData(myData) {
   var myObj = JSON.parse(myData);
   if (modalPing === "basic_info") {
     document.getElementById("modal_booking_site").value =
-      myObj[0]["booked_site"];
-    document.getElementById("modal_booking_status").value = myObj[0]["status"];
-    document.getElementById("modal_booking_pickup").value = myObj[0]["src"];
-    document.getElementById("modal_booking_dropoff").value = myObj[0]["des"];
-    document.getElementById("modal_booking_date").value = myObj[0]["dt"];
-    document.getElementById("modal_booking_time").value = myObj[0]["time"];
-    document.getElementById("modal_booking_cab_type").value = myObj[0]["type"];
+      myObj["base"]["booked_site"];
+    document.getElementById("modal_booking_status").value = myObj["base"]["status"];
+    document.getElementById("modal_booking_pickup").value = myObj["base"]["src"];
+    document.getElementById("modal_booking_dropoff").value = myObj["base"]["des"];
+    document.getElementById("modal_booking_date").value = myObj["base"]["dt"];
+    document.getElementById("modal_booking_time").value = myObj["base"]["time"];
+    document.getElementById("modal_booking_cab_type").value = myObj["base"]["type"];
     document.getElementById("myModalBookId").innerHTML =
-      "Booking Information - ( " + myObj[0]["refid"] + " )";
-    document.getElementById("myModalBookId_temp").innerHTML = myObj[0]["refid"];
+      "Booking Information - ( " + myObj["base"]["refid"] + " )";
+    document.getElementById("myModalBookId_temp").innerHTML = myObj["base"]["refid"];
 
-    document.getElementById("modal_booking_name").value = myObj[0]["name"];
-    document.getElementById("modal_booking_mail").value = myObj[0]["mail"];
-    document.getElementById("modal_booking_num1").value = myObj[0]["num1"];
-    document.getElementById("modal_booking_num2").value = myObj[0]["num2"];
+    document.getElementById("modal_booking_name").value = myObj["base"]["name"];
+    document.getElementById("modal_booking_mail").value = myObj["base"]["mail"];
+    document.getElementById("modal_booking_num1").value = myObj["base"]["num1"];
+    document.getElementById("modal_booking_num2").value = myObj["base"]["num2"];
     document.getElementById("modal_booking_address1").value =
-      myObj[0]["address1"];
+      myObj["base"]["address1"];
     document.getElementById("modal_booking_address2").value =
-      myObj[0]["address2"];
-    document.getElementById("modal_booking_dt").value = myObj[0]["dt"];
-    document.getElementById("modal_booking_tm").value = myObj[0]["time"];
-    document.getElementById("modal_booking_np").value = myObj[0]["passenger"];
-    document.getElementById("modal_booking_nl").value = myObj[0]["luggage"];
+      myObj["base"]["address2"];
+    document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
+    document.getElementById("modal_booking_tm").value = myObj["base"]["time"];
+    document.getElementById("modal_booking_np").value = myObj["base"]["passenger"];
+    document.getElementById("modal_booking_nl").value = myObj["base"]["luggage"];
     document.getElementById("modal_booking_location").value =
-      myObj[0]["location"];
-    document.getElementById("modal_booking_info").value = myObj[0]["info"];
-    document.getElementById("modal_booking_type").value = myObj[0]["type"];
-    document.getElementById("modal_booking_fare").value = myObj[0]["fare"];
+      myObj["base"]["location"];
+    document.getElementById("modal_booking_info").value = myObj["base"]["info"];
+    document.getElementById("modal_booking_type").value = myObj["base"]["type"];
+    document.getElementById("modal_booking_fare").value = myObj["base"]["fare"];
 
     //setting up message
 
-    var message1_data = "Reference Id : " + myObj[0].refid + "\n";
+    var message1_data = "Reference Id : " + myObj["base"].refid + "\n";
     message1_data =
       message1_data +
       "Pick Up : " +
@@ -373,18 +373,18 @@ function setModalData(myData) {
       document.getElementById("modal_booking_dfare").value +
       "\n";
 
-    var number1_data = myObj[0].dnum1;
+    var number1_data = myObj["base"].dnum1;
 
-    var message2_data = "Reference Id : " + myObj[0].refid + "\n";
-    message2_data = message2_data + "Driver name :" + myObj[0].dname;
+    var message2_data = "Reference Id : " + myObj["base"].refid + "\n";
+    message2_data = message2_data + "Driver name :" + myObj["base"].dname;
     message2_data =
       message2_data +
       "Driver Number :" +
-      myObj[0].dnum1 +
+      myObj["base"].dnum1 +
       " / " +
-      myObj[0].dnum2;
+      myObj["base"].dnum2;
 
-    var number2_data = myObj[0].num1;
+    var number2_data = myObj["base"].num1;
 
     document.getElementById("id_message1").value = message1_data;
     document.getElementById("id_message2").value = message2_data;
@@ -393,14 +393,14 @@ function setModalData(myData) {
     document.getElementById("id_number2").value = number2_data;
 
     //End of message part
-    if (myObj.length > 0 && myObj[0].status != "comitted") {
-      setBid(myObj);
+    if (myObj.length > 0 && myObj["base"].status != "comitted") {
+      setBid(myObj["bid"]);
     } else {
       var temp = "";
       temp = temp + "<tr>";
-      temp = temp + "<td>" + myObj[0].drvid + "</td>";
-      temp = temp + "<td>" + myObj[0].dname + "</td>";
-      temp = temp + "<td>" + myObj[0].dfare + "</td>";
+      temp = temp + "<td>" + myObj["base"].drvid + "</td>";
+      temp = temp + "<td>" + myObj["base"].dname + "</td>";
+      temp = temp + "<td>" + myObj["base"].dfare + "</td>";
       temp = temp + "<td>Allocated</td>";
       temp = temp + "</tr>";
 
