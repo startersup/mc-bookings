@@ -23,16 +23,17 @@ session_start();
  $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
 
      
-     $temp[]=$row;
+     $temp["base"]=$row;
 
      $i=0;
+
      while( $row2= mysqli_fetch_array($result2,MYSQLI_ASSOC))
      {
    
-        $temp[]=$row2;
+        $temp2[$i]=$row2;
         $i++;
    }
-
+   $temp["bid"]=$temp2;
   echo  json_encode($temp);
 
   ?>
