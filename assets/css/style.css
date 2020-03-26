@@ -1234,6 +1234,8 @@ font-family: 'Montserrat', sans-serif;
 {
     box-shadow: 0 10px 25px 0 rgba(0,0,0,.07);
     padding:15px;
+    border: 1px solid #DADCE0;
+    transition: transform .3s ease,box-shadow .3s ease;
     cursor: pointer;
     position: relative;
 }
@@ -1246,6 +1248,13 @@ font-family: 'Montserrat', sans-serif;
     width: 100%;
     background-color: #E8F0FE;
     padding: 10px;
+}
+.fc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,.1);
+}
+.mc-card:hover .mc-floatable {
+    opacity: 1;
 }
 .mc-flex
 {
