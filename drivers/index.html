@@ -145,7 +145,7 @@
                 <th>Driver Name</th>
                 <th>Driver Email </th>
                 <th>Driver Contact</th>
-                <th>Driver Contact2</th>
+                <th>Alternate Contact</th>
                 <th>Covering Areas</th>
                 <th>status</th>
                 <th>Action</th>
@@ -196,138 +196,70 @@
           <h4 class="modal-title" id="myModalBookId" name="">Booking Information - ( BRT124 )</h4>
           <div id="myModalBookId_temp" style="display:none;"></div>
                     <ul class="nav nav-pills mc-info-tabs">
-    <li id="basic_info" class="active modalToggle"><a data-toggle="pill"  href="#location">Basic Info</a></li>
-    <li id="passenger_info" class="modalToggle"><a data-toggle="pill" href="#passenger">Passenger Info</a></li>
+    <li id="basic_info" class="active modalToggle"><a data-toggle="pill"  href="#driverinfo">Driver Info</a></li>
+    <li id="passenger_info" class="modalToggle"><a data-toggle="pill" href="#coverings">Passenger Info</a></li>
     <li id="driver_info" class="modalToggle" ><a data-toggle="pill" href="#driver">Driver Info</a></li>
-    <li id="booking_sms" class="modalToggle" ><a data-toggle="pill" href="#sms">Booking SMS</a></li>
   </ul>
 				</div>
 
 				<div class="modal-body">
                            
                      <div class="tab-content">
-    <div id="location" class="tab-pane fade in active">
+    <div id="driverinfo" class="tab-pane fade in active">
 <!--                  <div id="map"></div>-->
 
          <table class="table table-user-information map-info">
                   <tbody>
-                      <tr>
-                      <td>Booking Source :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_site" value="Gatwick WB"></td>
-                    </tr>
                        <tr>
-                      <td>Booking Status :</td>
+                      <td>Driver Status :</td>
                       <td><input type="text" class="text" name="num1" id="modal_booking_status" value="Booked"></td>
                     </tr>
                     <tr>
-                      <td class="first">Pickup From :</td>
-                      <td class="first"><input type="text" class="text" name="modal_booking_pickup" id="modal_booking_pickup" value="Gatwick Airport"></td>
-                    </tr>
-                    <tr>
-                      <td>Dropoff To :</td>
-                      <td><input type="text" class="text" name="mail" id="modal_booking_dropoff" value="Heathrow Airport Terminal 2"></td>
-                    </tr>
-                    <tr>
-                      <td>Date :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_date" value="1 hour 15 minutes"></td>
-                    </tr>
-                    <tr>
-                      <td>Time :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_time" value="1 hour 15 minutes"></td>
-                    </tr>
-                    <tr>
-                      <td>Cab Type :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_cab_type" value="1 hour 15 minutes"></td>
-                    </tr>
-                    <tr>
-                      <td>Total Miles :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value="43 Miles"></td>
-                    </tr>
-                       <tr>
-                      <td>Journey Time :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value="1 hour 15 minutes"></td>
-                    </tr>
-                    <tr>
-                      <td>Update</td>
-                      <td>Cancel</td>
-                    </tr>
-                  
-             </tbody></table>
-				</div>
-            
-            
-                 <div id="passenger" class="tab-pane fade"> 
-
-                   <table class="table table-user-information">
-                  <tbody>
-                    <tr>
-                      <td class="first">Passenger Name :</td>
+                      <td class="first">Driver Name :</td>
                       <td class="first"><input type="text" class="text" name="modal_booking_name" id="modal_booking_name" value="saicharan"></td>
                     </tr>
                     <tr>
-                      <td>Passenger Email :</td>
+                      <td>Driver Email :</td>
                       <td><input type="text" class="text" name="mail" id="modal_booking_mail" value=""></td>
                     </tr>
                     <tr>
-                      <td>Passenger Contact :</td>
+                      <td>Driver Contact :</td>
                       <td><input type="text" class="text" name="num1" id="modal_booking_num1" value=""></td>
                     </tr>
-                    
                      <tr>
                       <td>Alternate Contact :</td>
                       <td><input type="text" class="text" name="num2" id="modal_booking_num2" value=""></td>
-                    </tr>
-                    
-                           <tr>
-                      <td>Pickup Address :</td>
-                      <td><input type="text" class="text" name="address1" id="modal_booking_address1" value=""></td>
-                    </tr>
-                      <tr>
-                      <td>Dropoff Address : </td>
-                      <td><input type="text" class="text" name="address2" id="modal_booking_address2" value=""></td>
-                    </tr>
+                    </tr>  
+             </tbody></table>
+
+
+
+<h3>Vehicle Details</h3>
+             <table class="table table-user-information">
+              <tbody>
                     <tr>
-                      <td>Pickup Date :</td>
-                      <td><input type="text" class="text" name="date" id="modal_booking_dt" value=""></td>
+                    <td>Vehicle Type :</td>
+                    <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
+                  </tr>
+                  <tr>
+                    <td>Vehicle Brand and Model :</td>
+                    <td><input type="text" name="nl" id="modal_booking_nl" class="text" value=""></td>
+                  </tr>
+                  <tr>
+                      <td>Vehicle Plate Number :</td>
+                      <td><input type="text" name="nl" id="modal_booking_nl" class="text" value=""></td>
                     </tr>
-                    
-                     <tr>
-                      <td>Pickup Time :</td>
-                      <td><input type="text" class="text" name="time" id="modal_booking_tm" value=""></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Passengers :</td>
-                        <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
-                      </tr>
-                      <tr>
-                          <td>Luggages :</td>
-                          <td><input type="text" name="nl" id="modal_booking_nl" class="text" value=""></td>
-                        </tr>
-                        
-                         <tr>
-                      <td>Flight Details :</td>
-                      <td><input type="text" class="text" name="modal_booking_location" id="modal_booking_location" value=""></td>
-                    </tr>
-                    
-                     <tr>
-                      <td>Special Info :</td>
-                      <td><input type="text" class="text" name="modal_booking_info" id="modal_booking_info" value=""></td>
-                    </tr>
-                    
-                    <tr>
-                      <td>Cab Type :</td>
-                      <td><input type="text" class="text" name="modal_booking_type" id="modal_booking_type" value=""></td>
-                    </tr>
-                    <tr>
-                        <td>Total Fare (£) :</td>
-                        <td><input type="text" class="text" name="fare" id="modal_booking_fare" value=""></td>
-                      </tr>
-                      <tr>
-                        <td>Driver Fare (£) :</td>
-                        <td><input type="text" class="text" name="dfare" id="modal_booking_dfare" value=""></td>
-                      </tr>
-                       </tbody></table></div>
+                   </tbody></table>
+				</div>
+            
+            
+                 <div id="covering" class="tab-pane fade"> 
+                  <h3>Covering Areas</h3>
+                  <table>
+                    <tr><th>Area Location</th><th>Action</th></tr>
+                    <tr><td>Ramford</td><td><button class="btn">Approve</button><button class="btn">Reject</button></td></tr>
+                  </table>
+              </div>
                          
                          
                          
