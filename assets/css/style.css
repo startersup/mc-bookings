@@ -627,6 +627,7 @@ border-right: 1px solid #ebf0f5;
 width:30px;
 height:30px;
 background: linear-gradient(-45deg, #bebebe, #7a7a7a, #e6e6e6, #cef3ea);
+background-color:#ffffff;
 -webkit-animation: gradientBG 10s ease infinite;
 animation: gradientBG 10s ease infinite;
 }
