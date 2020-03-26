@@ -8,7 +8,7 @@ session_start();
 
 
    
-    $sql="SELECT id,concat(name,' (',password,')') as tempname,mobile,mobile2,e_mail,status from driver where `drvid` !=''";
+    $sql="SELECT id,concat(name,' (',password,')') as tempname,mobile,mobile2,e_mail,status from driver where `id` !=''";
   
   $result=  mysqli_query($conn,$sql);
 
