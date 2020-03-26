@@ -1132,14 +1132,23 @@ margin: 8px 0;
 {
     font-family: 'Montserrat', sans-serif;
 }
+.mc-coveringAreasTable
+{
+    width:100%;
+}
 .mc-coveringAreasTable  tr
 {
-padding:10px;
 font-family: 'Montserrat', sans-serif;
 }
 .mc-coveringAreasTable  th
 {
+    padding:10px;
     background-color:#f4f4f4;
+font-family: 'Montserrat', sans-serif;
+}
+.mc-coveringAreasTable  td
+{
+    padding:10px;
 font-family: 'Montserrat', sans-serif;
 }
 
