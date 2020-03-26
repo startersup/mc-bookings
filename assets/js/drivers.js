@@ -16,7 +16,7 @@ function loadDriver() {
         dom: "Bfrtip",
         buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
         columns: [
-          { data: null },
+
           { data: "id" },
           { data: "tempname" },
           { data: "e_mail" },
