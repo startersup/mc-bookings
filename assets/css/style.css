@@ -1234,9 +1234,23 @@ font-family: 'Montserrat', sans-serif;
 {
     box-shadow: 0 10px 25px 0 rgba(0,0,0,.07);
     padding:15px;
+    cursor: pointer;
+    position: relative;
 }
-
-
+.mc-floatable {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all 0.3s;
+    width: 100%;
+    background-color: #E8F0FE;
+    padding: 10px;
+}
+.mc-flex
+{
+    display:flex;
+}
 
 /*****cards****/
 
