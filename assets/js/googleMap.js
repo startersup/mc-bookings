@@ -10,7 +10,9 @@
       var chicgo = new google.maps.LatLng(51.5287352, -0.3817888);
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 8,
+        disableDefaultUI: true,
         center:myLatLng
+
       });
       directionsDisplay = new google.maps.DirectionsRenderer({
         map: map
