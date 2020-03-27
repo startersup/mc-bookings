@@ -445,22 +445,6 @@ padding:20px 10px;
     list-style: none;
     padding:20px 0px;
 }
-.mc-teritory-sidebar
-{
-    margin-top: -50px !important;
-    position: fixed;
-    background: #fff;
-    box-shadow: 0 1px 5px rgba(0,0,0,.06);
-    border-right: 1px solid #ebf0f5;
-    height: 100%;
-    right: 0 !important;
-    width: 350px !important;
-    float: left;
-    z-index: 0;
-    height: 100vh;
-    list-style: none;
-    padding: 20px 0px;
-}
 .mc-secondary-sidebar ul
 {
     list-style: none;
@@ -493,6 +477,23 @@ padding:20px 10px;
 
 /********dashboard-sidebar*******/
 
+
+.mc-teritory-sidebar
+{
+    margin-top:90px;
+    margin-left:65px;
+    position: fixed;
+  background: #fff;
+ box-shadow: 0 1px 5px rgba(0,0,0,.06);
+border-right: 1px solid #ebf0f5;
+    height: 100%;
+    width: 350px;
+    float: left;
+    z-index:0;
+    height: 100vh;
+    list-style: none;
+    padding:20px 0px;
+}
 
 .report-width
 {
