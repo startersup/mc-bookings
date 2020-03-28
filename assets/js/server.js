@@ -331,6 +331,10 @@ function setModalData(myData) {
     document.getElementById("modal_booking_info").value = myObj["base"]["info"];
     document.getElementById("modal_booking_type").value = myObj["base"]["type"];
     document.getElementById("modal_booking_fare").value = myObj["base"]["fare"];
+    document.getElementById("modal_booking_Child_ceat").value = myObj["base"]["ceat"];
+    document.getElementById("modal_booking_mg").value = myObj["base"]["mg"];
+    document.getElementById("modal_booking_infants").value = myObj["base"]["infants"];
+    
 
     //setting up message
 
