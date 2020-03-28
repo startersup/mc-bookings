@@ -31,7 +31,7 @@ function pageLoad() {
   var mydata = {};
   var myGetUrl = "myapi/alldriver.php";
 
-  get_booking_response(myGetUrl, mydata,'setAllDriver');
+  get_url_response(myGetUrl, mydata,'setAllDriver');
 }
 function SetParam(myparam) {
   var mydata = {};
