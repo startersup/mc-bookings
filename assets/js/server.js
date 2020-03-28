@@ -15,6 +15,7 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
+var driverList={};
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
 
@@ -27,6 +28,10 @@ function stopLoader() {
 }
 function pageLoad() {
   SetParam("today");
+  var mydata = {};
+  var myGetUrl = "myapi/alldriver.php";
+
+  get_booking_response(myGetUrl, mydata,'setAllDriver');
 }
 function SetParam(myparam) {
   var mydata = {};
@@ -72,6 +77,12 @@ function get_url_response(myGetUrl, mydata, myfunc) {
     },
     error: function(xhr) {}
   });
+}
+
+function setAllDriver(data) {
+
+  driverList = JSON.parse(data);
+
 }
 function setRow(data) {
   var myTable = $("#mc-datatables").DataTable();
