@@ -445,22 +445,6 @@ padding:20px 10px;
     list-style: none;
     padding:20px 0px;
 }
-.mc-teritory-sidebar
-{
-    margin-top: -50px !important;
-    position: fixed;
-    background: #fff;
-    box-shadow: 0 1px 5px rgba(0,0,0,.06);
-    border-right: 1px solid #ebf0f5;
-    height: 100%;
-    right: 0 !important;
-    width: 350px !important;
-    float: left;
-    z-index: 0;
-    height: 100vh;
-    list-style: none;
-    padding: 20px 0px;
-}
 .mc-secondary-sidebar ul
 {
     list-style: none;
@@ -475,12 +459,15 @@ padding:20px 10px;
 .mc-secondary-sidebar ul li a
 {
        color: #2d2d52;
-    cursor: pointer;
     letter-spacing: 0.4px;
     text-decoration: none; 
      font-size: 14px;
     cursor: pointer;
     font-weight: 400;
+}
+.mc-secondary-sidebar ul li
+{
+    position: relative;
 }
 .mc-secondary-sidebar ul li a:hover
 {
@@ -1323,6 +1310,36 @@ button:focus {
 .searcher li:hover
 {
 background-color: #f4f4f4;
+}
+.online
+{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    background-color: #12e558;
+    border-radius: 50%;
+}
+.idle
+{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    background-color: #ffd710;
+    border-radius: 50%;
+}
+.offline
+{
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    background-color: #ff0000;
+    border-radius: 50%;
 }
 .fc-card:hover {
     transform: translateY(-6px);
