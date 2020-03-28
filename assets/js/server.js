@@ -421,6 +421,14 @@ function setModalData(myData) {
 
       document.getElementById("Allocate_Table").innerHTML = temp;
     }
+
+    temp='';
+    for(var x=0;driverList.length;x++)
+    {
+      temp = temp + '<option val="'+driverList[x]["id"]+'" >'+driverList[x]["name"]+' - '+driverList[x]["id"]+'</option>'
+    }
+    document.getElementById("drvid").innerHTML = temp;
+
   }
 }
 
