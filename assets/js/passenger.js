@@ -13,6 +13,7 @@ function setPassenger(data) {
       data: result,
       lengthChange: false,
       searching: false,
+      "paging": false,
       dom: "Bfrtip",
       buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
       columns: [
