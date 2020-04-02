@@ -13,6 +13,7 @@ function setPassenger(data) {
       data: result,
       lengthChange: false,
       searching: false,
+      "paging": false,
       dom: "Bfrtip",
       buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
       columns: [
@@ -23,7 +24,7 @@ function setPassenger(data) {
         { data: "num2" },
         { data: "tcount"},
         { data:"tfare" },
-        { data: null ,defaultContent: '<button>Delete</button>'}
+        { data: null ,defaultContent: '<div class="mc-edit"></div>'}
       ],
       "fnRowCallback": function (nRow, aData, iDisplayIndex) {
         $("td:nth-child(1)", nRow).html(iDisplayIndex + 1);
