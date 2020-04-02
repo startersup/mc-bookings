@@ -1588,7 +1588,7 @@ display: block;
 /******empty_states images****/
 #empty_state
 {
-    max-width:500px;
+    max-width:300px;
     margin:200px auto;
 }
 .empty_states p
@@ -1607,7 +1607,7 @@ display: block;
 }
 .booking_empty_state
 {
-    max-width:100px;
+    max-width:200px;
     width:100%;
 }
 
