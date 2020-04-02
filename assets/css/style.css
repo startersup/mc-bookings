@@ -1588,7 +1588,7 @@ display: block;
 /******empty_states images****/
 #empty_state
 {
-    max-width:700px;
+    max-width:500px;
     margin:0 auto;
 }
 .empty_states p
@@ -1600,9 +1600,14 @@ display: block;
     font-family: 'Montserrat', sans-serif;
 }
 
-.booking_empty_state, .empty_image
+.empty_image
 {
     max-width:700px;
+    width:100%;
+}
+.booking_empty_state
+{
+    max-width:400px;
     width:100%;
 }
 
