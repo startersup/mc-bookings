@@ -1589,7 +1589,7 @@ display: block;
 #empty_state
 {
     max-width:500px;
-    margin:50% auto;
+    margin:200px auto;
 }
 .empty_states p
 {
@@ -1607,7 +1607,7 @@ display: block;
 }
 .booking_empty_state
 {
-    max-width:200px;
+    max-width:100px;
     width:100%;
 }
 
