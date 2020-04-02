@@ -1591,7 +1591,7 @@ display: block;
     max-width:300px;
     margin:200px auto;
 }
-.empty_states p
+#empty_state p
 {
     text-align: center;
     font-weight:600;
