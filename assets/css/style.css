@@ -1589,7 +1589,7 @@ display: block;
 #empty_state
 {
     max-width:500px;
-    margin:0 auto;
+    margin:50% auto;
 }
 .empty_states p
 {
