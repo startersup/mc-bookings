@@ -1586,7 +1586,7 @@ display: block;
 
 
 /******empty_states images****/
-.empty_states
+#empty_state
 {
     max-width:700px;
     margin:0 auto;
