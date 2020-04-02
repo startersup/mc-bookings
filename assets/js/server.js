@@ -92,7 +92,7 @@ function setRow(data) {
   {
     $("#display_data").css('display','none');
     $("#empty_state").css('display','block');
-
+    stopLoader();
   }else{
 
     $("#display_data").css('display','block');
@@ -117,7 +117,7 @@ function setRow(data) {
     ]
   });
   setStatus();
-  stopLoader();
+  
 }
 }
 function setStatus() {
