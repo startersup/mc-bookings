@@ -1600,7 +1600,7 @@ display: block;
     font-family: 'Montserrat', sans-serif;
 }
 
-.booking_empty_state
+.booking_empty_state, .empty_image
 {
     max-width:700px;
     width:100%;
