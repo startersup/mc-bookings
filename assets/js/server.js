@@ -88,6 +88,16 @@ function setRow(data) {
   var myTable = $("#mc-datatables").DataTable();
   myTable.destroy();
   var result = JSON.parse(data);
+  if(result.length === 0)
+  {
+    $("#display_data").css('display','none');
+    $("#empty_state").css('display','block');
+
+  }else{
+
+    $("#display_data").css('display','block');
+    $("#empty_state").css('display','none');
+
   $("#mc-datatables").DataTable({
     data: result,
     lengthChange: false,
@@ -107,6 +117,7 @@ function setRow(data) {
     ]
   });
   setStatus();
+}
 }
 function setStatus() {
   var table = $("#mc-datatables").DataTable();
