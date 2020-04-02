@@ -117,6 +117,7 @@ function setRow(data) {
     ]
   });
   setStatus();
+  stopLoader();
 }
 }
 function setStatus() {
