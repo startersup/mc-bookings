@@ -1715,7 +1715,8 @@ margin-top: 50px;
 	.modal.left .modal-content,
 	.modal.right .modal-content {
 		height: 100%;
-		overflow-y: auto;
+        overflow-y: auto;
+        position: relative;
 	}
 	
 	.modal.left .modal-body,
