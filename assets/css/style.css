@@ -1983,6 +1983,7 @@ margin-top:100px; */
   .mc-btn-update:hover
   {
       background-color: rgb(196, 0, 20);
+      color:#ffffff;
       text-decoration: none;
   }
   .mc-btn-cancel
@@ -2000,6 +2001,7 @@ margin-top:100px; */
   .mc-btn-cancel:hover
   {
       background-color:#b8b8b8;
+      color:#ffffff;
   }
   .mc-modal-footer
   {
