@@ -1840,10 +1840,17 @@ display: block;
 position: absolute;
 margin-top:100px; */
   }
+  .invoice-box
+  {
+    font-family: 'Montserrat', sans-serif;
+  }
 
   .tickettable td{
     padding: 10px;
     border: 1px solid #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
     }
     .dataTables_wrapper
     {
