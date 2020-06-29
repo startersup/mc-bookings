@@ -1977,18 +1977,29 @@ margin-top:100px; */
       color:#ffffff;
       text-align: center;
       font-size:15px;
+      cursor: pointer;
       text-transform: uppercase;
+  }
+  .mc-btn-update:hover
+  {
+      background-color: rgb(196, 0, 20);
+      text-decoration: none;
   }
   .mc-btn-cancel
   {
       padding:10px;
       width:50%;
-      background-color:#abb7f1;
+      background-color:#cecece;
       color:#000000;
       font-weight:700;
       text-align: center;
       font-size:15px;
       text-transform: uppercase;
+      cursor: pointer;
+  }
+  .mc-btn-cancel:hover
+  {
+      background-color:#b8b8b8;
   }
   .mc-modal-footer
   {
