@@ -136,9 +136,37 @@ body
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-.mc-quick-metrics
+.mc-quick-metrics, .mc-quick-lists
 {
     padding:10px 20px;
+}
+.mc-quick-lists ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+.mc-quick-lists ul li
+{
+    padding:10px;
+    cursor: pointer;
+}
+.mc-quick-lists ul li:hover
+{
+   background-color:#fff5e5;
+}
+.mc-quick-lists ul li a
+{
+    color:#2d2d52;
+}
+.mc-quick-lists ul li a 
+{
+    text-decoration: none;
+}
+.mc-quick-lists ul li a span
+{
+    font-weight:600;
+    color:#000000;
 }
 .mc-metric-card
 {
@@ -153,11 +181,23 @@ body
     font-weight:700;
     font-size:25px;
 }
+.mc-metric-card h5
+{
+    font-weight:700;
+    padding:10px 0px;
+    border-bottom:1px dashed #dfdfdf;
+    font-size:18px;   
+}
 .mc-metric-card p
 {
-    font-weight:500;
-    color:#161515;
+    font-weight:700;
+    color:#959595;
+    font-size:12px;
+    letter-spacing: 0.4px !important;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
 }
+
 .mc-dash-mid
 {
     padding-left:50px;
@@ -802,7 +842,7 @@ border-right: 1px solid #ebf0f5;
 {
 width:25px;
 height:25px;
-background-color:#ffffff;
+margin-left:-5px;
 }
 
 .mc-sub-icons
