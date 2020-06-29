@@ -1966,3 +1966,28 @@ margin-top:100px; */
   /*****invoice table****/
 
 
+  /****update***/
+  .mc-btn-update
+  {
+      padding:10px;
+      max-width:100px;
+      background-color:#F15463;
+      color:#ffffff;
+  }
+  .mc-btn-canel
+  {
+      padding:10px;
+      max-width:100px;
+      background-color:#abb7f1;
+      color:#000000;
+  }
+  .mc-modal-footer
+  {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+

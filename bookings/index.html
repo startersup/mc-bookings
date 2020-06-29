@@ -258,182 +258,7 @@
 	</div><!-- modal -->
      <!--Notification Modal -->
     
-    
-    
-    
-    
-    
-        <!--NewBooking Modal -->
-	<div class="modal right fade" id="newbooking-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
 
-				<div class="modal-header">
-					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
-					<h4 class="modal-title" id="myModalLabel2">New Booking</h4>
-                      <ul class="nav nav-pills mc-info-tabs">
-    <li class="active"><a data-toggle="pill" href="#book-location">Booking Location</a></li>
-    <li><a data-toggle="pill" href="#passenger-info">Passenger Info</a></li>
-    <li><a data-toggle="pill" href="#confirmation">confirmation</a></li>
-  </ul>
-				</div>
-
-				<div class="modal-body"> 
-  <div class="tab-content">
-    <div id="book-location" class="tab-pane fade in active">
-                  <div id="map"></div>
-	    <button onclick="calcRoute();">Click it</button>
- <input id="autocomplete" class="controls" type="text" placeholder="Enter Pickup Location or Postcode " name="pick" required="" autocomplete="off">
-
-   <input id="autocomplete2" class="controls" type="text" placeholder="Enter Drop Location or Postcode " name="drop" required="" autocomplete="off">
-        
-        
-        <input id="datetimepicker" class="controls" type="text"
-            placeholder="pickup Date and Time" autocomplete="off">
-        
-        <div class="row">
-        <div class="col-md-6">
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-            </div>
-            <div class="col-md-6">
-            <select name="Luggage" id="nl" class="selectit" autocomplete="off">
-  <option value="0">0 Luggage</option>
-  <option value="1">1 Luggage</option>
-  <option value="2">2 Luggages</option>
-  <option value="3">3 Luggages</option>
-  <option value="4">4 Luggages</option>   
-  <option value="5">5 Luggages</option>
-  <option value="6">6 Luggages</option>
-  <option value="7">7 Luggages</option>
-  <option value="8">8 Luggages</option>
-  <option value="9">9 Luggages</option>
-  <option value="10">10 Luggages</option>
-</select>
-            </div>
-        </div>
-                    <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="saloon">Saloon</option>
-  <option value="Estate">Estate</option>
-  <option value="MPV 4">MPV 4</option>
-  <option value="MPV 6">MPV 6</option>   
-  <option value="7 seater">7 Seater</option>
-  <option value="9 Seater">9 Seater</option>
-
-</select>
-         <input id="fare" class="controls" type="text"
-            placeholder="Enter Fare" autocomplete="off">
-
-        <button class="mc-cta" data-toggle="pill" href="#passenger-info">Next ></button>
-      </div>
-                    
-         
-      
-                       <div id="passenger-info" class="tab-pane fade"> 
-
-        
-                    <label for="name">Passenger Name</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Name" autocomplete="off">
-                    
-                            <label for="name">Passenger Email</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Passenger Email" autocomplete="off">
-                    
-                
-                               <label for="name">Passenger Contact</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Passenger Contact" autocomplete="off">
-                    
-                      <label for="name">Alternate Contact</label>
-                      <input class="controls" type="text"
-            placeholder="Enter Alternate Contact" autocomplete="off">
-                    
-                            <label for="name">Full Pickup Address</label>
-                      <input class="controls" type="text"
-            placeholder="eg: 124 colin street, crawley" autocomplete="off">
-                   
-                                       <label for="name">Full Dropoff Address</label>
-                      <input class="controls" type="text"
-            placeholder="eg: 12 Walnut Lane, crawley" autocomplete="off">
-            
-                  <div class="row">
-                  <div class="col-md-6">
-                              <label for="name">Adults</label>
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-                      </div>    
-                                   <div class="col-md-6">
-                              <label for="name">Infants</label>
-            <select name="passenger" id="np" class="selectit" autocomplete="off">
-  <option value="1">1 Passenger</option>
-  <option value="2">2 Passengers</option>
-  <option value="3">3 Passengers</option>
-  <option value="4">4 Passengers</option>   
-  <option value="5">5 Passengers</option>
-  <option value="6">6 Passengers</option>
-  <option value="7">7 Passengers</option>
-  <option value="8">8 Passengers</option>
-  <option value="9">9 Passengers</option>
-  <option value="10">10 Passengers</option>
-</select>
-                      </div> 
-                  </div>
-                        
-                  <label for="name">Flight Details</label>
-                      <input class="controls" type="text"
-            placeholder="eg: Easyjet EZYT54" autocomplete="off">
-            
-                        <label for="name">Special Information</label>
-                      <input class="controls" type="text"
-            placeholder="eg: dogs with me " autocomplete="off">
-            
-                           
-                            <button class="mc-cta" data-toggle="pill" href="#confirmation">Next ></button>
-                       </div>
-      
-      
-      
-         <div id="confirmation" class="tab-pane fade"> 
-        <input type="checkbox" name="vehicle1" value="Bike">
-  <label for="vehicle1">Email Confirmation</label><br><br>
-  <input type="checkbox" name="vehicle2" value="Car">
-  <label for="vehicle2"> SMS Confirmation</label><br><br>
-        <button class="mc-cta">Book Now</button>      
-      </div>
-      
-                    
-    </div>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-     <!--NewBooking Modal -->
-    
-    
-    
-    
     
         <!-- Modal -->
         <button type="button" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#info-bar" id="mc-open-modal">Open Small Modal</button>
@@ -443,7 +268,7 @@
 
 				<div class="modal-header">
 					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
-          <h4 class="modal-title" id="myModalBookId" name="">Booking Information - ( BRT124 )</h4>
+          <h4 class="modal-title" id="myModalBookId" name="">Booking Information - (  )</h4>
           <div id="myModalBookId_temp" style="display:none;"></div>
                     <ul class="nav nav-pills mc-info-tabs">
     <li id="basic_info" class="active modalToggle"><a data-toggle="pill"  href="#location">Basic Info</a></li>
@@ -496,12 +321,7 @@
                        <tr>
                       <td>Journey Time :</td>
                       <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value="1 hour 15 minutes"></td>
-                    </tr>
-                    <tr>
-                      <td>Update</td>
-                      <td>Cancel</td>
-                    </tr>
-                  
+                    </tr>    
              </tbody></table>
 				</div>
             
@@ -689,7 +509,12 @@
                          
                 
                     </div>
-                
+                <div class="mc-modal-footer">
+                  <div class="mc-flex">
+                    <a class="mc-btn-update">Update</a>
+                    <a class="mc-btn-cancel">Update</a>
+                  </div>
+                </div>
                 </div>
 			</div><!-- modal-content -->
 		</div><!-- modal-dialog -->
