@@ -168,8 +168,34 @@ body
     font-weight:600;
     color:#000000;
 }
+div.mc-sp-charts {
+    position: absolute;
+    top:10px;
+    right:10px;
+  }  
+  .mc-sp-charts *[hidden] {
+    display: none;
+  }
+  .mc-sp-charts .mc-chart-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, .7) !important;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 9999;
+  }
+  .sparkline--cursor {
+    stroke: orange;
+  }
+  
+  .sparkline--spot {
+    fill: red;
+    stroke: red;
+  }
 .mc-metric-card
 {
+    position: relative;
     padding:10px 20px;
     background-color:#ffffff;
     font-family: 'Montserrat', sans-serif;
