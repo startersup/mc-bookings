@@ -1971,22 +1971,26 @@ margin-top:100px; */
   .mc-btn-update
   {
       padding:10px;
-      max-width:100px;
+      width:50%;
+      font-weight:700;
       background-color:#F15463;
       color:#ffffff;
+      text-align: center;
   }
   .mc-btn-canel
   {
       padding:10px;
-      max-width:100px;
+      width:50%;
       background-color:#abb7f1;
       color:#000000;
+      font-weight:700;
+      text-align: center;
   }
   .mc-modal-footer
   {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 50px;
     width: 100%;
   }
 
