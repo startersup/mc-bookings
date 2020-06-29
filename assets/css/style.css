@@ -113,11 +113,11 @@ body
    list-style-type: none;
     margin-top: 0px;
     padding: 7px 5px;
-    border: 1px solid #dedede;
     background-color:#ffffff;
 }
 #filterList ul li
 {
+    display:block;
     margin-top: 5px;
     font-family: 'Montserrat', sans-serif;
     padding: 0px 8px;
@@ -125,6 +125,7 @@ body
     font-weight: 500;
     color: #2d2d52;
     cursor: pointer;
+    border:none !important;
     text-decoration: none;
 }
 
