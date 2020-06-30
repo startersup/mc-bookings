@@ -227,6 +227,13 @@ div.mc-sp-charts {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
+.mc-tiny-metric
+{
+    font-size:10px;
+    font-weight:500 !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 .mc-dash-mid
 {
