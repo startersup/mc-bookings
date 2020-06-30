@@ -72,7 +72,7 @@ body
 }
 .navbar-default .navbar-brand {
     color:#ffffff !important;
-    font-weight:800;
+    font-weight:600;
     font-size:16px;
 }
 
@@ -221,7 +221,7 @@ div.mc-sp-charts {
 .mc-metric-card p
 {
     font-weight:700;
-    color:#959595;
+    color:#666666;
     font-size:12px;
     letter-spacing: 0.4px !important;
     font-family: 'Montserrat', sans-serif;
