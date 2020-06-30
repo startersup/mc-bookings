@@ -140,9 +140,13 @@ body
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-.mc-quick-metrics, .mc-quick-lists
+.mc-quick-metrics, .mc-quick-lists, .quick-map-lookups
 {
     padding:10px 20px;
+}
+.mc-cluster-map
+{
+    width:100%;
 }
 .mc-quick-lists ul
 {
