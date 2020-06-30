@@ -4,7 +4,7 @@
   <meta http-equiv='cache-control' content='no-cache'>
 <meta http-equiv='expires' content='0'>
 <meta http-equiv='pragma' content='no-cache'>
-  <title>Minicabee Travel Solutions | Bookings | XendFleet</title>
+  <title>Minicabee Travel Solutions | Dashboard</title>
   <meta charset="utf-8">
   <link rel="icon" href="./assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -249,8 +249,16 @@
     
   </div>
 </div>
-<div class="">
-  
+
+
+<div class="quick-map-lookups">
+  <div class="row">
+  <div class="col-md-12">
+    <div class="mc-metric-card">
+      <h5>Booking Traffic</h5>
+  <div id="map" class="mc-cluster-map"></div>
+</div>
+</div></div></div>
 </div>
 
 </div>
@@ -327,8 +335,54 @@
      <script src="./assets/js/sparkline-chart.js"></script>
      <script src="./assets/js/server.js"></script>
      <script src="./assets/js/dashboard.js"></script>
-   
-<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE&amp;callback=initMap"></script>
+
+     <script>
+
+function initMap() {
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {lat: 55.3781, lng: 3.4360}
+  });
+
+  // Create an array of alphabetical characters used to label the markers.
+  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+  // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+  var markers = locations.map(function(location, i) {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length]
+    });
+  });
+
+  // Add a marker clusterer to manage the markers.
+  var markerCluster = new MarkerClusterer(map, markers,
+      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+}
+var locations = [
+  {lat: 51.1537, lng: 0.1821},
+  {lat: 51.5074, lng: 0.1278},
+  {lat: 51.1537, lng: 0.1821},
+  {lat: 51.1537, lng: 0.1821},
+  {lat: 51.1537, lng: 0.1821},
+  {lat: 51.1537, lng: 0.1821},
+  {lat: 51.5074, lng: 0.1278},
+  {lat: 51.5074, lng: 0.1278},
+  {lat: 2.4862, lng: 1.8904},
+  {lat: 2.4862, lng: 1.8904},
+  {lat: 2.4862, lng: 1.8904}
+]
+</script>
+<!-- Replace following script src -->
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js">
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauQAxB_oaAk4z-NQN2BkhmD4AxzA2l6M&callback=initMap">
+</script>   
     </body>
   
    
