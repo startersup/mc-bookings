@@ -127,6 +127,20 @@
 <div class="mc-mainbar-components">
   <div class="mc-quick-metrics">
 <div class="row">
+
+<div class="col-md-2 col-xs-6">
+<div class="mc-metric-card">
+<h3 id="allBookingId">25 </h3><p>New Bookings Temp</p>
+<div class="mc-sp-charts">
+  <svg class="btc" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric">25% <img style="width:10px;" src="./assets/images/icons/increase.svg"></p>
+
+</div>
+</div>
+</div>
+
+
 <div class="col-md-2 col-xs-6">
 <div class="mc-metric-card">
 <h3 id="allBookingId">25 </h3><p>New Bookings</p>
