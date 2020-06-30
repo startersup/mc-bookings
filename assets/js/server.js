@@ -15,7 +15,7 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
-var driverList={};
+var driverList = {};
 function startLoader() {
   //document.getElementById("spinnermodal").style.display = "block";
 
@@ -29,9 +29,9 @@ function stopLoader() {
 function pageLoad() {
   SetParam("today");
   var mydata = {};
-  var myGetUrl = "myapi/alldriver.php";
+  var myGetUrl = myUrl + "myapi/alldriver.php";
 
-  get_url_response(myGetUrl, mydata,'setAllDriver');
+  get_url_response(myGetUrl, mydata, 'setAllDriver');
 }
 function SetParam(myparam) {
   var mydata = {};
@@ -55,12 +55,12 @@ function get_booking_response(myGetUrl, mydata) {
     url: myGetUrl,
     data: mydata,
     async: false,
-    success: function(data) {
+    success: function (data) {
       setRow(data);
       // document.getElementById("spinnermodal").style.display = "none";
       //window[functionName](data);
     },
-    error: function(xhr) {
+    error: function (xhr) {
       // document.getElementById("spinnermodal").style.display = "none";
       //  Server_Response_Fail(xhr.responseText);
     }
@@ -72,10 +72,10 @@ function get_url_response(myGetUrl, mydata, myfunc) {
     url: myGetUrl,
     data: mydata,
     async: false,
-    success: function(data) {
+    success: function (data) {
       window[myfunc](data);
     },
-    error: function(xhr) {}
+    error: function (xhr) { }
   });
 }
 
@@ -88,41 +88,40 @@ function setRow(data) {
   var myTable = $("#mc-datatables").DataTable();
   myTable.destroy();
   var result = JSON.parse(data);
-  if(result.length === 0)
-  {
-    $("#display_data").css('display','none');
-    $("#empty_state").css('display','block');
+  if (result.length === 0) {
+    $("#display_data").css('display', 'none');
+    $("#empty_state").css('display', 'block');
     stopLoader();
-  }else{
+  } else {
 
-    $("#display_data").css('display','block');
-    $("#empty_state").css('display','none');
+    $("#display_data").css('display', 'block');
+    $("#empty_state").css('display', 'none');
 
-  $("#mc-datatables").DataTable({
-    data: result,
-    lengthChange: false,
-    searching: false,
-    dom: "Bfrtip",
-    buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
-    columns: [
-      { data: "refid" },
-      { data: "booked_site" },
-      { data: "src" },
-      { data: "des" },
-      { data: "dt" },
-      { data: "type" },
-      { data: "fare" },
-      { data: "status" },
-      { data: null, defaultContent: '<div class="mc-edit"></div>' }
-    ]
-  });
-  setStatus();
-  
-}
+    $("#mc-datatables").DataTable({
+      data: result,
+      lengthChange: false,
+      searching: false,
+      dom: "Bfrtip",
+      buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
+      columns: [
+        { data: "refid" },
+        { data: "booked_site" },
+        { data: "src" },
+        { data: "des" },
+        { data: "dt" },
+        { data: "type" },
+        { data: "fare" },
+        { data: "status" },
+        { data: null, defaultContent: '<div class="mc-edit"></div>' }
+      ]
+    });
+    setStatus();
+
+  }
 }
 function setStatus() {
   var table = $("#mc-datatables").DataTable();
-  table.rows().every(function(rowIdx, tableLoop, rowLoop) {
+  table.rows().every(function (rowIdx, tableLoop, rowLoop) {
     var data = this.data();
     var myClass = "";
     var myDiv = '<div class="myClass">myStatus</div>';
@@ -192,8 +191,8 @@ function clearClass() {
   $("#tommorrow").removeClass("active");
   $("#future").removeClass("active");
 }
-$(document).ready(function() {
-  $(".booking").click(function() {
+$(document).ready(function () {
+  $(".booking").click(function () {
     clearClass();
     $(this).addClass("active");
     startLoader();
@@ -202,11 +201,11 @@ $(document).ready(function() {
     SetParam(id);
   });
 
-  $("#filter_all").click(function() {
+  $("#filter_all").click(function () {
     filterCheckBox(this);
   });
 
-  $("#mc-datatables tbody").on("click", ".mc-edit", function() {
+  $("#mc-datatables tbody").on("click", ".mc-edit", function () {
     var table = $("#mc-datatables").DataTable();
     var data = table.row($(this).parents("tr")).data();
     // $('#mc-open-modal').trigger('click');
@@ -217,34 +216,33 @@ $(document).ready(function() {
     clearModal();
     getModalData("basic_info", data);
   }
-  $(".modalToggle").click(function() {
+  $(".modalToggle").click(function () {
     var id = $(this).attr("id");
     if (id === "bidding") {
       getModalData(id, document.getElementById("myModalBookId_temp").innerHTML);
     }
   });
 
-  $("#BookingUpdate").click(function() {
-    var myData={};
-    $("#passenger :input").each(function(e) {
-     
-     var key = this.name;
+  $("#BookingUpdate").click(function () {
+    var myData = {};
+    $("#passenger :input").each(function (e) {
+
+      var key = this.name;
       var val = this.value;
-      myData[key]=val;
+      myData[key] = val;
     });
     myData["refid"] = document.getElementById("myModalBookId_temp").innerHTML;
     var myGetUrl = myUrl + "myapi/UpdateBooking.php";
-    
+
     get_url_response(myGetUrl, myData, "UpdationAlert");
   });
 
-  $("#filter_load").click(function() {
+  $("#filter_load").click(function () {
     searchByFilter();
   });
 });
 
-function UpdationAlert(myData)
-{
+function UpdationAlert(myData) {
   console.log(myData);
 }
 function searchByFilter() {
@@ -357,7 +355,7 @@ function setModalData(myData) {
     document.getElementById("modal_booking_Child_ceat").value = myObj["base"]["ceat"];
     document.getElementById("modal_booking_mg").value = myObj["base"]["mg"];
     document.getElementById("modal_booking_infants").value = myObj["base"]["infants"];
-    
+
 
     //setting up message
 
@@ -434,10 +432,9 @@ function setModalData(myData) {
       document.getElementById("Allocate_Table").innerHTML = temp;
     }
 
-    temp='';
-    for(var x=0;driverList.length;x++)
-    {
-      temp = temp + '<option val="'+driverList[x]["id"]+'" >'+driverList[x]["name"]+' - '+driverList[x]["id"]+'</option>'
+    temp = '';
+    for (var x = 0; driverList.length; x++) {
+      temp = temp + '<option val="' + driverList[x]["id"] + '" >' + driverList[x]["name"] + ' - ' + driverList[x]["id"] + '</option>'
     }
     document.getElementById("drvid").innerHTML = temp;
 
@@ -465,9 +462,16 @@ function date_format_db(x) {
 
   return year + "-" + month + "-" + day;
 }
-// var temp = document.getElementById("fromto").innerHTML;
 
-// var d = temp.split(" - ");
 
-// mydata['from']=date_format_db(d[0]);
-// mydata['to']=date_format_db(d[1]);
+function getWeekDates() {
+  var current = new Date();     // get current date
+  var week_date = [];
+  for (var i = 0; i < 7; i++) {
+    var weekstart = current.getDate() - current.getDay() + i;
+    var x = new Date(current.setDate(weekstart));
+    week_date[i] = date_format_db(x);
+
+  }
+  return week_date;
+}

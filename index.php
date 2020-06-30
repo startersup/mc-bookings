@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+  <title>Minicabee Travel Solutions | Bookings | XendFleet</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="./assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.rawgit.com/fnando/sparkline/master/dist/sparkline.js "></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+</head>
+<body onload="dashboardLoad();">
+
+
+  <!-- <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
+  display: block;
+  background-color: rgb(255, 255, 255);
+  min-width: 1500px;
+  top: 48px;
+  left: 65px;
+  border: none;">
+    <div class="modal11-content">
+      <div class="loader" style="max-width:100px;position:absolute;top:300px;left:650px;">
+        <centre> <img width="80px;" src="./assets/images/icons/loader.svg"></centre>    
+      </div>
+    </div>
+  </div> -->
+    <!----navbar-starts----->
+    <nav class="navbar navbar-default mc-dash-nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="./assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav mc-dash-mid">
+            <li class="active"><a class="mc-load" href="./passengers/">Passengers</a></li>
+            <li><a class="mc-load" href="./drivers/">Drivers</a></li>
+            <li><a class="mc-load" href="./partners">Partners</a></li>
+            <li><a class="mc-load" href="./invoice/">Invoice</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
+                <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
+                    <div class="mc-dropdown-content mc-bx-shdw">
+                    <ul class="mc-drop-desc">
+                        <li>Help Docs</li>
+                        <li>Feedback</li>
+                         <li>Raise Ticket</li>
+                        <li>Live Chat</li>
+                    </ul>
+                    </div>
+            </li>
+            <li>
+              <div class="mc-notify-badge">12</div>
+              <a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a>
+            </li>
+              <li><a href="#"><img src="./assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>   <!----navbar-ends----->
+    
+  
+    <!----sidebar-starts----->
+    <div class="mc-dash-sidebar">
+      <ul>
+        <li><a href="../"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/analytics.svg">
+          <span class="mc-controls">Dashboard</span>
+          <span class="tooltiptext"> Dashboard</span>
+           </div></a></li> 
+           <li><a href="../bookings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/bookings.svg">
+            <span class="mc-controls">Bookings</span>
+            <span class="tooltiptext"> Bookings</span>
+             </div></a></li> 
+             <li><a href="../company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
+              <span class="mc-controls">Company</span>
+              <span class="tooltiptext"> Company</span>
+               </div></a></li> 
+               <li><a href="../tracking"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/track.svg">
+                <span class="mc-controls">Tracking</span>
+                <span class="tooltiptext"> Tracking</span>
+                 </div></a></li> 
+                 <li><a href="../marketing/email-marketing"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
+                  <span class="mc-controls">Marketing</span>
+                  <span class="tooltiptext"> Marketing</span>
+                   </div></a></li> 
+                     <li><a href="../settings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/gear.svg"><br>
+                      <span class="mc-controls">Settings</span>
+                      <span class="tooltiptext"> App Settings</span>
+                       </div></a></li>       
+     </ul>
+       
+  </div>
+        
+<!----Sidebar-ends----->    
+    
+    
+    
+    
+    <!---mainbar-starts----->
+    
+    <div class="mc-dash-mainbar">
+<div class="mc-mainbar-components">
+  <div class="mc-quick-metrics">
+<div class="row">
+<div class="col-md-2 col-xs-6">
+<div class="mc-metric-card">
+<h3 id="allBookingId">25 </h3><p>New Bookings</p>
+<div class="mc-sp-charts">
+  <svg class="allBooking" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric">25% <img style="width:10px;" src="./assets/images/icons/increase.svg"></p>
+
+</div>
+</div>
+</div>
+<div class="col-md-2 col-xs-6">
+  <div class="mc-metric-card">
+  <h3 id="totalBookedId">12 </h3><p>Today Bookings</p>
+  <div class="mc-sp-charts">
+  <svg class="totalBooked" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+</div>
+  </div>
+  </div>
+<div class="col-md-2 col-xs-6">
+  <div class="mc-metric-card">
+  <h3 id="unallocId" >10 </h3><p>Unallocated Jobs</p>
+  <div class="mc-sp-charts">
+  <svg class="unalloc" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+</div>
+  </div>
+  </div>
+  <div class="col-md-2 col-xs-6">
+    <div class="mc-metric-card">
+    <h3 id="completedId" >15 </h3><p>Completed Jobs</p>
+    <div class="mc-sp-charts">
+  <svg class="completed" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+</div>
+    </div>
+    </div>
+    <div class="col-md-2 col-xs-6">
+      <div class="mc-metric-card">
+      <h3 id="cancelledId" >15 </h3><p>Cancelled Jobs</p>
+      <div class="mc-sp-charts">
+  <svg class="cancelled" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+</div>
+      </div>
+      </div>
+      <div class="col-md-2 col-xs-6">
+        <div class="mc-metric-card">
+        <h3 id="totalFareId">£ 1598 </h3><p>Booking Value</p>
+        <div class="mc-sp-charts">
+  <svg class="totalFare" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
+  <span class="mc-chart-tooltip" hidden="true"></span>
+</div>
+        </div>
+        </div>
+</div>
+</div>
+<div class="mc-quick-lists">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mc-metric-card">
+        <h5>Drivers Online</h5>
+        <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #f6f7f8;">
+          <thead class="mc-table-head">
+              <tr style="border:1px solid #f6f7f8;">
+                  <th>Driver Id</th>
+                  <th>Driver Name</th>
+                  <th>Contact Number</th>
+                  <th>Covering Locations</th>
+              </tr>
+          </thead>
+          <tbody id="Allocate_Table">
+            <tr>
+              <td>BRT145</td><td>Rauf Khan</td><td>+44786878878</td><td>Gatwick, Heathrow, Ramford,horsham</td>
+            </tr>
+            <tr>
+              <td>BR232</td><td>Azhwar Khan</td><td>+4477838398</td><td>London,Brighton,horsham</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mc-metric-card">
+        <h5>Ongoing Jobs ( 11AM - 12AM )</h5>
+        <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #f6f7f8;">
+          <thead class="mc-table-head">
+              <tr style="border:1px solid #f6f7f8;">
+                  <th>Job Id</th>
+                  <th>Status</th>
+                  <th>Driver Name</th>
+                  <th>Contact Number</th>
+              </tr>
+          </thead>
+          <tbody id="Allocate_Table">
+            <tr>
+              <td>BRT145</td><td>Allocated</td><td>Rauf Khan</td><td>+44786878878</td>
+            <tr>
+              <td>BR232</td><td>Allocated</td><td>Azhwar Khan</td><td>+4477838398</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+    
+  </div>
+</div>
+<div class="">
+  
+</div>
+
+</div>
+
+    
+      <!---mainbar-starts----->
+    
+<!---modals-section------>
+    
+    <!--Notification Modal -->
+	<div class="modal right fade" id="notification-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-color:#fbfbfb;">
+				<div class="modal-header">
+					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<h4 class="modal-title" id="myModalLabel2">Notifications</h4>
+				</div>
+
+				<div class="modal-body">
+                    <ul class="mc-notifications-head">
+                    <li><h3>New Booking on Bin</h3>
+                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                    <h5>12/13/15 at 22:20</h5>
+                    </li>
+                    <li><h3>New Booking on Bin</h3>
+                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                      <h5>12/13/15 at 22:20</h5>
+                      </li>
+                      <li><h3>New Booking on Bin</h3>
+                        <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                        <h5>12/13/15 at 22:20</h5>
+                        </li>
+                        <li><h3>New Booking on Bin</h3>
+                          <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                          <h5>12/13/15 at 22:20</h5>
+                          </li>
+                          <li><h3>New Booking on Bin</h3>
+                            <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                            <h5>12/13/15 at 22:20</h5>
+                            </li>
+                            <li><h3>New Booking on Bin</h3>
+                              <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                              <h5>12/13/15 at 22:20</h5>
+                              </li>
+                              <li><h3>New Booking on Bin</h3>
+                                <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                <h5>12/13/15 at 22:20</h5>
+                                </li>
+                                <li><h3>New Booking on Bin</h3>
+                                  <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                  <h5>12/13/15 at 22:20</h5>
+                                  </li>
+                                  <li><h3>New Booking on Bin</h3>
+                                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                    <h5>12/13/15 at 22:20</h5>
+                                    </li>
+                                    <li><h3>New Booking on Bin</h3>
+                                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                      <h5>12/13/15 at 22:20</h5>
+                                      </li>
+                    </ul>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+     <!--Notification Modal -->
+    
+    
+    
+    
+    
+    
+     <script src="./assets/js/sparkline-chart.js"></script>
+     <script src="./assets/js/server.js"></script>
+     <script src="./assets/js/dashboard.js"></script>
+   
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE&amp;callback=initMap"></script>
+    </body>
+  
+   
+</html>
+
+

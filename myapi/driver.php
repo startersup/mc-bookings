@@ -26,7 +26,7 @@ if($temp==null)
 {
    $temp=array();
 }
-  echo  json_encode($temp);
+echo  json_encode($temp);
 
 
  
