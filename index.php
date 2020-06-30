@@ -241,7 +241,7 @@
   <div class="row">
   <div class="col-md-12">
     <div class="mc-metric-card">
-      <h3>Booking Traffic</h4>
+      <h5>Booking Traffic</h5>
   <div id="map" class="mc-cluster-map"></div>
 </div>
 </div></div></div>
