@@ -1,6 +1,10 @@
 function otherFunction() {
   document.getElementById("mc-dropdown").classList.toggle("show");
 }
+function statuschange() {
+  document.getElementById("open-status").classList.toggle("show");
+}
+
 
 window.onclick = function(event) {
   if (!event.target.matches(".mc-others-icon")) {

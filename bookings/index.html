@@ -295,7 +295,25 @@
                     </tr>
                        <tr>
                       <td>Booking Status :</td>
-                      <td><input type="text" class="text" name="modal_booking_status" id="modal_booking_status" value="Booked"></td>
+                      <td>
+                        <div class="mc-icon-wrap">
+                        <input type="text" class="text" name="modal_booking_status" onclick="statuschange()" id="modal_booking_status" value="Booked">
+                        <div id="open-status" class="dropdown-set">
+                          <div id="statuslist">
+                            <ul>
+                            <li><a>Booked</a></li>
+                               <li><a>Confirmed</a></li>
+                               <li><a>Completed</a></li>
+                               <li><a>Cancelled</a></li>
+                            </ul><br>
+                            <div class="mc-flex">
+                            <button class="button-style" id="filter_load" >Load</button>
+                            <button class="button-cancel-style" >Cancel</button>
+                          </div>
+                        </div>
+                  </div>
+                         </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="first">Pickup From :</td>
