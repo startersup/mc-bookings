@@ -109,7 +109,7 @@
                 <input class="input-filter" type="hidden" value="" id="filter_checklist" >
             </ul><br>
             <div class="mc-flex">
-            <button class="button-style" id="filter_load" >Load</button>
+            <button class="button-style" id="change_status" >Change</button>
             <button class="button-cancel-style" >Cancel</button>
           </div>
         </div>
@@ -297,7 +297,7 @@
                       <td>Booking Status :</td>
                       <td>
                         <div class="mc-icon-wrap">
-                        <input type="text" class="text" name="modal_booking_status" readonly onclick="statuschange()" id="modal_booking_status" value="Booked">
+                        <input type="text" class="text mc-status-change" name="modal_booking_status" readonly onclick="statuschange()" id="modal_booking_status" value="Booked">
                         <div id="open-status" class="dropdown-set">
                           <div id="statuslist">
                             <ul>
