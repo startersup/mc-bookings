@@ -842,9 +842,13 @@ border-right: 1px solid #ebf0f5;
      font-family: 'Montserrat', sans-serif;
     font-size: 12px;
 }
+.mc-home-mainbar
+{
+    margin-top:50px !important;margin-left:65px !important;
+}
 .mc-dash-sidebar
 {
-    margin-top:35px;
+    margin-top:0px;
     position: fixed;
   background: #fff;
       box-shadow: 0 1px 5px rgba(0,0,0,.06);

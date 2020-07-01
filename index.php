@@ -57,9 +57,7 @@
 
   <!---mainbar-starts----->
 
-
-
-    <div class="mc-mainbar-components">
+    <div class="mc-mainbar-components mc-home-mainbar">
       <div class="mc-quick-metrics">
         <div class="row">
           <div class="col-md-2 col-xs-6">
