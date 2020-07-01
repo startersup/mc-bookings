@@ -39,6 +39,16 @@ body
 {
     padding: 8px 0px;
 }
+.max-width-300
+{
+    max-width:280px !important;
+    width:100%;
+}
+.pad-0
+{
+    padding:0px !important;
+}
+
 .navbar-brand
 {
     display:flex;
