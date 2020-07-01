@@ -108,18 +108,18 @@ body
     cursor: pointer;
     background-color: #480093;
 }
-#filterlist
+#filterlist, #statuslist
 {
     border:1px solid #e5e5e5;
 }
-#filterList ul
+#filterList ul, #statuslist ul
 {
    list-style-type: none;
     margin-top: 0px;
     padding: 7px 5px;
     background-color:#ffffff;
 }
-#filterList ul li
+#filterList ul li, #statuslist ul li
 {
     display:block;
     margin-top: 5px;
