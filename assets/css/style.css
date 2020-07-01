@@ -132,6 +132,10 @@ body
     border:none !important;
     text-decoration: none;
 }
+#statuslist a
+{
+    padding:5px 15px;
+}
 
 .navbar-default .navbar-nav>li:hover .mc-dropdown-content {
     visibility: visible;
