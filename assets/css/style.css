@@ -1299,7 +1299,7 @@ background-color: #4e009f !important;
     display: block;
     position: absolute;
     width: 0;
-    top: 48px;
+    top: 40px;
     height: 3px;
     background: #ff3184;
     transition: width 0.3s;

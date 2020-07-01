@@ -91,29 +91,8 @@
      <li id="today"  class="active booking"><a>Today Booking</a></li>
     <li id="tommorrow" class="booking"><a  >Tomorrow Booking</a></li> 
     <li id="future" class="booking" ><a  >Future Booking</a></li> 
-     <li><div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" onclick="otherFunction()" data-toggle="tooltip" data-placement="right" title="More Filters" src="../assets/images/icons/more.svg"></div>
-        <div id="mc-dropdown" class="dropdown-set">
-          <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span id="fromto" ></span> 
-        <i class="fa fa-caret-down"></i>
-        </div>
-          <div id="filterList">
-            <ul>
-            <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all" > ALL</li>
-                <li><input class="input-filter" type="checkbox" value="booked" id="1" > Booked</li>
-                <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirm</li>
-                <li>    <input class="input-filter" type="checkbox" value="comitted" id="3" > Allocated</li>
-                <li><input class="input-filter" type="checkbox" value="completed" id="4"> Complete</li>
-                <li><input class="input-filter" type="checkbox" value="cancelled" id="5" > Cancelled</li>
-                <input class="input-filter" type="hidden" value="" id="filter_checklist" >
-            </ul><br>
-            <div class="mc-flex">
-            <button class="button-style" id="filter_load" >Load</button>
-            <button class="button-cancel-style" >Cancel</button>
-          </div>
-        </div>
-  </div>
+     <li><div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#custom-filters"   src="../assets/images/icons/more.svg"></div>
+
         </li> 
 
     </ul>
@@ -542,6 +521,53 @@
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->
     <!---modals-section------>
+
+
+<!----custom-filter-modal-->
+<div class="modal modal-bg" id="custom-filters" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Custom Filters</h4>
+      </div>
+      <div class="modal-body">
+        <div id="mc-dropdown" class="dropdown-set">
+          <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span id="fromto" ></span> 
+        <i class="fa fa-caret-down"></i>
+        </div>
+          <div id="filterList">
+            <ul>
+            <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all" > ALL</li>
+                <li><input class="input-filter" type="checkbox" value="booked" id="1" > Booked</li>
+                <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirm</li>
+                <li>    <input class="input-filter" type="checkbox" value="comitted" id="3" > Allocated</li>
+                <li><input class="input-filter" type="checkbox" value="completed" id="4"> Complete</li>
+                <li><input class="input-filter" type="checkbox" value="cancelled" id="5" > Cancelled</li>
+                <input class="input-filter" type="hidden" value="" id="filter_checklist" >
+            </ul><br>
+            <div class="mc-flex">
+            <button class="button-style" id="filter_load" >Load</button>
+            <button class="button-cancel-style" >Cancel</button>
+          </div>
+        </div>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!---end custom-filter-modal-->
+
+
     
 <script>$(document).ready(function() {
     $('img').tooltip()
