@@ -456,13 +456,22 @@ function setBid(myObj) {
 }
 function date_format_db(x) {
   var d = new Date(x),
-    month = "" + (d.getMonth() + 1),
+   /* month = "" + (d.getMonth() + 1),
     day = "" + d.getDate(),
+*/
+     month = ("0" + (d.getMonth() + 1)).slice(-2); 
+     day = ("0" + d.getDate()).slice(-2); 
+
     year = d.getFullYear();
 
   return year + "-" + month + "-" + day;
 }
 
+function todayDate()
+{
+  var today = new Date();
+  return date_format_db(today);
+}
 
 function getWeekDates() {
   var current = new Date();     // get current date

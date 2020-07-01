@@ -32,69 +32,76 @@ interval: "10:00 to 11:00" */
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="New Booking";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["allBooking"][idx].value;
+            tempdata["value"]=parseInt(dashboardData["allBooking"][idx].value);
         }
         allBooking.push(tempdata);
 
-        idx =dashboardData["cancelled"].findIndex(data1=> data1.id ===curr_date );
+        idx =dashboardData["cancelled"].findIndex(data1=> data1.date ===curr_date );
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="Cancelled Jobs";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["cancelled"][idx].value;
+            tempdata["value"]=parseInt(dashboardData["cancelled"][idx].value);
         }
         cancelled.push(tempdata);
 
-        idx =dashboardData["completed"].findIndex(data1=> data1.id ===curr_date );
+        idx =dashboardData["completed"].findIndex(data1=> data1.date ===curr_date );
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="Completed Jobs";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["completed"][idx].value;
+            tempdata["value"]=parseInt(dashboardData["completed"][idx].value);
         }
         completed.push(tempdata);
 
-        idx =dashboardData["totalBooked"].findIndex(data1=> data1.id ===curr_date );
+        idx =dashboardData["totalBooked"].findIndex(data1=> data1.date ===curr_date );
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="Today Booking";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["totalBooked"][idx].value;
+            tempdata["value"]=parseInt(dashboardData["totalBooked"][idx].value);
         }
         totalBooked.push(tempdata);
 
-        idx =dashboardData["totalFare"].findIndex(data1=> data1.id ===curr_date );
+        idx =dashboardData["totalFare"].findIndex(data1=> data1.date ===curr_date );
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="Fare";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["totalFare"][idx].value;
+            tempdata["value"]=parseFloat(dashboardData["totalFare"][idx].value);
         }
         totalFare.push(tempdata);
 
-        idx =dashboardData["unalloc"].findIndex(data1=> data1.id ===curr_date );
+        idx =dashboardData["unalloc"].findIndex(data1=> data1.date ===curr_date );
         tempdata={};
         tempdata["date"]=curr_date;
         tempdata["value"]=0;
+        tempdata["name"]="Unallocated Jobs";
         if(idx >=0)
         {
-            tempdata["value"]=dashboardData["unalloc"][idx].value;
+            tempdata["value"]=parseInt(dashboardData["unalloc"][idx].value);
         }
         unalloc.push(tempdata);
     }
+    sparkline.sparkline(document.querySelector(".btc"), btc, options_Count);
 
-    sparkline.sparkline(document.querySelector(".allBooking"), allBooking, options);
-    sparkline.sparkline(document.querySelector(".cancelled"), cancelled, options);
-    sparkline.sparkline(document.querySelector(".completed"), completed, options);
-    sparkline.sparkline(document.querySelector(".totalBooked"), totalBooked, options);
-    sparkline.sparkline(document.querySelector(".totalFare"), totalFare, options);
-    sparkline.sparkline(document.querySelector(".unalloc"), unalloc, options);
+    sparkline.sparkline(document.querySelector(".allBooking"), allBooking, options_Count);
+    sparkline.sparkline(document.querySelector(".cancelled"), cancelled, options_Count);
+    sparkline.sparkline(document.querySelector(".completed"), completed, options_Count);
+    sparkline.sparkline(document.querySelector(".totalBooked"), totalBooked, options_Count);
+    sparkline.sparkline(document.querySelector(".totalFare"), totalFare, options_GBP);
+    sparkline.sparkline(document.querySelector(".unalloc"), unalloc, options_Count);
 
 
 }
