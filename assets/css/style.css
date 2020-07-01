@@ -848,7 +848,7 @@ border-right: 1px solid #ebf0f5;
 }
 .mc-dash-sidebar
 {
-    margin-top:0px;
+    margin-top:35px;
     position: fixed;
   background: #fff;
       box-shadow: 0 1px 5px rgba(0,0,0,.06);
