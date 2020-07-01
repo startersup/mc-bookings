@@ -846,6 +846,10 @@ border-right: 1px solid #ebf0f5;
 {
     margin-top:0px !important;margin-left:65px !important; width: calc(100% - 55px) !important;
 }
+.mc-top-visual
+{
+    margin-top:50px;
+}
 .mc-dash-sidebar
 {
     margin-top:35px;
