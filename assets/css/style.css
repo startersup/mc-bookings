@@ -842,10 +842,10 @@ border-right: 1px solid #ebf0f5;
      font-family: 'Montserrat', sans-serif;
     font-size: 12px;
 }
-/* .mc-home-mainbar
+.mc-home-mainbar
 {
-    margin-top:50px !important;margin-left:65px ;
-} */
+    margin-top:50px !important;margin-left:65px !important; width: calc(100% - 55px) !important;
+}
 .mc-dash-sidebar
 {
     margin-top:0px;
