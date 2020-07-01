@@ -2,7 +2,7 @@ function otherFunction() {
   document.getElementById("mc-dropdown").classList.toggle("show");
 }
 function statuschange() {
-  document.getElementById("open-status").classList.toggle("show");
+  document.getElementById("open-status").addClass("show");
 }
 
 
