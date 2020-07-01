@@ -11,6 +11,7 @@ function dashboardLoad() {
     var myGetUrl = myUrl + "myapi/dashboard.php";
 
     get_url_response(myGetUrl, myData, "dashboardChange");
+
 }
 
 function dashboardChange(data) {
@@ -109,27 +110,25 @@ function dashboardChange(data) {
 
 function setTables(dashboardData) {
 
-      /* driverStatus: (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
- interval: "10:00 to 11:00" */
+    /* driverStatus: (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
+interval: "10:00 to 11:00" */
     //   var ongoingJob=[];
-    var temp='';
-    var count =dashboardData["driverStatus"].length
-    for(i=0;i<count;i++)
-        {
-            temp = temp +'<tr><td>'+dashboardData["driverStatus"][i].id+'</td><td>'+dashboardData["driverStatus"][i].name+'</td><td>'+dashboardData["driverStatus"][i].contact+'</td><td>NA</td></tr>';
-        }
-        $('#Driver_Online_tbl').html(temp);
+    var temp = '';
+    var count = dashboardData["driverStatus"].length
+    for (i = 0; i < count; i++) {
+        temp = temp + '<tr><td>' + dashboardData["driverStatus"][i].id + '</td><td>' + dashboardData["driverStatus"][i].name + '</td><td>' + dashboardData["driverStatus"][i].contact + '</td><td>NA</td></tr>';
+    }
+    $('#Driver_Online_tbl').html(temp);
 
-        temp='';
-        count =dashboardData["ongoingJob"].length
-    for(i=0;i<count;i++)
-        {
-            temp = temp +'<tr><td>'+dashboardData["ongoingJob"][i].refid+'</td><td>Allocated</td><td>'+dashboardData["ongoingJob"][i].name+'</td><td>'+dashboardData["ongoingJob"][i].contact+'</td></tr>';
-        }
-        $('#Ongoing_job_tbl').html(temp);
-        temp='Ongoing Jobs ( '+dashboardData["interval"]+' )';
+    temp = '';
+    count = dashboardData["ongoingJob"].length
+    for (i = 0; i < count; i++) {
+        temp = temp + '<tr><td>' + dashboardData["ongoingJob"][i].refid + '</td><td>Allocated</td><td>' + dashboardData["ongoingJob"][i].name + '</td><td>' + dashboardData["ongoingJob"][i].contact + '</td></tr>';
+    }
+    $('#Ongoing_job_tbl').html(temp);
+    temp = 'Ongoing Jobs ( ' + dashboardData["interval"] + ' )';
     $('#currentTiming').text(temp)
-        
+
 
 }
 function calcPercentile(i) {
@@ -267,5 +266,17 @@ function calcPercentile(i) {
     $('#unallocIdPercent').text(temp);
     temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
     $('#unallocIdPercent').append(temp);
+
+}
+
+function test() {
+    var myData = {};
+    var myGetUrl = "http://localhost/bookings/";
+
+    get_url_response(myGetUrl, myData, "print");
+}
+
+function print(data) {
+    console.log(data);
 
 }
