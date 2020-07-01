@@ -130,24 +130,11 @@
 
 <div class="col-md-2 col-xs-6">
 <div class="mc-metric-card">
-<h3 id="allBookingId">25 </h3><p>New Bookings Temp</p>
-<div class="mc-sp-charts">
-  <svg class="btc" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
-  <span class="mc-chart-tooltip" hidden="true"></span>
-  <p class="mc-tiny-metric">25% <img style="width:10px;" src="./assets/images/icons/increase.svg"></p>
-
-</div>
-</div>
-</div>
-
-
-<div class="col-md-2 col-xs-6">
-<div class="mc-metric-card">
 <h3 id="allBookingId">25 </h3><p>New Bookings</p>
 <div class="mc-sp-charts">
   <svg class="allBooking" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
-  <p class="mc-tiny-metric">25% <img style="width:10px;" src="./assets/images/icons/increase.svg"></p>
+  <p class="mc-tiny-metric" id="allBookingIdPercent"></p>
 
 </div>
 </div>
@@ -158,6 +145,8 @@
   <div class="mc-sp-charts">
   <svg class="totalBooked" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric" id="totalBookedIdPercent"></p>
+
 </div>
   </div>
   </div>
@@ -167,6 +156,7 @@
   <div class="mc-sp-charts">
   <svg class="unalloc" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric" id="unallocIdPercent"></p>
 </div>
   </div>
   </div>
@@ -176,6 +166,7 @@
     <div class="mc-sp-charts">
   <svg class="completed" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric" id="completedIdPercent"></p>
 </div>
     </div>
     </div>
@@ -185,6 +176,7 @@
       <div class="mc-sp-charts">
   <svg class="cancelled" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric" id="completedIdPercent"></p>
 </div>
       </div>
       </div>
@@ -194,6 +186,7 @@
         <div class="mc-sp-charts">
   <svg class="totalFare" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
   <span class="mc-chart-tooltip" hidden="true"></span>
+  <p class="mc-tiny-metric" id="totalFareIdPercent"></p>
 </div>
         </div>
         </div>
@@ -213,20 +206,16 @@
                   <th>Covering Locations</th>
               </tr>
           </thead>
-          <tbody id="Allocate_Table">
-            <tr>
-              <td>BRT145</td><td>Rauf Khan</td><td>+44786878878</td><td>Gatwick, Heathrow, Ramford,horsham</td>
-            </tr>
-            <tr>
-              <td>BR232</td><td>Azhwar Khan</td><td>+4477838398</td><td>London,Brighton,horsham</td>
-            </tr>
+          <tbody id="Driver_Online_tbl">
+
+           
           </tbody>
         </table>
         </div>
     </div>
     <div class="col-md-6">
       <div class="mc-metric-card">
-        <h5>Ongoing Jobs ( 11AM - 12AM )</h5>
+        <h5 id="currentTiming "></h5>
         <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #f6f7f8;">
           <thead class="mc-table-head">
               <tr style="border:1px solid #f6f7f8;">
@@ -236,12 +225,9 @@
                   <th>Contact Number</th>
               </tr>
           </thead>
-          <tbody id="Allocate_Table">
-            <tr>
-              <td>BRT145</td><td>Allocated</td><td>Rauf Khan</td><td>+44786878878</td>
-            <tr>
-              <td>BR232</td><td>Allocated</td><td>Azhwar Khan</td><td>+4477838398</td>
-            </tr>
+          <tbody id="Ongoing_job_tbl">
+            
+             
           </tbody>
         </table>
         </div>
