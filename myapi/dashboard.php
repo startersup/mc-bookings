@@ -75,7 +75,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 }
 $temp["cancelled"]=$row2;
 
-$sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as Contact FROM `driver` WHERE `today_status` =1";
+$sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as contact FROM `driver` WHERE `today_status` =1";
 $result=  mysqli_query($conn,$sql);
 $row2=array();
 while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
