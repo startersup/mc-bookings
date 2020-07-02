@@ -1,4 +1,8 @@
 
+    <?php
+   include('../loadcurrentpage.php'); 
+if($action =="")
+  ?>
 
 
 <div class="container">
