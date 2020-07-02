@@ -200,6 +200,10 @@ $(document).ready(function () {
 
     SetParam(id);
   });
+  $('.li_sidebar').click(function(){
+       pagerouter($(this).attr('href'));
+      return false;
+     });
 
   $("#filter_all").click(function () {
     filterCheckBox(this);

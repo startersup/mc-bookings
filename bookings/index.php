@@ -1,89 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" id="html">
-<head>
-  <meta http-equiv='cache-control' content='no-cache'>
-<meta http-equiv='expires' content='0'>
-<meta http-equiv='pragma' content='no-cache'>
-  <title>Bookings | Minicabee Travel Solutions </title>
-  <meta charset="utf-8">
-  <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
-  <link rel="stylesheet" href="../assets/css/style.css">
-  
-</head>
-<body onload="pageLoad();">
 
-
-  <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
-  display: block;
-  background-color: rgb(255, 255, 255);
-  min-width: 1500px;
-  top: 48px;
-  left: 65px;
-  border: none;">
-    <div class="modal11-content">
-      <div class="loader" style="max-width:100px;position:absolute;top:300px;left:650px;">
-        <centre> <img width="80px;" src="../assets/images/icons/loader.svg"></centre>    
-      </div>
-    </div>
-  </div>
-    <!----navbar-starts----->
-    <nav class="navbar navbar-default mc-dash-nav">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="../"><img class="mc-nav-logo" src="../assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav mc-dash-mid">
-            <li class="active"><a class="mc-load" href="../passengers/">Passengers</a></li>
-            <li><a class="mc-load" href="../drivers/">Drivers</a></li>
-            <li><a class="mc-load" href="../partners">Partners</a></li>
-            <li><a class="mc-load" href="../invoice/">Invoice</a></li>
-          </ul>
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
-                <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
-                    <div class="mc-dropdown-content mc-bx-shdw">
-                    <ul class="mc-drop-desc">
-                        <li>Help Docs</li>
-                        <li>Feedback</li>
-                         <li>Raise Ticket</li>
-                        <li>Live Chat</li>
-                    </ul>
-                    </div>
-            </li>
-            <li>
-              <div class="mc-notify-badge">12</div>
-              <a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a>
-            </li>
-              <li><a href="#"><img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>   <!----navbar-ends----->
-    
-    
+    <!---------- Including js to refresh page --------->
+    <?php include('../loadcurrentpage.php'); ?>
+    <body onload="autoLoad();"></body> 
       <!----sub-navbar-starts----->
     <div class="mc-sub-section">
     <ul class="mc-sub-left">
@@ -107,42 +25,7 @@
       <!----sub-navbar-ends----->
     
     
-    
-    <!----sidebar-starts----->
-    <div class="mc-dash-sidebar">
-      <ul>
-        <li><a href="../"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/analytics.svg">
-          <span class="mc-controls">Dashboard</span>
-          <span class="tooltiptext"> Dashboard</span>
-           </div></a></li> 
-           <li><a href="../bookings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/bookings.svg">
-            <span class="mc-controls">Bookings</span>
-            <span class="tooltiptext"> Bookings</span>
-             </div></a></li> 
-             <li><a href="../company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
-              <span class="mc-controls">Company</span>
-              <span class="tooltiptext"> Company</span>
-               </div></a></li> 
-               <li><a href="../tracking"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/track.svg">
-                <span class="mc-controls">Tracking</span>
-                <span class="tooltiptext"> Tracking</span>
-                 </div></a></li> 
-                 <li><a href="../marketing/email-marketing"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
-                  <span class="mc-controls">Marketing</span>
-                  <span class="tooltiptext"> Marketing</span>
-                   </div></a></li> 
-                     <li><a href="../settings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/gear.svg"><br>
-                      <span class="mc-controls">Settings</span>
-                      <span class="tooltiptext"> App Settings</span>
-                       </div></a></li>       
-     </ul>
-       
-  </div>
-        
-<!----Sidebar-ends----->    
-    
-    
-    
+      
     
     <!---mainbar-starts----->
     
@@ -150,7 +33,7 @@
 <div class="mc-mainbar-components">
 
 <div id="empty_state">
-  <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
+  <centre><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></centre>
   <p>It seems there is no bookings available</p>
 
 </div>
@@ -181,65 +64,7 @@
     
 <!---modals-section------>
     
-    <!--Notification Modal -->
-	<div class="modal right fade" id="notification-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content" style="background-color:#fbfbfb;">
-				<div class="modal-header">
-					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
-					<h4 class="modal-title" id="myModalLabel2">Notifications</h4>
-				</div>
-
-				<div class="modal-body">
-                    <ul class="mc-notifications-head">
-                    <li><h3>New Booking on Bin</h3>
-                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                    <h5>12/13/15 at 22:20</h5>
-                    </li>
-                    <li><h3>New Booking on Bin</h3>
-                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                      <h5>12/13/15 at 22:20</h5>
-                      </li>
-                      <li><h3>New Booking on Bin</h3>
-                        <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                        <h5>12/13/15 at 22:20</h5>
-                        </li>
-                        <li><h3>New Booking on Bin</h3>
-                          <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                          <h5>12/13/15 at 22:20</h5>
-                          </li>
-                          <li><h3>New Booking on Bin</h3>
-                            <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                            <h5>12/13/15 at 22:20</h5>
-                            </li>
-                            <li><h3>New Booking on Bin</h3>
-                              <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                              <h5>12/13/15 at 22:20</h5>
-                              </li>
-                              <li><h3>New Booking on Bin</h3>
-                                <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                                <h5>12/13/15 at 22:20</h5>
-                                </li>
-                                <li><h3>New Booking on Bin</h3>
-                                  <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                                  <h5>12/13/15 at 22:20</h5>
-                                  </li>
-                                  <li><h3>New Booking on Bin</h3>
-                                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                                    <h5>12/13/15 at 22:20</h5>
-                                    </li>
-                                    <li><h3>New Booking on Bin</h3>
-                                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
-                                      <h5>12/13/15 at 22:20</h5>
-                                      </li>
-                    </ul>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-     <!--Notification Modal -->
-    
+ 
 
     
         <!-- Modal -->
@@ -503,7 +328,7 @@
           
       </div>
 
-    <center> <button class="mc-cta" id="send_sms">SEND NOW</button></center> 
+    <centre> <button class="mc-cta" id="send_sms">SEND NOW</button></centre> 
     </div>
                          </div>
                          
@@ -569,149 +394,6 @@
 } );</script>
    
     
-<script>
-    var placeSearch, autocomplete, autocomplete2, autocomplete3, autocomplete4;
-
-    function initAutocomplete() {
-
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('autocomplete')), {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: 'uk'
-                }
-            });
-
-
-
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-
-
-        autocomplete2 = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('autocomplete2')), {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: 'uk'
-                }
-            });
-
-
-
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete2.addListener('place_changed', fillInAddress);
-
-
-        autocomplete3 = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('autocomplete3')), {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: 'uk'
-                }
-            });
-
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete3.addListener('place_changed', fillInAddress);
-
-
-        autocomplete4 = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */
-            (document.getElementById('autocomplete4')), {
-                types: ['geocode'],
-                componentRestrictions: {
-                    country: 'uk'
-                }
-            });
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete4.addListener('place_changed', fillInAddress);
-
-
-    }
-
-
-    function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
-
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            if (componentForm[addressType]) {
-                var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
-            }
-        }
-        var place = autocomplete2.getPlace();
-
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            if (componentForm[addressType]) {
-                var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
-            }
-        }
-
-        var place = autocomplete3.getPlace();
-
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            if (componentForm[addressType]) {
-                var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
-            }
-        }
-
-        var place = autocomplete4.getPlace();
-
-        for (var component in componentForm) {
-            document.getElementById(component).value = '';
-            document.getElementById(component).disabled = false;
-        }
-
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-            var addressType = place.address_components[i].types[0];
-            if (componentForm[addressType]) {
-                var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
-            }
-        }
-
-
-    }
-</script>
 
 <script>
 function hideshowFunction() {
@@ -760,23 +442,4 @@ $(function() {
     cb(start, end);
 });
 </script>
-    
-   
-    <script src="../assets/js/datatable.js"></script>
-    <script src="../assets/js/server.js"></script>
-
-
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>       
-    
-<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE&amp;callback=initMap"></script>
-    </body>
-  
-   
-</html>
-
 

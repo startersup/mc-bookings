@@ -11,6 +11,7 @@ function dashboardLoad() {
     var myGetUrl = myUrl + "myapi/dashboard.php";
 
     get_url_response(myGetUrl, myData, "dashboardChange");
+  
 
 }
 
@@ -269,14 +270,20 @@ function calcPercentile(i) {
 
 }
 
-function test() {
+function test(ele) {
     var myData = {};
     var myGetUrl = "http://localhost/bookings/";
 
     get_url_response(myGetUrl, myData, "print");
+    return false;
 }
 
 function print(data) {
     console.log(data);
 
 }
+
+$(document).ready(function () {
+
+
+});
