@@ -39,6 +39,16 @@ body
 {
     padding: 8px 0px;
 }
+.max-width-300
+{
+    max-width:280px !important;
+    width:100%;
+}
+.pad-0
+{
+    padding:0px !important;
+}
+
 .navbar-brand
 {
     display:flex;
@@ -844,7 +854,11 @@ border-right: 1px solid #ebf0f5;
 }
 .mc-home-mainbar
 {
-    margin-top:50px !important;margin-left:65px !important; width: calc(100% - 55px) !important;
+    margin-top:0px !important;margin-left:65px !important; width: calc(100% - 55px) !important;
+}
+.mc-top-visual
+{
+    padding-top: 60px;
 }
 .mc-dash-sidebar
 {
@@ -1295,7 +1309,7 @@ background-color: #4e009f !important;
     display: block;
     position: absolute;
     width: 0;
-    top: 48px;
+    top: 40px;
     height: 3px;
     background: #ff3184;
     transition: width 0.3s;

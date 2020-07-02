@@ -55,7 +55,10 @@
 
  
 
-  <!---mainbar-starts-----><div class="mc-mainbar-components">
+  <!---mainbar-starts----->
+
+    <div class="mc-mainbar-components mc-home-mainbar">
+      <div class="mc-top-visual">
       <div class="mc-quick-metrics">
         <div class="row">
           <div class="col-md-2 col-xs-6">
@@ -128,6 +131,7 @@
           </div>
         </div>
       </div>
+</div>
       <div class="mc-quick-lists">
         <div class="row">
           <div class="col-md-6">
