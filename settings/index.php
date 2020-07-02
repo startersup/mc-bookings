@@ -1,4 +1,8 @@
 
+    <?php
+   include('../loadcurrentpage.php'); 
+if($action =="")
+  ?>
 <!----Sidebar-ends----->    
     <div class="mc-flex">
 <!------secondary-sidebar------>
