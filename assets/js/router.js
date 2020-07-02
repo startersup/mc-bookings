@@ -8,6 +8,11 @@ var router = {
         "url":"bookings/",
         "load":"bookingsLoad",
         "view":"bookings/"
+    },
+    "settings":{
+        "url":"settings/",
+        "load":"",
+        "view":"settings/"
     }
 }
 //idx = dashboardData["allBooking"].findIndex(data1 => data1.date === curr_date);
