@@ -16,16 +16,8 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
 var driverList = {};
-function startLoader() {
-  //document.getElementById("spinnermodal").style.display = "block";
 
-  $("#spinnermodal").fadeIn(200);
-}
-function stopLoader() {
-  //document.getElementById("spinnermodal").style.display = "none";
 
-  $("#spinnermodal").fadeOut(200);
-}
 function pageLoad() {
   SetParam("today");
   var mydata = {};
@@ -91,8 +83,7 @@ function setRow(data) {
   if (result.length === 0) {
     $("#display_data").css('display', 'none');
     $("#empty_state").css('display', 'block');
-    stopLoader();
-  } else {
+     } else {
 
     $("#display_data").css('display', 'block');
     $("#empty_state").css('display', 'none');
@@ -144,7 +135,7 @@ function setStatus() {
     data.status = myDiv;
     this.data(data);
   });
-  stopLoader();
+  
 }
 
 /*
@@ -195,8 +186,7 @@ $(document).ready(function () {
   $(".booking").click(function () {
     clearClass();
     $(this).addClass("active");
-    startLoader();
-    var id = $(this).attr("id");
+     var id = $(this).attr("id");
 
     SetParam(id);
   });
