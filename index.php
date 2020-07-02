@@ -32,11 +32,11 @@
 <body onload="dashboardLoad();">
 
 
-  <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
+  <!-- <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
   display: block;
   background-color: rgb(255, 255, 255);
   min-width: 1500px;
-  top: 0px;
+  top: 48px;
   left: 65px;
   border: none;">
     <div class="modal11-content">
@@ -44,7 +44,7 @@
         <centre> <img width="80px;" src="./assets/images/icons/loader.svg"></centre>    
       </div>
     </div>
-  </div>
+  </div> -->
   <!----navbar-starts----->
   <?php include('navbar.php'); ?>
   <!----navbar-ends----->
@@ -55,9 +55,7 @@
 
  
 
-  <!---mainbar-starts----->
-
-    <div class="mc-mainbar-components mc-home-mainbar">
+  <!---mainbar-starts-----><div class="mc-mainbar-components">
       <div class="mc-quick-metrics">
         <div class="row">
           <div class="col-md-2 col-xs-6">
