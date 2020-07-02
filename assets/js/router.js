@@ -2,7 +2,7 @@ var router = {
     "dashboard" : {
         "url" :"admin/",
         "load":"dashboardLoad",
-        "view":"admin/"
+        "view":""
     },
     "bookings":{
         "url":"bookings/",

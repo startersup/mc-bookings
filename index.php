@@ -49,7 +49,7 @@ if($q == "")
 <?php include('secondary_script.php'); ?>
 <!-------- Secondary script ends ----->
 
-</body>
+  </body>
 
 
 </html>
