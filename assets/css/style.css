@@ -1092,10 +1092,17 @@ background-color: #E7FAEC;
 }
 .dataTables_info
 {
-     font-size:13px;
-    font-weight:bold;
-     margin-top:15px !important;
-     font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    bottom: 0px;
+    max-width: 1348px;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #ebf0f5;
+    margin-top: 15px !important;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    background-color: #ffffff;
 }
 #mc-datatables_info
 {
@@ -1168,14 +1175,15 @@ background-color: #E7FAEC;
 }
 #mc-datatables_paginate
 {
-    position:absolute;
-    right:20px;  
+    position:fixed;
+    bottom:10px;
+    right:10px; 
+    box-shadow: 0 1px 5px rgba(0,0,0,.06);
 }
 .paginate_button
 {
     padding:10px;
-   border: 1px solid #e6e6e6;
-    background-color: #efefef;
+    background-color: #ffffff;
     cursor:pointer;
 }
 a.paginate_button
