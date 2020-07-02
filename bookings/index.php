@@ -1,7 +1,10 @@
 
     <!---------- Including js to refresh page --------->
-    <?php include('../loadcurrentpage.php'); ?>
-    <body onload="autoLoad();"></body> 
+   
+    <?php
+   include('../loadcurrentpage.php'); 
+if($action =="")
+  ?>
       <!----sub-navbar-starts----->
     <div class="mc-sub-section">
     <ul class="mc-sub-left">
