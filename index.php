@@ -4,7 +4,7 @@
 $q=$_POST["q"];
 if($q == "")
 {
-  $q="admin/";
+  $q="dashboard/";
 }
 ?>
 
