@@ -33,7 +33,20 @@ var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
 var driverList = {};
 
+function temLoad()
+{
+ 
+  var mydata = {};
+  var myGetUrl = myUrl + "myapi/sample2.php";
 
+  get_url_response(myGetUrl, mydata, 'tempLoad2');
+
+  
+}
+function tempLoad2(data)
+  {
+    console.log(data);
+  }
 function bookingsLoad() {
   SetParam("today");
   var mydata = {};
@@ -81,6 +94,7 @@ function get_url_response(myGetUrl, mydata, myfunc) {
     data: mydata,
     async: false,
     success: function (data) {
+
       window[myfunc](data);
     },
     error: function (xhr) { }

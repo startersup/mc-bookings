@@ -1,5 +1,6 @@
 
     <?php
+    session_start();
    include('../loadcurrentpage.php'); 
 if($action =="")
   ?>
@@ -32,6 +33,8 @@ if($action =="")
               </div>
             </div>
           </div>
+<button onclick="temLoad();">  abcdefg</button>
+
           <div class="col-md-2 col-xs-6">
             <div class="mc-metric-card">
               <h3 id="unallocId">10 </h3>

@@ -1,9 +1,9 @@
 <?php
 
-include('sample1.php');
+session_start();
 
-echo($value);
-echo("<br> success");
+$res["name"]=$_SESSION["userName"];
+echo json_encode($res);
 
 
 ?>
