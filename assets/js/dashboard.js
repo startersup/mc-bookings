@@ -157,7 +157,7 @@ function calcPercentile(i) {
     $('#allBookingId').text(today_val);
     temp = percent + '% ';
     $('#allBookingIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#allBookingIdPercent').append(temp);
 
     yest_val = cancelled[i - 1].value;
@@ -178,7 +178,7 @@ function calcPercentile(i) {
     $('#cancelledId').text(today_val);
     temp = percent + '% ';
     $('#cancelledIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#cancelledIdPercent').append(temp);
 
 
@@ -200,7 +200,7 @@ function calcPercentile(i) {
     $('#completedId').text(today_val);
     temp = percent + '% ';
     $('#completedIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#completedIdPercent').append(temp);
 
 
@@ -222,7 +222,7 @@ function calcPercentile(i) {
     $('#totalBookedId').text(today_val);
     temp = percent + '% ';
     $('#totalBookedIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#totalBookedIdPercent').append(temp);
 
 
@@ -240,11 +240,11 @@ function calcPercentile(i) {
         percent = 0.00;
         svg = 'increase';
     }
-    $('#totalFareIdPercent').remove();
+    $('#totalFareIdPercent').empty();
     $('#totalFareId').text(today_val);
     temp = percent + '% ';
     $('#totalFareIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#totalFareIdPercent').append(temp);
 
     yest_val = unalloc[i - 1].value;
@@ -261,11 +261,11 @@ function calcPercentile(i) {
         percent = 0.00;
         svg = 'increase';
     }
-    $('#unallocIdPercent').remove();
+    $('#unallocIdPercent').empty();
     $('#unallocId').text(today_val);
     temp = percent + '% ';
     $('#unallocIdPercent').text(temp);
-    temp = '<img style="width:10px;" src="./assets/images/icons/' + svg + '.svg">'
+    temp = '<img style="width:10px;" src="../assets/images/icons/' + svg + '.svg">'
     $('#unallocIdPercent').append(temp);
 
 }
@@ -283,7 +283,3 @@ function print(data) {
 
 }
 
-$(document).ready(function () {
-
-
-});

@@ -61,7 +61,7 @@ if($action =="")
               <div class="mc-sp-charts">
                 <svg class="cancelled" width="50" height="20" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"></svg>
                 <span class="mc-chart-tooltip" hidden="true"></span>
-                <p class="mc-tiny-metric" id="completedIdPercent"></p>
+                <p class="mc-tiny-metric" id="cancelledIdPercent"></p>
               </div>
             </div>
           </div>

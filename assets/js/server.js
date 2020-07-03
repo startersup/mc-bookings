@@ -1,16 +1,32 @@
-var text =
-  "{" +
-  ' "booked" : { "class":"green-status" , "showstatus":"Booked" },' +
-  ' "booked-confirmed" : { "class":"green-status" , "showstatus":"Confirmed" },' +
-  ' "comitted" : { "class":"green-status" , "showstatus":"Allocated" },' +
-  ' "cancelled" : { "class":"green-status" , "showstatus":"Cancelled" },' +
-  ' "completed" : { "class":"green-status" , "showstatus":"Completed" }' +
-  "}";
-var text_filter_name = "ALL Booked Confirmed Allocated Completed Cancelled";
-var text_filter_value =
-  "ALL booked booked-confirmed comitted completed cancelled";
-var obj_status = JSON.parse(text);
-var loadBooking = "Today";
+var GLStatusBooking = {
+  "booked": {
+    "class": "green-status",
+    "showstatus": "Booked"
+  },
+  "booked-confirmed": {
+    "class": "green-status",
+    "showstatus": "Confirmed"
+  },
+  "comitted": {
+    "class": "green-status",
+    "showstatus": "Allocated"
+  },
+  "cancelled": {
+    "class": "green-status",
+    "showstatus": "Cancelled"
+  },
+  "completed": {
+    "class": "green-status",
+    "showstatus": "Completed"
+  },
+  "all": {
+    "class": "green-status",
+    "showstatus": "All"
+  }
+};
+
+// var GLBookingData={};
+// var GLDriverData={};
 var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
@@ -18,7 +34,7 @@ var modalPing = "";
 var driverList = {};
 
 
-function pageLoad() {
+function bookingsLoad() {
   SetParam("today");
   var mydata = {};
   var myGetUrl = myUrl + "myapi/alldriver.php";
@@ -83,7 +99,7 @@ function setRow(data) {
   if (result.length === 0) {
     $("#display_data").css('display', 'none');
     $("#empty_state").css('display', 'block');
-     } else {
+  } else {
 
     $("#display_data").css('display', 'block');
     $("#empty_state").css('display', 'none');
@@ -135,7 +151,7 @@ function setStatus() {
     data.status = myDiv;
     this.data(data);
   });
-  
+
 }
 
 /*
@@ -169,9 +185,9 @@ function setRow(data)
 function GetRecordStatus(status) {
   return (
     '<div class="' +
-    obj_status[status]["class"] +
+    GLStatusBooking[status]["class"] +
     '">' +
-    obj_status[status]["showstatus"] +
+    GLStatusBooking[status]["showstatus"] +
     "</div>"
   );
 }
@@ -182,42 +198,33 @@ function clearClass() {
   $("#tommorrow").removeClass("active");
   $("#future").removeClass("active");
 }
-$(document).ready(function () {
-  $(".booking").click(function () {
+
+$(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modalToggle , #BookingUpdate , #filter_load', function () {
+
+  if ($(this).hasClass('li_sidebar')) {
+    pagerouter($(this).attr('href'));
+    return false;
+  } else if ($(this).hasClass('booking')) {
     clearClass();
     $(this).addClass("active");
-     var id = $(this).attr("id");
-
+    var id = $(this).attr("id");
     SetParam(id);
-  });
-  $('.li_sidebar').click(function(){
-       pagerouter($(this).attr('href'));
-      return false;
-     });
 
-  $("#filter_all").click(function () {
+  } else if ($(this).attr("id") == 'filter_all') {
     filterCheckBox(this);
-  });
-
-  $("#mc-datatables tbody").on("click", ".mc-edit", function () {
+  }else if ($(this).hasClass('mc-edit')){
     var table = $("#mc-datatables").DataTable();
     var data = table.row($(this).parents("tr")).data();
     // $('#mc-open-modal').trigger('click');
     document.getElementById("mc-open-modal").click();
     clickModal(data.refid);
-  });
-  function clickModal(data) {
-    clearModal();
-    getModalData("basic_info", data);
   }
-  $(".modalToggle").click(function () {
+  else if ($(this).hasClass('modalToggle')){
     var id = $(this).attr("id");
     if (id === "bidding") {
       getModalData(id, document.getElementById("myModalBookId_temp").innerHTML);
     }
-  });
-
-  $("#BookingUpdate").click(function () {
+  }else if ($(this).attr("id") == 'BookingUpdate') {
     var myData = {};
     $("#passenger :input").each(function (e) {
 
@@ -229,13 +236,29 @@ $(document).ready(function () {
     var myGetUrl = myUrl + "myapi/UpdateBooking.php";
 
     get_url_response(myGetUrl, myData, "UpdationAlert");
+  }else if ($(this).attr("id") == 'filter_load'){
+    searchByFilter();
+  }
+
+});
+
+function clickModal(data) {
+  clearModal();
+  getModalData("basic_info", data);
+}
+
+/*
+$(document).ready(function () { 
+
+  $("#BookingUpdate").click(function () {
+ 
   });
 
   $("#filter_load").click(function () {
-    searchByFilter();
+    
   });
 });
-
+*/
 function UpdationAlert(myData) {
   console.log(myData);
 }
@@ -450,19 +473,18 @@ function setBid(myObj) {
 }
 function date_format_db(x) {
   var d = new Date(x),
-   /* month = "" + (d.getMonth() + 1),
-    day = "" + d.getDate(),
-*/
-     month = ("0" + (d.getMonth() + 1)).slice(-2); 
-     day = ("0" + d.getDate()).slice(-2); 
+    /* month = "" + (d.getMonth() + 1),
+     day = "" + d.getDate(),
+ */
+    month = ("0" + (d.getMonth() + 1)).slice(-2);
+  day = ("0" + d.getDate()).slice(-2);
 
-    year = d.getFullYear();
+  year = d.getFullYear();
 
   return year + "-" + month + "-" + day;
 }
 
-function todayDate()
-{
+function todayDate() {
   var today = new Date();
   return date_format_db(today);
 }

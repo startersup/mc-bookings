@@ -2,7 +2,7 @@ var router = {
     "dashboard" : {
         "url" :"admin/",
         "load":"dashboardLoad",
-        "view":"dashboard/"
+        "view":"admin/"
     },
     "bookings":{
         "url":"bookings/",
@@ -10,24 +10,29 @@ var router = {
         "view":"bookings/"
     }
 }
-//idx = dashboardData["allBooking"].findIndex(data1 => data1.date === curr_date);
+
 
 function pagerouter(key)
 {
+    $('#spinnermodal').show();
+    setTimeout(function(){
     var mydata={"x":"1"};
     var fname = router[key].load;
     var myGetUrl = myUrl + router[key].url;
     var pathName =myUrl+router[key].view;
    window.history.replaceState(null, null, pathName);
     get_page_response(myGetUrl,mydata, fname)
+}, 100);
     $('#spinnermodal').hide();
 }
+
+
 
 function defaultLoader(temp)
 {
      
     $('#spinnermodal').show();
-     setTimeout(function(){
+ //    setTimeout(function(){
    
         for(var k in router)
         {
@@ -37,8 +42,7 @@ function defaultLoader(temp)
             }
         } 
         
-      }, 100);
-    ;
+ //     }, 100);   
    
 }
 
@@ -58,7 +62,17 @@ function get_page_response(myGetUrl,mydata, fname) {
     });
   }
 
-  function setRequestPage(data)
+  function LoadJsScript()
   {
+    var loop =jsRouter.length;
+    for(i=0;i<loop;i++)
+    {
+        var path= myUrl+jsRouter[i];
+        $.getScript(path, function() {
+           console.log(jsRouter[i] + '  => Loaded');    });
+    }
+  
+        
+    
       
   }

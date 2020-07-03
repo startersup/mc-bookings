@@ -13,7 +13,7 @@ if($q == "")
 
 <?php include('common_header.php'); ?>
 
-<body onload="defaultLoader('<?php echo($q); ?>');">
+<body >
 
 
   <!-- Pre Loader Strats  -->
@@ -50,6 +50,12 @@ if($q == "")
 <!-------- Secondary script ends ----->
 
   </body>
+<script>
+  $(document).ready(function () {
 
+    defaultLoader('<?php echo($q); ?>');
+
+});
+  </script>
 
 </html>
