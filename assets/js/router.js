@@ -8,7 +8,17 @@ var router = {
         "url":"bookings/",
         "load":"bookingsLoad",
         "view":"bookings/"
-    }
+    },
+    "settings":{
+        "url":"settings/",
+        "load":"",
+        "view":"settings/"
+    },
+    "login":{
+    "url":"login/",
+    "load":"",
+    "view":"login/"
+}
 }
 
 
