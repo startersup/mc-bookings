@@ -15,7 +15,7 @@ include($rootfolder."/myapi/sessionCheck.php");
 if(! $boolSession)
 {
 
-  echo ('<script>alert("'.$msg.'"); window.location.href ="' .$link."://". $host . '"</script>');
+  echo ('<script>alert("'.$msg.'"); window.location.href ="' .$link."://". $host . '/login/"</script>');
 
  exit(0);
 }

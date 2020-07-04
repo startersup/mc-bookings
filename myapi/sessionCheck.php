@@ -27,7 +27,7 @@ if (strpos($prev_url, $host)) {
         $msg ="Please Login to proceed..";
     }
 }else{
-    $msg="Un Authorized Access....";
+    $msg="UnAuthorized Access....";
 }
 
 
