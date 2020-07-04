@@ -4,8 +4,22 @@
 $q=$_POST["q"];
 if($q == "")
 {
-  $q="dashboard/";
+  $q="admin/";
 }
+
+
+$rootfolder= $_SERVER['DOCUMENT_ROOT']; 
+
+include($rootfolder."/myapi/sessionCheck.php");
+
+if(! $boolSession)
+{
+
+  echo ('<script>alert("'.$msg.'"); window.location.href ="' .$link."://". $host . '"</script>');
+
+ exit(0);
+}
+
 ?>
 
 <!DOCTYPE html>

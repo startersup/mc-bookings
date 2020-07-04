@@ -1,10 +1,21 @@
 <?php
 
-session_start();
+
 
  $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
- 
+
+ include($rootfolder."/myapi/sessionCheck.php");
+ include($rootfolder."/myapi/rightsCheckWrite.php");
+ if(! $boolSession)
+ {
+  $row["response"]="Failed";
+  $row["msg"]=$msg;
+  echo json_encode($row);
+  exit(0);
+ }
+
   include($rootfolder."/connection/connect.php"); 
+
     
     if(!$conn)
     {

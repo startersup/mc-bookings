@@ -1,5 +1,8 @@
 
- 
+ <?php
+session_start();
+ session_destroy();
+ ?>
 
 
 <!DOCTYPE html>
@@ -12,6 +15,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/js/login.js">
 </head>
 <body>
 
@@ -37,16 +41,16 @@
           <div class="form">
           <div class="tab-content">
             <div id="mc-login" class="tab-pane fade in active">
-            <form class="login-form">
-              <input type="text" placeholder="username"/>
-              <input type="password" placeholder="password"/>
-              <button>login</button>
+            <form class="login-form" action="getUserInfo.php" method="post">
+              <input type="text" name="user" placeholder="userName"/>
+              <input type="password" name="password" placeholder="password"/>
+              <button id="login">login</button>
               <p class="message">Forgot Password? <a  data-toggle="pill" href="#reset-pass">Click here</a></p>
             </form>
           </div>
             <div id="reset-pass" class="tab-pane fade">
               <input type="text" placeholder="Enter Email Address"/>
-              <button >Reset Password</button>
+              <button id="reset">Reset Password</button>
               <p class="message">Back to Login <a  data-toggle="pill" href="#mc-login">Click here</a></p>
               </div>
           </div>
