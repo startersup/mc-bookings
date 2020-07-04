@@ -29,7 +29,7 @@ if(! $boolSession)
 
 <body >
 
-
+<?php include('action_modal.php'); ?>
   <!-- Pre Loader Strats  -->
   <?php include('preLoader.php'); ?>
   <!----- Pre Loader Ends ---->
