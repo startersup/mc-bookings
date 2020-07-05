@@ -40,8 +40,8 @@ else
     $mg=$_POST["mg"];
     $ref=$_POST['refid'];
 
-       $sql="UPDATE `register` SET `name` ='$name' , `mail` ='$mail', `num1` = '$num1', `num2` = '$num2', `location`='$location', `info` ='$info', `pay`='$pay', `src`='$src', `des`='$des', `address1`='$address1', `address2` ='address2', `dt` ='$dt', `time` ='$time', `passenger`='$np', `infants`='$infants', `luggage`='$nl', `type`='$type',`fare`='$fare', `via`='$via', `dfare`='$dfare', `drvid` =='$drvid', `mg` ='$mg', `ceat`='$ceat' WHERE refid='$ref'";       
-echo($sql);
+       $sql="UPDATE `register` SET `name` ='$name' , `mail` ='$mail', `num1` = '$num1', `num2` = '$num2', `location`='$location', `info` ='$info', `pay`='$pay', `src`='$src', `des`='$des', `address1`='$address1', `address2` ='address2', `dt` ='$dt', `time` ='$time', `passenger`='$np', `infants`='$infants', `luggage`='$nl', `type`='$type',`fare`='$fare', `via`='$via', `dfare`='$dfare', `drvid` ='$drvid', `mg` ='$mg', `ceat`='$ceat' WHERE refid='$ref'";       
+// echo($sql);
 // $result= mysqli_query($conn,$sql);
 if($result)
 {

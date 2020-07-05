@@ -25,14 +25,13 @@ var router = {
 function pagerouter(key)
 {
     $('#spinnermodal').show();
-    setTimeout(function(){
     var mydata={"x":"1"};
     var fname = router[key].load;
     var myGetUrl = myUrl + router[key].url;
     var pathName =myUrl+router[key].view;
-   window.history.replaceState(null, null, pathName);
+    window.history.replaceState(null, null, pathName);
     get_page_response(myGetUrl,mydata, fname)
-}, 100);
+
     $('#spinnermodal').hide();
 }
 

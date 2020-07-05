@@ -168,34 +168,7 @@ function setStatus() {
 
 }
 
-/*
-function setRow(data)
-{
 
-    var obj = JSON.parse(data);
-    var myTable = $('#mc-datatables').DataTable();
-    var loop = obj.length;
-    var editRec='<div class="mc-edit"></div>';
-    var statusRec ='';
-    myTable.clear().draw();
-    for(var i=0;i<loop;i++)
-    {
-        statusRec= GetRecordStatus(obj[i]["status"]);
-        myTable.row.add( [
-            obj[i]["refid"],
-            obj[i]["booked_site"],
-            obj[i]["src"],
-            obj[i]["des"],
-            obj[i]["dt"]+' '+obj[i]["time"],
-            obj[i]["type"],
-            obj[i]["fare"],
-            statusRec,           
-            editRec
-        ] ).draw( false );
-    }
-    document.getElementById("spinnermodal").style.display = "none";
-
-} */
 function GetRecordStatus(status) {
   return (
     '<div class="' +
@@ -255,6 +228,11 @@ $(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modal
   }
 
 });
+
+$(document).on('click', '#change_Status', function () {
+
+});
+
 
 function clickModal(data) {
   clearModal();
@@ -357,11 +335,11 @@ function setModalData(myData) {
     document.getElementById("modal_booking_site").value =
       myObj["base"]["booked_site"];
     document.getElementById("modal_booking_status").value = myObj["base"]["status"];
-    document.getElementById("modal_booking_pickup").value = myObj["base"]["src"];
-    document.getElementById("modal_booking_dropoff").value = myObj["base"]["des"];
-    document.getElementById("modal_booking_date").value = myObj["base"]["dt"];
+    document.getElementById("modal_booking_src").value = myObj["base"]["src"];
+    document.getElementById("modal_booking_des").value = myObj["base"]["des"];
+    document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
     document.getElementById("modal_booking_time").value = myObj["base"]["time"];
-    document.getElementById("modal_booking_cab_type").value = myObj["base"]["type"];
+    document.getElementById("modal_booking_type").value = myObj["base"]["type"];
     document.getElementById("myModalBookId").innerHTML =
       "Booking Information - ( " + myObj["base"]["refid"] + " )";
     document.getElementById("myModalBookId_temp").innerHTML = myObj["base"]["refid"];
@@ -375,15 +353,15 @@ function setModalData(myData) {
     document.getElementById("modal_booking_address2").value =
       myObj["base"]["address2"];
     document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
-    document.getElementById("modal_booking_tm").value = myObj["base"]["time"];
-    document.getElementById("modal_booking_np").value = myObj["base"]["passenger"];
-    document.getElementById("modal_booking_nl").value = myObj["base"]["luggage"];
+    document.getElementById("modal_booking_time").value = myObj["base"]["time"];
+    document.getElementById("modal_booking_passenger").value = myObj["base"]["passenger"];
+    document.getElementById("modal_booking_luggage").value = myObj["base"]["luggage"];
     document.getElementById("modal_booking_location").value =
       myObj["base"]["location"];
     document.getElementById("modal_booking_info").value = myObj["base"]["info"];
     document.getElementById("modal_booking_type").value = myObj["base"]["type"];
     document.getElementById("modal_booking_fare").value = myObj["base"]["fare"];
-    document.getElementById("modal_booking_Child_ceat").value = myObj["base"]["ceat"];
+    document.getElementById("modal_booking_ceat").value = myObj["base"]["ceat"];
     document.getElementById("modal_booking_mg").value = myObj["base"]["mg"];
     document.getElementById("modal_booking_infants").value = myObj["base"]["infants"];
 
@@ -416,7 +394,7 @@ function setModalData(myData) {
     message1_data =
       message1_data +
       "Cab type : " +
-      document.getElementById("modal_booking_cab_type").value +
+      document.getElementById("modal_booking_type").value +
       "\n";
     message1_data =
       message1_data +
