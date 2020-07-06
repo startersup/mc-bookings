@@ -132,7 +132,7 @@ if($action =="")
                     </tr>
                     <tr>
                       <td>Date :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_dt" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="datepicker" value="1 hour 15 minutes"></td>
                     </tr>
                     <tr>
                       <td>Time :</td>
