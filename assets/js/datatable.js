@@ -5,7 +5,7 @@ function statuschange() {
   document.getElementById("open-status").classList.toggle("show");
 }
 
-
+/*
 window.onclick = function(event) {
   if (!event.target.matches(".mc-others-icon")) {
     var dropdowns = document.getElementsByClassName("dropdown-set");
@@ -18,9 +18,9 @@ window.onclick = function(event) {
     }
   }
 };
+*/
 
-
-
+/*
 window.onclick = function(event) {
   if (!event.target.matches(".mc-status-change")) {
     var dropdowns = document.getElementsByClassName("dropdown-set");
@@ -32,7 +32,7 @@ window.onclick = function(event) {
       }
     }
   }
-};
+}; */
 
 $(document).ready(function() {
   $("#myInput").on("keyup", function() {

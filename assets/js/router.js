@@ -24,7 +24,6 @@ var router = {
 
 function pagerouter(key)
 {
-    $('#spinnermodal').show();
     var mydata={"x":"1"};
     var fname = router[key].load;
     var myGetUrl = myUrl + router[key].url;
@@ -41,7 +40,7 @@ function defaultLoader(temp)
 {
      
     $('#spinnermodal').show();
- //    setTimeout(function(){
+     setTimeout(function(){
    
         for(var k in router)
         {
@@ -51,7 +50,7 @@ function defaultLoader(temp)
             }
         } 
         
- //     }, 100);   
+    }, 100);   
    
 }
 

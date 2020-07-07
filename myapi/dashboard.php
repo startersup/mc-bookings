@@ -7,8 +7,8 @@ date_default_timezone_set('Europe/London');
 $date= date("Y-m-d");
 $time_from = date("H").":00";
 $time_to = (date("H")+1).":00";
-$temp["interval"] = $time_from ." to ".$time_to;
-$week_days="('".date("Y-m-d", strtotime("last week sunday"))."','".date("Y-m-d", strtotime("this week monday"))."','".date("Y-m-d", strtotime("this week tuesday"))."','".date("Y-m-d", strtotime("this week wednesday"))."','".date("Y-m-d", strtotime("this week thursday"))."','".date("Y-m-d", strtotime("this week friday"))."','".date("Y-m-d", strtotime("this week saturday"))."')";
+$temp_dashboard["interval"] = $time_from ." to ".$time_to;
+$week_days="('".date("Y-m-d", strtotime("last week saturday"))."','".date("Y-m-d", strtotime("last week sunday"))."','".date("Y-m-d", strtotime("this week monday"))."','".date("Y-m-d", strtotime("this week tuesday"))."','".date("Y-m-d", strtotime("this week wednesday"))."','".date("Y-m-d", strtotime("this week thursday"))."','".date("Y-m-d", strtotime("this week friday"))."','".date("Y-m-d", strtotime("this week saturday"))."')";
 
 /*
 $date_array[0]=date("Y-m-d", strtotime("last week sunday"))   ;
@@ -27,7 +27,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row;
 }
- $temp["totalFare"]=$row2;
+ $temp_dashboard["totalFare"]=$row2;
 
 $sql="SELECT count(*) as value,DT as date FROM `register` WHERE dt in ".$week_days." and status = 'booked' GROUP BY dt;";
 $result=  mysqli_query($conn,$sql);
@@ -36,7 +36,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row;
 } 
-$temp["totalBooked"]=$row2;
+$temp_dashboard["totalBooked"]=$row2;
 
 
 $sql="SELECT count(*) as value,DT as date FROM `register` WHERE dt in ".$week_days." and status = 'booked-confirmed' GROUP BY dt;";
@@ -46,7 +46,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row;
 }
-$temp["unalloc"]=$row2;
+$temp_dashboard["unalloc"]=$row2;
 
 $sql="SELECT count(*) as value,DT as date FROM `register` WHERE dt in ".$week_days." and  GROUP BY dt;";
 $result=  mysqli_query($conn,$sql);
@@ -55,7 +55,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row;
 }
-$temp["allBooking"]=$row2;
+$temp_dashboard["allBooking"]=$row2;
 
 $sql="SELECT count(*) as value,DT as date FROM `register` WHERE dt in ".$week_days." and status ='completed' GROUP BY dt;";
 $result=  mysqli_query($conn,$sql);
@@ -64,7 +64,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row; 
 }
-$temp["completed"]=$row2;
+$temp_dashboard["completed"]=$row2;
 
 $sql="SELECT count(*) as value,DT as date FROM `register` WHERE dt in ".$week_days." and status ='cancelled' GROUP BY dt;";
 $result=  mysqli_query($conn,$sql);
@@ -73,7 +73,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row;
 }
-$temp["cancelled"]=$row2;
+$temp_dashboard["cancelled"]=$row2;
 
 $sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as contact FROM `driver` WHERE `today_status` =1";
 $result=  mysqli_query($conn,$sql);
@@ -83,7 +83,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
     $row2[]=$row;
 }
 
-$temp["driverStatus"]=$row2;
+$temp_dashboard["driverStatus"]=$row2;
 
 
 $sql="SELECT A.refid, concat(A.num1,' / ',A.num2) as contact,B.name FROM register as A inner join driver as B on A.drvid = B.id WHERE A.time  <= $time_from and A.time > $time_to and A.dt ='$date' and A.status ='comitted' ";
@@ -93,13 +93,13 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 { 
     $row2[]=$row; 
 }
-$temp["ongoingJob"]=$row2;
+$temp_dashboard["ongoingJob"]=$row2;
 
-if($temp==null)
+if($temp_dashboard==null)
 {
-   $temp=array();
+   $temp_dashboard=array();
 }
- echo  json_encode($temp);
+ echo  json_encode($temp_dashboard);
 
 
   ?>
