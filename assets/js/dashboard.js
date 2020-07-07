@@ -134,6 +134,7 @@ interval: "10:00 to 11:00" */
 }
 function calcPercentile(i) {
     var yest_val = 0;
+    
     var today_val = 0;
     var percent = 0.00;
     var temp = ''

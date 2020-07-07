@@ -1,23 +1,31 @@
 var GLStatusBooking = {
   "booked": {
     "class": "green-status",
-    "showstatus": "Booked"
+    "showstatus": "Booked",
+    "dropdown_val": "Book Now",
+    
   },
   "booked-confirmed": {
     "class": "green-status",
-    "showstatus": "Confirmed"
+    "showstatus": "Confirmed",
+    "dropdown_val": "Confirm Now",
+    "api":"change_status"
   },
   "comitted": {
     "class": "green-status",
-    "showstatus": "Allocated"
+    "showstatus": "Allocated",
   },
   "cancelled": {
     "class": "green-status",
-    "showstatus": "Cancelled"
+    "showstatus": "Cancelled",
+    "dropdown_val": "Cancel Now",
+    "api":"cancel_booking"
   },
   "completed": {
     "class": "green-status",
-    "showstatus": "Completed"
+    "showstatus": "Completed",
+    "dropdown_val": "Complete Now",
+    "api":"complete_booking"
   },
   "all": {
     "class": "green-status",
@@ -32,28 +40,62 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var modalPing = "";
 var driverList = {};
+var bookingPage = '';
+var confirmFunction = '';
+var mc_datatables_row = {};
+var mc_datatables_row_num = -1;
+var bookingpass = '';
 
-function temLoad()
-{
- 
+
+function temLoad() {
+
   var mydata = {};
   var myGetUrl = myUrl + "myapi/sample2.php";
 
   get_url_response(myGetUrl, mydata, 'tempLoad2');
 
-  
+
 }
-function tempLoad2(data)
-  {
-    console.log(data);
-  }
+function tempLoad2(data) {
+  console.log(data);
+}
 function bookingsLoad() {
-  SetParam("today");
+  if (bookingPage == '') {
+    SetParam("today");
+    bookingPage = 'today';
+  } else {
+    SetParam(bookingPage);
+  }
   var mydata = {};
   var myGetUrl = myUrl + "myapi/alldriver.php";
 
   get_url_response(myGetUrl, mydata, 'setAllDriver');
 }
+
+function confirmNow(type) {
+  var message = confirmMessage(type);
+  document.getElementById("action_popup_btn").click();
+}
+
+$(document).on('click', '.confirm_btn ', function () {
+  if ($(this).attr("id") == 'yes') {
+    window[confirmFunction];
+  } else if ($(this).attr("id") == 'no') {
+    confirmFunction = '';
+  }
+  confirmFunction = '';
+  document.getElementById("action_popup_btn_close").click()
+});
+
+function confirmMessage(type) {
+  var msg = '';
+  if (type == 'update') {
+    msg = 'Wish to Update and Continue'
+  }
+
+  return type;
+}
+
 function SetParam(myparam) {
   var mydata = {};
   var myGetUrl = "";
@@ -94,7 +136,6 @@ function get_url_response(myGetUrl, mydata, myfunc) {
     data: mydata,
     async: false,
     success: function (data) {
-
       window[myfunc](data);
     },
     error: function (xhr) { }
@@ -105,6 +146,18 @@ function setAllDriver(data) {
 
   driverList = JSON.parse(data);
 
+}
+
+$(document).on('click', '.dataTableUpdate', function () {
+  updateRow();
+});
+function updateRow()
+{
+  var myTable = $("#mc-datatables").DataTable();
+  newData.status = setStatusView(mc_datatables_row.status);
+  myTable.row( mc_datatables_row_num ).data( newData ).draw();
+  mc_datatables_row_num=-1;
+  mc_datatables_row={};
 }
 function setRow(data) {
   var myTable = $("#mc-datatables").DataTable();
@@ -144,30 +197,33 @@ function setStatus() {
   var table = $("#mc-datatables").DataTable();
   table.rows().every(function (rowIdx, tableLoop, rowLoop) {
     var data = this.data();
-    var myClass = "";
-    var myDiv = '<div class="myClass">myStatus</div>';
-    if (data.status == "completed") {
-      myDiv = myDiv.replace("myStatus", "Completed");
-      myDiv = myDiv.replace("myClass", "mc-cl-Completed");
-    } else if (data.status == "booked") {
-      myDiv = myDiv.replace("myStatus", "Booked");
-      myDiv = myDiv.replace("myClass", "mc-cl-Booked");
-    } else if (data.status == "booked-confirmed") {
-      myDiv = myDiv.replace("myStatus", "Confirmed");
-      myDiv = myDiv.replace("myClass", "mc-cl-Confirmed");
-    } else if (data.status == "cancelled") {
-      myDiv = myDiv.replace("myStatus", "Cancelled");
-      myDiv = myDiv.replace("myClass", "mc-cl-Cancelled");
-    } else if (data.status == "comitted") {
-      myDiv = myDiv.replace("myStatus", "Comitted");
-      myDiv = myDiv.replace("myClass", "mc-cl-Comitted");
-    }
-    data.status = myDiv;
+    data.status = setStatusView(data.status);
     this.data(data);
   });
 
 }
 
+function setStatusView(statusVal)
+{
+  var myDiv = '<div class="myClass">myStatus</div>';
+  if (statusVal== "completed") {
+    myDiv = myDiv.replace("myStatus", "Completed");
+    myDiv = myDiv.replace("myClass", "mc-cl-Completed");
+  } else if (statusVal== "booked") {
+    myDiv = myDiv.replace("myStatus", "Booked");
+    myDiv = myDiv.replace("myClass", "mc-cl-Booked");
+  } else if (statusVal== "booked-confirmed") {
+    myDiv = myDiv.replace("myStatus", "Confirmed");
+    myDiv = myDiv.replace("myClass", "mc-cl-Confirmed");
+  } else if (statusVal== "cancelled") {
+    myDiv = myDiv.replace("myStatus", "Cancelled");
+    myDiv = myDiv.replace("myClass", "mc-cl-Cancelled");
+  } else if (statusVal== "comitted") {
+    myDiv = myDiv.replace("myStatus", "Comitted");
+    myDiv = myDiv.replace("myClass", "mc-cl-Comitted");
+  }
+  return myDiv;
+}
 
 function GetRecordStatus(status) {
   return (
@@ -186,7 +242,7 @@ function clearClass() {
   $("#future").removeClass("active");
 }
 
-$(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modalToggle , #BookingUpdate , #filter_load', function () {
+$(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modalToggle , #modal_update , #filter_load', function () {
 
   if ($(this).hasClass('li_sidebar')) {
     pagerouter($(this).attr('href'));
@@ -194,46 +250,55 @@ $(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modal
   } else if ($(this).hasClass('booking')) {
     clearClass();
     $(this).addClass("active");
-    var id = $(this).attr("id");
-    SetParam(id);
+    bookingPage = $(this).attr("id");
+    SetParam(bookingPage);
 
   } else if ($(this).attr("id") == 'filter_all') {
     filterCheckBox(this);
-  }else if ($(this).hasClass('mc-edit')){
+  } else if ($(this).hasClass('mc-edit')) {
     var table = $("#mc-datatables").DataTable();
-    var data = table.row($(this).parents("tr")).data();
+    mc_datatables_row = table.row($(this).parents("tr")).data();
+    mc_datatables_row_num = $(this).closest('tr').index();
     // $('#mc-open-modal').trigger('click');
     document.getElementById("mc-open-modal").click();
-    clickModal(data.refid);
-  }
-  else if ($(this).hasClass('modalToggle')){
+    clickModal(mc_datatables_row.refid);
+  }else if ($(this).hasClass('modalToggle')) {
     var id = $(this).attr("id");
     if (id === "bidding") {
       getModalData(id, document.getElementById("myModalBookId_temp").innerHTML);
     }
-  }else if ($(this).attr("id") == 'BookingUpdate') {
-    var myData = {};
-    $("#passenger :input").each(function (e) {
-
-      var key = this.name;
-      var val = this.value;
-      myData[key] = val;
-    });
-    myData["refid"] = document.getElementById("myModalBookId_temp").innerHTML;
-    var myGetUrl = myUrl + "myapi/UpdateBooking.php";
-
-    get_url_response(myGetUrl, myData, "UpdationAlert");
-  }else if ($(this).attr("id") == 'filter_load'){
+  } else if ($(this).attr("id") == 'modal_update') {
+    //confirmNow('update');
+    updateBookingDetails();
+  } else if ($(this).attr("id") == 'filter_load') {
     searchByFilter();
   }
 
 });
 
-$(document).on('click', '#change_Status', function () {
-
-});
 
 
+function updateBookingDetails() {
+
+  var myData = {};
+
+  $("ul.mc-info-tabs li").each(function () {
+    if ($(this).hasClass('active')) {
+
+      var temp = "#table_" + ($(this).attr('id')) + " :input"
+      $(temp).each(function (e) {
+        var key = this.id.replace("modal_booking_", "");;
+        var val = this.value;
+        myData[key] = val;
+      });
+    }
+  });
+  var temp = 'refid';
+  myData[temp] = document.getElementById("myModalBookId_temp").innerHTML;
+  var myGetUrl = myUrl + "myapi/UpdateBooking.php";
+
+  get_url_response(myGetUrl, myData, "UpdationAlert");
+}
 function clickModal(data) {
   clearModal();
   getModalData("basic_info", data);
@@ -293,13 +358,13 @@ function filterCheckBox(ele) {
   }
 }
 function clearModal() {
-  document.getElementById("modal_booking_site").value = "";
-  document.getElementById("modal_booking_status").value = "";
-  document.getElementById("modal_booking_pickup").value = "";
-  document.getElementById("modal_booking_dropoff").value = "";
-  document.getElementById("modal_booking_date").value = "";
+  document.getElementById("modal_booking_booked_site").value = "";
+  document.getElementById("status_dropdown").value = "";
+  document.getElementById("modal_booking_src").value = "";
+  document.getElementById("modal_booking_des").value = "";
+  document.getElementById("modal_booking_dt").value = "";
   document.getElementById("modal_booking_time").value = "";
-  document.getElementById("modal_booking_cab_type").value = "";
+  document.getElementById("modal_booking_type").value = "";
   document.getElementById("myModalBookId").innerHTML = "";
   document.getElementById("myModalBookId").name = "";
 
@@ -310,9 +375,9 @@ function clearModal() {
   document.getElementById("modal_booking_address1").value = "";
   document.getElementById("modal_booking_address2").value = "";
   document.getElementById("modal_booking_dt").value = "";
-  document.getElementById("modal_booking_tm").value = "";
-  document.getElementById("modal_booking_np").value = "";
-  document.getElementById("modal_booking_nl").value = "";
+  document.getElementById("modal_booking_time").value = "";
+  document.getElementById("modal_booking_passenger").value = "";
+  document.getElementById("modal_booking_luggage").value = "";
   document.getElementById("modal_booking_location").value = "";
   document.getElementById("modal_booking_info").value = "";
   document.getElementById("modal_booking_type").value = "";
@@ -332,9 +397,11 @@ var objModaldata = {};
 function setModalData(myData) {
   var myObj = JSON.parse(myData);
   if (modalPing === "basic_info") {
-    document.getElementById("modal_booking_site").value =
+    document.getElementById("modal_booking_booked_site").value =
       myObj["base"]["booked_site"];
-    document.getElementById("modal_booking_status").value = myObj["base"]["status"];
+
+    var x = myObj["base"]["status"];
+    document.getElementById("status_dropdown").value = GLStatusBooking[x].showstatus;;
     document.getElementById("modal_booking_src").value = myObj["base"]["src"];
     document.getElementById("modal_booking_des").value = myObj["base"]["des"];
     document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
@@ -427,7 +494,7 @@ function setModalData(myData) {
     document.getElementById("id_number2").value = number2_data;
 
     //End of message part
-    if (myObj.length > 0 && myObj["base"].status != "comitted") {
+    if (myObj["base"].status != "comitted") {
       setBid(myObj["bid"]);
     } else {
       var temp = "";
@@ -441,22 +508,112 @@ function setModalData(myData) {
       document.getElementById("Allocate_Table").innerHTML = temp;
     }
 
-    temp = '';
-    for (var x = 0; driverList.length; x++) {
-      temp = temp + '<option val="' + driverList[x]["id"] + '" >' + driverList[x]["name"] + ' - ' + driverList[x]["id"] + '</option>'
-    }
-    document.getElementById("drvid").innerHTML = temp;
-
   }
 }
+$(document).on('keyup', '#drvid', function () {
 
-function setBid(myObj) {
+  var str = $('#drvid').val().toLowerCase();
+  var temp = '<div class="drvid_class_div">';
+  for (var i = 0; i < driverList.length; i++) {
+    if ((driverList[i].name.toLowerCase()).includes(str)) {
+      temp = temp + '<p class="drvid_class_p">' + driverList[i].id + ' - ' + driverList[i].name + '</p>'
+    }
+  }
+  temp = temp + '</div>';
+  $('.drvid_class_div').remove();
+  $('#drvid').parent().parent().parent().append(temp);
+});
+
+$(document).on('click', '.drvid_class_p', function () {
+  $('#drvid').val($(this).html());
+  $('.drvid_class_div').remove();
+
+});
+
+$(document).on('click', '#status_dropdown', function () {
+
+  var str = $('#status_dropdown').val();
+  var p = '';
+  var exec = false;
+  var attr = [];
+  if (str == 'Booked') {
+    attr[0] = "booked-confirmed";
+    attr[1] = 'cancelled';
+    exec = true;
+  } else if (str == 'Allocated') {
+    attr[0] = "completed";
+    attr[1] = 'cancelled';
+    exec = true;
+  }else if (str == 'Confirmed') {
+    attr[0] = "cancelled";
+    exec = true;
+  }
+  if (exec) {
+    var temp = '<div  class="dropdown-set show">';
+    for (var i = 0; i < attr.length; i++) {
+      var ptemp = attr[i];
+      p = p + '<p class="status_class_p" name="'+ptemp+'" id="' + GLStatusBooking[ptemp].showstatus + '" >' + GLStatusBooking[ptemp].dropdown_val + '</p>'
+
+    }
+    temp = temp + p;
+    temp = temp + '<div class="mc-flex">';
+    temp = temp + '<button class="button-style change_Status" >Change</button>';
+    temp = temp + '<button class="button-cancel-style change_Status" >Cancel</button>';
+    temp = temp + '</div>';
+    temp = temp + '</div>';
+    $('.dropdown-set').remove();
+    $('#status_dropdown').parent().append(temp);
+  }
+});
+
+$(document).on('click', '.status_class_p', function () {
+
+  $("div.dropdown-set p").each(function () {
+    $(this).removeClass('class-sky-blue');
+
+  });
+  $(this).addClass('class-sky-blue');
+
+  // $('#status_dropdown').val();
+  // $('.dropdown-set').remove();
+
+});
+
+$(document).on('click', '.change_Status', function () {
+
+  if ($(this).html() == 'Change') {
+    $("div.dropdown-set p").each(function () {
+      if ($(this).hasClass('class-sky-blue')) {
+        var myData={}
+        var temp = $(this).attr("id");
+        $('#status_dropdown').val(temp);
+        temp = $(this).attr("name");
+        myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
+        var myGetUrl = myUrl + "myapi/"+GLStatusBooking[temp].api+".php";
+        get_url_response(myGetUrl, myData, "changeStatus");
+      }
+    });
+  }  
+  $('.dropdown-set').remove();
+
+});
+
+function changeStatus(data){
+ JSON.parse(data);
+}
+function manual_alloc() {
+  var drvid = $('#drvid').val().substring(($('#drvid').val().indexOf("- ") + 2), $('#drvid').val().length);
+}
+
+
+
+function setBid(myObj_bid) {
   var temp = "";
-  for (var i = 1; i < myObj.length; i++) {
+  for (var i = 1; i < myObj_bid.length; i++) {
     temp = temp + "<tr>";
-    temp = temp + "<td>" + myObj[i].drvid + "</td>";
-    temp = temp + "<td>" + myObj[i].name + "</td>";
-    temp = temp + "<td>" + myObj[i].bid + "</td>";
+    temp = temp + "<td>" + myObj_bid[i].drvid + "</td>";
+    temp = temp + "<td>" + myObj_bid[i].name + "</td>";
+    temp = temp + "<td>" + myObj_bid[i].bid + "</td>";
     temp = temp + '<td><a class="myAllocate">Allocate</a></td>';
     temp = temp + "</tr>";
   }
@@ -479,15 +636,25 @@ function date_format_db(x) {
 function todayDate() {
   var today = new Date();
   return date_format_db(today);
+
 }
 
+function previous_date(today) {
+  today.setDate(today.getDate() - 1);
+  return date_format_db(today);
+}
 function getWeekDates() {
   var current = new Date();     // get current date
   var week_date = [];
   for (var i = 0; i < 7; i++) {
     var weekstart = current.getDate() - current.getDay() + i;
     var x = new Date(current.setDate(weekstart));
-    week_date[i] = date_format_db(x);
+    week_date[(i + 1)] = date_format_db(x);
+    if (i == 0) {
+      week_date[i] = previous_date(x);
+    }
+
+    //  week_date[i] = date_format_db(x);
 
   }
   return week_date;

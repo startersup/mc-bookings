@@ -77,7 +77,7 @@ if($action =="")
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<button type="button" class="mc-close close" id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<button type="button" class="mc-close close dataTableUpdate" id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
           <h4 class="modal-title" id="myModalBookId" name="">Booking Information - (  )</h4>
           <div id="myModalBookId_temp" style="display:none;"></div>
                     <ul class="nav nav-pills mc-info-tabs">
@@ -94,61 +94,52 @@ if($action =="")
     <div id="location" class="tab-pane fade in active">
 <!--                  <div id="map"></div>-->
 
-<table class="table table-user-information map-info">
+<table id="table_basic_info" class="table table-user-information map-info">
                   <tbody>
                       <tr>
                       <td>Booking Source :</td>
-                      <td><input type="text" class="text" name="modal_booking_site" id="modal_booking_booked_site" value="Gatwick WB"></td>
+                      <td><input type="text" class="text" name="modal_booking_site" id="modal_booking_booked_site" value=""></td>
                     </tr>
                        <tr>
                       <td>Booking Status :</td>
                       <td>
                         <div class="mc-icon-wrap">
-                        <input type="text" class="text mc-status-change" name="modal_booking_status" readonly onclick="statuschange()" id="modal_booking_status" value="Booked">
-                        <div id="open-status" class="dropdown-set">
-                          <div id="statuslist">
-                            <ul>
-                            <li><a>Booked</a></li>
-                               <li><a>Confirmed</a></li>
-                               <li><a>Completed</a></li>
-                               <li><a>Cancelled</a></li>
-                            </ul><br>
-                            <div class="mc-flex">
-                            <button class="button-style" id="change_Status" >Change</button>
-                            <button class="button-cancel-style" >Cancel</button>
-                          </div>
-                        </div>
+                        <input type="text" class="text mc-status-change" id = "status_dropdown" name="modal_booking_status" readonly  >
+                        
+                          
+                            
+                        
                   </div>
                          </div>
                       </td>
                     </tr>
                     <tr>
                       <td class="first">Pickup From :</td>
-                      <td class="first"><input type="text" class="text" name="modal_booking_src" id="modal_booking_pickup" value="Gatwick Airport"></td>
+                      <td class="first"><input type="text" class="text" name="src" id="modal_booking_src" value=""></td>
                     </tr>
                     <tr>
                       <td>Dropoff To :</td>
-                      <td><input type="text" class="text" name="mail" id="modal_booking_des" value="Heathrow Airport Terminal 2"></td>
+                      <td><input type="text" class="text" name="mail" id="modal_booking_des" value=""></td>
                     </tr>
                     <tr>
                       <td>Date :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_dt" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_dt" value=""></td>
                     </tr>
                     <tr>
                       <td>Time :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_time" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_time" value=""></td>
                     </tr>
                     <tr>
                       <td>Cab Type :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_type" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_type" value=""></td>
                     </tr>
                     <tr>
                       <td>Total Miles :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value="43 Miles"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value=""></td>
                     </tr>
                        <tr>
                       <td>Journey Time :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value="1 hour 15 minutes"></td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value=""></td>
                     </tr>    
              </tbody></table>
 				</div>
@@ -156,11 +147,11 @@ if($action =="")
             
                  <div id="passenger" class="tab-pane fade"> 
 
-                 <table class="table table-user-information">
+                 <table id="table_passenger_info" class="table table-user-information">
                   <tbody>
                     <tr>
                       <td class="first">Passenger Name :</td>
-                      <td class="first"><input type="text" class="text" name="name" id="modal_booking_name" value="saicharan"></td>
+                      <td class="first"><input type="text" class="text" name="name" id="modal_booking_name" value=""></td>
                     </tr>
                     <tr>
                       <td>Passenger Email :</td>
@@ -252,11 +243,11 @@ if($action =="")
 
                   
                                 <h3>Manual Allocation</h3>
-                                       <table class="manalloc-table">
+            <table class="manalloc-table">
                <tbody>
 
                    <tr>
-          <td><select name="drvid" id="drvid"  class="selectit" autocomplete="off"></select> </td>
+          <td><input type="text" name="drvid" id="drvid"  class="selectit" autocomplete="off"> </td>
           <td><input type="text" class="controls" required="required" id="amt" name="amt" placeholder="Enter Amount"></td>
           <td><button class="buttongreen" onclick="manual_alloc();">Allocate </button></td>
         </tr>
@@ -338,9 +329,13 @@ if($action =="")
                 </div>
                 <div class="mc-modal-footer">
                   <div class="mc-flex">
-                    <a class="mc-btn-update" id="modal_update" >Update</a>
-               <button class="mc-close close" id="mc-close-modal" data-dismiss="modal" aria-label="Close">     <a class="mc-btn-cancel" id="modal_cancel">Cancel</a>
-</button>   </div>
+                    <a class="mc-btn-update dataTableUpdate" id="modal_update" >Update</a>
+                               
+               <a id="mc-close-modal" class="mc-btn-cancel"  data-dismiss="modal" aria-label="Close">Cancel
+
+               <button class="mc-close close" ></button>  
+               </a>
+  </div>
                 </div>
 			</div><!-- modal-content -->
 		</div><!-- modal-dialog -->

@@ -39,19 +39,17 @@ if (strpos($prev_url, $host)) {
                     $_SESSION["rights"][$temp] = $rights[$temp];
                 }
               
-                $_SESSION["sessiontime"] = 600;
+                $_SESSION["sessiontime"] = 6000;
                 $_SESSION["logintime"] = strtotime(date("Y-m-d H:i:s"));
                 echo ('<script>alert("Logged in Successfully"); window.location.href ="' .$link."://". $host . '"</script>');
 
 
 
             } else {
-                echo('paass');
-                echo ('<script>alert("User Name or Password is wrong"); window.location.href ="' . $_SERVER['HTTP_REFERER'] . '"</script>');
+               echo ('<script>alert("User Name or Password is wrong"); window.location.href ="' . $_SERVER['HTTP_REFERER'] . '"</script>');
             }
         } else {
-
-            echo ('<script>alert("User Not Found"); window.location.href ="' . $_SERVER['HTTP_REFERER'] . '"</script>');
+                echo ('<script>alert("User Not Found"); window.location.href ="' . $_SERVER['HTTP_REFERER'] . '"</script>');
         }
     } // connection 
 

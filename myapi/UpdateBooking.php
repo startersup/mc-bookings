@@ -22,8 +22,8 @@ else
     $via = $_POST['via'];
     $date= $_POST['dt'];
     $jtime= $_POST['jtime'];
-    $np = $_POST['np']; 
-    $nl=$_POST['nl']; 
+    $np = $_POST['passenger']; 
+    $nl=$_POST['luggage']; 
     $type=$_POST['type']; 
     $time=$_POST['time'];
     $fare=$_POST['fare'];
@@ -32,7 +32,7 @@ else
     $num1=$_POST['num1'];
     $num2=$_POST['num2'];
     $info=$_POST['info'];
-    $pm=$_POST['payment'];
+    $pm=$_POST['pay'];
     $add1=$_POST['address1'];
     $add2=$_POST['address2'];
     $location=$_POST['location'];
@@ -42,7 +42,7 @@ else
 
        $sql="UPDATE `register` SET `name` ='$name' , `mail` ='$mail', `num1` = '$num1', `num2` = '$num2', `location`='$location', `info` ='$info', `pay`='$pay', `src`='$src', `des`='$des', `address1`='$address1', `address2` ='address2', `dt` ='$dt', `time` ='$time', `passenger`='$np', `infants`='$infants', `luggage`='$nl', `type`='$type',`fare`='$fare', `via`='$via', `dfare`='$dfare', `drvid` ='$drvid', `mg` ='$mg', `ceat`='$ceat' WHERE refid='$ref'";       
 // echo($sql);
-// $result= mysqli_query($conn,$sql);
+ $result= mysqli_query($conn,$sql);
 if($result)
 {
     $row["response"]="Success";
