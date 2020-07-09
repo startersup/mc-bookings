@@ -36,7 +36,7 @@ if($action =="")
 <div class="mc-mainbar-components">
 
 <div id="empty_state">
-  <centre><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></centre>
+  <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
   <p>It seems there is no bookings available</p>
 
 </div>
