@@ -77,10 +77,7 @@ function bookingsLoad() {
   get_url_response(myGetUrl, mydata, 'setAllDriver');
 }
 
-function confirmNow(type) {
-  var message = confirmMessage(type);
-  document.getElementById("action_popup_btn").click();
-}
+
 
 $(document).on('click', '.confirm_btn ', function () {
   if ($(this).attr("id") == 'yes') {
@@ -92,14 +89,6 @@ $(document).on('click', '.confirm_btn ', function () {
   document.getElementById("action_popup_btn_close").click()
 });
 
-function confirmMessage(type) {
-  var msg = '';
-  if (type == 'update') {
-    msg = 'Wish to Update and Continue'
-  }
-
-  return type;
-}
 
 function SetParam(myparam) {
   var mydata = {};
@@ -310,8 +299,36 @@ function clearClass() {
 
   $(document).on('click','#modal_update',function () {
     //confirmNow('update');
-    updateBookingDetails();
+    ActionDecision('update','updateBookingDetails');
   });
+
+  function ActionDecision(type,callBack)
+  {
+    var message = confirmMessage(type);
+    var temp= callBack+'();';
+    $('.action_confirm_btn_yes').attr('onClick', temp);
+    $('#confirm_id_msg').html(message);
+    $('#action_popup_btn').click();
+  }
+
+  $(document).on('click','.action_confirm_btn_yes',function () {
+    $('#action_popup_btn').click();
+  });
+  $(document).on('click','.action_confirm_btn_no',function () {
+    $('#action_popup_btn').click();
+  });
+
+ 
+function confirmMessage(type) {
+  var msg = '';
+  if (type == 'update') {
+    msg = 'Wish to Update and Continue'
+  }else  if (type == 'allocate') {
+    msg = 'Wish to Allocate and Continue'
+  }
+
+  return msg;
+}
 
 $(document).on('click','#filter_load',function () {
     searchByFilter();
@@ -691,7 +708,12 @@ function manual_alloc() {
         var myGetUrl = myUrl + "myapi/driver_accept.php";
         get_url_response(myGetUrl, myData, "manual_alloc_response");
 }
+$(document).on('click', '#manual_alloc', function () {
 
+  ActionDecision('allocate','manual_alloc');
+
+
+});
 
 
 function setBid(myObj_bid) {

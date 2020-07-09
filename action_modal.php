@@ -8,12 +8,12 @@
       <div class="modal-content mc-act-modal">
         <div class="modal-body">
           <div class="mc-action-msg">
-          <p id="confirm_id_msg">Do you want to change the method</p></div>
+          <p id="confirm_id_msg">ERR !!!!</p></div>
      
         <div class="mc-ac-modal-footer">
                   <div class="mc-flex">
-                    <a class="mc-btn-update confirm_btn" id="yes">Yes</a>
-                    <a class="mc-btn-cancel confirm_btn " id="no">NO</a>
+                    <a class="mc-btn-update action_confirm_btn_yes" >Yes</a>
+                    <a class="mc-btn-cancel action_confirm_btn_no " >NO</a>
                   </div>   </div>
       </div>
     </div>
