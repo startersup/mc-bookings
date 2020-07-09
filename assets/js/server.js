@@ -45,6 +45,7 @@ var confirmFunction = '';
 var mc_datatables_row = {};
 var mc_datatables_row_num = -1;
 var bookingpass = '';
+var currentModalStatus=''
 
 
 function temLoad() {
@@ -130,16 +131,21 @@ function get_booking_response(myGetUrl, mydata) {
   });
 }
 function get_url_response(myGetUrl, mydata, myfunc) {
-  $.ajax({
-    type: "POST",
-    url: myGetUrl,
-    data: mydata,
-    async: false,
-    success: function (data) {
-      window[myfunc](data);
-    },
-    error: function (xhr) { }
-  });
+
+  $('#spinnermodal').show();
+     setTimeout(function(){
+        $.ajax({
+          type: "POST",
+          url: myGetUrl,
+          data: mydata,
+          async: false,
+          success: function (data) {
+            window[myfunc](data);
+          },
+          error: function (xhr) { }
+        });
+    }, 200);   
+    $('#spinnermodal').hide();
 }
 
 function setAllDriver(data) {
@@ -148,14 +154,11 @@ function setAllDriver(data) {
 
 }
 
-$(document).on('click', '.dataTableUpdate', function () {
-  updateRow();
-});
 function updateRow()
 {
   var myTable = $("#mc-datatables").DataTable();
-  newData.status = setStatusView(mc_datatables_row.status);
-  myTable.row( mc_datatables_row_num ).data( newData ).draw();
+  mc_datatables_row.status = setStatusView(mc_datatables_row.status);
+  myTable.row( mc_datatables_row_num ).data( mc_datatables_row ).draw();
   mc_datatables_row_num=-1;
   mc_datatables_row={};
 }
@@ -221,6 +224,8 @@ function setStatusView(statusVal)
   } else if (statusVal== "comitted") {
     myDiv = myDiv.replace("myStatus", "Comitted");
     myDiv = myDiv.replace("myClass", "mc-cl-Comitted");
+  }else{
+    myDiv=statusVal;
   }
   return myDiv;
 }
@@ -260,6 +265,13 @@ $(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modal
     mc_datatables_row = table.row($(this).parents("tr")).data();
     mc_datatables_row_num = $(this).closest('tr').index();
     // $('#mc-open-modal').trigger('click');
+
+    $("ul.mc-info-tabs li").each(function () { 
+      $(this).removeClass('active');    
+    });
+    $('#basic_info').addClass('active');      
+
+
     document.getElementById("mc-open-modal").click();
     clickModal(mc_datatables_row.refid);
   }else if ($(this).hasClass('modalToggle')) {
@@ -276,14 +288,22 @@ $(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modal
 
 });
 
-
+$(document).on('click', '.modalToggle ', function () {
+  if(($(this).attr('id') == 'basic_info') || ($(this).attr('id') == 'passenger_info'))
+  {
+    $('#modal_update').prop('disabled', false);
+  }else{
+    $('#modal_update').prop('disabled', true);
+  }
+});
+ 
 
 function updateBookingDetails() {
 
   var myData = {};
-
+// ||  
   $("ul.mc-info-tabs li").each(function () {
-    if ($(this).hasClass('active')) {
+    if ($(this).hasClass('active')  ) {
 
       var temp = "#table_" + ($(this).attr('id')) + " :input"
       $(temp).each(function (e) {
@@ -317,7 +337,18 @@ $(document).ready(function () {
 });
 */
 function UpdationAlert(myData) {
-  console.log(myData);
+ if( showStatusMessage(myData))
+ {
+  mc_datatables_row.des= 	$("#modal_booking_des").val() ;
+  mc_datatables_row.src= 	$("#modal_booking_src").val() ;
+  // mc_datatables_row.dt= 	$("#modal_booking_dt").val() ;
+  mc_datatables_row.fare= $("#modal_booking_fare").val() ;
+  mc_datatables_row.time= $("#modal_booking_time").val() ;
+  mc_datatables_row.type= $("#modal_booking_type").val() ;
+ }
+ updateRow();
+ document.getElementById("mc-open-modal").click();
+ 
 }
 function searchByFilter() {
   var mydata = {};
@@ -358,30 +389,33 @@ function filterCheckBox(ele) {
   }
 }
 function clearModal() {
-  document.getElementById("modal_booking_booked_site").value = "";
-  document.getElementById("status_dropdown").value = "";
-  document.getElementById("modal_booking_src").value = "";
-  document.getElementById("modal_booking_des").value = "";
-  document.getElementById("modal_booking_dt").value = "";
-  document.getElementById("modal_booking_time").value = "";
-  document.getElementById("modal_booking_type").value = "";
-  document.getElementById("myModalBookId").innerHTML = "";
-  document.getElementById("myModalBookId").name = "";
+  $("#modal_booking_booked_site").val('') ;
+  $("#status_dropdown").val('') ;
+  $("#modal_booking_src").val('') ;
+  $("#modal_booking_des").val('') ;
+  $("#modal_booking_dt").val('') ;
+  $("#modal_booking_time").val('') ;
+  $("#modal_booking_type").val('') ;
+  $("#myModalBookId").innerHTML ;
+  $("#myModalBookId").name ;
+  
+  $("#modal_booking_name").val('') ;
+  $("#modal_booking_mail").val('') ;
+  $("#modal_booking_num1").val('') ;
+  $("#modal_booking_num2").val('') ;
+  $("#modal_booking_address1").val('') ;
+  $("#modal_booking_address2").val('') ;
+  $("#modal_booking_dt").val('') ;
+  $("#modal_booking_time").val('') ;
+  $("#modal_booking_passenger").val('') ;
+  $("#modal_booking_luggage").val('') ;
+  $("#modal_booking_location").val('') ;
+  $("#modal_booking_info").val('') ;
+  $("#modal_booking_type").val('') ;
+  $("#modal_booking_fare").val('') ;
 
-  document.getElementById("modal_booking_name").value = "";
-  document.getElementById("modal_booking_mail").value = "";
-  document.getElementById("modal_booking_num1").value = "";
-  document.getElementById("modal_booking_num2").value = "";
-  document.getElementById("modal_booking_address1").value = "";
-  document.getElementById("modal_booking_address2").value = "";
-  document.getElementById("modal_booking_dt").value = "";
-  document.getElementById("modal_booking_time").value = "";
-  document.getElementById("modal_booking_passenger").value = "";
-  document.getElementById("modal_booking_luggage").value = "";
-  document.getElementById("modal_booking_location").value = "";
-  document.getElementById("modal_booking_info").value = "";
-  document.getElementById("modal_booking_type").value = "";
-  document.getElementById("modal_booking_fare").value = "";
+  $("#drvid").val('') ;
+  $("#amt").val('') ;
 }
 function getModalData(myload, book_id) {
   var mydata = {};
@@ -579,6 +613,12 @@ $(document).on('click', '.status_class_p', function () {
 
 });
 
+$(document).on('click', '.send_sms', function () {
+  var myData={};
+  myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
+  var myGetUrl = myUrl + "myapi/send_msg.php";
+  get_url_response(myGetUrl, myData, "changeStatus");
+});
 $(document).on('click', '.change_Status', function () {
 
   if ($(this).html() == 'Change') {
@@ -588,6 +628,7 @@ $(document).on('click', '.change_Status', function () {
         var temp = $(this).attr("id");
         $('#status_dropdown').val(temp);
         temp = $(this).attr("name");
+        currentModalStatus=temp;
         myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
         var myGetUrl = myUrl + "myapi/"+GLStatusBooking[temp].api+".php";
         get_url_response(myGetUrl, myData, "changeStatus");
@@ -599,10 +640,26 @@ $(document).on('click', '.change_Status', function () {
 });
 
 function changeStatus(data){
- JSON.parse(data);
+  if( showStatusMessage(data))
+ {
+  mc_datatables_row.status= 	currentModalStatus ;
+ }
+ currentModalStatus='';
+ updateRow();
+}
+
+function manual_alloc_response(data)
+{
+   showStatusMessage(data);
+   document.getElementById("mc-open-modal").click();
 }
 function manual_alloc() {
-  var drvid = $('#drvid').val().substring(($('#drvid').val().indexOf("- ") + 2), $('#drvid').val().length);
+  var myData={}
+  myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
+  myData["did"]=$('#drvid').val().substring(0, ($('#drvid').val().indexOf("- ")-1));
+  myData["new"]=  $('#amt').val();
+        var myGetUrl = myUrl + "myapi/driver_accept.php";
+        get_url_response(myGetUrl, myData, "manual_alloc_response");
 }
 
 
@@ -658,4 +715,32 @@ function getWeekDates() {
 
   }
   return week_date;
+}
+
+function showStatusMessage(obj)
+{
+  myObj= JSON.parse(obj);
+  var myret=false;
+	// alert(myObj["status"]+" "+myObj["message"]);
+  
+  $("#myAlert_status").html(myObj["status"]);
+  $("#myAlert_msg").html(myObj["msg"]);
+  $("#myAlert_class").removeClass('color-green');
+  $("#myAlert_class").removeClass('color-red');
+  if( (myObj["response"].toLowerCase()) === 'success'  )
+  {
+    $("#myAlert_class").addClass('color-green');
+    myret=true;
+  }
+  else{
+    $("#myAlert_class").addClass('color-red');
+  }
+  $("#myAlert").fadeIn();
+
+  return myret;
+}
+
+function showStatusMessageClose()
+{
+  $("#myAlert").fadeOut();
 }

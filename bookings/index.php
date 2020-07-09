@@ -77,7 +77,7 @@ if($action =="")
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<button type="button" class="mc-close close dataTableUpdate" id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+			<!--		<button type="button" class="mc-close close " id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button> -->
           <h4 class="modal-title" id="myModalBookId" name="">Booking Information - (  )</h4>
           <div id="myModalBookId_temp" style="display:none;"></div>
                     <ul class="nav nav-pills mc-info-tabs">
@@ -175,15 +175,7 @@ if($action =="")
                       <td>Dropoff Address : </td>
                       <td><input type="text" class="text" name="address2" id="modal_booking_address2" value=""></td>
                     </tr>
-                    <tr>
-                      <td>Pickup Date :</td>
-                      <td><input type="text" class="text" name="date" id="modal_booking_dt" value=""></td>
-                    </tr>
-                    
-                     <tr>
-                      <td>Pickup Time :</td>
-                      <td><input type="text" class="text" name="time" id="modal_booking_time" value=""></td>
-                    </tr>
+                   
                     
                     <tr>
                         <td>Passengers :</td>
@@ -207,11 +199,7 @@ if($action =="")
                       <td>Special Info :</td>
                       <td><input type="text" class="text" name="info" id="modal_booking_info" value=""></td>
                     </tr>
-                    
-                    <tr>
-                      <td>Cab Type :</td>
-                      <td><input type="text" class="text" name="type" id="modal_booking_type" value=""></td>
-                    </tr>
+                  
                     <tr>
                       <td>Child Ceat :</td>
                       <td><input type="text" class="text" name="ceat" id="modal_booking_ceat" value=""></td>
@@ -329,9 +317,9 @@ if($action =="")
                 </div>
                 <div class="mc-modal-footer">
                   <div class="mc-flex">
-                    <a class="mc-btn-update dataTableUpdate" id="modal_update" >Update</a>
+                    <a class="mc-btn-update" id="modal_update" >Update</a>
                                
-               <a id="mc-close-modal" class="mc-btn-cancel"  data-dismiss="modal" aria-label="Close">Cancel
+               <a id="mc-close-modal" class="mc-btn-cancel"  data-dismiss="modal" aria-label="Close">Close
 
                <button class="mc-close close" ></button>  
                </a>

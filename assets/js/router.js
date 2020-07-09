@@ -50,7 +50,7 @@ function defaultLoader(temp)
             }
         } 
         
-    }, 100);   
+    }, 200);   
    
 }
 

@@ -2,85 +2,48 @@
 
 session_start();
 
- $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
- 
-  include($rootfolder."/connection/connect.php"); 
-    
-    if(!$conn)
-    {
-    
-    $row["response"]="Failed";
-    $row["msg"]="DB Connection Failed";
-    echo json_encode($row);
-    
-    }
-else
-{
+$rootfolder = $_SERVER['DOCUMENT_ROOT'];
 
- 
-    
-    
-   
-        $ref=$_POST['id'];
-        $did=$_POST['did'];
-          $bid=$_POST['new'];
-         
-        
-    
+include($rootfolder . "/connection/connect.php");
+
+if (!$conn) {
+
+  $row["response"] = "Failed";
+  $row["msg"] = "DB Connection Failed";
   
+} else {
+  $ref = $_POST['id'];
+  $did = $_POST['did'];
+  $bid = $_POST['new'];
+  $st = "comitted";
+
+  $update_qry="UPDATE `register` SET `status`='$st',`drvid`='$did',`dfare`='$bid' WHERE refid='$ref'";
+  $result = mysqli_query($conn, $update_qry);
+
+
+  if ($result) {
+
+    $mail_qry="select book.mail as passmail,book.name,book.num1,book.num2,book.src,book.des,book.via,book.address1,book.address2,book.dt,book.time,book.dfare,driver.name as dname,driver.mobile as dnum1,driver.mobile2 as dnum2,driver.car_type as dcar_type,driver.car_num as dcar_num,driver.e_mail as dmail from register as book LEFT JOIN driver as driver ON register.drvid=driver.id WHERE register.refid ='" . $ref . "' ";
+    $res = mysqli_query($conn, $mail_qry);
+
+    $subjectp = "Driver Details for the Journey : Reference Id (" . $ref . ")";
+
+    $subjectd = "Passenger Details for the Journey : Reference Id (" . $ref . ")";
+
+
+    // Always set content-type when sending HTML email
+    $headers = "";
+    $headers .= "From: Minicabee <noreply-bookings@minicabee.co.uk> \r\n";
+    $headers .= "Reply-To: Minicabee <noreply-bookings@minicabee.co.uk> \r\n" . "X-Mailer: PHP/" . phpversion();
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
 
 
 
- $result2= mysqli_query($conn,"SELECT * from `register` WHERE refid='$ref'");
-
-  $row= mysqli_fetch_array($result2,MYSQLI_ASSOC);
-  
- 
-    
-$st="comitted";
-    
-    
-
-  $result= mysqli_query($conn,"UPDATE `register` SET `status`='$st',`drvid`='$did',`dfare`='$bid' WHERE refid='$ref'");
-  
-  
-   $res= mysqli_query($conn,"SELECT * from `register` WHERE refid='$ref'");
-
-    
-    
-   
-
-    if($result)
-    {
-        
-        
-        $subjectp = "Driver Details for the Journey : Reference Id (".$ref.")";
-        
-        $subjectd = "Passenger Details for the Journey : Reference Id (".$ref.")";
-        
-
-// Always set content-type when sending HTML email
-$headers = "";
-$headers .= "From: Minicabee <noreply-bookings@minicabee.co.uk> \r\n";
-$headers .= "Reply-To: Minicabee <noreply-bookings@minicabee.co.uk> \r\n"."X-Mailer: PHP/" . phpversion();
-$headers .= "MIME-Version: 1.0" . "\r\n"; 
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
+    $rowpass = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
-
-  $rowpass= mysqli_fetch_array($res,MYSQLI_ASSOC);
-  
-  
-  
-  $lendid=strlen($did);
-  
-
-  
-  $res2= mysqli_query($conn,"SELECT * from `driver` WHERE id='$did'");
-  $rowd= mysqli_fetch_array($res2,MYSQLI_ASSOC);
-  
-
-$messagep = '
+    $messagep = '
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -88,50 +51,50 @@ $messagep = '
  	<meta name="format-detection" content="telephone=no"/>
     <style>
             @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 400;
-      src: local( '."'".'Lato Regular'."'".'), local('."'".'Lato-Regular'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXjeu.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato Regular' . "'" . '), local(' . "'" . 'Lato-Regular' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXjeu.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
     /* latin */
     @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 400;
-      src: local( '."'".'Lato Regular'."'".'), local('."'".'Lato-Regular'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXg.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato Regular' . "'" . '), local(' . "'" . 'Lato-Regular' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXg.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
     /* latin-ext */
     @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 700;
-      src: local( '."'".'Lato-Bold'."'".'), local('."'".'Lato-Bold'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato-Bold' . "'" . '), local(' . "'" . 'Lato-Bold' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
     /* latin */
     @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 700;
-      src: local( '."'".'Lato-Bold'."'".'), local('."'".'Lato-Bold'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato-Bold' . "'" . '), local(' . "'" . 'Lato-Bold' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
     /* latin-ext */
     @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 900;
-      src: local( '."'".'Lato-Black'."'".'), local('."'".'Lato-Black'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato-Black' . "'" . '), local(' . "'" . 'Lato-Black' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
     /* latin */
     @font-face {
-      font-family: '."'".'Lato'."'".';
+      font-family: ' . "'" . 'Lato' . "'" . ';
       font-style: normal;
       font-weight: 900;
-      src: local( '."'".'Lato-Black'."'".'), local('."'".'Lato-Black'."'".'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('."'".'woff2'."'".');
+      src: local( ' . "'" . 'Lato-Black' . "'" . '), local(' . "'" . 'Lato-Black' . "'" . '), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh50XSwiPGQ.woff2) format(' . "'" . 'woff2' . "'" . ');
       unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
@@ -172,7 +135,7 @@ $messagep = '
 			<td class="border" style="border-collapse: collapse;border: 1px solid #eeeff0;margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #555559;font-family: Arial, sans-serif;">
 				<table style="font-weight: normal;border-collapse: collapse;border: 0;margin: 0;padding: 0;font-family: Arial, sans-serif;">
 					<tr>
-						<td colspan="4" valign="top" class="image-section" style="border-collapse: collapse;border: 0;margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #000000;background-color: #ffffff;font-weight:bold;font-family:  '."'".'Lato'."'".', sans-serif;">
+						<td colspan="4" valign="top" class="image-section" style="border-collapse: collapse;border: 0;margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #000000;background-color: #ffffff;font-weight:bold;font-family:  ' . "'" . 'Lato' . "'" . ', sans-serif;">
 							<center><a target="_blank" style="text-decoration: none;"
 				href="https://minicabee.co.uk/"><img border="0" vspace="0" hspace="0"
 				src="https://minicabee.co.uk/assets/images/logo.png"
@@ -194,42 +157,39 @@ $messagep = '
 			color: #000000; font-size: 13px; margin: 0; padding: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;"/></a></td>
 	</tr>
 					<tr>
-						<td valign="top" class="side title" style="border-collapse: collapse;border: 0;margin: 0;padding: 10px;-webkit-text-size-adjust: none;color: #555559;font-family:  '."'".'Lato'."'".', sans-serif;font-size: 16px;line-height: 26px;vertical-align: top;background-color: white;border-top: none;">
+						<td valign="top" class="side title" style="border-collapse: collapse;border: 0;margin: 0;padding: 10px;-webkit-text-size-adjust: none;color: #555559;font-family:  ' . "'" . 'Lato' . "'" . ', sans-serif;font-size: 16px;line-height: 26px;vertical-align: top;background-color: white;border-top: none;">
 							<table style="font-weight: normal;border-collapse: collapse;border: 0;margin: 0;padding: 0;font-family: Arial, sans-serif;">
 								<div class="mktEditable" id="main_text">
-										<p style="font-family:  '."'".'Lato'."'".', sans-serif;line-height: 30px;font-size:18px;">Dear Passenger , here is your driver details for your journey, kindly connect with him before the journey.</p>
+										<p style="font-family:  ' . "'" . 'Lato' . "'" . ', sans-serif;line-height: 30px;font-size:18px;">Dear Passenger , here is your driver details for your journey, kindly connect with him before the journey.</p>
 									</div>
 								
-					<center><b style="font-family:  '."'".'Lato'."'".', sans-serif;line-height: 30px;font-size:22px;padding:20px 10px;">Driver Details</b></center>
-                            						 <table style="font-family:  '."'".'Lato'."'".', sans-serif;
+					<center><b style="font-family:  ' . "'" . 'Lato' . "'" . ', sans-serif;line-height: 30px;font-size:22px;padding:20px 10px;">Driver Details</b></center>
+                            						 <table style="font-family:  ' . "'" . 'Lato' . "'" . ', sans-serif;
     border-collapse: collapse;
     width: 100%;color:#555559;font-size:14px;">
-      <tr>
-    <th style=" text-align:right;padding:10px;"><b>Provider Name</b></th>
-    <th  style="text-align: left;padding:10px;">: MCE Provider #32</th>
-  </tr>
+   
   <tr>
     <th style=" text-align:right;padding:10px;"><b>Driver Name</b></th>
-    <th  style="text-align: left;padding:10px;">: '.$rowd["name"].'</th>
+    <th  style="text-align: left;padding:10px;">: ' . $rowpass["dname"] . '</th>
   </tr>
    <tr>
     <th style=" text-align:right;padding:10px;"><b>Contact Number</b></th>
-    <th  style="text-align: left;padding:10px;">:  '.$rowd["mobile"].'</th>
+    <th  style="text-align: left;padding:10px;">:  ' . $rowpass["dnum1"] . '</th>
   </tr>
     <tr>
     <th style=" text-align:right;padding:10px;"><b>Alternate Number</b></th>
-    <th  style="text-align: left;padding:10px;">: '.$rowd["mobile2"].'</th>
+    <th  style="text-align: left;padding:10px;">: ' . $rowpass["dnum2"] . '</th>
   </tr>
              <tr>
     <th style=" text-align:right;padding:10px;"><b>Cab Type</b></th>
-    <th  style="text-align: left;padding:10px;">: '.$rowd["car_type"].'</th>
+    <th  style="text-align: left;padding:10px;">: ' . $rowpass["dcar_type"] . '</th>
   </tr>
                                                            <tr>
     <th style=" text-align:right;padding:10px;"><b>Cab Plate Number</b></th>
-    <th  style="text-align: left;padding:10px;">: '.$rowd["car_num"].'</th>
+    <th  style="text-align: left;padding:10px;">: ' . $rowpass["dcar_num"] . '</th>
   </tr>
         </table>
-                           				
+              				
 						<tr>
 									<td style="border-collapse: collapse;border: 0;margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #555559;font-family: Arial, sans-serif;font-size: 16px;line-height: 24px;">
 									 &nbsp;<br>
@@ -238,7 +198,7 @@ $messagep = '
 								<tr>
 									<td class="text" style="border-collapse: collapse;border: 0;margin: 0;padding: 0;-webkit-text-size-adjust: none;color: #555559;font-family: Arial, sans-serif;font-size: 16px;line-height: 24px;">
 									<div class="mktEditable" id="download_button" style="text-align: center;">
-										<a style="color:#ffffff; background-color: #ff8300; border: 20px solid #ff8300; border-left: 20px solid #ff8300; border-right: 20px solid #ff8300; border-top: 10px solid #ff8300; border-bottom: 10px solid #ff8300;border-radius: 3px; text-decoration:none;" href="tel:"'.$rowd["mobile"].'"">Contact Driver</a>										
+										<a style="color:#ffffff; background-color: #ff8300; border: 20px solid #ff8300; border-left: 20px solid #ff8300; border-right: 20px solid #ff8300; border-top: 10px solid #ff8300; border-bottom: 10px solid #ff8300;border-radius: 3px; text-decoration:none;" href="tel:"' . $rowd["mobile"] . '"">Contact Driver</a>										
 									</div>
 									</td>
 								</tr>									
@@ -274,14 +234,14 @@ $messagep = '
 ';
 
 
-$mail=$rowpass["mail"];
+    $mail = $rowpass["passmail"];
 
 
 
-// $ll=mail($mail,$subjectp,$messagep,$headers);
+     $ll=mail($mail,$subjectp,$messagep,$headers);
 
 
-$messaged=' 
+    $messaged = ' 
 
 <!DOCTYPE html>
 <html>
@@ -306,56 +266,55 @@ $messaged='
     width: 100%;">
     
 
-
          <tr>
     <th style=" text-align:right;padding: 8px;">Passenger Name</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["name"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["name"] . '</th>
   </tr>
        
          <tr>
     <th style=" text-align:right;padding: 8px;">Contact Number</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["num1"].' /  '.$rowpass["num2"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["num1"] . ' /  ' . $rowpass["num2"] . '</th>
   </tr>
         <tr>
     <th style=" text-align:right;padding: 8px;">Pickup From</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["src"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["src"] . '</th>
   </tr>
          <tr>
     <th style=" text-align:right;padding: 8px;">Dropoff To</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["des"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["des"] . '</th>
   </tr>
          <tr>
     <th style=" text-align:right;padding: 8px;">Via Point</th>
-    <th  style="text-align: left;padding: 8px;">:'.$rowpass["via"].'</th>
+    <th  style="text-align: left;padding: 8px;">:' . $rowpass["via"] . '</th>
   </tr>
          <tr>
     <th style=" text-align:right;padding: 8px;">Full pickup Address</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["address1"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["address1"] . '</th>
   </tr>
          <tr>
     <th style=" text-align:right;padding: 8px;">Full Dropoff Address</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["address2"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["address2"] . '</th>
   </tr>
          <tr>
     <th style=" text-align:right;padding: 8px;">Pickup Time And Time</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["dt"]." ".$rowpass["time"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["dt"] . " " . $rowpass["time"] . '</th>
        </tr>
         
               <tr>
     <th style=" text-align:right;padding: 8px;">Passengers</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["passenger"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["passenger"] . '</th>
   </tr>
              <tr>
     <th style=" text-align:right;padding: 8px;">Luggages</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["luggage"].'</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["luggage"] . '</th>
   </tr>
   
   
              <tr>
-    <th style=" text-align:right;padding: 8px;">Luggages</th>
-    <th  style="text-align: left;padding: 8px;">: '.$rowpass["dfare"].'</th>
+    <th style=" text-align:right;padding: 8px;">Your Fare</th>
+    <th  style="text-align: left;padding: 8px;">: ' . $rowpass["dfare"] . '</th>
   </tr>
-           
+          
         
         </table>
 
@@ -376,41 +335,29 @@ $messaged='
 
 
 
-$mail=$rowd["e-mail"];
+    $mail = $rowpass["dmail"];
 
 
-// $alert=mail($mail,$subjectd,$messaged,$headers);
+     $alert=mail($mail,$subjectd,$messaged,$headers);
 
 
 
-  $row["response"]="Success";
-    $row["msg"]="Data Updated Succeddfully";
-    $row["id"]=$ref;
-    $row["opr"]=$did;
-    $row["code"]="drvid";
-    $row["opr2"]=$new;
-    $row["code2"]="dfare";
-    echo json_encode($row);   
-        
-        
-        
-   
-    }
-
-else
-{
-    $row["response"]="Failed";
-    $row["msg"]="Data Doesn't Updated";
+    $row["response"] = "Success";
+    $row["msg"] = "Driver Allocated Succeddfully";
+    $row["id"] = $ref;
+    $row["opr"] = $did;
+    $row["code"] = "drvid";
+    $row["opr2"] = $new;
+    $row["code2"] = "dfare";
     
-    
-    echo json_encode($row);
+  } else {
+    $row["response"] = "Failed";
+    $row["msg"] = "Error in Driver Allocation";
+
+
+  }
 }
 
- 
-    
-    
+echo json_encode($row);
 
-
-
-}
 ?>

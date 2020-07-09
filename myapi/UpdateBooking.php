@@ -10,54 +10,84 @@ session_start();
     if(!$conn)
     {
     
-    echo ("Connecdtion Failed");
-    
+        $row["response"]="Failed";
+        $row["msg"]="DB Connection Failed";
+
+          
     }
 else
 {
     date_default_timezone_set('Europe/London');
+
+    $loop_array=[ 'name', 'mail', 'num1', 'num2', 'location', 'info', 'pay', 'src', 'des', 'address1', 'address2', 'dt', 'time', 'passenger', 'infants', 'luggage', 'type', 'agency', 'jtime', 'fare',  'via', 'dfare', 'drvid', 'mg', 'ceat', 'tiktok', 'miles', 'rdt', 'rtime', 'booked', 'confirmed', 'cancelled', 'status2', 'booked_date', 'booked_site', 'agent_name', 'agent_action', 'booking_agent' ];
     
+    $count =count($loop_array);
+    $set_value='';
+    for($i=0;$i<$count;$i++)
+    {
+        $temp=$loop_array[$i];
+        if(isset($_POST[$temp]))
+        {
+            $set_value .= "`".$temp."` = '" .$_POST[$temp]."',";
+        }
+       
+    }
+
+    if($set_value == '')
+    {
+        $row["response"]="Failed";
+        $row["msg"]="No Data to Update";
+    }
+    else{
+        $refid =$_POST["refid"];
+        $set_value .= "`refid`= '".$refid."'";
+        $sql_query= "UPDATE `register` SET ".$set_value."WHERE refid='$refid'";
+       // $row["sql"]=$sql_query;
+        $result= mysqli_query($conn,$sql_query);
+        if($result)
+        {
+            $row["response"]="Success";
+            $row["msg"]="Updated Successfully";
+        }
+        else{
+            $row["response"]="Failed";
+            $row["msg"]="Failed to Update";
+        }
+        
+        
+    }
+/*
     $src = $_POST['src'];
     $des = $_POST['des']; 
-    $via = $_POST['via'];
+   // $via = $_POST['via'];
     $date= $_POST['dt'];
-    $jtime= $_POST['jtime'];
-    $np = $_POST['passenger']; 
-    $nl=$_POST['luggage']; 
-    $type=$_POST['type']; 
     $time=$_POST['time'];
-    $fare=$_POST['fare'];
+    $type=$_POST['type'];
+    $miles=$_POST['miles'];
+    $jtime= $_POST['jtime'];
+
+
     $name=$_POST['name'];
     $mail=$_POST['mail'];
     $num1=$_POST['num1'];
     $num2=$_POST['num2'];
-    $info=$_POST['info'];
-    $pm=$_POST['pay'];
     $add1=$_POST['address1'];
     $add2=$_POST['address2'];
+    $np = $_POST['passenger']; 
+    $nl=$_POST['luggage']; 
+    $nl=$_POST['infants'];
     $location=$_POST['location'];
-    $ceat=$_POST['ceat'];
+    $info=$_POST['info'];
     $mg=$_POST["mg"];
-    $ref=$_POST['refid'];
+    $ceat=$_POST['ceat'];
+    $fare=$_POST['fare'];
+    $dfare=$_POST['dfare'];
 
-       $sql="UPDATE `register` SET `name` ='$name' , `mail` ='$mail', `num1` = '$num1', `num2` = '$num2', `location`='$location', `info` ='$info', `pay`='$pay', `src`='$src', `des`='$des', `address1`='$address1', `address2` ='address2', `dt` ='$dt', `time` ='$time', `passenger`='$np', `infants`='$infants', `luggage`='$nl', `type`='$type',`fare`='$fare', `via`='$via', `dfare`='$dfare', `drvid` ='$drvid', `mg` ='$mg', `ceat`='$ceat' WHERE refid='$ref'";       
-// echo($sql);
- $result= mysqli_query($conn,$sql);
-if($result)
-{
-    $row["response"]="Success";
-    $row["msg"]="Updated Successfully";
-}
-else{
-    $row["response"]="Failed";
-    $row["msg"]="Failed to Update";
-}
-
-}
-
+   // $pm=$_POST['pay'];
+*/
 echo json_encode($row);
 mysqli_close($conn);
-
+}
 ?>
 
  

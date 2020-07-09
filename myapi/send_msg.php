@@ -11,14 +11,10 @@ session_start();
     
     $row["response"]="Failed";
     $row["msg"]="DB Connection Failed";
-    echo json_encode($row);
-    
+        
     }
 else
-{
-
-
-   
+{  
          $urlback=$_SERVER['HTTP_REFERER'];
  
         $uid = "mohammad_api";
