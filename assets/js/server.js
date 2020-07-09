@@ -65,7 +65,11 @@ function bookingsLoad() {
     SetParam("today");
     bookingPage = 'today';
   } else {
+    clearClass();
+    var temp='#'+bookingPage;
+      $(temp).addClass("active");
     SetParam(bookingPage);
+
   }
   var mydata = {};
   var myGetUrl = myUrl + "myapi/alldriver.php";
@@ -114,26 +118,33 @@ function SetParam(myparam) {
   get_booking_response(myGetUrl, mydata);
 }
 function get_booking_response(myGetUrl, mydata) {
+
+  $('#spinnermodal').show();
+ 
+     setTimeout(function(){
+   
   $.ajax({
     type: "POST",
     url: myGetUrl,
     data: mydata,
     async: false,
+       
     success: function (data) {
       setRow(data);
-      // document.getElementById("spinnermodal").style.display = "none";
-      //window[functionName](data);
+      $('#spinnermodal').hide();
     },
     error: function (xhr) {
       // document.getElementById("spinnermodal").style.display = "none";
       //  Server_Response_Fail(xhr.responseText);
     }
   });
+
+}, 400);
+
 }
 function get_url_response(myGetUrl, mydata, myfunc) {
 
-  $('#spinnermodal').show();
-     setTimeout(function(){
+ 
         $.ajax({
           type: "POST",
           url: myGetUrl,
@@ -144,8 +155,7 @@ function get_url_response(myGetUrl, mydata, myfunc) {
           },
           error: function (xhr) { }
         });
-    }, 200);   
-    $('#spinnermodal').hide();
+    
 }
 
 function setAllDriver(data) {
@@ -247,20 +257,35 @@ function clearClass() {
   $("#future").removeClass("active");
 }
 
-$(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modalToggle , #modal_update , #filter_load', function () {
 
-  if ($(this).hasClass('li_sidebar')) {
+  $(document).on('click','.li_sidebar',function () {
+
+       
+   
     pagerouter($(this).attr('href'));
     return false;
-  } else if ($(this).hasClass('booking')) {
-    clearClass();
-    $(this).addClass("active");
-    bookingPage = $(this).attr("id");
-    SetParam(bookingPage);
 
-  } else if ($(this).attr("id") == 'filter_all') {
+
+  } );
+  
+  
+   $(document).on('click','.booking',function () {
+
+
+      clearClass();
+      $(this).addClass("active");
+      bookingPage = $(this).attr("id");
+      SetParam(bookingPage);
+   
+   
+
+  });
+
+  $(document).on('click','#filter_all',function () {
     filterCheckBox(this);
-  } else if ($(this).hasClass('mc-edit')) {
+  } );
+
+  $(document).on('click','.mc-edit',function () {
     var table = $("#mc-datatables").DataTable();
     mc_datatables_row = table.row($(this).parents("tr")).data();
     mc_datatables_row_num = $(this).closest('tr').index();
@@ -274,19 +299,24 @@ $(document).on('click', '.li_sidebar , .booking , #filter_all , .mc-edit, .modal
 
     document.getElementById("mc-open-modal").click();
     clickModal(mc_datatables_row.refid);
-  }else if ($(this).hasClass('modalToggle')) {
+  });
+
+  $(document).on('click','.modalToggle',function () {
     var id = $(this).attr("id");
     if (id === "bidding") {
       getModalData(id, document.getElementById("myModalBookId_temp").innerHTML);
     }
-  } else if ($(this).attr("id") == 'modal_update') {
+  });
+
+  $(document).on('click','#modal_update',function () {
     //confirmNow('update');
     updateBookingDetails();
-  } else if ($(this).attr("id") == 'filter_load') {
-    searchByFilter();
-  }
+  });
 
-});
+$(document).on('click','#filter_load',function () {
+    searchByFilter();
+  });
+
 
 $(document).on('click', '.modalToggle ', function () {
   if(($(this).attr('id') == 'basic_info') || ($(this).attr('id') == 'passenger_info'))
