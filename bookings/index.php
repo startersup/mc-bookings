@@ -36,13 +36,13 @@ if($action =="")
 <div class="mc-mainbar-components">
 
 <div id="empty_state">
-  <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
-  <p>It seems there is no bookings available</p>
+ <!-- <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
+  <p>It seems there is no bookings available</p> -->
 
 </div>
 <div id="display_data" >
 	    <table id="mc-datatables" class="table table-fixed table striped dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
-        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
+      <!--  <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
             <tr style="border:1px solid #e4e4e4;">
                 <th>Id</th>
                 <th>Source</th>
@@ -57,7 +57,7 @@ if($action =="")
         </thead>
         <tbody>
    
-        </tbody>
+        </tbody> -->
     </table>
     </div>
 		
