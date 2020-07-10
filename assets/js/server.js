@@ -365,7 +365,7 @@ function updateBookingDetails() {
   var temp = 'refid';
   myData[temp] = document.getElementById("myModalBookId_temp").innerHTML;
   var myGetUrl = myUrl + "myapi/UpdateBooking.php";
-
+  document.getElementById("mc-open-modal").click();
   get_url_response(myGetUrl, myData, "UpdationAlert");
 }
 function clickModal(data) {
@@ -396,7 +396,7 @@ function UpdationAlert(myData) {
   mc_datatables_row.type= $("#modal_booking_type").val() ;
  }
  updateRow();
- document.getElementById("mc-open-modal").click();
+ 
  
 }
 function searchByFilter() {
@@ -465,6 +465,9 @@ function clearModal() {
 
   $("#drvid").val('') ;
   $("#amt").val('') ;
+
+  $('.dropdown-set').remove();  
+  $('.drvid_class_div').remove();
 }
 function getModalData(myload, book_id) {
   $('#spinnermodal').show();
@@ -676,9 +679,27 @@ $(document).on('click', '.send_sms', function () {
   var myGetUrl = myUrl + "myapi/send_msg.php";
   get_url_response(myGetUrl, myData, "changeStatus");
 });
+
+$(document).mouseup(function(e){
+  var container = $(".dropdown-set");
+
+  // If the target of the click isn't the container
+  if(!container.is(e.target) && container.has(e.target).length === 0){
+      container.remove();
+  }
+
+  container = $(".drvid_class_div");
+
+  // If the target of the click isn't the container
+  if(!container.is(e.target) && container.has(e.target).length === 0){
+      container.remove();
+  }
+});
+
 $(document).on('click', '.change_Status', function () {
 
   if ($(this).html() == 'Change') {
+    
     $("div.dropdown-set p").each(function () {
       if ($(this).hasClass('class-sky-blue')) {
         var myData={}
@@ -688,11 +709,15 @@ $(document).on('click', '.change_Status', function () {
         currentModalStatus=temp;
         myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
         var myGetUrl = myUrl + "myapi/"+GLStatusBooking[temp].api+".php";
+        $('.dropdown-set').remove();
+        document.getElementById("mc-open-modal").click();
         get_url_response(myGetUrl, myData, "changeStatus");
       }
     });
-  }  
-  $('.dropdown-set').remove();
+  } else{
+    $('.dropdown-set').remove();
+  }
+ 
 
 });
 
@@ -703,6 +728,7 @@ function changeStatus(data){
  }
  currentModalStatus='';
  updateRow();
+ 
 }
 
 function manual_alloc_response(data)
