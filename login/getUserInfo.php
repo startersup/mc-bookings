@@ -41,7 +41,7 @@ if (strpos($prev_url, $host)) {
               
                 $_SESSION["sessiontime"] = 6000;
                 $_SESSION["logintime"] = strtotime(date("Y-m-d H:i:s"));
-                echo ('<script>alert("Logged in Successfully"); window.location.href ="' .$link."://". $host . '"</script>');
+                echo ('<script>window.location.href ="' .$link."://". $host . '"</script>');
 
 
 
