@@ -11,9 +11,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav mc-dash-mid">
         <li class="active"><a class="mc-load" href="./passengers/">Passengers</a></li>
-        <li><a class="mc-load" href="./drivers/">Drivers</a></li>
-        <li><a class="mc-load" href="./partners">Partners</a></li>
-        <li><a class="mc-load" href="./invoice/">Invoice</a></li>
+        <li><a class="mc-load" href="drivers">Drivers</a></li>
+        <li><a class="mc-load" href="partners">Partners</a></li>
+        <li><a class="mc-load" href="invoice">Invoice</a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
