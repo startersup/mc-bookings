@@ -120,7 +120,7 @@ function get_booking_response(myGetUrl, mydata) {
        
     success: function (data) {
       setRow(data);
-      $('#spinnermodal').hide();
+     
     },
     error: function (xhr) {
       // document.getElementById("spinnermodal").style.display = "none";
@@ -194,6 +194,8 @@ function setRow(data) {
     setStatus();
 
   }
+
+  $('#spinnermodal').hide();
 }
 function setStatus() {
   var table = $("#mc-datatables").DataTable();
@@ -465,6 +467,9 @@ function clearModal() {
   $("#amt").val('') ;
 }
 function getModalData(myload, book_id) {
+  $('#spinnermodal').show();
+    setTimeout(function () {
+
   var mydata = {};
   var myGetUrl = "";
   mydata["book_id"] = book_id;
@@ -473,6 +478,9 @@ function getModalData(myload, book_id) {
     myGetUrl = myUrl + "myapi/basic_info.php";
   }
   get_url_response(myGetUrl, mydata, "setModalData");
+
+}, 300);
+
 }
 var objModaldata = {};
 function setModalData(myData) {
@@ -590,6 +598,8 @@ function setModalData(myData) {
     }
 
   }
+
+  $('#spinnermodal').hide();
 }
 $(document).on('keyup', '#drvid', function () {
 

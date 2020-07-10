@@ -35,14 +35,14 @@ if($action =="")
     <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
 
-<div id="empty_state">
- <!-- <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
-  <p>It seems there is no bookings available</p> -->
+<div id="empty_state" >
+ <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
+  <p>It seems there is no bookings available</p> 
 
 </div>
-<div id="display_data" >
+<div id="display_data" style="display: none;">
 	    <table id="mc-datatables" class="table table-fixed table striped dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
-      <!--  <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
+       <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
             <tr style="border:1px solid #e4e4e4;">
                 <th>Id</th>
                 <th>Source</th>
@@ -57,7 +57,7 @@ if($action =="")
         </thead>
         <tbody>
    
-        </tbody> -->
+        </tbody> 
     </table>
     </div>
 		
@@ -98,7 +98,7 @@ if($action =="")
                   <tbody>
                       <tr>
                       <td>Booking Source :</td>
-                      <td><input type="text" class="text" name="modal_booking_site" id="modal_booking_booked_site" value=""></td>
+                      <td><input disabled type="text" class="text" name="modal_booking_site" id="modal_booking_booked_site" value=""></td>
                     </tr>
                        <tr>
                       <td>Booking Status :</td>
@@ -123,7 +123,7 @@ if($action =="")
                     </tr>
                     <tr>
                       <td>Date :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_dt" value=""></td>
+                      <td><input  type="text" class="text datepickerfuture" name="num1" id="modal_booking_dt" ></td>
                     </tr>
                     <tr>
                       <td>Time :</td>
@@ -135,7 +135,7 @@ if($action =="")
                     </tr>
                     <tr>
                       <td>Total Miles :</td>
-                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value=""></td>
+                      <td><input type="text" class="text number" whole="3" decimal="2" name="num1" id="modal_booking_miles" value=""></td>
                     </tr>
                        <tr>
                       <td>Journey Time :</td>
