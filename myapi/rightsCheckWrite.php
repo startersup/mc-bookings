@@ -2,9 +2,6 @@
 
 if($boolSession)
 {
-    $variable = str_replace($host, "", $prev_url);
-    $boolSession=FALSE;
-
     if($_SESSION["rights"][$variable] == "write"){
         $boolSession=TRUE;
     }else if($_SESSION["rights"][$variable] == "no"){
