@@ -2195,7 +2195,17 @@ margin-top:100px; */
     width: 100%;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.07);
 }
-
+.datepickerfuture
+{
+    position: relative;
+}
+#ui-datepicker-div
+{
+    z-index:100 !important;
+    max-width:280px;
+    width:100%;
+    position: absolute;
+}
 
 .class-sky-blue{
     background-color:#87ceeb ;

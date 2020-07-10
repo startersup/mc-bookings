@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en" id="html">
 
-<head>
-  <title>Invoice Generator | Minicabee Travel Solutions</title>
-  <meta charset="utf-8">
-  <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-    id="bootstrap-css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-  <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <link data-require="fontawesome@4.5.0" data-semver="4.5.0" rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
-  <script data-require="jquery@3.1.1" data-semver="3.1.1"
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
-
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script type="text/javascript" src="../assets/js/invoice.js"></script>
-</head>
+    <!---------- Including js to refresh page --------->
+   
+    <?php
+   include('../loadcurrentpage.php'); 
+if($action =="")
+  ?>
 
 <body onload="stopLoader();">
 
@@ -470,10 +445,3 @@
     }
   </style>
 
-
-
-
-</body>
-
-
-</html>

@@ -18,6 +18,16 @@ var router = {
         "url": "login/",
         "load": "",
         "view": "login/"
+    },
+    "partners": {
+        "url": "partners/",
+        "load": "",
+        "view": "partners/"
+    },
+    "invoice": {
+        "url": "invoice/",
+        "load": "",
+        "view": "invoice/"
     }
 }
 
