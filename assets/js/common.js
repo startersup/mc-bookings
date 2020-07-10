@@ -58,7 +58,7 @@
         }
       });
 
-      $(document).on('focus',".datepickerfuture", function(){
+      $(document).on('click',".datepickerfuture", function(){
 
         $(this).datepicker({
           // var u="60:00";
