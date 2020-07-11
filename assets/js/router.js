@@ -24,10 +24,20 @@ var router = {
         "load": "",
         "view": "partners/"
     },
+    "passengers": {
+        "url": "passengers/",
+        "load": "loadPassenger",
+        "view": "passengers/"
+    },
     "invoice": {
         "url": "invoice/",
         "load": "",
         "view": "invoice/"
+    }, 
+    "drivers": {
+        "url": "drivers/",
+        "load": "loadDriver",
+        "view": "drivers/"
     }
 }
 
@@ -71,8 +81,11 @@ function get_page_response(myGetUrl, mydata, fname) {
         async: false,
         success: function (data) {
             $('#pageLoader').html(data);
-
-            window[fname](data);
+            if(!(fname==''))
+            {
+                window[fname];
+            }
+            
             $('#spinnermodal').hide();
         },
         error: function (xhr) { }
