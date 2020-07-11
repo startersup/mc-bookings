@@ -72,6 +72,11 @@
 $(document).on('click',".datetime", function(){
     $('#DateTimeDiv').css({"display":"block"});
 
+    $('.calendar-blue').pignoseCalendar({
+        theme: 'blue', // light, dark, blue
+        select: onSelectHandler
+    });
+
 });
 
 function setDate()
@@ -150,10 +155,7 @@ $(function () {
 
 
     // Blue theme type Calendar
-    $('.calendar-blue').pignoseCalendar({
-        theme: 'blue', // light, dark, blue
-        select: onSelectHandler
-    });
+   
 
 
     $('.menu .item').tab();
