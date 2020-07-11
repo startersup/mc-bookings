@@ -94,3 +94,67 @@ $('body').click(function(e)
     }
 });
 
+$(function () {
+    $('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.version);
+
+    function onSelectHandler(date, context) {
+
+        var $element = context.element;
+        var $calendar = context.calendar;
+        var $box = $element.siblings('.box').show();
+        var text = '';
+
+        if (date[0] !== null) {
+            text += date[0].format('YYYY-MM-DD');
+        }
+
+        if (date[0] !== null && date[1] !== null) {
+            text += ' ~ ';
+        }
+        else if (date[0] === null && date[1] == null) {
+            text += 'nothing';
+        }
+
+        if (date[1] !== null) {
+            text += date[1].format('YYYY-MM-DD');
+        }
+
+        $box.text(text);
+    }
+
+    function onApplyHandler(date, context) {
+
+        var $element = context.element;
+        var $calendar = context.calendar;
+        var $box = $element.siblings('.box').show();
+        var text = 'You applied date ';
+
+        if (date[0] !== null) {
+            text += date[0].format('YYYY-MM-DD');
+        }
+
+        if (date[0] !== null && date[1] !== null) {
+            text += ' ~ ';
+        }
+        else if (date[0] === null && date[1] == null) {
+            text += 'nothing';
+        }
+
+        if (date[1] !== null) {
+            text += date[1].format('YYYY-MM-DD');
+        }
+
+        $box.text(text);
+    }
+
+
+
+    // Blue theme type Calendar
+    $('.calendar-blue').pignoseCalendar({
+        theme: 'blue', // light, dark, blue
+        select: onSelectHandler
+    });
+
+
+    $('.menu .item').tab();
+});
