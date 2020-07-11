@@ -69,7 +69,7 @@
       });
 });
 
-$('.datetime').click(function(event){
+$(document).on('click',".datetime", function(){
     $('#DateTimeDiv').css({"display":"block"});
 
 });
