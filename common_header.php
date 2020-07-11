@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/components/icon.min.css">
     
-    <link rel="stylesheet" type="text/css" href="./assets/css/custom-calendar.css"/>
+    <link rel="stylesheet" type="text/css" href="./assets/css/custom-calender.css"/>
 
     <link rel="stylesheet" href="./assets/css/style.css">
   
