@@ -68,3 +68,29 @@
       });
       });
 });
+
+$('.datetime').click(function(event){
+    $('#DateTimeDiv').css({"display":"block"});
+
+});
+
+function setDate()
+{
+    document.getElementById('date').value =document.getElementById('myDate').innerHTML+" "+document.getElementById('hours').value+":"+document.getElementById('minutes').value;
+
+    $('#DateTimeDiv').css({"display":"none"});
+}
+
+$('body').click(function(e) 
+{
+    var container = $("#DateTimeDiv");
+    var container2=$('.datetime');
+
+// if the target of the click isn't the container nor a descendant of the container
+    if ((!container.is(e.target) && container.has(e.target).length === 0) && (!container2.is(e.target) && container2.has(e.target).length === 0) )
+    {
+        $('#DateTimeDiv').css({"display":"none"});
+
+    }
+});
+
