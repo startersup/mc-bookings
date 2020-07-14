@@ -68,3 +68,95 @@
       });
       });
 });
+
+$(document).on('click',".datetime", function(){
+    $('#DateTimeDiv').css({"display":"block"});
+
+    $('.calendar-blue').pignoseCalendar({
+        theme: 'blue', // light, dark, blue
+        select: onSelectHandler
+    });
+
+});
+
+function setDate()
+{
+    document.getElementById('date').value =document.getElementById('myDate').innerHTML+" "+document.getElementById('hours').value+":"+document.getElementById('minutes').value;
+
+    $('#DateTimeDiv').css({"display":"none"});
+}
+
+$('body').click(function(e) 
+{
+    var container = $("#DateTimeDiv");
+    var container2=$('.datetime');
+
+// if the target of the click isn't the container nor a descendant of the container
+    if ((!container.is(e.target) && container.has(e.target).length === 0) && (!container2.is(e.target) && container2.has(e.target).length === 0) )
+    {
+        $('#DateTimeDiv').css({"display":"none"});
+
+    }
+});
+
+$(function () {
+    $('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.version);
+
+    function onSelectHandler(date, context) {
+
+        var $element = context.element;
+        var $calendar = context.calendar;
+        var $box = $element.siblings('.box').show();
+        var text = '';
+
+        if (date[0] !== null) {
+            text += date[0].format('YYYY-MM-DD');
+        }
+
+        if (date[0] !== null && date[1] !== null) {
+            text += ' ~ ';
+        }
+        else if (date[0] === null && date[1] == null) {
+            text += 'nothing';
+        }
+
+        if (date[1] !== null) {
+            text += date[1].format('YYYY-MM-DD');
+        }
+
+        $box.text(text);
+    }
+
+    function onApplyHandler(date, context) {
+
+        var $element = context.element;
+        var $calendar = context.calendar;
+        var $box = $element.siblings('.box').show();
+        var text = 'You applied date ';
+
+        if (date[0] !== null) {
+            text += date[0].format('YYYY-MM-DD');
+        }
+
+        if (date[0] !== null && date[1] !== null) {
+            text += ' ~ ';
+        }
+        else if (date[0] === null && date[1] == null) {
+            text += 'nothing';
+        }
+
+        if (date[1] !== null) {
+            text += date[1].format('YYYY-MM-DD');
+        }
+
+        $box.text(text);
+    }
+
+
+
+    // Blue theme type Calendar
+   
+
+
+    $('.menu .item').tab();
+});
