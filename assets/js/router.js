@@ -83,7 +83,7 @@ function get_page_response(myGetUrl, mydata, fname) {
             $('#pageLoader').html(data);
             if(!(fname==''))
             {
-                window[fname];
+                window[fname]();
             }
             
             $('#spinnermodal').hide();
