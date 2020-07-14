@@ -60,7 +60,7 @@ if(! $boolSession)
 <!-------- Secondary script ends ----->
 
 <!------ Alert Modal ----------->
-<?php include('alert_modal.php'); ?>
+<?php include('alert_Modal.php'); ?>
 <!-------- Alert Modal ends ----->
 
 <!-------- Action Modal ends ----->
