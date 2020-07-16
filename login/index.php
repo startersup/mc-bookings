@@ -41,8 +41,8 @@ session_start();
           <div class="tab-content">
             <div id="mc-login" class="tab-pane fade in active">
             <form class="login-form" action="getUserInfo.php" method="post">
-              <input type="text" name="user" placeholder="userName"/>
-              <input type="password" name="password" placeholder="password"/>
+              <input type="text" name="user" placeholder="Enter Username"/>
+              <input type="password" name="password" placeholder="Enter Password"/>
               <button id="login">login</button>
               <p class="message">Forgot Password? <a  data-toggle="pill" href="#reset-pass">Click here</a></p>
             </form>
