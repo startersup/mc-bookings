@@ -673,9 +673,15 @@ $(document).on('click', '.status_class_p', function () {
 
 });
 
-$(document).on('click', '.send_sms', function () {
+$(document).on('click', '#send_sms', function () {
   var myData={};
-  myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
+  myData["ref"]=document.getElementById("myModalBookId_temp").innerHTML;
+
+  myData["number1"]=document.getElementById("id_number1").value;
+  myData["message1"]=document.getElementById("id_message1").value;
+  myData["number2"]=document.getElementById("id_number2").value;
+  myData["message2"]=document.getElementById("id_message2").value;
+
   var myGetUrl = myUrl + "myapi/send_msg.php";
   get_url_response(myGetUrl, myData, "changeStatus");
 });

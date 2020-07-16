@@ -60,7 +60,7 @@ else
         $dest2="44".$dest2;
         }
         
-    
+/*   
 $url = 'https://www.voodoosms.com/vapi/server/sendSMS?uid='.$uid.'&pass='.$pass.
         '&dest='.$dest1.'&orig='.$orig."&msg=".$msg1."&format=".$format;
         
@@ -93,7 +93,7 @@ foreach ($field1 as $onefield2) {
  
 }
 
-
+*/
 
     
    
