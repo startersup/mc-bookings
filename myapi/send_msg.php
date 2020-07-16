@@ -20,7 +20,7 @@ else
         $uid = "mohammad_api";
         $pass = "zg5j20m";
        
-        $orig = "BRITANNIA";
+        $orig = "TAXI-BOOK";
        
         $format = "XML";
         
