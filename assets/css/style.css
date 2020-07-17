@@ -1287,6 +1287,15 @@ background-color: #4e009f !important;
     background-color:transparent;
     color:#000000;
 }
+.table-user-information .mc-icon-wrap
+{
+    cursor: pointer;
+}
+.table-user-information .mc-icon-wrap:hover
+{
+    background-color: transparent;
+    
+}
 .mc-login-form
 {
     font-family: "montserrat", sans-serif;
@@ -2209,6 +2218,7 @@ margin-top:100px; */
 {
     padding:10px;
     cursor: pointer;
+    margin-bottom:0px;
 }
 .status_class_p:hover
 {
