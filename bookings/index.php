@@ -288,7 +288,7 @@ if($action =="")
                <tbody>
 
                    <tr>
-          <td><input type="text" name="drvid" id="drvid"  class="selectit" autocomplete="off"> </td>
+          <td><input type="text" name="drvid" id="drvid"  class="selectit" placeholder="search Partners" autocomplete="off"> </td>
           <td><input type="text" class="controls" required="required" id="amt" name="amt" placeholder="Enter Amount"></td>
           <td><button class="buttongreen" id="manual_alloc" >Allocate </button></td>
         </tr>
