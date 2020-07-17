@@ -360,7 +360,7 @@ if($action =="")
           
       </div>
 
-    <centre> <button class="mc-cta" id="send_sms">SEND NOW</button></centre> 
+    <center> <button class="mc-cta" id="send_sms">SEND NOW</button></center> 
     </div>
                          </div>
                          
