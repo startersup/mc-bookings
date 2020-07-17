@@ -2244,10 +2244,13 @@ outline:none;
  }
  .drvid_class_p
  {
-     padding:10px;
-     cursor: pointer;
-     font-family:'montserrat', sans-serif;
-     text-transform: uppercase;  
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'montserrat', sans-serif;
+    text-transform: uppercase;
+}
  }
  .drvid_class_p:hover
  {
