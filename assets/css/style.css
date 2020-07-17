@@ -2225,4 +2225,7 @@ margin-top:100px; */
 {
     background-color:#f4f4f4;
 }
- 
+ .mc-status-change
+ {
+     cursor: pointer !important;
+ }
