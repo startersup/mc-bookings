@@ -2233,3 +2233,10 @@ outline:none;
  {
      cursor: pointer !important;
  }
+ .drvid_class_div
+ {
+     position:absolute;
+     max-width:200px;
+     width:100%;
+     
+ }
