@@ -1293,7 +1293,7 @@ background-color: #4e009f !important;
 }
 .table-user-information .mc-icon-wrap:hover
 {
-    background-color: transparent;
+    background-color: transparent !important;
     
 }
 .mc-login-form

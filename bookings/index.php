@@ -103,7 +103,7 @@ if($action =="")
                        <tr>
                       <td>Booking Status :</td>
                       <td>
-                        <div class="mc-icon-wrap">
+                        <div class="mc-ic-wrap">
                         <input type="text" class="text mc-status-change" id = "status_dropdown" name="modal_booking_status" readonly  >
                         
                           
