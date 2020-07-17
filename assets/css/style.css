@@ -2245,7 +2245,9 @@ outline:none;
  .drvid_class_p
  {
      padding:10px;
-     cursor: pointer;  
+     cursor: pointer;
+     font-family:'montserrat', sans-serif;
+     text-transform: uppercase;  
  }
  .drvid_class_p:hover
  {
