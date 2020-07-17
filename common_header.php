@@ -14,7 +14,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdn.rawgit.com/fnando/sparkline/master/dist/sparkline.js "></script>
@@ -27,8 +26,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
   <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/custom-calender.css"/>
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-  
-
 </head>
