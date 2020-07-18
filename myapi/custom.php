@@ -15,7 +15,7 @@ session_start();
 // $to="2020-1-31";
 // $status="('temp','booked','booked-confirmed')";
    
-  $sql = "SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE dt>= '".$from."' AND dt<= '".$to."'";
+  $sql = "SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site from register WHERE dt>= '".$from."' AND dt<= '".$to."'";
 
   if(!($status == "ALL"))
   {
