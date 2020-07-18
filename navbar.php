@@ -6,7 +6,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="./assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name"></div></a>
+      <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="./assets/images/icons/fleet.svg"><span></span>
+      <!-- <div class="mc-buyer-name"></div> -->
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav mc-dash-mid">
