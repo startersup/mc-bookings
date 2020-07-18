@@ -15,7 +15,7 @@ session_start();
     
    
    
-    $sql="SELECT refid,src,des,dt,time,type,fare,dfare,status,booked_site from register WHERE status = 'cancelled'  ";
+    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site from register WHERE status = 'cancelled'  ";
   
     
   $result=  mysqli_query($conn,$sql);
