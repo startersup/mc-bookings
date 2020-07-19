@@ -2225,10 +2225,6 @@ outline:none;
     font-family:'montserrat', sans-serif;
     margin-bottom:0px;
 }
-.status_class_p:hover
-{
-    background-color:#f4f4f4;
-}
  .mc-status-change
  {
      cursor: pointer !important;
