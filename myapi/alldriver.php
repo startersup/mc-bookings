@@ -6,7 +6,7 @@
  
   include($rootfolder."/connection/connect.php"); 
 
-    $sql="SELECT id,name from driver where 1";
+    $sql="SELECT id,name from driver union select id,name from provider ";
   
   $result=  mysqli_query($conn,$sql);
 
