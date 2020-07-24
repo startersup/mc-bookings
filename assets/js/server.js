@@ -760,7 +760,7 @@ $(document).on('click', '#manual_alloc', function () {
 
 function setBid(myObj_bid) {
   var temp = "";
-  for (var i = 1; i < myObj_bid.length; i++) {
+  for (var i = 0; i < myObj_bid.length; i++) {
     temp = temp + "<tr>";
     temp = temp + "<td>" + myObj_bid[i].drvid + "</td>";
     temp = temp + "<td>" + myObj_bid[i].name + "</td>";
