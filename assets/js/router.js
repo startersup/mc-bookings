@@ -21,7 +21,7 @@ var router = {
     },
     "partners": {
         "url": "partners/",
-        "load": "",
+        "load": "loadProvider",
         "view": "partners/"
     },
     "passengers": {
@@ -31,7 +31,7 @@ var router = {
     },
     "invoice": {
         "url": "invoice/",
-        "load": "",
+        "load": "LoadJS",
         "view": "invoice/"
     }, 
     "drivers": {

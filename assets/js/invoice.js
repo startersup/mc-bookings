@@ -85,6 +85,9 @@ function setInvoiceTable(myData)
     var total_dfare=0;
     document.getElementById("InvoiceTable").innerHTML='';
     document.getElementById("tableHeader").innerHTML='<th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Booking Id</th> <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Pickup From</th> <th style="width:30%;cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Dropoff To</th> <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Date & Time</th> <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Total Fare</th> <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Driver Fare</th> <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:\'Nunito\', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Commission</th>';
+   if(myObj.length > 0)
+   {
+    $('#invoicePreview').show();
     for(var i=0;i<myObj.length;i++)
     {
         temp=temp+'<tr>';
@@ -109,6 +112,11 @@ function setInvoiceTable(myData)
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
     setDate(myTemp.no);
+  }else if(myObj.length == 0)
+  {
+    $('#emptyPreview').show(); 
+  }
+
     stopLoader();
         
 }
@@ -168,30 +176,31 @@ today.setDate(today.getDate() + 7);
 document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> Created:'+today_date+'<br> '+today.toShortFormat();
  mydataInv["invno"]=InvNo;
 }
-  $(document).ready(function() {
 
-  $("#get_details").click(function() {
-    getInvoice();
-  });
-
-  $('#all').change(function() {
-    if(this.checked) {
-        document.getElementById('driver').checked = false;
-    }
-        
+$(document).on('click', '#get_details', function () {
+  getInvoice();
 });
 
-  
+$(document).on('change', '#all', function () {
+  if(this.checked) {
+      document.getElementById('driver').checked = false;
+  }
+});
 
-$('#driver').change(function() {
-    if(this.checked) {
+  $(document).on('click', '#print-btn', function () {
+    printDiv('printDiv(divName)');
+  });
+  
+    $(document).on('change', '#driver', function () {
+      if(this.checked) {
         document.getElementById('all').checked = false;
     }
-        
+      
+
 });
 
 
-});
+
 function GetDriverInvoice(element)
 {
   startLoader();
@@ -205,6 +214,7 @@ function GetDriverInvoice(element)
 function getInvoice()
 {
   startLoader();
+
     if(document.getElementById('all').checked === true)
     {
         myInvoice=document.getElementById('all').value;
@@ -212,8 +222,10 @@ function getInvoice()
     {
         myInvoice=document.getElementById('driver').value;
     }else {
-      stopLoader();
-      myAlert('Please Select an category');
+      startLoader();
+      var msg='{"status":"success","msg" : "Please Select an category"}';
+      showStatusMessage(msg);
+
       return '';
     }
     mydataInv["for"]=myInvoice;
@@ -240,7 +252,44 @@ function date_format_db(x) {
     return year + "-" + month + "-" + day;
   }
 
-  function myAlert(msg)
+ 
+  function LoadJS()
   {
-    alert(msg);
+    $(function () {
+
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+
+      $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf(
+            'month')]
+        }
+      }, cb);
+
+      cb(start, end);
+    });
   }
+
+
+        function printDiv(divName) {
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+
+          document.body.innerHTML = printContents;
+
+          window.print();
+
+          document.body.innerHTML = originalContents;
+        }

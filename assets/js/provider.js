@@ -1,11 +1,11 @@
 
-function loadDriver() {
+function loadProvider() {
     var tempData = {};
-    var url = myUrl + "myapi/DriverList.php";
-    get_url_response(url,    tempData, "setDriver");
+    var url = myUrl + "myapi/ProviderList.php";
+    get_url_response(url,    tempData, "setProvider");
   }
   
-  function setDriver(data) {
+  function setProvider(data) {
       var myTable = $("#mc-datatables").DataTable();
       myTable.destroy();
       var result = JSON.parse(data);
@@ -21,16 +21,16 @@ function loadDriver() {
           { data: "tempname" },
           { data: "e_mail" },
           { data: "mobile" },
-          { data: "car_type" },
+          { data: "noFleets" },
          { data: "address"},
           { data:"status" },
           { data: null ,defaultContent: '<div class="mc-edit"></div>'}
         ]
       });
-      setDriverStatus();
+      setProviderStatus();
     }
 
-    function setDriverStatus() {
+    function setProviderStatus() {
         var table = $("#mc-datatables").DataTable();
         table.rows().every(function(rowIdx, tableLoop, rowLoop) {
           var data = this.data();

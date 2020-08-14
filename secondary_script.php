@@ -31,6 +31,8 @@
   document.write('<script src="./assets/js/dashboard.js?dev=' +version + '"\><\/script>');
   document.write('<script src="./assets/js/datatable.js?dev=' +version + '"\><\/script>');  
   document.write('<script src="./assets/js/router.js?dev=' +version + '"\><\/script>');
+  document.write('<script src="./assets/js/invoice.js?dev=' +version + '"\><\/script>');
+  document.write('<script src="./assets/js/drivers.js?dev=' +version + '"\><\/script>');
   </script>
 
   

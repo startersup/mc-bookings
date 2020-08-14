@@ -1,10 +1,10 @@
 
     <!---------- Including js to refresh page --------->
    
-    <?php
+    <!-- <?php
    include('../loadcurrentpage.php'); 
 if($action =="")
-  ?>
+  ?> -->
 
 <body onload="stopLoader();">
 
