@@ -40,9 +40,9 @@ var router = {
         "view": "drivers/"
     },
     "emails": {
-        "url": "emails/templates",
+        "url": "emails/templates/",
         "load": "",
-        "view": "emails/templates"
+        "view": "emails/templates/"
     }
 }
 
