@@ -17,7 +17,7 @@
                 <span class="mc-controls">Tracking</span>
                 <span class="tooltiptext"> Tracking</span>
                  </div></a></li> 
-                 <li><a class="li_sidebar" href="email-marketing"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
+                 <li><a class="li_sidebar" href="emails"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
                   <span class="mc-controls">Marketing</span>
                   <span class="tooltiptext"> Marketing</span>
                    </div></a></li> 

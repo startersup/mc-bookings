@@ -38,6 +38,11 @@ var router = {
         "url": "drivers/",
         "load": "loadDriver",
         "view": "drivers/"
+    },
+    "emails": {
+        "url": "emails/templates",
+        "load": "",
+        "view": "emails/templates"
     }
 }
 
