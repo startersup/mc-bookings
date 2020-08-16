@@ -24,10 +24,7 @@
    </div>   
   </div>
  </nav> 
- <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#oneway">Oneway</a></li>
-    <li><a data-toggle="pill" href="#roundtrip"> Round-Trip</a></li>
-  </ul>
+
 <br><br><br><br>
  <section class="booking-form">
       <div class="tab-content">
@@ -152,6 +149,69 @@
       <div class="form-group">
        <button class="calculate-fare">Calculate Fare</button>
       </div>
+
+      <div class="mc-booking-information">
+
+        <div class="form-group">
+          <label for="usr">Passenger name:</label>
+          <input type="text" class="form-control" placeholder="Enter Passenger Name" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Email Address:</label>
+          <input type="text" class="form-control" placeholder="Enter Passenger Email Address" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Contact Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Contact Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Alternater Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Alternate Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Alternater Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Alternate Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Pickup Full Address:</label>
+          <input type="text" class="form-control" placeholder="Eg: Building Number " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Dropoff Full Address:</label>
+          <input type="text" class="form-control" placeholder="Eg: Building Number " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Flight Details:</label>
+          <input type="text" class="form-control" placeholder="Eg: EZY167 " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Payment Method:</label>
+          <select class="select form-control" required="" id="pay" name="pay">
+            <option value="card">Debit / Credit card (3% Admin Charges)</option>
+            <option value="paypal">Paypal Transaction(5% quote-card Charges)</option>
+            <option value="cash">Cash on Ride (Deposit Required)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Meet & Greet:</label>
+          <select class="select form-control">
+            <option value="1">No I don't Need </option>
+            <option value="2">Yes I Need Meet &amp; Greet.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Child Seat:</label>
+          <select name="pay" id="pay" class="select form-control">
+            <option value="1">No I don't Need </option>
+            <option value="2">Yes I Need Meet &amp; Greet.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Special Info:</label>
+          <textarea rows="5" cols="50" class="form-control"></textarea>
+        </div>
+        <br><br><br><br>
+      </div>  
       </div>
       </div>
 
@@ -269,13 +329,18 @@ font-weight:500;
 }
 .book-now
 {
-    text-decoration: none;
+    text-decoration: none !important;
     padding:8px 10px;
     color:#000000;
     background-color:#6ce4a8;
     position: absolute;
     font-weight:500;
     right:0;
+    cursor: pointer;
+}
+.book-now:hover
+{
+  background-color:#3ec280;
 }
 </style>
 
