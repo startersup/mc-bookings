@@ -13,10 +13,10 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
-           if(mydataInv["for"] == 'driver' && mydataInv["id"] == 'e')
+           if((mydataInv["for"] == 'driver' || mydataInv["for"] == 'provider')  && mydataInv["id"] == 'e')
           {
             setList(data);
-          }else if(mydataInv["for"] == 'driver' && mydataInv["id"] != 'e'){
+          }else if((mydataInv["for"] == 'driver' || mydataInv["for"] == 'provider') && mydataInv["id"] != 'e'){
 		setInvoiceTable(data);
           }else if(mydataInv["for"] == 'all')
           {
@@ -106,12 +106,13 @@ function setInvoiceTable(myData)
 
     document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
     document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
-    document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
-    document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
-    document.getElementById("DrvTotalPay").innerHTML='£'+(total_fare-total_dfare);
+    document.getElementById("DrvTotalValue").innerHTML='£'+total_fare.toFixed(2);
+    document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare.toFixed(2);
+    document.getElementById("DrvTotalPay").innerHTML='£'+((total_fare-total_dfare).toFixed(2));
 
     document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
     setDate(myTemp.no);
+    $('#emptyPreview').hide(); 
   }else if(myObj.length == 0)
   {
     $('#emptyPreview').show(); 
@@ -221,6 +222,9 @@ function getInvoice()
     }else if(document.getElementById('driver').checked === true)
     {
         myInvoice=document.getElementById('driver').value;
+    }else if(document.getElementById('provider').checked === true)
+    {
+        myInvoice=document.getElementById('provider').value;
     }else {
       startLoader();
       var msg='{"status":"success","msg" : "Please Select an category"}';

@@ -29,10 +29,25 @@ session_start();
  $invno= "INV".preg_replace("/[a-zA-Z]/", "", $driverId)."/". (date("Y")-2000)."/".$row1["num"];
  $temp["no"] =$invno;
   
+}else if(($for == "provider") && ($driverId == "e"))
+{
+  $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address as daddress FROM provider where id IN(select distinct drvid from register where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
+
+}else  if(($for == "provider") && ($driverId !== "e"))
+{
+ $sql=" SELECT register.refid,register.src,register.des,register.dt,register.time,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN provider as driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."') and (driver.id ='".$driverId."')";
+$invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
+$temp_result=mysqli_query($conn,$invid_sql);
+$row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
+$invno= "INV".preg_replace("/[a-zA-Z]/", "", $driverId)."/". (date("Y")-2000)."/".$row1["num"];
+$temp["no"] =$invno;
+
 }
+
+
   else if($for == "all")
   {
-    $sql=" SELECT register.dt,register.time,register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname FROM register INNER JOIN driver ON register.drvid=driver.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
+    $sql=" SELECT register.dt,register.time,register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname ,provider.name as pname FROM register INNER JOIN driver ON register.drvid=driver.id INNER JOIN provider ON register.drvid=provider.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
   }
    //echo($sql."<br>") ;
    $result=  mysqli_query($conn,$sql);

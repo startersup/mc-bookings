@@ -586,7 +586,7 @@ function setModalData(myData) {
     document.getElementById("id_number2").value = number2_data;
 
     //End of message part
-    if (myObj["base"].status != "comitted") {
+    if (myObj["base"].status != "comitted" && myObj["base"].status != 'completed') {
       setBid(myObj["bid"]);
     } else {
       var temp = "";
@@ -747,12 +747,21 @@ function manual_alloc() {
   myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
   myData["did"]=$('#drvid').val().substring(0, ($('#drvid').val().indexOf("- ")-1));
   myData["new"]=  $('#amt').val();
+
+  if(myData["new"]=='' || myData["new"]=='0')
+  {
+    alertData='{"response":"fail","msg":"Please enter fare for driver!!!"}';
+    showStatusMessage(alertData);
+    return;
+  }
         var myGetUrl = myUrl + "myapi/driver_accept.php";
         get_url_response(myGetUrl, myData, "manual_alloc_response");
 }
 $(document).on('click', '#manual_alloc', function () {
 
-  ActionDecision('allocate','manual_alloc');
+ // ActionDecision('allocate','manual_alloc');
+
+  manual_alloc();
 
 
 });

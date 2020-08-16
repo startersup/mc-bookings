@@ -36,8 +36,9 @@ if($action =="")
         <i class="fa fa-caret-down"></i>
       </div>
       <ul>
-        <li><a> <input type="checkbox" id="all" name="job-list" value="all"> Cumulative Job List</a></li>
         <li><a><input type="checkbox" id="driver" name="job-list" value="driver"> Drivers List</a></li>
+        <li><a><input type="checkbox" id="provider" name="job-list" value="provider"> Provider List</a></li>
+        <li><a> <input type="checkbox" id="all" name="job-list" value="all"> Cumulative Job List</a></li>
         <li> <button type="button" class="mc-cta" id="get_details">Get Now</button></li>
       </ul>
 
