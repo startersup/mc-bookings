@@ -105,17 +105,17 @@ if($action =="")
           </div>
           <div class="col-md-6">
             <div class="mc-metric-card">
-              <h5 id="currentTiming "></h5>
+              <h5 id="currentTiming ">Provider List</h5>
               <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #f6f7f8;">
                 <thead class="mc-table-head">
                   <tr style="border:1px solid #f6f7f8;">
-                    <th>Job Id</th>
-                    <th>Status</th>
-                    <th>Driver Name</th>
-                    <th>Contact Number</th>
+                  <th>Provider Id</th>
+                    <th>Provider Name</th>
+                    <th>Provider Number</th>
+                    <th>Provider Locations</th>
                   </tr>
                 </thead>
-                <tbody id="Ongoing_job_tbl">
+                <tbody id="provider_list_tbl">
 
 
                 </tbody>

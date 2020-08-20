@@ -117,10 +117,17 @@ interval: "10:00 to 11:00" */
     var temp = '';
     var count = dashboardData["driverStatus"].length
     for (i = 0; i < count; i++) {
-        temp = temp + '<tr><td>' + dashboardData["driverStatus"][i].id + '</td><td>' + dashboardData["driverStatus"][i].name + '</td><td>' + dashboardData["driverStatus"][i].contact + '</td><td>NA</td></tr>';
+        temp = temp + '<tr><td>' + dashboardData["driverStatus"][i].id + '</td><td>' + dashboardData["driverStatus"][i].name + '</td><td>' + dashboardData["driverStatus"][i].contact + '</td><td>' + dashboardData["driverStatus"][i].car_type + '</td></tr>';
     }
     $('#Driver_Online_tbl').html(temp);
 
+    var temp = '';
+    var count = dashboardData["providerStatus"].length
+    for (i = 0; i < count; i++) {
+        temp = temp + '<tr><td>' + dashboardData["providerStatus"][i].id + '</td><td>' + dashboardData["providerStatus"][i].name + '</td><td>' + dashboardData["providerStatus"][i].contact + '</td><td>' + 'NA' + '</td></tr>';
+    }
+    $('#provider_list_tbl').html(temp);
+/*
     temp = '';
     count = dashboardData["ongoingJob"].length
     for (i = 0; i < count; i++) {
@@ -129,7 +136,7 @@ interval: "10:00 to 11:00" */
     $('#Ongoing_job_tbl').html(temp);
     temp = 'Ongoing Jobs ( ' + dashboardData["interval"] + ' )';
     $('#currentTiming').text(temp)
-
+*/
 
 }
 function calcPercentile(i) {

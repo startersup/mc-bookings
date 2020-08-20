@@ -75,7 +75,7 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 }
 $temp_dashboard["cancelled"]=$row2;
 
-$sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as contact FROM `driver` WHERE `today_status` =1";
+$sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as contact,car_type FROM `driver` WHERE `today_status` =1";
 $result=  mysqli_query($conn,$sql);
 $row2=array();
 while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
@@ -84,6 +84,16 @@ while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
 }
 
 $temp_dashboard["driverStatus"]=$row2;
+
+$sql="SELECT id,name,concat(mobile,' / ',mobile2 ) as contact FROM `provider` ";
+$result=  mysqli_query($conn,$sql);
+$row2=array();
+while( $row= mysqli_fetch_array($result,MYSQLI_ASSOC))
+{
+    $row2[]=$row;
+}
+
+$temp_dashboard["providerStatus"]=$row2;
 
 
 $sql="SELECT A.refid, concat(A.num1,' / ',A.num2) as contact,B.name FROM register as A inner join driver as B on A.drvid = B.id WHERE A.time  <= $time_from and A.time > $time_to and A.dt ='$date' and A.status ='comitted' ";
