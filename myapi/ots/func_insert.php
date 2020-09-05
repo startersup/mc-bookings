@@ -7,21 +7,21 @@ include($rootfolder . "/connection/connect.php");
 
 date_default_timezone_set('Europe/London');
 
-
+$response["status"] = false;
 
 $tableName = "oregister";
 $uniqueKey = "refid";
 $unique_prefix = "TAX";
 $sql = "INSERT INTO `" . $tableName . "` ";
-$sqlCols = "( `toberepcust` ";
-$sqlVals = "( `toberepcust` ";
+$sqlCols = "( `agency` ";
+$sqlVals = "( '' ";
 foreach ($_POST["data"] as $param_name => $param_val) {
 
     $sqlCols .= ", `" . $param_name . "` ";
     $sqlVals .= ", '" . addslashes($param_val) . "' ";
 }
-$sqlCols = str_replace("`toberepcust` ,", "", $sqlCols);
-$sqlVals = str_replace("`toberepcust` ,", "", $sqlVals);
+// $sqlCols = str_replace("`toberepcust` ,", "", $sqlCols);
+// $sqlVals = str_replace("`toberepcust` ,", "", $sqlVals);
 $sql .= $sqlCols . ") VALUES " . $sqlVals . ")";
 $response["sql1"] = $sql;
 $result =  mysqli_query($conn, $sql);

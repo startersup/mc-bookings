@@ -181,12 +181,17 @@ document.getElementById("InvoiceDetails").innerHTML ='Invoice #: '+InvNo+'<br> C
 }
 
 $(document).on('click', '#get_details', function () {
+  
+  $('#invoicePreview').hide();
+  $('#emptyPreview').hide(); 
   getInvoice();
+
 });
 
 $(document).on('change', '#all', function () {
   if(this.checked) {
       document.getElementById('driver').checked = false;
+      document.getElementById('provider').checked = false;
   }
 });
 
@@ -197,6 +202,13 @@ $(document).on('change', '#all', function () {
     $(document).on('change', '#driver', function () {
       if(this.checked) {
         document.getElementById('all').checked = false;
+        document.getElementById('provider').checked = false;
+    }
+  });
+    $(document).on('change', '#provider', function () {
+      if(this.checked) {
+        document.getElementById('all').checked = false;
+        document.getElementById('driver').checked = false;
     }
       
 

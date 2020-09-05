@@ -1443,6 +1443,23 @@ background-color: #4e009f !important;
     transition: 0.3s ease;
     background: url(/assets/images/icons/edit.svg) center/contain no-repeat;
 }
+
+.mc-edit-ots
+{
+    margin-left:20px;
+}
+.mc-edit-ots:before
+{
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    left:0px;
+    position: relative;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    background: url(/assets/images/icons/edit.svg) center/contain no-repeat;
+}
 /*****dashboard datatables****/
 
 

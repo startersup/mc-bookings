@@ -78,7 +78,8 @@ if ($action == "")
       <div class="modal-content">
 
         <div class="modal-header">
-          <!--		<button type="button" class="mc-close close " id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button> -->
+          <!-- <button type="button" class="mc-close close " id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+      -->
           <h4 class="modal-title" id="myModalBookId" name="">Booking Information - ( )</h4>
           <div id="myModalBookId_temp" style="display:none;"></div>
 
@@ -90,181 +91,270 @@ if ($action == "")
             <div id="location" class="tab-pane fade in active">
               <!--                  <div id="map"></div>-->
               <form method="POST" id="dataForm" action="">
-              <div class="row">
-                <div class="col-md-6 ">
-                  <label>Pick Up:</label>
-                  <input type="text" required class="controls" id="src" name="src" placeholder="Enter Passenger Name">
+                <input type="hidden" id="refid_temp">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Pick Up:</label>
+                    <input type="text" required class="form-feild controls" id="src" name="src" placeholder="Enter Passenger Name">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <label>Drop Off:</label>
+                    <input type="text" required class="form-feild controls" id="des" name="des" placeholder="Enter Passenger Name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>No Of Passengers:</label>
+                    <input type="text" required class="form-feild controls" id="passenger" name="passenger" placeholder="Enter Passenger Name">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <label>No Of Luggage:</label>
+                    <input type="text" required class="form-feild controls" id="luggage" name="luggage" placeholder="Enter Passenger Name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Date Of Journey:</label>
+                    <input type="text" required class=" controls datepickerfuture " id="dt_temp" placeholder="Enter Passenger Name">
+                    <input type="hidden" class="form-feild controls" id="dt" name="dt">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <label>Taxicode / OTS Id:</label>
+                    <input type="text" required class="form-feild controls" id="bookid" name="bookid" placeholder="Enter Passenger Name">
+                  </div>
                 </div>
 
-                <div class="col-md-6 ">
-                  <label>Drop Off:</label>
-                  <input type="text" required class="controls" id="des" name="des" placeholder="Enter Passenger Name">
-                </div>
-</div>
-<div class="row">
-                <div class="col-md-6 ">
-                  <label>No Of Passengers:</label>
-                  <input type="text" required class="controls" id="passenger" name="passenger" placeholder="Enter Passenger Name">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Hour:</label>
+                    <select id="hrs" name="hrs" class="select timeset selectit  controls">
+                      <option value="00">00</option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                    </select>
+                    <input type="hidden" class="form-feild controls" id="time" name="time">
+                  </div>
+
+                  <div class="col-md-6 ">
+                    <label>Mins:</label>
+                    <select id="mins" name="mins" class="select selectit timeset controls">
+                      <option value="00">00</option>
+                      <option value="05">05</option>
+                      <option value="10">10</option>
+                      <option value="15">15</option>
+                      <option value="20">20</option>
+                      <option value="25">25</option>
+                      <option value="30">30</option>
+                      <option value="35">35</option>
+                      <option value="40">40</option>
+                      <option value="45">45</option>
+                      <option value="50">50</option>
+                      <option value="55">55</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div class="col-md-6 ">
-                  <label>No Of Luggage:</label>
-                  <input type="text" required class="controls" id="luggage" name="luggage" placeholder="Enter Passenger Name">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Passenger Name:</label>
+                    <input type="text" required class="form-feild controls" id="name" name="name" placeholder="Enter Passenger Name">
+                  </div>
+                  <div class="col-md-6">
+                    <label>Passenger Email:</label>
+                    <input type="text" class="form-feild controls" id="mail" name="mail" required placeholder="Enter Passenger Email">
+                  </div>
                 </div>
-</div>
-<div class="row">
-                <div class="col-md-6 ">
-                  <label>Date Of Journey:</label>
-                  <input type="text" required class="controls datepickerfuture " id="dt" name="dt" placeholder="Enter Passenger Name">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Contact Number:</label>
+                    <input type="text" class="form-feild controls" required id="num1" name="num1" placeholder="Enter Passenger Contact" value="+44">
+                  </div>
+                  <div class="col-md-6 ">
+                    <label>Alternate Number:</label>
+                    <input type="text" class="form-feild controls" id="num2" name="num2" placeholder="Enter Alternate Contact" value="+44">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Pickup Full Address:</label>
+                    <input type="text" class="form-feild controls" id="address1" name="address1" required placeholder="Eg:Building Number, Flat No">
+                  </div>
+                  <div class="col-md-6">
+                    <label>Dropoff Full Address:</label>
+                    <input type="text" class="form-feild controls" id="address2" name="address2" required placeholder="Eg:Building Number, Flat No">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <label>Flight Details:</label>
+                    <input type="text" class="form-feild controls" name="location" id="location" placeholder="Eg: B789">
+                  </div>
+                  <div class="col-md-6 ">
+                    <label>Payment Mode:</label>
+                    <select id="pay" name="pay" class="select selectit form-feild controls">
+                      <option value="cash">Cash on Ride (Deposit Required)</option>
+                      <option value="debit">Debit / Credit Card (3% Admin Charges)</option>
+                      <option value="paypaul">Paypal Transaction(5% Card Charges)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Meet & Greet(£10.00):</label>
+                    <select id="mg" name="mg" class="select selectit form-feild controls">
+                      <option value="0">No I don't Need </option>
+                      <option value="1">Yes I Need Meet & Greet.</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 ">
+                    <label>Child Seat(£5.00 each):</label>
+                    <select id="ceat" name="ceat" class="select selectit form-feild controls">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div class="col-md-6 ">
-                  <label>Taxicode / OTS Id:</label>
-                  <input type="text" required class="controls" id="bookid" name="bookid" placeholder="Enter Passenger Name">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Driver Name</label>
+                    <select id="drvid" name="drvid" class="select selectit form-feild controls">
+                      <option value="">--SELECT--</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 ">
+                    <label>Driver Fare:</label>
+                    <input type="text" class="form-feild controls" name="dfare" id="dfare" placeholder="">
+                  </div>
                 </div>
-</div>
-<div class="row">
-                <div class="col-md-6 ">
-                  <label>Passenger Name:</label>
-                  <input type="text" required class="controls" id="name" name="name" placeholder="Enter Passenger Name">
+
+
+
+                <div class="row">
+                  <div class="col-md-12"><br>
+                    <label>Booking Status:</label>
+                    <select id="status_temp" name="status" class="select selectit form-feild controls">
+                      <option value="booked-confirmed">Booked</option>
+                      <option value="completed">Completed</option>
+                      <option value="comitted">Allocated</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label>Passenger Email:</label>
-                  <input type="text" class="controls" id="mail" name="mail" required placeholder="Enter Passenger Email">
+                <div class="row">
+                  <div class="col-md-12"><br>
+                    <label>Special information to us (optional):</label>
+                    <textarea name="info" class="select form-feild controls textarea" rows="8" id="info"></textarea>
+                  </div>
                 </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 ">
-                <label>Contact Number:</label>
-                <input type="text" class="controls" required id="num1" name="num1" placeholder="Enter Passenger Contact" value="+44">
-              </div>
-              <div class="col-md-6 ">
-                <label>Alternate Number:</label>
-                <input type="text" class="controls" id="num2" name="num2" placeholder="Enter Alternate Contact" value="+44">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Pickup Full Address:</label>
-                <input type="text" class="controls" id="address1" name="address1" required placeholder="Eg:Building Number, Flat No">
-              </div>
-              <div class="col-md-6">
-                <label>Dropoff Full Address:</label>
-                <input type="text" class="controls" id="address2" name="address2" required placeholder="Eg:Building Number, Flat No">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 ">
-                <label>Flight Details:</label>
-                <input type="text" class="controls" name="location" id="location" placeholder="Eg: B789">
-              </div>
-              <div class="col-md-6 ">
-                <label>Payment Mode:</label>
-                <select id="pay" name="pay" class="select selectit controls">
-                  <option value="cash">Cash on Ride (Deposit Required)</option>
-                  <option value="debit">Debit / Credit Card (3% Admin Charges)</option>
-                  <option value="paypaul">Paypal Transaction(5% Card Charges)</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <label>Meet & Greet(£10.00):</label>
-                <select id="mg" name="mg" class="select selectit controls">
-                  <option value="0">No I don't Need </option>
-                  <option value="1">Yes I Need Meet & Greet.</option>
-                </select>
-              </div>
-              <div class="col-md-6 ">
-                <label>Child Seat(£5.00 each):</label>
-                <select id="ceat" name="ceat" class="select selectit controls">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12"><br>
-                <label>Special information to us (optional):</label>
-                <textarea name="info" class="select controls textarea" rows="8" id="info"></textarea>
-              </div>
-            </div>
-            
 
-            </form>
-            
-            <center> <button class="button clickButton" name="new" >BOOK</button></center>
-            <center> <button class="button clickButton" name="edit" >UPDATE</button></center>
+              </form>
 
 
-          </div><!-- modal-content -->
-        </div><!-- modal-dialog -->
-      </div><!-- modal -->
-      <!---modals-section------>
 
+            </div><!-- modal-content -->
+          </div><!-- modal-dialog -->
 
-      <!----custom-filter-modal-->
-      <div class="modal modal-bg" id="custom-filters" role="dialog">
-        <div class="modal-dialog">
+        </div><!-- modal -->
+        <!---modals-section------>
+        <div class="mc-modal-footer">
+          <div class="mc-flex">
+            <a class="mc-btn-update clickButton" name="new">BOOK</a>
+            <a class="mc-btn-update clickButton" name="edit">UPDATE</a>
 
-          <!-- Modal content-->
-          <div class="modal-content max-width-300">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Custom Filters</h4>
-            </div>
-            <div class="modal-body pad-0">
-              <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                <i class="fa fa-calendar"></i>&nbsp;
-                <span id="fromto"></span>
-                <i class="fa fa-caret-down"></i>
-              </div>
-              <div id="filterList">
-                <ul>
-                  <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all_OTS"> All</li>
-                  <li><input class="input-filter" type="checkbox" value="booked" id="1"> Booked</li>
-                  <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirmed</li>
-                  <li> <input class="input-filter" type="checkbox" value="comitted" id="3"> Allocated</li>
-                  <li><input class="input-filter" type="checkbox" value="completed" id="4"> Completed</li>
-                  <li><input class="input-filter" type="checkbox" value="cancelled" id="5"> Cancelled</li>
-                  <input class="input-filter" type="hidden" value="" id="filter_checklist">
-                </ul><br>
-                <div class="mc-flex">
-                  <button class="button-style" data-dismiss="modal" id="filter_load">Load</button>
-                  <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
-                </div>
-              </div>
-            </div>
+            <a id="mc-close-modal" class="mc-btn-cancel" data-dismiss="modal" aria-label="Close">Close
+
+              <button class="mc-close close"></button>
+            </a>
           </div>
-
         </div>
-      </div>
 
-      <!---end custom-filter-modal-->
+        <!----custom-filter-modal-->
+        <div class="modal modal-bg" id="custom-filters" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content max-width-300">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Custom Filters</h4>
+              </div>
+              <div class="modal-body pad-0">
+                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                  <i class="fa fa-calendar"></i>&nbsp;
+                  <span id="fromto"></span>
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                <div id="filterList">
+                  <ul>
+                    <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all_OTS"> All</li>
+                    <li><input class="input-filter" type="checkbox" value="booked" id="1"> Booked</li>
+                    <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirmed</li>
+                    <li> <input class="input-filter" type="checkbox" value="comitted" id="3"> Allocated</li>
+                    <li><input class="input-filter" type="checkbox" value="completed" id="4"> Completed</li>
+                    <li><input class="input-filter" type="checkbox" value="cancelled" id="5"> Cancelled</li>
+                    <input class="input-filter" type="hidden" value="" id="filter_checklist">
+                  </ul><br>
+                  <div class="mc-flex">
+                    <button class="button-style" data-dismiss="modal" id="filter_load">Load</button>
+                    <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!---end custom-filter-modal-->
 
 
 
-      <script>
-        $(document).ready(function() {
-          $('img').tooltip()
-        });
-      </script>
+        <script>
+          $(document).ready(function() {
+            $('img').tooltip()
+          });
+        </script>
 
 
 
-      <script>
-        function hideshowFunction() {
-          var x = document.getElementById("mc-display");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
+        <script>
+          function hideshowFunction() {
+            var x = document.getElementById("mc-display");
+            if (x.style.display === "none") {
+              x.style.display = "block";
+            } else {
+              x.style.display = "none";
+            }
           }
-        }
-      </script>
+        </script>
 
-      <!--
+        <!--
    <script>$(window).on('load', function() { // makes sure the whole site is loaded 
   $('#status').fadeOut(); // will first fade out the loading animation 
   $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
@@ -274,29 +364,29 @@ if ($action == "")
 
 
 
-      <script type="text/javascript">
-        $(function() {
+        <script type="text/javascript">
+          $(function() {
 
-          var start = moment().subtract(29, 'days');
-          var end = moment();
+            var start = moment().subtract(29, 'days');
+            var end = moment();
 
-          function cb(start, end) {
-            $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-          }
-
-          $('#reportrange').daterangepicker({
-            startDate: start,
-            endDate: end,
-            ranges: {
-              'Today': [moment(), moment()],
-              'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-              'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-              'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-              'This Month': [moment().startOf('month'), moment().endOf('month')],
-              'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            function cb(start, end) {
+              $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
             }
-          }, cb);
 
-          cb(start, end);
-        });
-      </script>
+            $('#reportrange').daterangepicker({
+              startDate: start,
+              endDate: end,
+              ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+              }
+            }, cb);
+
+            cb(start, end);
+          });
+        </script>

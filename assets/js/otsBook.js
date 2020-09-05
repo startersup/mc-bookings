@@ -49,25 +49,14 @@ var GLStatusBooking = {
   
 
 
-  function temLoad() {
-  
-    var mydata = {};
-    var myGetUrl = myUrlOts + "myapi/sample2.php";
-  
-    get_url_response(myGetUrl, mydata, 'tempLoad2');
-  
-  
-  }
-  function tempLoad2(data) {
-    console.log(data);
-  }
+ 
   function OtsBookingsLoad() {
     LoadJsOts();
     if (bookingPageOts == '') {
       OTSsetParam("today");
       bookingPageOts = 'today';
     } else {
-      clearClass();
+      clearClassOts();
       var temp='#'+bookingPageOts;
         $(temp).addClass("active");
         OTSsetParam(bookingPageOts);
@@ -84,8 +73,13 @@ var GLStatusBooking = {
     $('.datepickerfuture').click();
 
   }
-  
-  
+
+  $(document).on('change','#dt_temp',function () {
+    var temp= $('#dt_temp').val();
+    var data=temp.split('/');
+    var dateVal=data[2]+'-'+data[0]+'-'+data[1];
+    $('#dt').val(dateVal);
+  });
   $(document).on('click','.clickButton',function () {
   var api="";
   var allData ={};
@@ -94,14 +88,64 @@ var GLStatusBooking = {
         api="func_insert.php"
   }else if($(this).attr("name") == "edit")
   {
-        api="func_insert.php"
+        api="func_update.php"
+        allData["refid"]=$('#refid_temp').val();
   }
   dataHandle(api,allData);
 });
 
 $(document).on('click','#addOTSBook',function () {
+    clearModalOts();
+    $('.clickButton').each(function(){
+        if($(this).attr("name") == "edit")
+        {
+            $(this).hide();
+        }
+    });
+    $('#myModalBookId').html('');
+    $('#status_temp').val('booked-confirmed');
+    $('#mins').val('00');
+
     $('#ots-open-modal').click();
 });
+
+$(document).on('click','.timeset',function () {
+
+  var temp=$('#hrs').val()+':'+$('#mins').val();
+  $('#time').val(temp);
+
+});
+
+function dataSet(allData)
+{
+    var myData=JSON.parse(allData);
+    $('#dataForm input, #dataForm select, #dataForm textarea').each(function(){
+        if($(this).hasClass('form-feild'))
+        {
+        key=$(this).attr("name");
+        $(this).val(myData[0][key]);
+        }
+    });
+    $('#refid_temp').val((myData[0]["refid"]));
+    $('#myModalBookId').html('Booking Info ('+(myData[0]["refid"])+')');
+    var temp= $('#dt').val();
+    var data=temp.split('-'); 
+    var dateVal=data[1]+'/'+data[2]+'/'+data[0];
+    $('#dt_temp').val(dateVal);
+
+    var temp=$('#time').val().split(':');
+    $('#hrs').val(temp[0]);
+    $('#mins').val(temp[1]);
+
+    $('.clickButton').each(function(){
+        if($(this).attr("name") == "new")
+        {
+            $(this).hide();
+        }
+    });
+
+    
+}
 
 function dataHandle(api,allData)
 {
@@ -109,32 +153,21 @@ function dataHandle(api,allData)
     var key='';
     var val='';
     $('#dataForm input, #dataForm select, #dataForm textarea').each(function(){
+        if($(this).hasClass('form-feild'))
+        {
         key=$(this).attr("name");
         val=$(this).val();
         myData[key]=val;
+        }
     });
     allData["data"]=myData;
     var myGetUrl = "";
       myGetUrl = myUrlOts + "myapi/ots/"+api;
 
-    get_url_response(myGetUrl, allData, 'messageBox')
+    get_url_response(myGetUrl, allData, 'showStatusMessageOts')
 }
 
-function messageBox(obJ)
-{
-    alert(Obj);
-}
-  $(document).on('click', '.confirm_btn ', function () {
-    if ($(this).attr("id") == 'yes') {
-      window[confirmFunctionOts];
-    } else if ($(this).attr("id") == 'no') {
-      confirmFunctionOts = '';
-    }
-    confirmFunctionOts = '';
-    document.getElementById("action_popup_btn_close").click()
-  });
-  
-  
+
   function OTSsetParam(myparam) {
     var mydata = {};
     var myGetUrl = "";
@@ -195,7 +228,13 @@ function messageBox(obJ)
   function setAllDriver(data) {
   
     driverListOts = JSON.parse(data);
-  
+    var loop= driverListOts.length;
+    var temp='<option value="">--SELECT--</option>' ;
+    for(var i=0;i<loop;i++)
+    {
+        temp += '<option value="'+driverListOts[i].id+'">'+driverListOts[i].id+' - '+driverListOts[i].name+'</option>'
+    }
+  $('#drvid').html(temp);
   }
   
   function updateRowOts()
@@ -233,7 +272,7 @@ function messageBox(obJ)
           { data: "type" },
           { data: "fare" },
           { data: "status" },
-          { data: null, defaultContent: '<div class="mc-edit"></div>' }
+          { data: null, defaultContent: '<div class="mc-edit-ots"></div>' }
         ]
       });
       setStatusOts();
@@ -276,17 +315,8 @@ function messageBox(obJ)
     return myDiv;
   }
   
-  function GetRecordStatus(status) {
-    return (
-      '<div class="' +
-      GLStatusBooking[status]["class"] +
-      '">' +
-      GLStatusBooking[status]["showstatus"] +
-      "</div>"
-    );
-  }
-  
-  function clearClass() {
+
+  function clearClassOts() {
     $("#yesterday").removeClass("active");
     $("#today").removeClass("active");
     $("#tommorrow").removeClass("active");
@@ -294,21 +324,12 @@ function messageBox(obJ)
   }
   
   
-    $(document).on('click','.li_sidebar',function () {
-  
-         
-     
-      pagerouter($(this).attr('href'));
-      return false;
-  
-  
-    } );
-    
+
     
      $(document).on('click','.bookingOTS',function () {
   
   
-        clearClass();
+        clearClassOts();
         $(this).addClass("active");
         bookingPageOts = $(this).attr("id");
         OTSsetParam(bookingPageOts);
@@ -316,106 +337,31 @@ function messageBox(obJ)
      
   
     });
+ 
   
-    $(document).on('click','#filter_all_OTS',function () {
-      filterCheckBox(this);
-    } );
-  
-    $(document).on('click','.mc-edit',function () {
+    $(document).on('click','.mc-edit-ots',function () {
       var table = $("#mc-datatables").DataTable();
       mc_datatables_rowOts = table.row($(this).parents("tr")).data();
       mc_datatables_rowOts_num = $(this).closest('tr').index();
-      // $('#mc-open-modal').trigger('click');
-  
-      $("ul.mc-info-tabs li").each(function () { 
-        $(this).removeClass('active');    
-      });
-      $('#basic_info').addClass('active');      
   
   
-      document.getElementById("mc-open-modal").click();
-      clickModal(mc_datatables_rowOts.refid);
-    });
-  
-    $(document).on('click','.modalToggle',function () {
-      var id = $(this).attr("id");
-      if (id === "bidding") {
-        getModalData(id, document.getElementById("myModalBookId_temp").innerHTML);
-      }
-    });
-  
-    $(document).on('click','#modal_update',function () {
-      //confirmNow('update');
-      ActionDecision('update','updateBookingDetails');
-    });
-  
-    function ActionDecision(type,callBack)
-    {
-      var message = confirmMessage(type);
-      var temp= callBack+'();';
-      $('.action_confirm_btn_yes').attr('onClick', temp);
-      $('#confirm_id_msg').html(message);
-      $('#action_popup_btn').click();
-    }
-  
-    $(document).on('click','.action_confirm_btn_yes',function () {
-      $('#action_popup_btn').click();
-    });
-    $(document).on('click','.action_confirm_btn_no',function () {
-      $('#action_popup_btn').click();
-    });
-  
-   
-  function confirmMessage(type) {
-    var msg = '';
-    if (type == 'update') {
-      msg = 'Wish to Update and Continue'
-    }else  if (type == 'allocate') {
-      msg = 'Wish to Allocate and Continue'
-    }
-  
-    return msg;
-  }
-  
-  $(document).on('click','#filter_load',function () {
-      searchByFilter();
+      $('#ots-open-modal').click();
+        
+        var myData={};
+        myData["refid"]=mc_datatables_rowOts.refid;
+        var myGetUrl = "";
+          myGetUrl = myUrlOts + "myapi/ots/func_get_data.php";
+        
+      get_url_response(myGetUrl,myData,'dataSet')
     });
   
   
-  $(document).on('click', '.modalToggle ', function () {
-    if(($(this).attr('id') == 'basic_info') || ($(this).attr('id') == 'passenger_info'))
-    {
-      $('#modal_update').prop('disabled', false);
-    }else{
-      $('#modal_update').prop('disabled', true);
-    }
-  });
-   
   
-  function updateBookingDetails() {
+
+
   
-    var myData = {};
-  // ||  
-    $("ul.mc-info-tabs li").each(function () {
-      if ($(this).hasClass('active')  ) {
-  
-        var temp = "#table_" + ($(this).attr('id')) + " :input"
-        $(temp).each(function (e) {
-          var key = this.id.replace("modal_booking_", "");;
-          var val = this.value;
-          myData[key] = val;
-        });
-      }
-    });
-    var temp = 'refid';
-    myData[temp] = document.getElementById("myModalBookId_temp").innerHTML;
-    var myGetUrl = myUrlOts + "myapi/UpdateBooking.php";
-    document.getElementById("mc-open-modal").click();
-    get_url_response(myGetUrl, myData, "UpdationAlert");
-  }
-  function clickModal(data) {
-    clearModal();
-    getModalData("basic_info", data);
+  function clickModalOts(data) {
+    clearModalOts();
   }
   
   /*
@@ -430,21 +376,8 @@ function messageBox(obJ)
     });
   });
   */
-  function UpdationAlert(myData) {
-   if( showStatusMessage(myData))
-   {
-    mc_datatables_rowOts.des= 	$("#modal_booking_des").val() ;
-    mc_datatables_rowOts.src= 	$("#modal_booking_src").val() ;
-    // mc_datatables_rowOts.dt= 	$("#modal_booking_dt").val() ;
-    mc_datatables_rowOts.fare= $("#modal_booking_fare").val() ;
-    mc_datatables_rowOts.time= $("#modal_booking_time").val() ;
-    mc_datatables_rowOts.type= $("#modal_booking_type").val() ;
-   }
-   updateRowOts();
-   
-   
-  }
-  function searchByFilter() {
+
+  function searchByFilterOts() {
     var mydata = {};
     if (document.getElementById("filter_all").checked) {
       mydata["status"] = document.getElementById("filter_all").value;
@@ -470,7 +403,7 @@ function messageBox(obJ)
   
     get_booking_response_Ots(myGetUrl, mydata);
   }
-  function filterCheckBox(ele) {
+  function filterCheckBoxOts(ele) {
     if (ele.checked) {
       for (var i = 1; i <= 5; i++) {
         document.getElementById(i).disabled = true;
@@ -482,39 +415,15 @@ function messageBox(obJ)
       }
     }
   }
-  function clearModal() {
-    $("#modal_booking_booked_site").val('') ;
-    $("#status_dropdown").val('') ;
-    $("#modal_booking_src").val('') ;
-    $("#modal_booking_des").val('') ;
-    $("#modal_booking_dt").val('') ;
-    $("#modal_booking_time").val('') ;
-    $("#modal_booking_type").val('') ;
-    $("#myModalBookId").innerHTML ;
-    $("#myModalBookId").name ;
-    
-    $("#modal_booking_name").val('') ;
-    $("#modal_booking_mail").val('') ;
-    $("#modal_booking_num1").val('') ;
-    $("#modal_booking_num2").val('') ;
-    $("#modal_booking_address1").val('') ;
-    $("#modal_booking_address2").val('') ;
-    $("#modal_booking_dt").val('') ;
-    $("#modal_booking_time").val('') ;
-    $("#modal_booking_passenger").val('') ;
-    $("#modal_booking_luggage").val('') ;
-    $("#modal_booking_location").val('') ;
-    $("#modal_booking_info").val('') ;
-    $("#modal_booking_type").val('') ;
-    $("#modal_booking_fare").val('') ;
-  
-    $("#drvid").val('') ;
-    $("#amt").val('') ;
-  
-    $('.dropdown-set').remove();  
-    $('.drvid_class_div').remove();
+  function clearModalOts() {
+    $('#dataForm input, #dataForm select, #dataForm textarea').each(function(){
+        if($(this).hasClass('form-feild'))
+        {
+        val=$(this).val('');
+        }
+    });
   }
-  function getModalData(myload, book_id) {
+  function getModalDataOts(myload, book_id) {
     $('#spinnermodal').show();
       setTimeout(function () {
   
@@ -531,301 +440,9 @@ function messageBox(obJ)
   
   }
   var objModaldata = {};
-  function setModalData(myData) {
-    var myObj = JSON.parse(myData);
-    if (modalPingOts === "basic_info") {
-      document.getElementById("modal_booking_booked_site").value =
-        myObj["base"]["booked_site"];
-  
-      var x = myObj["base"]["status"];
-      document.getElementById("status_dropdown").value = GLStatusBooking[x].showstatus;;
-      document.getElementById("modal_booking_src").value = myObj["base"]["src"];
-      document.getElementById("modal_booking_des").value = myObj["base"]["des"];
-      document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
-      document.getElementById("modal_booking_time").value = myObj["base"]["time"];
-      document.getElementById("modal_booking_type").value = myObj["base"]["type"];
-      document.getElementById("myModalBookId").innerHTML =
-        "Booking Information - ( " + myObj["base"]["refid"] + " )";
-      document.getElementById("myModalBookId_temp").innerHTML = myObj["base"]["refid"];
-  
-      document.getElementById("modal_booking_name").value = myObj["base"]["name"];
-      document.getElementById("modal_booking_mail").value = myObj["base"]["mail"];
-      document.getElementById("modal_booking_num1").value = myObj["base"]["num1"];
-      document.getElementById("modal_booking_num2").value = myObj["base"]["num2"];
-      document.getElementById("modal_booking_address1").value =
-        myObj["base"]["address1"];
-      document.getElementById("modal_booking_address2").value =
-        myObj["base"]["address2"];
-      document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
-      document.getElementById("modal_booking_time").value = myObj["base"]["time"];
-      document.getElementById("modal_booking_passenger").value = myObj["base"]["passenger"];
-      document.getElementById("modal_booking_luggage").value = myObj["base"]["luggage"];
-      document.getElementById("modal_booking_location").value =
-        myObj["base"]["location"];
-      document.getElementById("modal_booking_info").value = myObj["base"]["info"];
-      document.getElementById("modal_booking_type").value = myObj["base"]["type"];
-      document.getElementById("modal_booking_fare").value = myObj["base"]["fare"];
-      document.getElementById("modal_booking_ceat").value = myObj["base"]["ceat"];
-      document.getElementById("modal_booking_mg").value = myObj["base"]["mg"];
-      document.getElementById("modal_booking_infants").value = myObj["base"]["infants"];
-  
-  
-      //setting up message
-  
-      var message1_data = "Reference Id : " + myObj["base"].refid + "\n";
-      message1_data =
-        message1_data +
-        "Pick Up : " +
-        document.getElementById("modal_booking_address1").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Drop Off : " +
-        document.getElementById("modal_booking_address2").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Name : " +
-        document.getElementById("modal_booking_name").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Mobile Number : " +
-        document.getElementById("modal_booking_num1").value +
-        "/" +
-        document.getElementById("modal_booking_num2").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Cab type : " +
-        document.getElementById("modal_booking_type").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Collect fare : " +
-        document.getElementById("modal_booking_fare").value +
-        "\n";
-      message1_data =
-        message1_data +
-        "Your fare : " +
-        document.getElementById("modal_booking_dfare").value +
-        "\n";
-  
-      var number1_data = myObj["base"].dnum1;
-  
-      var message2_data = "Reference Id : " + myObj["base"].refid + "\n";
-      message2_data = message2_data + "Driver name :" + myObj["base"].dname;
-      message2_data =
-        message2_data +
-        "Driver Number :" +
-        myObj["base"].dnum1 +
-        " / " +
-        myObj["base"].dnum2;
-  
-      var number2_data = myObj["base"].num1;
-  
-      document.getElementById("id_message1").value = message1_data;
-      document.getElementById("id_message2").value = message2_data;
-  
-      document.getElementById("id_number1").value = number1_data;
-      document.getElementById("id_number2").value = number2_data;
-  
-      //End of message part
-      if (myObj["base"].status != "comitted" && myObj["base"].status != 'completed') {
-        setBid(myObj["bid"]);
-      } else {
-        var temp = "";
-        temp = temp + "<tr>";
-        temp = temp + "<td>" + myObj["base"].drvid + "</td>";
-        temp = temp + "<td>" + myObj["base"].dname + "</td>";
-        temp = temp + "<td>" + myObj["base"].dfare + "</td>";
-        temp = temp + "<td>Allocated</td>";
-        temp = temp + "</tr>";
-  
-        document.getElementById("Allocate_Table").innerHTML = temp;
-      }
-  
-    }
-  
-    $('#spinnermodal').hide();
-  }
-  $(document).on('keyup', '#drvid', function () {
-  
-    var str = $('#drvid').val().toLowerCase();
-    var temp = '<div class="drvid_class_div">';
-    for (var i = 0; i < driverListOts.length; i++) {
-      if ((driverListOts[i].name.toLowerCase()).includes(str)) {
-        temp = temp + '<p class="drvid_class_p">' + driverListOts[i].id + ' - ' + driverListOts[i].name + '</p>'
-      }
-    }
-    temp = temp + '</div>';
-    $('.drvid_class_div').remove();
-    $('#drvid').parent().parent().parent().append(temp);
-  });
-  
-  $(document).on('click', '.drvid_class_p', function () {
-    $('#drvid').val($(this).html());
-    $('.drvid_class_div').remove();
-  
-  });
-  
-  $(document).on('click', '#status_dropdown', function () {
-  
-    var str = $('#status_dropdown').val();
-    var p = '';
-    var exec = false;
-    var attr = [];
-    if (str == 'Booked') {
-      attr[0] = "booked-confirmed";
-      attr[1] = 'cancelled';
-      exec = true;
-    } else if (str == 'Allocated') {
-      attr[0] = "completed";
-      attr[1] = 'cancelled';
-      exec = true;
-    }else if (str == 'Confirmed') {
-      attr[0] = "cancelled";
-      exec = true;
-    }
-    if (exec) {
-      var temp = '<div  class="dropdown-set show">';
-      for (var i = 0; i < attr.length; i++) {
-        var ptemp = attr[i];
-        p = p + '<p class="status_class_p" name="'+ptemp+'" id="' + GLStatusBooking[ptemp].showstatus + '" >' + GLStatusBooking[ptemp].dropdown_val + '</p>'
-  
-      }
-      temp = temp + p;
-      temp = temp + '<div class="mc-flex">';
-      temp = temp + '<button class="button-style change_Status" >Change</button>';
-      temp = temp + '<button class="button-cancel-style change_Status" >Cancel</button>';
-      temp = temp + '</div>';
-      temp = temp + '</div>';
-      $('.dropdown-set').remove();
-      $('#status_dropdown').parent().append(temp);
-    }
-  });
-  
-  $(document).on('click', '.status_class_p', function () {
-  
-    $("div.dropdown-set p").each(function () {
-      $(this).removeClass('class-sky-blue');
-  
-    });
-    $(this).addClass('class-sky-blue');
-  
-    // $('#status_dropdown').val();
-    // $('.dropdown-set').remove();
-  
-  });
-  
-  $(document).on('click', '#send_sms', function () {
-    var myData={};
-    myData["ref"]=document.getElementById("myModalBookId_temp").innerHTML;
-  
-    myData["number1"]=document.getElementById("id_number1").value;
-    myData["message1"]=document.getElementById("id_message1").value;
-    myData["number2"]=document.getElementById("id_number2").value;
-    myData["message2"]=document.getElementById("id_message2").value;
-  
-    var myGetUrl = myUrlOts + "myapi/send_msg.php";
-    get_url_response(myGetUrl, myData, "changeStatus");
-  });
-  
-  $(document).mouseup(function(e){
-    var container = $(".dropdown-set");
-  
-    // If the target of the click isn't the container
-    if(!container.is(e.target) && container.has(e.target).length === 0){
-        container.remove();
-    }
-  
-    container = $(".drvid_class_div");
-  
-    // If the target of the click isn't the container
-    if(!container.is(e.target) && container.has(e.target).length === 0){
-        container.remove();
-    }
-  });
-  
-  $(document).on('click', '.change_Status', function () {
-  
-    if ($(this).html() == 'Change') {
-      
-      $("div.dropdown-set p").each(function () {
-        if ($(this).hasClass('class-sky-blue')) {
-          var myData={}
-          var temp = $(this).attr("id");
-          $('#status_dropdown').val(temp);
-          temp = $(this).attr("name");
-          currentModalStatusOts=temp;
-          myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
-          var myGetUrl = myUrlOts + "myapi/"+GLStatusBooking[temp].api+".php";
-          $('.dropdown-set').remove();
-          document.getElementById("mc-open-modal").click();
-          get_url_response(myGetUrl, myData, "changeStatus");
-        }
-      });
-    } else{
-      $('.dropdown-set').remove();
-    }
-   
-  
-  });
-  
-  function changeStatus(data){
-    if( showStatusMessage(data))
-   {
-    mc_datatables_rowOts.status= 	currentModalStatusOts ;
-   }
-   currentModalStatusOts='';
-   updateRowOts();
-   
-  }
-  
-  function manual_alloc_response(data)
-  {
-     showStatusMessage(data);
-     document.getElementById("mc-open-modal").click();
-  }
-  function manual_alloc() {
-    var myData={}
-    myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
-    myData["did"]=$('#drvid').val().substring(0, ($('#drvid').val().indexOf("- ")-1));
-    myData["new"]=  $('#amt').val();
-  
-    if(myData["new"]=='' || myData["new"]=='0')
-    {
-      alertData='{"response":"fail","msg":"Please enter fare for driver!!!"}';
-      showStatusMessage(alertData);
-      return;
-    }
-          var myGetUrl = myUrlOts + "myapi/driver_accept.php";
-          get_url_response(myGetUrl, myData, "manual_alloc_response");
-  }
-  $(document).on('click', '#manual_alloc', function () {
-  
-   // ActionDecision('allocate','manual_alloc');
-  
-    manual_alloc();
-  
-  
-  });
-  
-  
-  function setBid(myObj_bid) {
-    var temp = "";
-    for (var i = 0; i < myObj_bid.length; i++) {
-      temp = temp + "<tr>";
-      temp = temp + "<td>" + myObj_bid[i].drvid + "</td>";
-      temp = temp + "<td>" + myObj_bid[i].name + "</td>";
-      temp = temp + "<td>" + myObj_bid[i].bid + "</td>";
-      temp = temp + '<td><a class="myAllocate">Allocate</a></td>';
-      temp = temp + "</tr>";
-    }
-  
-    document.getElementById("Allocate_Table").innerHTML = temp;
-  }
-  function date_format_db(x) {
+ 
+
+  function date_format_db_Ots(x) {
     var d = new Date(x),
       /* month = "" + (d.getMonth() + 1),
        day = "" + d.getDate(),
@@ -844,11 +461,8 @@ function messageBox(obJ)
   
   }
   
-  function previous_date(today) {
-    today.setDate(today.getDate() - 1);
-    return date_format_db(today);
-  }
-  function getWeekDates() {
+
+  function getWeekDatesOts() {
     var current = new Date();     // get current date
     var week_date = [];
     for (var i = 0; i < 7; i++) {
@@ -865,30 +479,30 @@ function messageBox(obJ)
     return week_date;
   }
   
-  function showStatusMessage(obj)
+  function showStatusMessageOts(obj)
   {
-    myObj= JSON.parse(obj);
-    var myret=false;
-      // alert(myObj["status"]+" "+myObj["message"]);
     
-    $("#myAlert_status").html(myObj["status"]);
-    $("#myAlert_msg").html(myObj["msg"]);
     $("#myAlert_class").removeClass('color-green');
     $("#myAlert_class").removeClass('color-red');
-    if( (myObj["response"].toLowerCase()) === 'success'  )
-    {
-      $("#myAlert_class").addClass('color-green');
-      myret=true;
-    }
-    else{
-      $("#myAlert_class").addClass('color-red');
-    }
-    $("#myAlert").fadeIn();
+    myObj= JSON.parse(obj);
+if(myObj.status)
+{
+  $("#myAlert_class").addClass('color-green');
+  $("#myAlert_status").html('Success');
+     
+}else{
+  $("#myAlert_class").addClass('color-red');
+  $("#myAlert_status").html('Fail');
+   
+}
+    $("#myAlert_msg").html(myObj["msg"]);
   
+    $("#myAlert").fadeIn();
+    $('#ots-open-modal').click();
     return myret;
   }
   
-  function showStatusMessageClose()
+  function showStatusMessageOtsClose()
   {
     $("#myAlert").fadeOut();
   }
