@@ -102,10 +102,11 @@ var GLStatusBooking = {
     {
       $('#dpercen').val(dpercen);
     }
-    percen =parseInt($('#dpercen').val())
-    ofare = parseFloat($('#ofare').val());
+    percen =parseInt($('#dpercen').val()).toFixed(2);
+    ofare = parseFloat($('#ofare').val()).toFixed(2);
 
     var fare = parseFloat( (ofare/100) * percen ).toFixed(2);
+    fare = parseFloat( ofare -fare).toFixed(2);
     $('#dfare').val(fare);
   }
 
