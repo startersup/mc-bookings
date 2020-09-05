@@ -134,13 +134,14 @@ function setAllTable(myData)
     
   for(var i=0;i<myObj.length;i++)
   {
+
       temp=temp+'<tr>';
       temp=temp+'<td >'+myObj[i].refid+'</td>';
       temp=temp+'<td >'+myObj[i].src+'</td>';
       temp=temp+'<td >'+myObj[i].des+'</td>';
       temp=temp+'<td >'+myObj[i].dt+' '+myObj[i].time+'</td>';
       temp=temp+'<td >'+myObj[i].fare+'</td>';
-      temp=temp+'<td >'+myObj[i].dname+'</td>';
+      temp=temp+'<td >'+myObj[i].dname+myObj[i].pname+'</td>';
       temp=temp+'<td >'+myObj[i].dfare+'</td>';
       temp=temp+'<td >'+myObj[i].commision+'</td>';
       temp=temp+'</tr>';
@@ -151,10 +152,11 @@ function setAllTable(myData)
 
   document.getElementById("InvoiceTable").innerHTML= document.getElementById("InvoiceTable").innerHTML+temp;
   document.getElementById("DrvTotalJobs").innerHTML=myObj.length;
-  document.getElementById("DrvTotalValue").innerHTML='£'+total_fare;
-  document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare;
-  document.getElementById("DrvTotalPay").innerHTML='£'+parseFloat(total_fare-total_dfare);
-
+  document.getElementById("DrvTotalValue").innerHTML='£'+total_fare.toFixed(2);
+  document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare.toFixed(2);
+  document.getElementById("DrvTotalPay").innerHTML='£'+(parseFloat(total_fare-total_dfare)).toFixed(2);
+  $('#invoicePreview').show();
+  $('#emptyPreview').hide(); 
   document.getElementById("BasicDriverInfo").innerHTML='';
   setDate(myTemp.no);
   stopLoader();

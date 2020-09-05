@@ -9,6 +9,12 @@
             <span class="mc-controls">Bookings</span>
             <span class="tooltiptext"> Bookings</span>
              </div></a></li> 
+
+             <li><a class="li_sidebar" href="otsBookings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/bookings.svg">
+            <span class="mc-controls">OTS Bookings</span>
+            <span class="tooltiptext"> OTS Bookings</span>
+             </div></a></li> 
+
              <li><a class="li_sidebar" href="company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
               <span class="mc-controls">Company</span>
               <span class="tooltiptext"> Company</span>

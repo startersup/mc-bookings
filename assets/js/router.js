@@ -9,6 +9,11 @@ var router = {
         "load": "bookingsLoad",
         "view": "bookings/"
     },
+    "otsBookings": {
+        "url": "otsBookings/",
+        "load": "OtsBookingsLoad",
+        "view": "otsBookings/"
+    },
     "settings": {
         "url": "settings/",
         "load": "",
@@ -90,7 +95,7 @@ function get_page_response(myGetUrl, mydata, fname) {
             {
                 window[fname]();
             }
-            
+           // LoadJsScript();
             $('#spinnermodal').hide();
         },
         error: function (xhr) { }
@@ -98,15 +103,8 @@ function get_page_response(myGetUrl, mydata, fname) {
 }
 
 function LoadJsScript() {
-    var loop = jsRouter.length;
-    for (i = 0; i < loop; i++) {
-        var path = myUrl + jsRouter[i];
-        $.getScript(path, function () {
-            console.log(jsRouter[i] + '  => Loaded');
-        });
-    }
-
-
+ 
+    
 
 
 }

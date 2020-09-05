@@ -12,6 +12,8 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 <script type="text/javascript" src="./assets/js/custom-calender.js"></script>
 
 
@@ -34,6 +36,7 @@
   document.write('<script src="./assets/js/invoice.js?dev=' +version + '"\><\/script>');
   document.write('<script src="./assets/js/drivers.js?dev=' +version + '"\><\/script>');
   document.write('<script src="./assets/js/provider.js?dev=' +version + '"\><\/script>');
+  document.write('<script src="./assets/js/otsBook.js?dev=' +version + '"\><\/script>');
   </script>
 
   
