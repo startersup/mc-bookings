@@ -248,11 +248,30 @@ if ($action == "")
                     </select>
                   </div>
                   <div class="col-md-6 ">
-                    <label>Driver Fare:</label>
-                    <input type="text" class="form-feild controls" name="dfare" id="dfare" placeholder="">
-                  </div>
+                    <label>Driver Percentage:</label>
+                    <select id="dpercen" name="dpercen" class="select selectit form-feild controls">
+                      <option value="">--SELECT--</option>
+                      <option value="0">0%</option>
+                      <option value="5">5%</option>
+                      <option value="10">10%</option>
+                      <option value="15%">15%</option>
+                      <option value="20">20%</option>
+                      <option value="25">25%</option>
+                      <option value="30">%</option>
+                    </select></div>
                 </div>
 
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Original Fare</label>
+                    <input type="text" class="form-feild controls" name="ofare" id="ofare" placeholder="">
+                
+                  </div>
+                  <div class="col-md-6 ">
+                    <label>Driver Fare:</label>
+                    <input type="text" class="form-feild controls" disabled name="dfare" id="dfare" placeholder="">
+                  </div>
+                </div>
 
 
                 <div class="row">

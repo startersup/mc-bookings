@@ -80,6 +80,35 @@ var GLStatusBooking = {
     var dateVal=data[2]+'-'+data[0]+'-'+data[1];
     $('#dt').val(dateVal);
   });
+  
+  $(document).on('change','#dpercen',function () {
+  
+    setFare();
+  });
+
+  $(document).on('change','#ofare',function () {
+  
+    setFare();
+  });
+  function setFare()
+  {
+    var ofare=0;
+    var percen=0;
+    if($('#ofare').val()=='')
+    {
+      $('#ofare').val(ofare);
+    }
+    if($('#dpercen').val()=='')
+    {
+      $('#dpercen').val(dpercen);
+    }
+    percen =parseInt($('#dpercen').val())
+    ofare = parseFloat($('#ofare').val());
+
+    var fare = parseFloat( (ofare/100) * percen ).toFixed(2);
+    $('#dfare').val(fare);
+  }
+
   $(document).on('click','.clickButton',function () {
   var api="";
   var allData ={};
@@ -137,6 +166,7 @@ function dataSet(allData)
     var temp=$('#time').val().split(':');
     $('#hrs').val(temp[0]);
     $('#mins').val(temp[1]);
+
     $('.clickButton').show();
     $('.clickButton').each(function(){
         if($(this).attr("name") == "new")

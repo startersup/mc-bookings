@@ -36,6 +36,9 @@ if($action =="")
         <i class="fa fa-caret-down"></i>
       </div>
       <ul>
+      <li><a><input type="checkbox" id="minicabee" name="job-list" value="minicabee"> Minicabee List</a></li>
+        <li><a><input type="checkbox" id="taxicode" name="job-list" value="taxicode"> Taxicode List</a></li>
+
         <li><a><input type="checkbox" id="driver" name="job-list" value="driver"> Drivers List</a></li>
         <li><a><input type="checkbox" id="provider" name="job-list" value="provider"> Provider List</a></li>
         <li><a> <input type="checkbox" id="all" name="job-list" value="all"> Cumulative Job List</a></li>
