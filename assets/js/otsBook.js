@@ -96,6 +96,7 @@ var GLStatusBooking = {
 
 $(document).on('click','#addOTSBook',function () {
     clearModalOts();
+    $('.clickButton').show();
     $('.clickButton').each(function(){
         if($(this).attr("name") == "edit")
         {
@@ -136,7 +137,7 @@ function dataSet(allData)
     var temp=$('#time').val().split(':');
     $('#hrs').val(temp[0]);
     $('#mins').val(temp[1]);
-
+    $('.clickButton').show();
     $('.clickButton').each(function(){
         if($(this).attr("name") == "new")
         {
