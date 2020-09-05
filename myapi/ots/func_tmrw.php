@@ -14,7 +14,7 @@
     
     
    
-    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,bookid as booked_site from oregister WHERE dt= '".$check."' and status != 'cancelled' ";
+    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,name,fare,dfare,status,bookid as booked_site from oregister WHERE dt= '".$check."' and status != 'cancelled' ";
   $result=  mysqli_query($conn,$sql);
   
   

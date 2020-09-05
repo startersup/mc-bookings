@@ -94,16 +94,16 @@ var GLStatusBooking = {
   {
     var ofare=0;
     var percen=0;
-    if($('#ofare').val()=='')
+    if($('#fare').val()=='')
     {
-      $('#ofare').val(ofare);
+      $('#fare').val(ofare);
     }
     if($('#dpercen').val()=='')
     {
       $('#dpercen').val(dpercen);
     }
     percen =parseInt($('#dpercen').val()).toFixed(2);
-    ofare = parseFloat($('#ofare').val()).toFixed(2);
+    ofare = parseFloat($('#fare').val()).toFixed(2);
 
     var fare = parseFloat( (ofare/100) * percen ).toFixed(2);
     fare = parseFloat( ofare -fare).toFixed(2);
@@ -301,7 +301,7 @@ function dataHandle(api,allData)
           { data: "src" },
           { data: "des" },
           { data: "dt" },
-          { data: "type" },
+          { data: "name" },
           { data: "fare" },
           { data: "status" },
           { data: null, defaultContent: '<div class="mc-edit-ots"></div>' }

@@ -117,7 +117,7 @@ if ($action == "")
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Date Of Journey:</label>
-                    <input type="text" required class=" controls datepickerfuture " id="dt_temp" placeholder="Enter Passenger Name">
+                    <input type="text" required class=" controls datepicker " id="dt_temp" placeholder="Enter Passenger Name">
                     <input type="hidden" class="form-feild controls" id="dt" name="dt">
                   </div>
 
@@ -231,12 +231,9 @@ if ($action == "")
                     </select>
                   </div>
                   <div class="col-md-6 ">
-                    <label>Child Seat(£5.00 each):</label>
-                    <select id="ceat" name="ceat" class="select selectit form-feild controls">
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
+                  <label>Original Fare</label>
+                    <input type="text" class="form-feild controls" name="ofare" id="ofare" placeholder="">
+                
                   </div>
                 </div>
 
@@ -263,8 +260,8 @@ if ($action == "")
 
                 <div class="row">
                   <div class="col-md-6">
-                    <label>Original Fare</label>
-                    <input type="text" class="form-feild controls" name="ofare" id="ofare" placeholder="">
+                    <label>Our Fare</label>
+                    <input type="text" class="form-feild controls" name="fare" id="fare" placeholder="">
                 
                   </div>
                   <div class="col-md-6 ">

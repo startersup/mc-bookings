@@ -66,6 +66,15 @@
           minDate : 0
          
       });
+    });
+      $(document).on('click',".datepicker", function(){
+
+        $(this).datepicker({
+          // var u="60:00";
+          datepicker: true
+         
+      });
+
       });
 });
 
