@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+  <title>Bookings | Minicabee Travel Solutions </title>
+  <meta charset="utf-8">
+  <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/jquery.datetimepicker.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+</head>
+<body onload="pageLoad();">
+
+
+  <div id="spinnermodal" class="modal11 modal right fade in"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
+  display: block;
+  background-color: rgb(255, 255, 255);
+  min-width: 1500px;
+  top: 0px;
+  left: 65px;
+  border: none;">
+    <div class="modal11-content">
+      <div class="loader" style="max-width:100px;position:absolute;top:300px;left:650px;">
+        <centre> <img width="80px;" src="../assets/images/icons/loader.svg"></centre>    
+      </div>
+    </div>
+  </div>
+    <!----navbar-starts----->
+    <nav class="navbar navbar-default mc-dash-nav">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <a class="navbar-brand" href="../"><img class="mc-nav-logo" src="../assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav mc-dash-mid">
+            <li class="active"><a class="mc-load" href="../passengers/">Passengers</a></li>
+            <li><a class="mc-load" href="../drivers/">Drivers</a></li>
+            <li><a class="mc-load" href="../partners">Partners</a></li>
+            <li><a class="mc-load" href="../invoice/">Invoice</a></li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
+                <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
+                    <div class="mc-dropdown-content mc-bx-shdw">
+                    <ul class="mc-drop-desc">
+                        <li>Help Docs</li>
+                        <li>Feedback</li>
+                         <li>Raise Ticket</li>
+                        <li>Live Chat</li>
+                    </ul>
+                    </div>
+            </li>
+            <li>
+              <div class="mc-notify-badge">12</div>
+              <a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a>
+            </li>
+              <li><a href="#"><img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar"></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>   <!----navbar-ends----->
+    
+    
+      <!----sub-navbar-starts----->
+    <div class="mc-sub-section">
+    <ul class="mc-sub-left">
+    <li id="yesterday" class="booking"><a >Yesterday Booking</a></li>   
+     <li id="today"  class="active booking"><a>Today Booking</a></li>
+    <li id="tommorrow" class="booking"><a  >Tomorrow Booking</a></li> 
+    <li id="future" class="booking" ><a  >Future Booking</a></li> 
+     <li><div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#custom-filters"   src="../assets/images/icons/more.svg"></div>
+
+        </li> 
+
+    </ul>
+        
+        <ul class="mc-sub-right">
+            
+            <li>
+</li>
+            <li><a href="../new-booking/"><button class="mc-add-btn"> <img class="mc-button-icons" src="../assets/images/icons/add.svg"> Add Booking</button></li></a></ul>
+    </div>
+    
+      <!----sub-navbar-ends----->
+    
+    
+    
+    <!----sidebar-starts----->
+    <div class="mc-dash-sidebar">
+      <ul>
+        <li><a href="../"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/analytics.svg">
+          <span class="mc-controls">Dashboard</span>
+          <span class="tooltiptext"> Dashboard</span>
+           </div></a></li> 
+           <li><a href="../bookings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/bookings.svg">
+            <span class="mc-controls">Bookings</span>
+            <span class="tooltiptext"> Bookings</span>
+             </div></a></li> 
+             <li><a href="../company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
+              <span class="mc-controls">Company</span>
+              <span class="tooltiptext"> Company</span>
+               </div></a></li> 
+               <li><a href="../tracking"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/track.svg">
+                <span class="mc-controls">Tracking</span>
+                <span class="tooltiptext"> Tracking</span>
+                 </div></a></li> 
+                 <li><a href="../marketing/email-marketing"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
+                  <span class="mc-controls">Marketing</span>
+                  <span class="tooltiptext"> Marketing</span>
+                   </div></a></li> 
+                     <li><a href="../settings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/gear.svg"><br>
+                      <span class="mc-controls">Settings</span>
+                      <span class="tooltiptext"> App Settings</span>
+                       </div></a></li>       
+     </ul>
+       
+  </div>
+        
+<!----Sidebar-ends----->    
+    
+    
+    
+    
+    <!---mainbar-starts----->
+    
+    <div class="mc-dash-mainbar">
+<div class="mc-mainbar-components">
+
+<div id="empty_state">
+  <center><img src="../assets/images/empty-states/booking_empty_state.svg" class="booking_empty_state"></center>
+  <p>It seems there is no bookings available</p>
+
+</div>
+<div id="display_data" >
+	    <table id="mc-datatables" class="table table-fixed table striped dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
+        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
+            <tr style="border:1px solid #e4e4e4;">
+                <th>Id</th>
+                <th>Source</th>
+                <th style="width:15%;">Pickup From</th>
+                <th style="width:15%;">Dropoff To</th>
+                <th>D&T</th>
+                  <th>Type</th>
+                <th>Fare</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+   
+        </tbody>
+    </table>
+    </div>
+		
+        </div>
+    
+      <!---mainbar-starts----->
+    
+<!---modals-section------>
+    
+    <!--Notification Modal -->
+	<div class="modal right fade" id="notification-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content" style="background-color:#fbfbfb;">
+				<div class="modal-header">
+					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<h4 class="modal-title" id="myModalLabel2">Notifications</h4>
+				</div>
+
+				<div class="modal-body">
+                    <ul class="mc-notifications-head">
+                    <li><h3>New Booking on Bin</h3>
+                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                    <h5>12/13/15 at 22:20</h5>
+                    </li>
+                    <li><h3>New Booking on Bin</h3>
+                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                      <h5>12/13/15 at 22:20</h5>
+                      </li>
+                      <li><h3>New Booking on Bin</h3>
+                        <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                        <h5>12/13/15 at 22:20</h5>
+                        </li>
+                        <li><h3>New Booking on Bin</h3>
+                          <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                          <h5>12/13/15 at 22:20</h5>
+                          </li>
+                          <li><h3>New Booking on Bin</h3>
+                            <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                            <h5>12/13/15 at 22:20</h5>
+                            </li>
+                            <li><h3>New Booking on Bin</h3>
+                              <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                              <h5>12/13/15 at 22:20</h5>
+                              </li>
+                              <li><h3>New Booking on Bin</h3>
+                                <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                <h5>12/13/15 at 22:20</h5>
+                                </li>
+                                <li><h3>New Booking on Bin</h3>
+                                  <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                  <h5>12/13/15 at 22:20</h5>
+                                  </li>
+                                  <li><h3>New Booking on Bin</h3>
+                                    <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                    <h5>12/13/15 at 22:20</h5>
+                                    </li>
+                                    <li><h3>New Booking on Bin</h3>
+                                      <p>Booking Id <span>BRT1265273</span> has been received.</p>
+                                      <h5>12/13/15 at 22:20</h5>
+                                      </li>
+                    </ul>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+     <!--Notification Modal -->
+    
+
+    
+        <!-- Modal -->
+        <button type="button" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#info-bar" id="mc-open-modal">Open Small Modal</button>
+	<div class="modal right fade" id="info-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+          <h4 class="modal-title" id="myModalBookId" name="">Booking Information - (  )</h4>
+          <div id="myModalBookId_temp" style="display:none;"></div>
+                    <ul class="nav nav-pills mc-info-tabs">
+    <li id="basic_info" class="active modalToggle"><a data-toggle="pill"  href="#location">Basic Info</a></li>
+    <li id="passenger_info" class="modalToggle"><a data-toggle="pill" href="#passenger">Passenger Info</a></li>
+    <li id="driver_info" class="modalToggle" ><a data-toggle="pill" href="#driver">Driver Info</a></li>
+    <li id="booking_sms" class="modalToggle" ><a data-toggle="pill" href="#sms">Booking SMS</a></li>
+  </ul>
+				</div>
+
+				<div class="modal-body">
+                           
+                     <div class="tab-content">
+    <div id="location" class="tab-pane fade in active">
+<!--                  <div id="map"></div>-->
+
+         <table class="table table-user-information map-info">
+                  <tbody>
+                      <tr>
+                      <td>Booking Source :</td>
+                      <td><input type="text" class="text" name="modal_booking_site" id="modal_booking_site" value="Gatwick WB"></td>
+                    </tr>
+                       <tr>
+                      <td>Booking Status :</td>
+                      <td>
+                        <div class="mc-icon-wrap">
+                        <input type="text" class="text mc-status-change" name="modal_booking_status" readonly onclick="statuschange()" id="modal_booking_status" value="Booked">
+                        <div id="open-status" class="dropdown-set">
+                          <div id="statuslist">
+                            <ul>
+                            <li><a>Booked</a></li>
+                               <li><a>Confirmed</a></li>
+                               <li><a>Completed</a></li>
+                               <li><a>Cancelled</a></li>
+                            </ul><br>
+                            <div class="mc-flex">
+                            <button class="button-style" id="change_Status" >Change</button>
+                            <button class="button-cancel-style" >Cancel</button>
+                          </div>
+                        </div>
+                  </div>
+                         </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="first">Pickup From :</td>
+                      <td class="first"><input type="text" class="text" name="modal_booking_pickup" id="modal_booking_pickup" value="Gatwick Airport"></td>
+                    </tr>
+                    <tr>
+                      <td>Dropoff To :</td>
+                      <td><input type="text" class="text" name="mail" id="modal_booking_dropoff" value="Heathrow Airport Terminal 2"></td>
+                    </tr>
+                    <tr>
+                      <td>Date :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_date" value="1 hour 15 minutes"></td>
+                    </tr>
+                    <tr>
+                      <td>Time :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_time" value="1 hour 15 minutes"></td>
+                    </tr>
+                    <tr>
+                      <td>Cab Type :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_cab_type" value="1 hour 15 minutes"></td>
+                    </tr>
+                    <tr>
+                      <td>Total Miles :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_miles" value="43 Miles"></td>
+                    </tr>
+                       <tr>
+                      <td>Journey Time :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_jtime" value="1 hour 15 minutes"></td>
+                    </tr>    
+             </tbody></table>
+				</div>
+            
+            
+                 <div id="passenger" class="tab-pane fade"> 
+
+                   <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                      <td class="first">Passenger Name :</td>
+                      <td class="first"><input type="text" class="text" name="name" id="modal_booking_name" value="saicharan"></td>
+                    </tr>
+                    <tr>
+                      <td>Passenger Email :</td>
+                      <td><input type="text" class="text" name="mail" id="modal_booking_mail" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Passenger Contact :</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_num1" value=""></td>
+                    </tr>
+                    
+                     <tr>
+                      <td>Alternate Contact :</td>
+                      <td><input type="text" class="text" name="num2" id="modal_booking_num2" value=""></td>
+                    </tr>
+                    
+                           <tr>
+                      <td>Pickup Address :</td>
+                      <td><input type="text" class="text" name="address1" id="modal_booking_address1" value=""></td>
+                    </tr>
+                      <tr>
+                      <td>Dropoff Address : </td>
+                      <td><input type="text" class="text" name="address2" id="modal_booking_address2" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Pickup Date :</td>
+                      <td><input type="text" class="text" name="date" id="modal_booking_dt" value=""></td>
+                    </tr>
+                    
+                     <tr>
+                      <td>Pickup Time :</td>
+                      <td><input type="text" class="text" name="time" id="modal_booking_tm" value=""></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Passengers :</td>
+                        <td><input type="text" name="np" id="modal_booking_np" class="text" value=""></td>
+                      </tr>
+                      <tr>
+                        <td>Infants :</td>
+                        <td><input type="text" name="infants" id="modal_booking_infants" class="text" value=""></td>
+                      </tr>
+                      <tr>
+                          <td>Luggages :</td>
+                          <td><input type="text" name="nl" id="modal_booking_nl" class="text" value=""></td>
+                        </tr>
+                        
+                         <tr>
+                      <td>Flight Details :</td>
+                      <td><input type="text" class="text" name="location" id="modal_booking_location" value=""></td>
+                    </tr>
+                    
+                     <tr>
+                      <td>Special Info :</td>
+                      <td><input type="text" class="text" name="info" id="modal_booking_info" value=""></td>
+                    </tr>
+                    
+                    <tr>
+                      <td>Cab Type :</td>
+                      <td><input type="text" class="text" name="type" id="modal_booking_type" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Child Ceat :</td>
+                      <td><input type="text" class="text" name="ceat" id="modal_booking_Child_ceat" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Meet & Greet :</td>
+                      <td><select  class="text" name="mg" id="modal_booking_mg" >
+                        <option value="10">Yes</option>
+                        <option value="0">No</option>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>Total Fare (£) :</td>
+                        <td><input type="text" class="text" name="fare" id="modal_booking_fare" value=""></td>
+                      </tr>
+                      <tr>
+                        <td>Driver Fare (£) :</td>
+                        <td><input type="text" class="text" name="dfare" id="modal_booking_dfare" value=""></td>
+                      </tr>
+
+                      <tr>
+                        <td></td>
+                        <td><button id="BookingUpdate">UPDATE</button></td>
+                      </tr>
+
+                       </tbody></table></div>
+                         
+                         
+                         
+                            <div id="driver" class="tab-pane fade"> 
+                                
+
+                  
+                                <h3>Manual Allocation</h3>
+                                       <table class="manalloc-table">
+               <tbody>
+
+                   <tr>
+          <td><select name="drvid" id="drvid"  class="selectit" autocomplete="off"></select> </td>
+          <td><input type="text" class="controls" required="required" id="amt" name="amt" placeholder="Enter Amount"></td>
+          <td><button class="buttongreen" onclick="manual_alloc();">Allocate </button></td>
+        </tr>
+             </tbody> 
+              </table>
+                                
+                     <h3>Drivers Bidded</h3>
+                                
+                      <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
+        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
+            <tr style="border:1px solid #e4e4e4;">
+                <th>Driver Id</th>
+                <th>Driver Name</th>
+                <th>Bidded Amount</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody id="Allocate_Table">
+        </tbody>
+      </table>
+                         </div>
+                         
+                         
+                           <div id="sms" class="tab-pane fade sms">
+                          <!--- future requirement     <p>SMS Status</p>
+                                <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
+        <thead class="mc-table-head"  style="border:1px solid #e4e4e4;">
+            <tr style="border:1px solid #e4e4e4;">
+               
+                <th>Driver</th>
+                <th>Contact Number</th>
+                <th>Status</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Azhwar Khan</td>
+                <td>07818065914</td>
+                <td>Sent</td>
+               
+            </tr>
+                 <tr>
+                <td>Amila Jhonson</td>
+                <td>073894639332</td>
+                <td>Sent</td>
+               
+            </tr>
+                          </tbody></table>  --->
+                               <div class="row">
+                  <div class="col-md-12">
+                    <p class="sms">Passenger Details</p>
+        <input type="text" class="dark-controls" id="id_number1" name="number1"  value="" placeholder="Enter Contact Number">     
+           <textarea class="dark-controls" rows="9" id="id_message1" name="message1" style="width:100%;min-height:200px;"></textarea>
+       
+        
+        </div>
+
+           <div class="col-md-12">
+            
+                
+                       <p class="sms" style="padding:10px;margin-top:10px;">Driver Details</p>
+                       
+                
+                       
+        <input type="text" class="dark-controls" id="id_number2" name="number2" value=""placeholder="Enter Contact Number">     
+           <textarea class="dark-controls" rows="9" id="id_message2" name="message2" style="width:100%;min-height:200px;"></textarea>
+          
+      </div>
+
+    <center> <button class="mc-cta" id="send_sms">SEND NOW</button></center> 
+    </div>
+                         </div>
+                         
+                
+                    </div>
+         
+                </div>
+                <div class="mc-modal-footer">
+                  <div class="mc-flex">
+                    <a class="mc-btn-update">Update</a>
+                    <a class="mc-btn-cancel">Cancel</a>
+                  </div>
+                </div>
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+    <!---modals-section------>
+
+
+<!----custom-filter-modal-->
+<div class="modal modal-bg" id="custom-filters" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content max-width-300">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Custom Filters</h4>
+      </div>
+      <div class="modal-body pad-0">
+          <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span id="fromto" ></span> 
+        <i class="fa fa-caret-down"></i>
+        </div>
+          <div id="filterList">
+            <ul>
+            <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all" > All</li>
+                <li><input class="input-filter" type="checkbox" value="booked" id="1" > Booked</li>
+                <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirmed</li>
+                <li>    <input class="input-filter" type="checkbox" value="comitted" id="3" > Allocated</li>
+                <li><input class="input-filter" type="checkbox" value="completed" id="4"> Completed</li>
+                <li><input class="input-filter" type="checkbox" value="cancelled" id="5" > Cancelled</li>
+                <input class="input-filter" type="hidden" value="" id="filter_checklist" >
+            </ul><br>
+            <div class="mc-flex">
+            <button class="button-style" data-dismiss="modal" id="filter_load" >Load</button>
+            <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+  </div>
+    </div>
+    
+  </div>
+</div>
+
+<!---end custom-filter-modal-->
+
+
+    
+<script>$(document).ready(function() {
+    $('img').tooltip()
+} );</script>
+   
+    
+<script>
+    var placeSearch, autocomplete, autocomplete2, autocomplete3, autocomplete4;
+
+    function initAutocomplete() {
+
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+
+
+        autocomplete2 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete2')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete2.addListener('place_changed', fillInAddress);
+
+
+        autocomplete3 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete3')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete3.addListener('place_changed', fillInAddress);
+
+
+        autocomplete4 = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */
+            (document.getElementById('autocomplete4')), {
+                types: ['geocode'],
+                componentRestrictions: {
+                    country: 'uk'
+                }
+            });
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete4.addListener('place_changed', fillInAddress);
+
+
+    }
+
+
+    function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+        var place = autocomplete2.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+        var place = autocomplete3.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+        var place = autocomplete4.getPlace();
+
+        for (var component in componentForm) {
+            document.getElementById(component).value = '';
+            document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+            var addressType = place.address_components[i].types[0];
+            if (componentForm[addressType]) {
+                var val = place.address_components[i][componentForm[addressType]];
+                document.getElementById(addressType).value = val;
+            }
+        }
+
+
+    }
+</script>
+
+<script>
+function hideshowFunction() {
+  var x = document.getElementById("mc-display");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+    
+<!--
+   <script>$(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(350).css({'overflow':'visible'});
+})</script>
+-->
+
+
+    
+        <script type="text/javascript">
+$(function() {
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+
+    $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    }, cb);
+
+    cb(start, end);
+});
+</script>
+    
+   
+    <script src="../assets/js/datatable.js"></script>
+    <script src="../assets/js/server.js"></script>
+
+
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>       
+    
+<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCV_e29ZNv8f0S3-2IzNwIPqc-ycslxNBE&amp;callback=initMap"></script>
+    </body>
+  
+   
+</html>
+
+

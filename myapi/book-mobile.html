@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <title>Mobile Book | Minicabee </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body>
+ <nav class="mc-mobile-navbar d-flex">
+  <div class="container-fluid">
+   <div class="navbar-logo">
+    <a class="d-flex" href=""> 
+<img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"> <span>Bookings</span></a>   
+   </div>   
+  </div>
+ </nav> 
+
+<br><br><br><br>
+ <section class="booking-form">
+      <div class="tab-content">
+        <div id="oneway" class="tab-pane fade in active">
+    <div class="form-group">
+        <label for="usr">Pickup from:</label>
+        <input type="text" class="form-control" placeholder="Enter Pickup postcode" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="usr">Dropoff postcode:</label>
+        <input type="text" class="form-control" placeholder="Enter Dropoff postcode" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="usr">Via Point:</label>
+        <input type="text" class="form-control" placeholder="Enter Via Point" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label for="usr">Pickup Date:</label>
+        <input type="text" class="form-control" name="datepicker"  />
+      </div>
+      <div class="form-group">
+        <label for="usr">Pickup Time:</label>
+        <select class="form-control" >
+            <option value="00:00">00:00</option>
+            <option value="00:15">00:15</option>
+            <option value="00:30">00:30</option>
+            <option value="00:45">00:45</option>
+            <option value="01:00">01:00</option>
+            <option value="01:15">01:15</option>
+            <option value="01:30">01:30</option>
+            <option value="01:45">01:45</option>
+            <option value="02:00">02:00</option>
+            <option value="02:15">02:15</option>
+            <option value="02:30">02:30</option>
+            <option value="02:45">02:45</option>
+            <option value="03:00">03:00</option>
+            <option value="03:15">03:15</option>
+             <option value="3:30">03:30</option>
+            <option value="03:45">03:45</option>
+            <option value="04:00">04:00</option>
+            <option value="04:15">04:15</option>
+            <option value="04:30">04:30</option>
+            <option value="04:45">04:45</option>
+            <option value="05:00">05:00</option>
+            <option value="05:15">05:15</option>
+            <option value="05:30">05:30</option>
+            <option value="05:45">05:45</option>
+            <option value="06:00">06:00</option>
+            <option value="06:15">06:15</option>
+            <option value="06:30">06:30</option>
+            <option value="06:45">06:45</option>
+            <option value="07:00">07:00</option>
+            <option value="07:15">07:15</option>
+            <option value="07:30">07:30</option>
+            <option value="07:45">07:45</option>
+            <option value="08:00">08:00</option>
+            <option value="08:15">08:15</option>
+            <option value="08:30">08:30</option>
+            <option value="08:45">08:45</option>
+            <option value="09:00">09:00</option>
+            <option value="09:15">09:15</option>
+            <option value="09:30">09:30</option>
+            <option value="09:45">09:45</option>
+            <option value="10:00">10:00</option>
+            <option value="10:15">10:15</option>
+            <option value="10:30">10:30</option>
+            <option value="10:45">10:45</option>
+            <option value="11:00">11:00</option>
+            <option value="11:15">11:15</option>
+            <option value="11:30">11:30</option>
+            <option value="11:45">11:45</option>
+            <option value="12:00">12:00</option>
+            <option value="12:15">12:15</option>
+            <option value="12:30">12:30</option>
+            <option value="12:45">12:45</option>
+            <option value="13:00">13:00</option>
+            <option value="13:15">13:15</option>
+            <option value="13:30">13:30</option>
+            <option value="13:45">13:45</option>
+            <option value="14:00">14:00</option>
+            <option value="14:15">14:15</option>
+            <option value="14:30">14:30</option>
+            <option value="14:45">14:45</option>
+            <option value="15:00">15:00</option>
+            <option value="15:15">15:15</option>
+            <option value="15:30">15:30</option>
+            <option value="15:45">15:45</option>
+            <option value="16:00">16:00</option>
+            <option value="16:15">16:15</option>
+            <option value="16:30">16:30</option>
+            <option value="16:45">16:45</option>
+            <option value="17:00">17:00</option>
+            <option value="17:15">17:15</option>
+            <option value="17:30">17:30</option>
+            <option value="17:45">17:45</option>
+            <option value="18:00">18:00</option>
+            <option value="18:15">18:15</option>
+            <option value="18:30">18:30</option>
+            <option value="18:45">18:45</option>
+            <option value="19:00">19:00</option>
+            <option value="19:15">19:15</option>
+            <option value="19:30">19:30</option>
+            <option value="19:45">19:45</option>
+            <option value="20:00">20:00</option>
+            <option value="20:15">20:15</option>
+            <option value="20:30">20:30</option>
+            <option value="20:45">20:45</option>
+            <option value="21:00">21:00</option>
+            <option value="21:15">21:15</option>
+            <option value="21:30">21:30</option>
+            <option value="21:45">21:45</option>
+            <option value="22:00">22:00</option>
+            <option value="22:15">22:15</option>
+            <option value="22:30">22:30</option>
+            <option value="22:45">22:45</option>
+            <option value="23:00">23:00</option>
+            <option value="23:15">23:15</option>
+            <option value="23:30">23:30</option>
+            <option value="23:45">23:45</option>
+          </select>
+      </div>
+      <div class="form-group">
+       <button class="calculate-fare">Calculate Fare</button>
+      </div>
+
+      <div class="mc-booking-information">
+
+        <div class="form-group">
+          <label for="usr">Passenger name:</label>
+          <input type="text" class="form-control" placeholder="Enter Passenger Name" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Email Address:</label>
+          <input type="text" class="form-control" placeholder="Enter Passenger Email Address" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Contact Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Contact Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Alternater Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Alternate Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Alternater Number:</label>
+          <input type="text" class="form-control" placeholder="Enter Alternate Number" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Pickup Full Address:</label>
+          <input type="text" class="form-control" placeholder="Eg: Building Number " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Dropoff Full Address:</label>
+          <input type="text" class="form-control" placeholder="Eg: Building Number " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Flight Details:</label>
+          <input type="text" class="form-control" placeholder="Eg: EZY167 " autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Payment Method:</label>
+          <select class="select form-control" required="" id="pay" name="pay">
+            <option value="card">Debit / Credit card (3% Admin Charges)</option>
+            <option value="paypal">Paypal Transaction(5% quote-card Charges)</option>
+            <option value="cash">Cash on Ride (Deposit Required)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Meet & Greet:</label>
+          <select class="select form-control">
+            <option value="1">No I don't Need </option>
+            <option value="2">Yes I Need Meet &amp; Greet.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Child Seat:</label>
+          <select name="pay" id="pay" class="select form-control">
+            <option value="1">No I don't Need </option>
+            <option value="2">Yes I Need Meet &amp; Greet.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usr">Special Info:</label>
+          <textarea rows="5" cols="50" class="form-control"></textarea>
+        </div>
+        <br><br><br><br>
+      </div>  
+      </div>
+      </div>
+
+ </section>
+ 
+ <div class="footer">
+<div class="d-flex">
+ <p><span>12</span> Miles</p>   
+ <p><span>1</span> hour </p>   
+ <a class="book-now">Book now</a>
+
+</div>
+  </div>
+</body>
+<style>
+ .mc-mobile-navbar
+ {
+     height:50px;
+     width:100%;
+     position: fixed;
+     box-shadow: 0 0px 20px rgba(116, 113, 113, 0.1);
+     background-color:#4E019F;
+ }   
+ .mc-nav-logo
+ {
+     margin:5px;
+     max-width:40px;
+     width:100%;
+ }
+ .navbar-logo span
+ {
+     padding: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px 0px;
+ }
+ .d-flex
+ {
+  display:flex;   
+ }
+ .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 35px;
+  border-top:1px solid #cccccc;
+  background-color: #f4f4f4;
+  color: white;
+  text-align: center;
+}
+.booking-form
+{
+    max-width:380px;
+    width:100%;
+    margin:0px auto;
+    padding:10px;
+}
+.nav-pills
+{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    top: 50px;
+    border-bottom: 1px solid #efefef;
+}
+.nav-pills li
+{
+    width:50% !important; 
+}
+.nav-pills>li>a
+{
+color:#000000;
+border-radius:0px;
+text-align: center;
+font-weight:600;
+padding: 7px 15px;
+letter-spacing: 0.5px;
+}
+.nav-pills>li.active>a
+{
+color: #fff;
+background-color: #F5737F !important;
+}
+.form-control
+{
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #f1f1f1;
+    background-image: none;
+    border: 1px solid #ccc; 
+    border-radius:0px;
+    box-shadow: none;
+}
+.calculate-fare
+{
+    padding:5px 20px;
+    border:none;
+    font-size:14px;
+    font-weight:600;
+    background-color:#6ce4a8;
+}
+.footer p
+{
+padding:5px 10px;
+color:#000000; 
+font-weight:500;
+}
+.book-now
+{
+    text-decoration: none !important;
+    padding:8px 10px;
+    color:#000000;
+    background-color:#6ce4a8;
+    position: absolute;
+    font-weight:500;
+    right:0;
+    cursor: pointer;
+}
+.book-now:hover
+{
+  background-color:#3ec280;
+}
+</style>
+
+<script>
+    $(function() {
+      $('input[name="datepicker"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+      });
+    });
+    </script>
+</html>
