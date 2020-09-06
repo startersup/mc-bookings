@@ -209,7 +209,7 @@ if($action =="")
     </div>
 
     <div id="emptyPreview" class="empty_states" style="display:block">
-      <img class="empty_image" src="../assets/images/empty-states/mc_empty_states.png">
+      <center><img class="empty_image" src="../assets/images/empty-states/mc_empty_states.png"></center>
       <p style="text-align:center;">Sorry No Preview Available</p>
     </div>
 
