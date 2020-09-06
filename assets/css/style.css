@@ -2025,7 +2025,7 @@ display: block;
 }
 #empty_state p
 {
-    text-align: center;
+    text-align: center !important;
     font-weight:600;
     padding:10px;
     font-family: 'Montserrat', sans-serif;
