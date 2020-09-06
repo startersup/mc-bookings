@@ -2,8 +2,9 @@ var myProtocol = window.location.protocol;
 var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv={};
-
-
+var InvoiceType='';
+var minicabee_info="Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk";
+var taxicode_info="Britannia Travel Solution<br> britanniabooking@gmail.com <br> www.britannia-taxis.com";
 
 
 function get_response(myGetUrl, mydata) {
@@ -13,6 +14,17 @@ function get_response(myGetUrl, mydata) {
       data: mydata,
       async: false,
       success: function(data) {
+        if(InvoiceType == 'minicabee')
+        {
+          $('#minicabee_show').show();
+          $('#taxicode_show').hide();
+          $('#taxi_info').html(minicabee_info);
+        }else if(InvoiceType == 'taxicode')
+        {
+          $('#minicabee_show').hide();
+          $('#taxicode_show').show();
+          $('#taxi_info').html(taxicode_info);
+        }
            if((mydataInv["for"] == 'driver' || mydataInv["for"] == 'provider')  && mydataInv["id"] == 'e')
           {
             setList(data);
@@ -210,8 +222,20 @@ $(document).on('change', '#all', function () {
         document.getElementById('all').checked = false;
         document.getElementById('driver').checked = false;
     }
-      
+  });
+    
+    $(document).on('change', '#minicabee', function () {
+      if(this.checked) {
+       InvoiceType = 'minicabee';
+        document.getElementById('taxicode').checked = false;
+    }
+  });
 
+    $(document).on('change', '#taxicode', function () {
+      if(this.checked) {
+        InvoiceType = 'taxicode';
+        document.getElementById('minicabee').checked = false;
+    }
 });
 
 
@@ -256,7 +280,15 @@ function getInvoice()
   mydataInv["id"]='e';
   mydataInv["mdata"]='e';
   mydataInv["invno"]='e';
-    var myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  var myGetUrl = '';
+  if(InvoiceType == 'minicabee')
+  {
+     myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  }else if(InvoiceType == 'taxicode')
+  {
+    myGetUrl = myUrl + "myapi/ots/DriverInvoice.php";
+  }
+    
   
     get_response(myGetUrl, mydataInv);
 }

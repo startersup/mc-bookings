@@ -80,8 +80,9 @@ if($action =="")
                       <tr>
                         <td class="title"
                           style="font-weight:800;font-size:45px;padding:5px;vertical-align:top;padding-bottom:20px;line-height:45px;color:#333;">
-                          <img src="https://minicabee.co.uk/assets/images/logo.png"
+                          <img id="minicabee_show" src="https://minicabee.co.uk/assets/images/logo.png"
                             style="width:100%; max-width:200px !important;">
+                            <a class="navbar-brand" href="/" id="taxicode_show"><span>Britannia</span> Cars</a>
                         </td>
 
                         <td style="text-align:right !important;padding:5px;vertical-align:top;padding-bottom:20px;"
@@ -103,8 +104,8 @@ if($action =="")
                           Mr. -------<br> ---------
                         </td>
 
-                        <td style="float:right !important;padding:5px;vertical-align:top;">
-                          Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk
+                        <td style="float:right !important;padding:5px;vertical-align:top;" id="taxi_info">
+                          
                         </td>
                       </tr>
                     </table>
