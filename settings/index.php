@@ -1,80 +1,136 @@
+<?php
 
-    <?php
-   include('../loadcurrentpage.php'); 
-if($action =="")
-  ?>
-<!----Sidebar-ends----->    
-    <div class="mc-flex">
-<!------secondary-sidebar------>
-    
-    <div class="mc-secondary-sidebar mc-top-rev">
-        <h4>Settings</h4>
-        <ul>
-            <li><a href="/settings/">General</a></li>
-            <li><a href="/settings/user/">User Settings</a></li>
-            <li><a href="/settings/fare/">Fare Settings</a></li>
-            <li><a href="/settings/promo/">Promo Settings</a></li>
-            <li><a href="/settings/hellobar/">Hellobar Settings</a></li>
-            <li><a href="/settings/notifications/">Notifications Settings</a></li>
-            </ul>
-    </div>
-    
-    <!---mainbar-starts----->
-    
-    <div class="mc-dash-sub-mainbar">
-<div class="mc-sub-mainbar-components">
-	  <div class="mc-general-form">
-          <h3>General Settings</h3>
-        <form action="/action_page.php">
-            <div class="form-group">
-                <label for="email">Company Logo</label><br>
-                <div class="row">
-                    <div class="col-md-4">
-     <img src="../assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar-lg">
-    </div>
-    <div class="col-md-8">
-        <div class="upload-wrapper">
-        <input type="file" id="myFile" name="filename">
-      </form></div>
-    </div>
-</div>
-              </div>
-            <div class="form-group">
-              <label for="email">Company Name</label>
-              <input type="email" class="controls" id="name" placeholder="Enter Company Name" name="email">
-            </div>
-            <div class="form-group">
-              <label for="pwd">Company Email Address</label>
-              <input type="email" class="controls" id="pwd" placeholder="Enter Company Email Address" name="pswd">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Company Size</label>
-                <select class="selectit" name="cars" id="size">
-                    <option value="1-5">1-5 Employees</option>
-                    <option value="5-10">5-10 Employees</option>
-                    <option value="10-20">10-20 Employees</option>
-                    <option value="20-50">20-50 Employees</option>
-                    <option value="50-100">50-100 Employees</option>
-                    <option value="100-200">100-200 Employees</option>
-                    <option value="200+">200+ Employees</option>
-                  </select>
-              </div>
-              <div class="form-group">
-                <label for="pwd">Covering Locations</label>
-                <input type="email" class="controls" id="pwd" placeholder="Enter Covering Locations" name="pswd">
-              </div>
-            <button type="submit" class="btn btn-primary">SAVE</button>
-          </form>  
-      </div>
-        </div>
-</div>
-      <!---mainbar-starts----->
-    </div>
-<!---modals-section------>
 
-    
+$q=$_POST["q"];
+if($q == "")
+{
+  $q="admin/";
+}
 
-                         
-                         
-                         
-                 
+
+$rootfolder= $_SERVER['DOCUMENT_ROOT']; 
+
+include($rootfolder."/myapi/sessionCheck.php");
+
+if(! $boolSession)
+{
+
+  echo ('<script> window.location.href ="' .$link."://". $host . '/login/"</script>');
+
+ exit(0);
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<?php include('common_header.php'); ?>
+
+<body >
+
+
+  <!-- Pre Loader Strats  -->
+  <?php include('preLoader.php'); ?>
+  <!----- Pre Loader Ends ---->
+
+  <!----navbar-starts----->
+  <?php include('navbar.php'); ?>
+  <!----navbar-ends----->
+
+  <!----sidebar-starts----->
+  <?php include('sidebar.php'); ?>
+  <!----Sidebar-ends-----> 
+
+  <!---mainbar-starts----->
+
+<div id="pageLoader" > <!---------- Single Page div Starts ---->    
+</div> <!---- Single page div ----------->
+
+  <!---mainbar-Ends----->
+
+  <!---modals-section------>
+
+  <!--Notification Modal -->
+  <?php include('notification.php'); ?>
+  <!--Notification Modal -->
+
+<!------ Secondary Script ----------->
+<?php include('secondary_script.php'); ?>
+<!-------- Secondary script ends ----->
+
+<!------ Alert Modal ----------->
+<?php include('alert_Modal.php'); ?>
+<!-------- Alert Modal ends ----->
+
+<!-------- Action Modal ends ----->
+<?php include('action_modal.php'); ?>
+<!-------- Action Modal ends ----->
+
+  </body>
+<script>
+  $(document).ready(function () {
+
+    defaultLoader('<?php echo($q); ?>');
+
+});
+  </script>
+
+  
+<script type="text/javascript">
+    $(function () {
+
+      var start = moment().subtract(29, 'days');
+      var end = moment();
+
+      function cb(start, end) {
+        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+      }
+
+      $('#reportrange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+          'Today': [moment(), moment()],
+          'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+          'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf(
+            'month')]
+        }
+      }, cb);
+
+      cb(start, end);
+    });
+  </script>
+
+  
+<script>
+    function printDiv() {
+
+      var divToPrint = document.getElementById('DivIdToPrint');
+
+      var newWin = window.open('', 'Print-Window');
+
+      newWin.document.open();
+
+      newWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</body></html>');
+
+      newWin.document.close();
+
+      setTimeout(function () {
+        newWin.close();
+      }, 10);
+
+    }
+  </script>
+
+
+  <script>
+    $(document).ready(function () {
+      $('img').tooltip()
+    });
+  </script>
+
+</html>
