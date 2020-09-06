@@ -2030,6 +2030,11 @@ display: block;
     padding:10px;
     font-family: 'Montserrat', sans-serif;
 }
+.dark-head
+{
+    font-weight:700;
+    letter-spacing: 0.3px;
+}
 
 .empty_image
 {
