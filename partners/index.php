@@ -2,9 +2,7 @@
    include('../loadcurrentpage.php'); 
 if($action =="")
   ?>
-    <div class="mc-sub-section" style="margin-left:72px;">
-     <p class="dark-head">Partners Database</p>   
-    </div>
+
 <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
 	    <table id="mc-datatables" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
