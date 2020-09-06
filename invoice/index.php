@@ -27,7 +27,7 @@ if($action =="")
 
   <!------secondary-sidebar------>
 
-  <div class="mc-teritory-sidebar">
+  <div class="mc-teritory-sidebar" style="margin-left:75px;">
     <div class="report-width">
       <div id="reportrange"
         style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
