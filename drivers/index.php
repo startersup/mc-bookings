@@ -2,8 +2,8 @@
    include('../loadcurrentpage.php'); 
 if($action =="")
   ?>
-    <div class="mc-sub-section">
-     <p>Driver Database</p>   
+    <div class="mc-sub-section" style="margin-left:72px;">
+     <p  class="dark-head">Driver Database</p>   
     </div>
 <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">

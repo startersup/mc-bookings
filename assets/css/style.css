@@ -357,8 +357,6 @@ div.mc-sp-charts {
     border: 1px solid #63cc7f;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px;
     border-radius: 2px;
     font-size: 10px;
     font-weight: 700;
@@ -443,6 +441,13 @@ div.mc-sp-charts {
     background: #fff;
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
   border-bottom: 1px solid #ebf0f5;
+}
+.dark-head
+{
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+    color:#000000;
 }
 .mc-sub-left, .mc-sub-right
 {
@@ -759,14 +764,14 @@ border-right: 1px solid #ebf0f5;
 }
 .mc-teritory-sidebar ul li
 {
-    margin-top:20px;
+    margin-top:7px;
     display: inline-block;
-    padding:0px 30px 0px 0px;
+    padding:0px 15px 0px 0px;
 }
 
 .mc-teritory-sidebar ul li a
 {
-      font-size:14px !important;
+      font-size:11px !important;
          color: #000000 !important;
     font-weight:500;
     text-decoration: none;
@@ -1231,11 +1236,12 @@ background-color: #4e009f !important;
 }
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
-    padding: 15px 10px;
-    line-height: 1.42857143;
+    padding: 10px;
+    line-height: 26px;
     vertical-align: top;
-      font-weight: 500;
-    font-size:12.5px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
     border-top: 1px solid rgba(221, 221, 221, 0.38);
 }
 /* .table>tbody>tr.even

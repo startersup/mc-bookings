@@ -44,6 +44,11 @@ var router = {
         "load": "loadDriver",
         "view": "drivers/"
     },
+    "tracking": {
+        "url": "tracking/",
+        "load": "",
+        "view": "tracking/"
+    },
     "emails": {
         "url": "emails/templates/",
         "load": "",
