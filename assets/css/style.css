@@ -2024,12 +2024,12 @@ display: block;
 }
 
 /******empty_states images****/
-.empty_state
+#empty_state
 {
     max-width:400px;
     margin:200px auto;
 }
-.empty_state p
+#empty_state p
 {
     text-align: center;
     font-weight:600;
