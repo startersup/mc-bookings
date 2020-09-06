@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+  <title>Email-Marketing | Minicabee Travel Solutions</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script language="JavaScript" src="./assets/js/datatable.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css">
+    
+  <link rel="stylesheet" href="../../assets/css/style.css">
+        
+    
+  <script> 
+    $(function(){
+      $("#navbar").load("../navbar.html"); 
+    });
+    </script> 
+  <script>
+    jQuery(document).ready(function ($) {
+
+      $('.live-search-list .driverslist').each(function () {
+        $(this).attr('data-search-term', $(this).text().toLowerCase());
+      });
+
+      $('.live-search-box').on('keyup', function () {
+
+        var searchTerm = $(this).val().toLowerCase();
+
+        $('.live-search-list .driverslist').each(function () {
+
+          if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length <
+            1) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+
+        });
+
+      });
+
+    });
+  </script>
+
+</head>
+
+<body>
+
+      <!----navbar-starts----->
+      <div id="navbar"></div>
+  <!----navbar-ends----->
+  <div class="mc-dash-sidebar">
+    <ul>
+      <li><a href="../"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/analytics.svg">
+        <span class="mc-controls">Dashboard</span>
+        <span class="tooltiptext"> Dashboard</span>
+         </div></a></li> 
+         <li><a href="../bookings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/bookings.svg">
+          <span class="mc-controls">Bookings</span>
+          <span class="tooltiptext"> Bookings</span>
+           </div></a></li> 
+           <li><a href="../company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
+            <span class="mc-controls">Company</span>
+            <span class="tooltiptext"> Company</span>
+             </div></a></li> 
+             <li><a href="../tracking"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/track.svg">
+              <span class="mc-controls">Tracking</span>
+              <span class="tooltiptext"> Tracking</span>
+               </div></a></li> 
+               <li><a href="../marketing/email-marketing"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
+                <span class="mc-controls">Marketing</span>
+                <span class="tooltiptext"> Marketing</span>
+                 </div></a></li> 
+                   <li><a href="../settings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/gear.svg"><br>
+                    <span class="mc-controls">Settings</span>
+                    <span class="tooltiptext"> App Settings</span>
+                     </div></a></li>       
+   </ul>
+     
+</div>
+    
+<!------secondary-sidebar------>
+
+
+    <div class="mc-secondary-sidebar" style="margin-top:30px;width:230px;">
+        <div class="mc-driver-head">Drivers List</div>
+        <div class="search-wrapper">
+            <input class="live-search-box controls" type="text" placeholder="search for Drivers"
+            autocomplete="off">
+        </div>
+    <ul class=" searcher live-search-list" style="height:90vh;overflow-y:auto;">
+    <li class="driverslist"><a>Azhwar Khan<div class="online"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed<div class="online"></div></a></li>
+    <li class="driverslist"><a>Rauf Khan <div class="offline"></div></a></li>
+    <li class="driverslist"><a>Mohammed Paleel<div class="offline"></div></a></li>
+    <li class="driverslist"><a>Muzammil Khan <div class="idle"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed <div class="online"></div></a></li>
+    <li class="driverslist"><a>mara Khan <div class="idle"></div></a></li>
+    <li class="driverslist"><a>deepak Paleel <div class="offline"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed<div class="online"></div></a></li>
+    <li class="driverslist"><a>halal Khan <div class="offline"></div></a></li>
+    <li class="driverslist"><a>babu Paleel<div class="offline"></div></a></li>
+    <li class="driverslist"><a>neet Khan <div class="idle"></div></a></li>
+    <li class="driverslist"><a>maam Ahamed <div class="online"></div></a></li>
+    <li class="driverslist"><a>sai Ahamed<div class="online"></div></a></li>
+    <li class="driverslist"><a>vinodhan Khan <div class="offline"></div></a></li>
+    <li class="driverslist"><a>Mohammed Paleel<div class="offline"></div></a></li>
+    <li class="driverslist"><a>Azhwar Khan <div class="idle"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed <div class="online"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed<div class="online"></div></a></li>
+    <li class="driverslist"><a>Rauf Khan <div class="offline"></div></a></li>
+    <li class="driverslist"><a>Mohammed Paleel<div class="offline"></div></a></li>
+    <li class="driverslist"><a>Azhwar Khan <div class="idle"></div></a></li>
+    <li class="driverslist"><a>Riyas Ahamed <div class="online"></div></a></li>
+    </ul>
+    </div>
+    
+    <!---mainbar-starts----->
+    
+    <div class="mc-dash-mainbar">
+<div class="mc-mainbar-components">
+    <div class="mc-float-bar">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box"></div>
+    <div id="map" style="  position: absolute;
+    left: 295px;
+    margin-top:-50px;
+    height:100vh;
+    margin-right:0px;
+    max-width:2000px;
+    width: calc(100% - 10px);
+    text-align: center;"></div>
+    <div class="mc-right-bar">
+    <div class="mc-tr-sidebar">
+    
+    </div>
+    </div>
+        </div>
+</div>
+      <!---mainbar-starts----->
+    
+<!---modals-section------>
+    
+    <!--Notification Modal -->
+	<div class="modal right fade" id="notification-bar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="mc-close close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+					<h4 class="modal-title" id="myModalLabel2">Notifications</h4>
+				</div>
+
+				<div class="modal-body">
+                    <ul>
+                    <li></li>
+                    </ul>
+				</div>
+
+			</div><!-- modal-content -->
+		</div><!-- modal-dialog -->
+	</div><!-- modal -->
+    
+    
+    
+<script>$(document).ready(function() {
+    $('img').tooltip()
+} );</script>
+    
+<script>    
+function otherFunction() {
+  document.getElementById("mc-dropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.mc-others-icon')) {
+    var dropdowns = document.getElementsByClassName("dropdown-set");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}</script>
+    
+    <script>
+       function initAutocomplete() {
+        var myStyles =[
+    {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [
+              { visibility: "off" }
+        ]
+    }
+];
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -33.8688, lng: 151.2195},
+          zoom: 13,
+          disableDefaultUI: true,
+          styles: myStyles ,
+          mapTypeId: 'roadmap'
+        });
+
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+    </script>
+    
+
+    
+    
+      
+    
+</body> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJNbx7wr01p7h2a0psOsVieTc7Ge1LB8&libraries=places&callback=initAutocomplete"
+async defer></script>
+
+   
+</html>
+
+
