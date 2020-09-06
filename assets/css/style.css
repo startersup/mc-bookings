@@ -444,6 +444,13 @@ div.mc-sp-charts {
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
   border-bottom: 1px solid #ebf0f5;
 }
+.dark-head
+{
+    font-size: 14px !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+    color:#000000;
+}
 .mc-sub-left, .mc-sub-right
 {
     display:inline;

@@ -3,7 +3,7 @@
 if($action =="")
   ?>
     <div class="mc-sub-section" style="margin-left:72px;">
-     <p>Partners Database</p>   
+     <p class="dark-head">Partners Database</p>   
     </div>
 <div class="mc-dash-mainbar">
 <div class="mc-mainbar-components">
