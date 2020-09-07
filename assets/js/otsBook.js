@@ -65,7 +65,7 @@ var GLStatusBooking = {
     var mydata = {};
     var myGetUrl = myUrlOts + "myapi/alldriver.php";
   
-    get_url_response(myGetUrl, mydata, 'setAllDriver');
+    get_url_response(myGetUrl, mydata, 'setAllDriverOts');
   }
   
   function LoadJsOts()
@@ -257,7 +257,7 @@ function dataHandle(api,allData)
       
   }
   
-  function setAllDriver(data) {
+  function setAllDriverOts(data) {
   
     driverListOts = JSON.parse(data);
     var loop= driverListOts.length;

@@ -50,7 +50,7 @@ if ($action == "")
             <th style="width:15%;">Pickup From</th>
             <th style="width:15%;">Dropoff To</th>
             <th>D&T</th>
-            <th>Type</th>
+            <th>Name</th>
             <th>Fare</th>
             <th>Status</th>
             <th>Action</th>
@@ -95,35 +95,35 @@ if ($action == "")
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Pick Up:</label>
-                    <input type="text" required class="form-feild controls" id="src" name="src" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="src" name="src" placeholder="">
                   </div>
 
                   <div class="col-md-6 ">
                     <label>Drop Off:</label>
-                    <input type="text" required class="form-feild controls" id="des" name="des" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="des" name="des" placeholder="">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>No Of Passengers:</label>
-                    <input type="text" required class="form-feild controls" id="passenger" name="passenger" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="passenger" name="passenger" placeholder="">
                   </div>
 
                   <div class="col-md-6 ">
                     <label>No Of Luggage:</label>
-                    <input type="text" required class="form-feild controls" id="luggage" name="luggage" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="luggage" name="luggage" placeholder="">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Date Of Journey:</label>
-                    <input type="text" required class=" controls datepicker " id="dt_temp" placeholder="Enter Passenger Name">
+                    <input type="text" required class=" controls datepicker " id="dt_temp" placeholder="">
                     <input type="hidden" class="form-feild controls" id="dt" name="dt">
                   </div>
 
                   <div class="col-md-6 ">
                     <label>Taxicode / OTS Id:</label>
-                    <input type="text" required class="form-feild controls" id="bookid" name="bookid" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="bookid" name="bookid" placeholder="">
                   </div>
                 </div>
 
@@ -181,37 +181,37 @@ if ($action == "")
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Passenger Name:</label>
-                    <input type="text" required class="form-feild controls" id="name" name="name" placeholder="Enter Passenger Name">
+                    <input type="text" required class="form-feild controls" id="name" name="name" placeholder="">
                   </div>
                   <div class="col-md-6">
                     <label>Passenger Email:</label>
-                    <input type="text" class="form-feild controls" id="mail" name="mail" required placeholder="Enter Passenger Email">
+                    <input type="text" class="form-feild controls" id="mail" name="mail" required placeholder="">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Contact Number:</label>
-                    <input type="text" class="form-feild controls" required id="num1" name="num1" placeholder="Enter Passenger Contact" value="+44">
+                    <input type="text" class="form-feild controls" required id="num1" name="num1" placeholder="" value="+44">
                   </div>
                   <div class="col-md-6 ">
                     <label>Alternate Number:</label>
-                    <input type="text" class="form-feild controls" id="num2" name="num2" placeholder="Enter Alternate Contact" value="+44">
+                    <input type="text" class="form-feild controls" id="num2" name="num2" placeholder="" value="+44">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
                     <label>Pickup Full Address:</label>
-                    <input type="text" class="form-feild controls" id="address1" name="address1" required placeholder="Eg:Building Number, Flat No">
+                    <input type="text" class="form-feild controls" id="address1" name="address1" required placeholder="">
                   </div>
                   <div class="col-md-6">
                     <label>Dropoff Full Address:</label>
-                    <input type="text" class="form-feild controls" id="address2" name="address2" required placeholder="Eg:Building Number, Flat No">
+                    <input type="text" class="form-feild controls" id="address2" name="address2" required placeholder="">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6 ">
                     <label>Flight Details:</label>
-                    <input type="text" class="form-feild controls" name="location" id="location" placeholder="Eg: B789">
+                    <input type="text" class="form-feild controls" name="location" id="location" placeholder="">
                   </div>
                   <div class="col-md-6 ">
                     <label>Payment Mode:</label>
