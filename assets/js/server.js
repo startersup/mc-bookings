@@ -552,10 +552,7 @@ function setModalData(myData) {
     message1_data =
       message1_data +
       "Mobile Number : " +
-      document.getElementById("modal_booking_num1").value +
-      "/" +
-      document.getElementById("modal_booking_num2").value +
-      "\n";
+      document.getElementById("modal_booking_num1").value;
     message1_data =
       message1_data +
       "Cab type : " +
@@ -575,13 +572,8 @@ function setModalData(myData) {
     var number1_data = myObj["base"].dnum1;
 
     var message2_data = "Reference Id : " + myObj["base"].refid + "\n";
-    message2_data = message2_data + "Driver name :" + myObj["base"].dname;
-    message2_data =
-      message2_data +
-      "Driver Number :" +
-      myObj["base"].dnum1 +
-      " / " +
-      myObj["base"].dnum2;
+    message2_data = message2_data + "Driver name :" + myObj["base"].dname+"\n";
+    message2_data = message2_data +  "Driver Number :" + myObj["base"].dnum1 ;
 
     var number2_data = myObj["base"].num1;
 
