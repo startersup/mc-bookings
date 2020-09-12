@@ -54,7 +54,7 @@ curl_close ($ch);
   $msgId=$server_output["sid"];
   $msgStatus=$server_output["status"];
     $sql="INSERT INTO `messageStatus` (`bookId`, `msgId`, `statusJson`, `smsType`, `sendNum`, `status`) VALUES ( '$refid', '$msgId', '$server_output','$smsType', '$to', '$msgStatus')";
-    $server_output["sql"]=$sql;
+   // $server_output["sql"]=$sql;
     echo ($server_output);
     $result_sts= mysqli_query($conn,$sql);
 ?>
