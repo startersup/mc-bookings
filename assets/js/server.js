@@ -552,7 +552,7 @@ function setModalData(myData) {
     message1_data =
       message1_data +
       "Mobile Number : " +
-      document.getElementById("modal_booking_num1").value;
+      document.getElementById("modal_booking_num1").value+"\n";
     message1_data =
       message1_data +
       "Cab type : " +
@@ -573,7 +573,7 @@ function setModalData(myData) {
 
     var message2_data = "Reference Id : " + myObj["base"].refid + "\n";
     message2_data = message2_data + "Driver name :" + myObj["base"].dname+"\n";
-    message2_data = message2_data +  "Driver Number :" + myObj["base"].dnum1 ;
+    message2_data = message2_data +  "Driver Number :0" + myObj["base"].dnum1 ;
 
     var number2_data = myObj["base"].num1;
 
@@ -694,7 +694,7 @@ function passengerMessageStatus(data)
   myData["bookid"]=document.getElementById("myModalBookId_temp").innerHTML;
 
   
-  myData["to"]='+'+document.getElementById("id_number1").value;
+  myData["to"]='+44'+document.getElementById("id_number1").value;
   myData["msg"]=document.getElementById("id_message1").value;
   myData["smsType"]="Driver";
   var myGetUrl = myUrl + "myapi/message.php";
