@@ -344,7 +344,7 @@ if($action =="")
                     <p class="sms">Passenger Details</p>
         <input type="text" class="dark-controls" id="id_number1" name="number1"  value="" placeholder="Enter Contact Number">     
            <textarea class="dark-controls" rows="9" id="id_message1" name="message1" style="width:100%;min-height:200px;"></textarea>
-       
+       <input type="hidden" id="message_status_id">
         
         </div>
 

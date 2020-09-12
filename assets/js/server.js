@@ -131,6 +131,12 @@ function get_booking_response(myGetUrl, mydata) {
 }, 400);
 
 }
+
+
+
+
+
+
 function get_url_response(myGetUrl, mydata, myfunc) {
 
  
@@ -675,17 +681,61 @@ $(document).on('click', '.status_class_p', function () {
 
 $(document).on('click', '#send_sms', function () {
   var myData={};
-  myData["ref"]=document.getElementById("myModalBookId_temp").innerHTML;
+  myData["bookid"]=document.getElementById("myModalBookId_temp").innerHTML;
+  $('#message_status_id').val('');
+  myData["to"]=document.getElementById("id_number2").value;
+  myData["msg"]=document.getElementById("id_message2").value;
+  myData["smsType"]="Passenger";
+ 
 
-  myData["number1"]=document.getElementById("id_number1").value;
-  myData["message1"]=document.getElementById("id_message1").value;
-  myData["number2"]=document.getElementById("id_number2").value;
-  myData["message2"]=document.getElementById("id_message2").value;
+  var myGetUrl = myUrl + "myapi/message.php";
+  get_url_response(myGetUrl, myData, "passengerMessageStatus");
 
-  var myGetUrl = myUrl + "myapi/send_msg.php";
-  get_url_response(myGetUrl, myData, "changeStatus");
+
 });
 
+function passengerMessageStatus(data)
+{
+ var msgData= messageStatus(data);
+ $('#message_status_id').val(msgData);
+  var myData={};
+  myData["bookid"]=document.getElementById("myModalBookId_temp").innerHTML;
+
+  
+  myData["to"]='+'+document.getElementById("id_number1").value;
+  myData["msg"]=document.getElementById("id_message1").value;
+  myData["smsType"]="Driver";
+  var myGetUrl = myUrl + "myapi/message.php";
+  get_url_response(myGetUrl, myData, "driverMessageStatus");
+}
+function driverMessageStatus(data)
+{
+  
+  var msgData= messageStatus(data);
+  msgData = msgData+ $('#message_status_id').val()
+ // $('#message_status_id').val(msgData);
+  alertData='{"response":"success","status":"success","msg":"'+msgData+'"}';
+  showStatusMessage(alertData);
+
+}
+function messageStatus(data)
+{
+  var dataObj = JSON.parse(data);
+  if(dataObj.status == "accepted" || dataObj.status == "queued" || dataObj.status == "sending" || dataObj.status == "sent" 
+  || dataObj.status == "delivered" )
+  {
+    return 'Message Sent Successfully' ;
+  }
+  
+  if(dataObj.status == "failed")
+  {
+    return 'Unable to send message ' ;
+  }
+
+
+
+
+}
 $(document).mouseup(function(e){
   var container = $(".dropdown-set");
 
