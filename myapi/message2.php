@@ -25,10 +25,16 @@ curl_close ($ch);
 if ($server_output == "OK") { 
     
     echo("Success <br>");
+    echo ($server_output);
+    echo("<br>");
+    echo("Success encode <br>");
     echo json_encode($server_output);
  } else { 
      
     echo("Fail <br>");
+    echo ($server_output);
+    echo("<br>");
+    echo("Fail encode <br>");
     echo json_encode($server_output);
   }
 
