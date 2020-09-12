@@ -5,7 +5,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"https://api.twilio.com/2010-04-01/Accounts/AC093fdc747b395f0d5d0b7dce029ea20e/Messages.json");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS,
-            "From=+447723012660&To=+447818065914&Body=Test");
+            "From=Taxi-Info&To=+447818065914&Body=Test");
 
 $headers = array(
     'Content-Type:application/x-www-form-urlencoded',
