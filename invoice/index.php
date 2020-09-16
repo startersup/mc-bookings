@@ -82,13 +82,13 @@ if($action =="")
                           style="font-weight:800;font-size:45px;padding:5px;vertical-align:top;padding-bottom:20px;line-height:45px;color:#333;">
                           <img id="minicabee_show" src="https://minicabee.co.uk/assets/images/logo.png"
                             style="width:100%; max-width:200px !important;">
-                            <img id="taxicode_show" src="https://bookings.minicabee.co.uk/assets/images/britannia.jpg"
+                            <img id="taxicode_show" src="../../assets/images/britannia.jpg"
                             style="width:100%; max-width:200px !important;">
                             <!-- <a class="navbar-brand" href="/" id=""><span>Britannia</span> Cars</a> -->
                         </td>
 
                         <td style="text-align:right !important;padding:5px;vertical-align:top;padding-bottom:20px;"
-                          id="InvoiceDetails">
+                          id="InvoiceDetails" contenteditable='true'>
 
                         </td>
                       </tr>

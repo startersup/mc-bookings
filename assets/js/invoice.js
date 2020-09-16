@@ -122,7 +122,7 @@ function setInvoiceTable(myData)
     document.getElementById("DrvTotalFare").innerHTML='£'+total_dfare.toFixed(2);
     document.getElementById("DrvTotalPay").innerHTML='£'+((total_fare-total_dfare).toFixed(2));
 
-    document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid;
+    document.getElementById("BasicDriverInfo").innerHTML=myObj[0].dname+'<br>'+myObj[0].drvid+'<br>'+myObj[0].address;
     setDate(myTemp.no);
     $('#emptyPreview').hide(); 
   }else if(myObj.length == 0)
