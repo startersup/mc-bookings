@@ -22,7 +22,7 @@ session_start();
  
   }else  if(($for == "driver") && ($driverId !== "e"))
   {
-   $sql=" SELECT oregister.refid,oregister.src,oregister.des,oregister.dt,oregister.time,oregister.fare,oregister.dfare,cast((oregister.fare - oregister.dfare) as decimal(10, 2)) AS commision,oregister.drvid,driver.name as dname FROM oregister INNER JOIN driver ON oregister.drvid=driver.id where oregister.status = 'completed' AND (oregister.dt>= '".$from."' AND oregister.dt<= '".$to."') and (driver.id ='".$driverId."')";
+   $sql=" SELECT oregister.refid,oregister.src,oregister.des,oregister.dt,oregister.time,oregister.fare,oregister.dfare,cast((oregister.fare - oregister.dfare) as decimal(10, 2)) AS commision,oregister.drvid,driver.name as dname,driver.address FROM oregister INNER JOIN driver ON oregister.drvid=driver.id where oregister.status = 'completed' AND (oregister.dt>= '".$from."' AND oregister.dt<= '".$to."') and (driver.id ='".$driverId."')";
  $invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
  $temp_result=mysqli_query($conn,$invid_sql);
  $row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
@@ -35,7 +35,7 @@ session_start();
 
 }else  if(($for == "provider") && ($driverId !== "e"))
 {
- $sql=" SELECT oregister.refid,oregister.src,oregister.des,oregister.dt,oregister.time,oregister.fare,oregister.dfare,cast((oregister.fare - oregister.dfare) as decimal(10, 2)) AS commision,oregister.drvid,driver.name as dname FROM oregister INNER JOIN provider as driver ON oregister.drvid=driver.id where oregister.status = 'completed' AND (oregister.dt>= '".$from."' AND oregister.dt<= '".$to."') and (driver.id ='".$driverId."')";
+ $sql=" SELECT oregister.refid,oregister.src,oregister.des,oregister.dt,oregister.time,oregister.fare,oregister.dfare,cast((oregister.fare - oregister.dfare) as decimal(10, 2)) AS commision,oregister.drvid,driver.name as dname,driver.address FROM oregister INNER JOIN provider as driver ON oregister.drvid=driver.id where oregister.status = 'completed' AND (oregister.dt>= '".$from."' AND oregister.dt<= '".$to."') and (driver.id ='".$driverId."')";
 $invid_sql="select count(*) as num FROM `invoice` WHERE `tiktok` like '%".date("Y")."%' and `drvid` = '".$driverId."' ";
 $temp_result=mysqli_query($conn,$invid_sql);
 $row1= mysqli_fetch_array($temp_result,MYSQLI_ASSOC);
