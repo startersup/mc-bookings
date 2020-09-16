@@ -2,52 +2,62 @@ var router = {
     "dashboard": {
         "url": "admin/",
         "load": "dashboardLoad",
-        "view": "admin/"
+        "view": "admin/",
+        "js":""
     },
     "bookings": {
         "url": "bookings/",
         "load": "bookingsLoad",
-        "view": "bookings/"
+        "view": "bookings/",
+        "js":""
     },
     "otsBookings": {
         "url": "otsBookings/",
         "load": "OtsBookingsLoad",
-        "view": "otsBookings/"
+        "view": "otsBookings/",
+        "js":""
     },
     "settings": {
         "url": "settings/",
         "load": "",
-        "view": "settings/"
+        "view": "settings/",
+        "js":""
     },
     "login": {
         "url": "login/",
         "load": "",
-        "view": "login/"
+        "view": "login/",
+        "js":""
     },
     "partners": {
         "url": "partners/",
         "load": "loadProvider",
-        "view": "partners/"
+        "view": "partners/",
+        "js":""
     },
     "passengers": {
         "url": "passengers/",
         "load": "loadPassenger",
-        "view": "passengers/"
+        "view": "passengers/",
+        "js":""
     },
     "invoice": {
         "url": "invoice/",
         "load": "LoadJS",
-        "view": "invoice/"
+        "view": "invoice/",
+        "js":""
     }, 
     "drivers": {
         "url": "drivers/",
         "load": "loadDriver",
-        "view": "drivers/"
+        "view": "drivers/",
+        "js":""
     },
     "emails": {
         "url": "emails/templates/",
         "load": "",
-        "view": "emails/templates/"
+        "view": "emails/templates/",
+        "js":""
     }
 }
 
@@ -59,8 +69,9 @@ function pagerouter(key) {
         var fname = router[key].load;
         var myGetUrl = myUrl + router[key].url;
         var pathName = myUrl + router[key].view;
+        var jsFile = myUrl + router[key].js;
         window.history.replaceState(null, null, pathName);
-        get_page_response(myGetUrl, mydata, fname)
+        get_page_response(myGetUrl, mydata, fname,jsFile)
     }, 300);
    
 }
@@ -83,7 +94,7 @@ function defaultLoader(temp) {
 }
 
 
-function get_page_response(myGetUrl, mydata, fname) {
+function get_page_response(myGetUrl, mydata, fname,jsFile) {
     $.ajax({
         type: "POST",
         url: myGetUrl,
@@ -95,16 +106,22 @@ function get_page_response(myGetUrl, mydata, fname) {
             {
                 window[fname]();
             }
-           // LoadJsScript();
+            LoadJsScript(jsFile);
             $('#spinnermodal').hide();
         },
         error: function (xhr) { }
     });
 }
 
-function LoadJsScript() {
- 
-    
-
-
+function LoadJsScript(jsFile) {
+    if(jsFile != '')
+    {
+    var jsFileList=jsFile.split(',');
+    var loop = jsFileList.length;
+    for(var i=0;i<loop;i++)
+    {
+    var filename=myUrl+'assets/js/'+jsFileList[i];
+        $.getScript(filename);
+    }
+    }
 }

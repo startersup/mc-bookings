@@ -246,7 +246,15 @@ function GetDriverInvoice(element)
      mydataInv["id"]=element.id;
      mydataInv["mdata"]='e';
   mydataInv["invno"]='e';
-    var myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  var myGetUrl='';
+  if(InvoiceType == 'minicabee')
+  {
+     myGetUrl = myUrl + "myapi/DriverInvoice.php";
+  }else if(InvoiceType == 'taxicode')
+  {
+    myGetUrl = myUrl + "myapi/ots/DriverInvoice.php";
+  }
+   //  = myUrl + "myapi/DriverInvoice.php";
   
     get_response(myGetUrl, mydataInv);
 }
