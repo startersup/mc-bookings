@@ -12,7 +12,7 @@ if ($action == "")
     <li id="tommorrow" class="bookingOTS"><a>Tomorrow Booking</a></li>
     <li id="future" class="bookingOTS"><a>Future Booking</a></li>
     <li>
-      <div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#custom-filters" src="../assets/images/icons/more.svg"></div>
+      <div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#custom-filters-ots" src="../assets/images/icons/more.svg"></div>
 
     </li>
 
@@ -311,7 +311,7 @@ if ($action == "")
         </div>
 
         <!----custom-filter-modal-->
-        <div class="modal modal-bg" id="custom-filters" role="dialog">
+        <div class="modal modal-bg" id="custom-filters-ots" role="dialog">
           <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -337,7 +337,7 @@ if ($action == "")
                     <input class="input-filter" type="hidden" value="" id="filter_checklist">
                   </ul><br>
                   <div class="mc-flex">
-                    <button class="button-style" data-dismiss="modal" id="filter_load">Load</button>
+                    <button class="button-style" data-dismiss="modal" id="filter_load_ots">Load</button>
                     <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>
