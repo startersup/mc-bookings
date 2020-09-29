@@ -47,7 +47,7 @@ $temp["no"] =$invno;
 
   else if($for == "all")
   {
-    $sql=" SELECT register.dt,register.time,register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,driver.name as dname ,provider.name as pname FROM register left JOIN driver ON register.drvid=driver.id left JOIN provider ON register.drvid=provider.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
+    $sql=" SELECT register.dt,register.time,register.refid,register.src,register.des,register.fare,register.dfare,cast((register.fare - register.dfare) as decimal(10, 2)) AS commision,register.drvid,ifnull (provider.name,'') as dname ,ifnull (provider.name,'') as pname FROM register left JOIN driver ON register.drvid=driver.id left JOIN provider ON register.drvid=provider.id where register.status = 'completed' AND (register.dt>= '".$from."' AND register.dt<= '".$to."')";
   }
    //echo($sql."<br>") ;
    $result=  mysqli_query($conn,$sql);
