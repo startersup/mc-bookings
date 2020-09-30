@@ -31,6 +31,45 @@ if ($action == "")
 
 
 
+        <!----custom-filter-modal-->
+        <div class="modal fade" id="customFiltersOts" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content max-width-300">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Custom Filters</h4>
+              </div>
+              <div class="modal-body pad-0">
+                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                  <i class="fa fa-calendar"></i>&nbsp;
+                  <span id="fromto"></span>
+                  <i class="fa fa-caret-down"></i>
+                </div>
+                <div id="filterList">
+                  <ul>
+                    <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all_OTS"> All</li>
+                    <li><input class="input-filter" type="checkbox" value="booked" id="1"> Booked</li>
+                    <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirmed</li>
+                    <li> <input class="input-filter" type="checkbox" value="comitted" id="3"> Allocated</li>
+                    <li><input class="input-filter" type="checkbox" value="completed" id="4"> Completed</li>
+                    <li><input class="input-filter" type="checkbox" value="cancelled" id="5"> Cancelled</li>
+                    <input class="input-filter" type="hidden" value="" id="filter_checklist">
+                  </ul><br>
+                  <div class="mc-flex">
+                    <button class="button-style" data-dismiss="modal" id="filter_load_ots">Load</button>
+                    <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!---end custom-filter-modal-->
+
+
 <!---mainbar-starts----->
 
 <div class="mc-dash-mainbar">
@@ -309,72 +348,6 @@ if ($action == "")
             </a>
           </div>
         </div>
-
-
-
-<!----dumymodal--->
-<div id="customFiltersOts" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-        <!----custom-filter-modal-->
-        <div class="modal fade" id="custom-filters-ots" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content max-width-300">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Custom Filters</h4>
-              </div>
-              <div class="modal-body pad-0">
-                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-                  <i class="fa fa-calendar"></i>&nbsp;
-                  <span id="fromto"></span>
-                  <i class="fa fa-caret-down"></i>
-                </div>
-                <div id="filterList">
-                  <ul>
-                    <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all_OTS"> All</li>
-                    <li><input class="input-filter" type="checkbox" value="booked" id="1"> Booked</li>
-                    <li> <input class="input-filter" type="checkbox" value="booked-confirmed" id="2"> Confirmed</li>
-                    <li> <input class="input-filter" type="checkbox" value="comitted" id="3"> Allocated</li>
-                    <li><input class="input-filter" type="checkbox" value="completed" id="4"> Completed</li>
-                    <li><input class="input-filter" type="checkbox" value="cancelled" id="5"> Cancelled</li>
-                    <input class="input-filter" type="hidden" value="" id="filter_checklist">
-                  </ul><br>
-                  <div class="mc-flex">
-                    <button class="button-style" data-dismiss="modal" id="filter_load_ots">Load</button>
-                    <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!---end custom-filter-modal-->
-
-
 
         <script>
           $(document).ready(function() {
