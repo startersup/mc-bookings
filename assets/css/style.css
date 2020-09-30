@@ -1141,7 +1141,7 @@ background-color: #E7FAEC;
 {
         position: absolute;
     top: 59px;
-    z-index: 10;
+    z-index: 5;
     position: fixed;
     right: 250px;
 }
