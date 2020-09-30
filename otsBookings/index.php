@@ -12,7 +12,7 @@ if ($action == "")
     <li id="tommorrow" class="bookingOTS"><a>Tomorrow Booking</a></li>
     <li id="future" class="bookingOTS"><a>Future Booking</a></li>
     <li>
-      <div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#custom-filters-ots" src="../assets/images/icons/more.svg"></div>
+      <div class="mc-icon-wrap"><img class="mc-sub-icons mc-others-icon" data-toggle="modal" data-target="#customFiltersOts" src="../assets/images/icons/more.svg"></div>
 
     </li>
 
@@ -310,8 +310,33 @@ if ($action == "")
           </div>
         </div>
 
+
+
+<!----dumymodal--->
+<div id="customFiltersOts" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
         <!----custom-filter-modal-->
-        <div class="modal modal-bg" id="custom-filters-ots" role="dialog">
+        <div class="modal fade" id="custom-filters-ots" role="dialog">
           <div class="modal-dialog">
 
             <!-- Modal content-->
