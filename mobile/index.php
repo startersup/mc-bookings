@@ -299,98 +299,125 @@
 </div>
   </div>
   
-  <script>function initMap() {
-          var map = new google.maps.Map(document.getElementById('map'), {
-            mapTypeControl: false,
-            center: { lat: 51.5074, lng: 0.1278 },
-            zoom: 10,
-            disableDefaultUI: true
-          });
+  <script>
 
-          new AutocompleteDirectionsHandler(map);
+      
+var placeSearch, autocomplete, autocomplete2, autocomplete3;
+
+function initAutocomplete() {
+
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */
+        (document.getElementById('origin-input')), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: 'uk'
+            }
+        });
+
+
+
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', fillInAddress);
+
+
+    autocomplete2 = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */
+        (document.getElementById('destination-input')), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: 'uk'
+            }
+        });
+
+
+
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete2.addListener('place_changed', fillInAddress);
+
+
+    autocomplete3 = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */
+        (document.getElementById('via')), {
+            types: ['geocode'],
+            componentRestrictions: {
+                country: 'uk'
+            }
+        });
+
+
+
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete3.addListener('place_changed', fillInAddress);
+
+
+}
+
+
+function fillInAddress() {
+    // Get the place details from the autocomplete object.
+    var place = autocomplete.getPlace();
+
+    for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+    }
+
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
         }
+    }
+    var place = autocomplete2.getPlace();
 
-        /**
-         * @constructor
-        */
-        function AutocompleteDirectionsHandler(map) {
-          this.map = map;
-          this.originPlaceId = null;
-          this.destinationPlaceId = null;
-          this.travelMode = 'DRIVING';
-          var originInput = document.getElementById('origin-input');
-          var destinationInput = document.getElementById('destination-input');
-          var modeSelector = document.getElementById('mode-selector');
-          this.directionsService = new google.maps.DirectionsService;
-          this.directionsDisplay = new google.maps.DirectionsRenderer;
-          this.directionsDisplay.setMap(map);
+    for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+    }
 
-          var originAutocomplete = new google.maps.places.Autocomplete(
-            originInput, { placeIdOnly: true }
-          );
-          originAutocomplete.setComponentRestrictions(
-            { 'country': ['uk'] });
-          var destinationAutocomplete = new google.maps.places.Autocomplete(
-            destinationInput, { placeIdOnly: true });
-          destinationAutocomplete.setComponentRestrictions(
-            { 'country': ['uk'] });
-          this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-          this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
         }
-        AutocompleteDirectionsHandler.prototype.setupClickListener = function (id, mode) {
-          var radioButton = document.getElementById(id);
-          var me = this;
-          radioButton.addEventListener('click', function () {
-            me.travelMode = mode;
-            me.route();
-          });
-        };
+    }
 
-        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function (autocomplete, mode) {
-          var me = this;
-          autocomplete.bindTo('bounds', this.map);
-          autocomplete.addListener('place_changed', function () {
-            var place = autocomplete.getPlace();
-            if (!place.place_id) {
-              window.alert("Please select an option from the dropdown list.");
-              return;
-            }
-            if (mode === 'ORIG') {
-              me.originPlaceId = place.place_id;
-            } else {
-              me.destinationPlaceId = place.place_id;
-            }
-            me.route();
-          });
+    var place = autocomplete3.getPlace();
 
-        };
+    for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+    }
 
-        AutocompleteDirectionsHandler.prototype.route = function () {
-          if (!this.originPlaceId || !this.destinationPlaceId) {
-            return;
-          }
-          var me = this;
+    // Get each component of the address from the place details
+    // and fill the corresponding field on the form.
+    for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+        }
+    }
 
-          this.directionsService.route({
-            origin: { 'placeId': this.originPlaceId },
-            destination: { 'placeId': this.destinationPlaceId },
-            travelMode: this.travelMode
-          }, function (response, status) {
-            if (status === 'OK') {
-              me.directionsDisplay.setDirections(response);
-            } else {
-              window.alert('Directions request failed due to ' + status);
-            }
-          });
-        };
-      </script>  <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauQAxB_oaAk4z-NQN2BkhmD4AxzA2l6M&amp;libraries=places&amp;callback=initAutocomplete" defer="" type="text/javascript"></script>
-<script>
-    $(function() {
-      $('input[name="datepicker"]').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true
-      });
-    });
+
+
+}
+
+
+  
     setLoad();    </script>
 
 </body>
