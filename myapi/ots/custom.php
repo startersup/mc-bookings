@@ -15,7 +15,7 @@ session_start();
 // $to="2020-1-31";
 // $status="('temp','booked','booked-confirmed')";
  //  $temp["inp"]=$_POST;
-  $sql = "SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,'' as booked_site from oregister WHERE dt>= '".$from."' AND dt<= '".$to."'";
+  $sql = "SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,name,fare,dfare,status,bookid as booked_site from oregister WHERE dt>= '".$from."' AND dt<= '".$to."'";
   // $temp["sql"]=$sql;
   if(!($status == "ALL"))
   {

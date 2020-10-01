@@ -206,7 +206,7 @@
             
       </div>
       <div class="form-group">
-                <label for="lugg">No of Luggages:</label>
+                <label for="lugg">Cab Type:</label>
       <select name="cabType" id="cabType" onchange="setEstimate();" class="form-control" autocomplete="off">
               <option value="Saloon">Saloon</option>
               <option value="Estate">Estate</option>
@@ -216,6 +216,25 @@
               <option value="9-Seater">9 Seater</option>
 
             </select>
+</div>
+
+<div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="usr">Total Miles:</label>
+    
+            <input type="text" disabled name="" id="route_miles" class="form-control" >
+          </div>
+        </div>
+
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="usr">Total Time:</label>
+    
+            <input type="text" disabled name="" id="route_time" class="form-control" >
+          </div>
+        </div>
+
 </div>
 
       <div class="mc-booking-information">
