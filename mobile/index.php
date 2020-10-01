@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 <body >
-
+<div style="display:none;" id="map"></div>
 
 <div id="spinnermodal" class="modal11 modal right fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
     style="    
