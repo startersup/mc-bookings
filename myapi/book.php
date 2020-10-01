@@ -50,7 +50,7 @@ $ran=mt_rand(1000,99999);
 $ret="RET".$ran;
 $ran="MCE".$ran;
 
-$result=mysqli_query($conn,"SELECT * from register WHERE 1");
+$result=mysqli_query($conn,"SELECT refid from register WHERE 1");
  while ($row= mysqli_fetch_array($result,MYSQLI_ASSOC))
  {
     if($ran==$row["refid"])
@@ -332,7 +332,7 @@ VALUES ('$ref', '$name', '$mail', '$mobile1', '$mobile2', '$location', '$info', 
 
 // Always set content-type when sending HTML email
 $headers = "";
-$headers .= "From: Minicabee  <bookings@minicabee.co.uk> \r\n";
+$headers .= "From: Britannia  <bookings@minicabee.co.uk> \r\n";
 $headers .= "Reply-To: Minicabee  <bookings@minicabee.co.uk> \r\n"."X-Mailer: PHP/" . phpversion();
 $headers .= "MIME-Version: 1.0" . "\r\n"; 
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
@@ -346,6 +346,6 @@ else{
 		 $temp["status"]="fail";
 	 $temp["message"]="Try Again";
 }
-
+$temp["bookid"]=$ref;
 echo json_encode($temp);
  ?>

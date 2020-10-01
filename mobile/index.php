@@ -63,7 +63,7 @@
         <div class="col-xs-6">
           <div class="form-group">
             <label for="usr">Pickup Date:</label>
-            <input type="text" class="form-control" name="datepicker"  />
+            <input type="text" class="form-control" id="datetimepicker" name="datepicker"  />
             <input type="hidden" name="date" class="form-control" >
           </div>
         </div>
@@ -218,7 +218,7 @@
             </select>
 </div>
 
-<div class="row">
+<!-- <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
             <label for="usr">Total Miles:</label>
@@ -235,7 +235,7 @@
           </div>
         </div>
 
-</div>
+</div> -->
 
       <div class="mc-booking-information">
 
@@ -312,12 +312,20 @@
    </div>
  </div>  
 <div class="d-flex d-second">
- <p><span>12</span> Miles</p>   
- <p><span>1</span> hour </p>   
+ <p><span id="route_miles">12</span> Miles</p>   
+ <p><span id="route_time" >1</span>  </p>   
  <a class="book-now" data-toggle="pill" href="#successpage">Book now</a>
 </div>
   </div>
-  
+
+  <script>
+         $(function() {
+      $('input[name="datepicker"]').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true
+      });
+    });
+  </script>
   <script>
 
       

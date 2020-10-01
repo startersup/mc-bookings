@@ -36,6 +36,10 @@ $(document).on('click','.allocate-btn',function () {
   $("#allocated-table").show()
 });
 
+$(document).on('click','#datetimepicker',function () {
+
+    DateSplitter();
+  });
 function DateSplitter()
 {
     var myval = document.getElementById('datetimepicker').value; 
@@ -45,7 +49,7 @@ function DateSplitter()
       var myVals = myval.split(' ');
       document.getElementById('date').value = myVals[0].replace("/","-");
       document.getElementById('date').value = document.getElementById('date').value.replace("/","-");
-      document.getElementById('time').value = myVals[1];
+     
     }
  
 

@@ -46,7 +46,7 @@ if ($action == "")
                   <span id="fromto"></span>
                   <i class="fa fa-caret-down"></i>
                 </div>
-                <div id="filterList">
+                <div id="filterListOts">
                   <ul>
                     <li><input class="input-filter" type="checkbox" value="ALL" id="filter_all_OTS"> All</li>
                     <li><input class="input-filter" type="checkbox" value="booked" id="1"> Booked</li>
