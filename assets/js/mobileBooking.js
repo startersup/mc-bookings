@@ -12,25 +12,27 @@ var myDataBook={};
 var myFareObj={};
 
 
-$('.calculate-fare').click(function() 
-{
+$(document).on('click','.calculate-fare',function () {
+
     GetFare();
 $(".mc-booking-information").show()
 $(".d-second").css({"display":"flex"});
 $(".d-first").hide()
 });
-$('.book-now').click(function() 
-{
+
+$(document).on('click','.book-now',function () {
+
   $(".footer").hide()
 });
-   $('.allocate-driver').click(function() 
-{
+
+$(document).on('click','.allocate-driver',function () {
+
   $(".allocate-driver-card").show()
   $(".allocate-driver").hide()
 });
 
-$('.allocate-btn').click(function() 
-{
+$(document).on('click','.allocate-btn',function () {
+
   $("#allocated-table").show()
 });
 
@@ -194,7 +196,7 @@ function setEstimate()
     document.getElementById('route_miles').innerHTML=myObj["totaldistance"];
     document.getElementById('route_time').innerHTML=myObj["totaltime"];
     var temp=document.getElementById('cabType').value;
-    document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
+  //  document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
 	document.getElementById('fare').value=myObj[temp]["ofare"][0];
 	}
 
