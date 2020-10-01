@@ -396,6 +396,10 @@ function dataHandle(api,allData)
     clearModalOts();
   }
   
+  $(document).on('click','#filter_load_ots',function () {
+    searchByFilterOts();
+  });
+
   /*
   $(document).ready(function () { 
   
@@ -411,8 +415,8 @@ function dataHandle(api,allData)
 
   function searchByFilterOts() {
     var mydata = {};
-    if (document.getElementById("filter_all").checked) {
-      mydata["status"] = document.getElementById("filter_all").value;
+    if (document.getElementById("filter_all_OTS").checked) {
+      mydata["status"] = document.getElementById("filter_all_OTS").value;
     } else {
       var temp = "('temp'";
       for (var i = 1; i <= 5; i++) {
@@ -431,10 +435,15 @@ function dataHandle(api,allData)
     mydata["from"] = date_format_db(d[0]);
     mydata["to"] = date_format_db(d[1]);
   
-    var myGetUrl = myUrlOts + "myapi/custom.php";
+    var myGetUrl = myUrlOts + "myapi/ots/custom.php";
   
     get_booking_response_Ots(myGetUrl, mydata);
   }
+
+  $(document).on('click','#filter_all_OTS',function () {
+    filterCheckBoxOts(this);
+  } );
+
   function filterCheckBoxOts(ele) {
     if (ele.checked) {
       for (var i = 1; i <= 5; i++) {
