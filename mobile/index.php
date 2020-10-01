@@ -255,8 +255,9 @@
         <center> <a class="allocate-driver">Allocate Driver</a></center>
         <div class="allocate-driver-card">
           <div class="d-flex">
-          <input type="text" class="form-control" name="fare" value="" placeholder="Search for Driver"  />
-          <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="pay" name="pay">
+          <select name="drvid" id="drvid" class="selectit" autocomplete="off">
+                      </select>
+                       <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="pay" name="pay">
             <option value="10">10% </option>
             <option value="15">15%</option>
             <option value="20">20%</option>
