@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" id="html">
+
 <head>
   <title>Mobile Book | Minicabee </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   <script src="../assets/js/mobileBooking.js"></script>
- 
-</head>
-<body >
-<div style="display:none;" id="map"></div>
 
-<div id="spinnermodal" class="modal11 modal right fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2"
-    style="    
+</head>
+
+<body>
+  <div style="display:none;" id="map"></div>
+
+  <div id="spinnermodal" class="modal11 modal right fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" style="    
   display: block;
   background-color: rgb(255, 255, 255);
   min-width: 1500px;
@@ -33,50 +34,55 @@
         <centre> <img width="80px;" src="../assets/images/icons/loader.svg"></centre>
       </div>
     </div>
-    
-  </div>
- <nav class="mc-mobile-navbar d-flex">
-  <div class="container-fluid">
-   <div class="navbar-logo">
-    <a class="d-flex" href=""> 
-<img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"> <span>Bookings</span></a>   
-   </div>   
-  </div>
- </nav> 
 
- <div class=" mc-alert-box" id="myAlert" style="display: none;">
-      <div class="mc-alert-status color-green" id="myAlert_color" ><p id="myAlert_status" ><svg height="40" viewBox="0 0 515.556 515.556" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 274.226l176.549 176.886L515.556 112.44l-48.67-47.997-290.337 290L47.996 225.891z"/></svg></p></div>
-      <div class="mc-alert-desc " >     <a href="#" onclick="showStatusMessageClose();" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="myAlert_msg"> hII there</p></div>
+  </div>
+  <nav class="mc-mobile-navbar d-flex">
+    <div class="container-fluid">
+      <div class="navbar-logo">
+        <a class="d-flex" href="">
+          <img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"> <span>Bookings</span></a>
+      </div>
     </div>
+  </nav>
 
-<br><br><br><br>
- <section class="booking-form">
-      <div class="tab-content">
-        <div id="oneway" class="tab-pane fade in active">
-    <div class="form-group">
-        <label for="usr">Pickup from:</label>
-        <input type="text" class="form-control form-feild" name="origin-input" id="origin-input" placeholder="Enter Pickup postcode" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label for="usr">Dropoff postcode:</label>
-        <input type="text" class="form-control form-feild" name="destination-input" id="destination-input" placeholder="Enter Dropoff postcode" autocomplete="off">
-      </div>
-      <div class="form-group">
-        <label for="usr">Via Point:</label>
-        <input type="text" class="form-control form-feild" id="via" name="via" placeholder="Enter Via Point" autocomplete="off">
-      </div>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="usr">Pickup Date:</label>
-            <input type="text" class="form-control" id="datetimepicker" name="datepicker"  />
-            <input type="hidden" name="date" id="date" class="form-control form-feild" >
-          </div>
+  <div class=" mc-alert-box" id="myAlert" style="display: none;">
+    <div class="mc-alert-status color-green" id="myAlert_color">
+      <p id="myAlert_status"><svg height="40" viewBox="0 0 515.556 515.556" width="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 274.226l176.549 176.886L515.556 112.44l-48.67-47.997-290.337 290L47.996 225.891z" /></svg></p>
+    </div>
+    <div class="mc-alert-desc "> <a href="#" onclick="showStatusMessageClose();" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <p id="myAlert_msg"> hII there</p>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  <section class="booking-form">
+    <div class="tab-content">
+      <div id="oneway" class="tab-pane fade in active">
+        <div class="form-group">
+          <label for="usr">Pickup from:</label>
+          <input type="text" class="form-control form-feild" name="origin-input" id="origin-input" placeholder="Enter Pickup postcode" autocomplete="off">
         </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="usr">Pickup Time:</label>
-            <select class="form-control form-feild" name="time">
+        <div class="form-group">
+          <label for="usr">Dropoff postcode:</label>
+          <input type="text" class="form-control form-feild" name="destination-input" id="destination-input" placeholder="Enter Dropoff postcode" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="usr">Via Point:</label>
+          <input type="text" class="form-control form-feild" id="via" name="via" placeholder="Enter Via Point" autocomplete="off">
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="usr">Pickup Date:</label>
+              <input type="text" class="form-control" id="datetimepicker" name="datepicker" />
+              <input type="hidden" name="date" id="date" class="form-control form-feild">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="usr">Pickup Time:</label>
+              <select class="form-control form-feild" name="time">
                 <option value="00:00">00:00</option>
                 <option value="00:15">00:15</option>
                 <option value="00:30">00:30</option>
@@ -91,7 +97,7 @@
                 <option value="02:45">02:45</option>
                 <option value="03:00">03:00</option>
                 <option value="03:15">03:15</option>
-                 <option value="3:30">03:30</option>
+                <option value="3:30">03:30</option>
                 <option value="03:45">03:45</option>
                 <option value="04:00">04:00</option>
                 <option value="04:15">04:15</option>
@@ -174,7 +180,7 @@
                 <option value="23:30">23:30</option>
                 <option value="23:45">23:45</option>
               </select>
-          </div>
+            </div>
           </div>
           <div class="col-xs-6">
             <div class="form-group">
@@ -190,41 +196,42 @@
                 <option value="08">8</option>
                 <option value="09">9</option>
                 <option value="10">10</option>
-                </select>
-            </div></div>
-            <div class="col-xs-6">
-              <div class="form-group">
-                <label for="lugg">No of Luggages:</label>
-                <select class="form-control form-feild" name="nl">
-                  <option value="01">1</option>
-                  <option value="02">2</option>
-                  <option value="03">3</option>
-                  <option value="04">4</option>
-                  <option value="05">5</option>
-                  <option value="06">6</option>
-                  <option value="07">7</option>
-                  <option value="08">8</option>
-                  <option value="09">9</option>
-                  <option value="10">10</option>
-                  </select>
-              </div>
-              </div>
-            
-      </div>
-      <div class="form-group">
-                <label for="lugg">Cab Type:</label>
-      <select name="cabType" id="cabType" onchange="setEstimate();" class="form-control form-feild" autocomplete="off">
-              <option value="Saloon">Saloon</option>
-              <option value="Estate">Estate</option>
-              <option value="MPV-4">MPV 4</option>
-              <option value="MPV-6">MPV 6</option>
-              <option value="8-Seater">7 Seater</option>
-              <option value="9-Seater">9 Seater</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label for="lugg">No of Luggages:</label>
+              <select class="form-control form-feild" name="nl">
+                <option value="01">1</option>
+                <option value="02">2</option>
+                <option value="03">3</option>
+                <option value="04">4</option>
+                <option value="05">5</option>
+                <option value="06">6</option>
+                <option value="07">7</option>
+                <option value="08">8</option>
+                <option value="09">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+          </div>
 
-            </select>
-</div>
+        </div>
+        <div class="form-group">
+          <label for="lugg">Cab Type:</label>
+          <select name="cabType" id="cabType" onchange="setEstimate();" class="form-control form-feild" autocomplete="off">
+            <option value="Saloon">Saloon</option>
+            <option value="Estate">Estate</option>
+            <option value="MPV-4">MPV 4</option>
+            <option value="MPV-6">MPV 6</option>
+            <option value="8-Seater">7 Seater</option>
+            <option value="9-Seater">9 Seater</option>
 
-<!-- <div class="row">
+          </select>
+        </div>
+
+        <!-- <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
             <label for="usr">Total Miles:</label>
@@ -243,90 +250,107 @@
 
 </div> -->
 
-      <div class="mc-booking-information">
+        <div class="mc-booking-information">
 
-        <div class="form-group">
-          <label for="usr">Passenger name:</label>
-          <input type="text" name="name" class="form-control form-feild" placeholder="Enter Passenger Name" autocomplete="off">
+          <div class="form-group">
+            <label for="usr">Passenger name:</label>
+            <input type="text" name="name" class="form-control form-feild" placeholder="Enter Passenger Name" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="usr">Passenger Contact Number:</label>
+            <input type="text" name="mobile1" class="form-control form-feild" placeholder="Enter Contact Number" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="usr">Payment Method:</label>
+            <select class="select form-control form-feild" required="" id="pay" name="pay">
+              <option value="card">Debit / Credit card </option>
+              <option value="paypal">Paypal Transaction</option>
+              <option value="cash">Cash on Ride</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="usr">Special Info:</label>
+            <textarea rows="5" cols="50" name="info" class="form-control form-feild"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="usr">Total Fare:</label>
+            <input type="text" class="form-control form-feild" name="fare" id="fare" value="" />
+          </div>
+          <br><br>
         </div>
-        <div class="form-group">
-          <label for="usr">Passenger Contact Number:</label>
-          <input type="text" name="mobile1" class="form-control form-feild" placeholder="Enter Contact Number" autocomplete="off">
-        </div>
-        <div class="form-group">
-          <label for="usr">Payment Method:</label>
-          <select class="select form-control form-feild" required="" id="pay" name="pay">
-            <option value="card">Debit / Credit card </option>
-            <option value="paypal">Paypal Transaction</option>
-            <option value="cash">Cash on Ride</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="usr">Special Info:</label>
-          <textarea rows="5" cols="50" name="info" class="form-control form-feild"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="usr">Total Fare:</label>
-          <input type="text" class="form-control form-feild" name="fare" id="fare" value=""  />
-        </div>
-        <br><br>
-      </div>  
       </div>
       <div id="successpage" class="tab-pane fade">
         <div class="booking-success">
-         <h3>Booking Success!!</h3> 
-         <p>Your Booking Reference Id: <b id="bookid"></b></p>
-         <br>
-        <center> <a class="allocate-driver">Allocate Driver</a></center>
-        <div class="allocate-driver-card">
-          <div class="d-flex">
-          <select name="drvid" id="drvid" class="selectit" autocomplete="off">
-                      </select>
-                       <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="drvpercent" name="pay">
-            <option value="10">10% </option>
-            <option value="15">15%</option>
-            <option value="20">20%</option>
-            <option value="25">25%</option>
-          </select>
-          <button id="manual_alloc" class="allocate-btn">Allocate</button>
-        </div>
-        </div>
-        <br><br>
-        <table id="allocated-table" class="table table-fixed" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
-          <thead class="mc-table-head" style="border:1px solid #e4e4e4;background-color:#f4f4f4;">
+          <h3>Booking Success!!</h3>
+          <p>Your Booking Reference Id: <b id="bookid"></b></p>
+          <br>
+          <center> <a class="allocate-driver">Allocate Driver</a></center>
+          <div class="allocate-driver-card">
+            <div class="d-flex">
+              <select name="drvid" id="drvid" class="selectit" autocomplete="off">
+              </select>
+              <select class="select form-control" style="width:75px;margin-left:-1px;" required="" id="drvpercent" name="pay">
+                <option value="10">10% </option>
+                <option value="15">15%</option>
+                <option value="20">20%</option>
+                <option value="25">25%</option>
+              </select>
+              <input type="hidden" id="dfare">
+              <button id="manual_alloc" class="allocate-btn">Allocate</button>
+            </div>
+          </div>
+          <br><br>
+          <table id="allocated-table" class="table table-fixed" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
+            <thead class="mc-table-head" style="border:1px solid #e4e4e4;background-color:#f4f4f4;">
               <tr style="border:1px solid #e4e4e4;">
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Percent</th>
-                  <th>Action</th>
-                  
+                <th>Id</th>
+                <th>Name</th>
+                <th>Percent</th>
+                <th>Fare</th>
+                <th>Action</th>
+
               </tr>
-          </thead>
-          <tbody id="Allocate_Table"></tbody>
-        </table>
-        </div>
+            </thead>
+            <tbody id="Allocate_Table"></tbody>
+          </table>
         </div>
       </div>
 
+      <div class="row">
 
- </section>
- 
- <div class="footer">
- <div class="d-first d-flex">
-  <div class="form-group">
-    <button class="calculate-fare" >Calculate Fare</button>
-   </div>
- </div>  
-<div class="d-flex d-second">
- <p><span id="route_miles">12</span> Miles</p>   
- <p><span id="route_time" >1</span>  </p>   
- <button class="" id="bookedAlert" style="display:none" data-toggle="pill" href="#successpage">Book now</button>
- <a class="book-now" >Book now</a>
-</div>
+        <!--     
+    <div class="form-group">
+          <label for="usr">Driver Message:</label>
+          <textarea rows="10" cols="50" name="" class="form-control "></textarea>
+        </div>
+        <div class="form-group">
+          <label for="usr">Passenger Message:</label>
+          <textarea rows="10" cols="50" name="" class="form-control "></textarea>
+        </div>
+
+        <button id="msg_send" class="">Send</button>
+</div> -->
+      </div>
+
+
+  </section>
+
+  <div class="footer">
+    <div class="d-first d-flex">
+      <div class="form-group">
+        <button class="calculate-fare">Calculate Fare</button>
+      </div>
+    </div>
+    <div class="d-flex d-second">
+      <p><span id="route_miles">12</span> Miles</p>
+      <p><span id="route_time">1</span> </p>
+      <button class="" id="bookedAlert" style="display:none" data-toggle="pill" href="#successpage">Book now</button>
+      <a class="book-now">Book now</a>
+    </div>
   </div>
 
   <script>
-         $(function() {
+    $(function() {
       $('input[name="datepicker"]').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true
@@ -334,194 +358,191 @@
     });
   </script>
   <script>
+    var placeSearch, autocomplete, autocomplete2, autocomplete3;
 
-      
-var placeSearch, autocomplete, autocomplete2, autocomplete3;
+    function initAutocomplete() {
 
-function initAutocomplete() {
-
-    autocomplete = new google.maps.places.Autocomplete(
+      autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */
         (document.getElementById('origin-input')), {
-            types: ['geocode'],
-            componentRestrictions: {
-                country: 'uk'
-            }
+          types: ['geocode'],
+          componentRestrictions: {
+            country: 'uk'
+          }
         });
 
 
 
 
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
-    autocomplete.addListener('place_changed', fillInAddress);
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete.addListener('place_changed', fillInAddress);
 
 
-    autocomplete2 = new google.maps.places.Autocomplete(
+      autocomplete2 = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */
         (document.getElementById('destination-input')), {
-            types: ['geocode'],
-            componentRestrictions: {
-                country: 'uk'
-            }
+          types: ['geocode'],
+          componentRestrictions: {
+            country: 'uk'
+          }
         });
 
 
 
 
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
-    autocomplete2.addListener('place_changed', fillInAddress);
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete2.addListener('place_changed', fillInAddress);
 
 
-    autocomplete3 = new google.maps.places.Autocomplete(
+      autocomplete3 = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */
         (document.getElementById('via')), {
-            types: ['geocode'],
-            componentRestrictions: {
-                country: 'uk'
-            }
+          types: ['geocode'],
+          componentRestrictions: {
+            country: 'uk'
+          }
         });
 
 
 
 
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
-    autocomplete3.addListener('place_changed', fillInAddress);
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete3.addListener('place_changed', fillInAddress);
 
 
-}
+    }
 
 
-function fillInAddress() {
-    // Get the place details from the autocomplete object.
-    var place = autocomplete.getPlace();
+    function fillInAddress() {
+      // Get the place details from the autocomplete object.
+      var place = autocomplete.getPlace();
 
-    for (var component in componentForm) {
+      for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
-    }
+      }
 
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
         if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
         }
-    }
-    var place = autocomplete2.getPlace();
+      }
+      var place = autocomplete2.getPlace();
 
-    for (var component in componentForm) {
+      for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
-    }
+      }
 
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
         if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
         }
-    }
+      }
 
-    var place = autocomplete3.getPlace();
+      var place = autocomplete3.getPlace();
 
-    for (var component in componentForm) {
+      for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
-    }
+      }
 
-    // Get each component of the address from the place details
-    // and fill the corresponding field on the form.
-    for (var i = 0; i < place.address_components.length; i++) {
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
         var addressType = place.address_components[i].types[0];
         if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
         }
+      }
+
+
+
     }
 
 
 
-}
+    setLoad();
+  </script>
 
-
-  
-    setLoad();    </script>
-
-<script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauQAxB_oaAk4z-NQN2BkhmD4AxzA2l6M&amp;libraries=places&amp;callback=initAutocomplete" defer="" type="text/javascript"></script>
+  <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauQAxB_oaAk4z-NQN2BkhmD4AxzA2l6M&amp;libraries=places&amp;callback=initAutocomplete" defer="" type="text/javascript"></script>
 
 </body>
 <style>
- .mc-mobile-navbar
- {
-     height:50px;
-     width:100%;
-     z-index: 100;
-     position: fixed;
-     box-shadow: 0 0px 20px rgba(116, 113, 113, 0.1);
-     background-color:#4E019F;
- }   
- .mc-nav-logo
- {
-     margin:5px;
-     max-width:40px;
-     width:100%;
- }
- .navbar-logo span
- {
-     padding: 5px;
+  .mc-mobile-navbar {
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    box-shadow: 0 0px 20px rgba(116, 113, 113, 0.1);
+    background-color: #4E019F;
+  }
+
+  .mc-nav-logo {
+    margin: 5px;
+    max-width: 40px;
+    width: 100%;
+  }
+
+  .navbar-logo span {
+    padding: 5px;
     color: #ffffff;
     font-weight: bold;
     font-size: 16px;
     margin: 10px 0px;
- }
- .d-flex
- {
-  display:flex;   
- }
+  }
 
-.booking-form
-{
-    max-width:380px;
-    width:100%;
-    margin:0px auto 40px;
-    padding:10px;
-}
-.nav-pills
-{
+  .d-flex {
+    display: flex;
+  }
+
+  .booking-form {
+    max-width: 380px;
+    width: 100%;
+    margin: 0px auto 40px;
+    padding: 10px;
+  }
+
+  .nav-pills {
     display: flex;
     position: fixed;
     width: 100%;
     background-color: #ffffff;
     top: 50px;
     border-bottom: 1px solid #efefef;
-}
-.nav-pills li
-{
-    width:50% !important; 
-}
-.nav-pills>li>a
-{
-color:#000000;
-border-radius:0px;
-text-align: center;
-font-weight:600;
-padding: 7px 15px;
-letter-spacing: 0.5px;
-}
-.nav-pills>li.active>a
-{
-color: #fff;
-background-color: #F5737F !important;
-}
-.form-control
-{
+  }
+
+  .nav-pills li {
+    width: 50% !important;
+  }
+
+  .nav-pills>li>a {
+    color: #000000;
+    border-radius: 0px;
+    text-align: center;
+    font-weight: 600;
+    padding: 7px 15px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-pills>li.active>a {
+    color: #fff;
+    background-color: #F5737F !important;
+  }
+
+  .form-control {
     display: block;
     width: 100%;
     height: 40px;
@@ -531,50 +552,52 @@ background-color: #F5737F !important;
     color: #555;
     background-color: #f1f1f1;
     background-image: none;
-    border: 1px solid #ccc; 
-    border-radius:0px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
     box-shadow: none;
-}
-.mc-booking-information, .d-second
-{
-  display:none;
-}
-.d-first
-{
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.calculate-fare
-{
-    padding:5px 20px;
-    border:none;
+  }
+
+  .mc-booking-information,
+  .d-second {
+    display: none;
+  }
+
+  .d-first {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calculate-fare {
+    padding: 5px 20px;
+    border: none;
     margin-top: 8px;
-    font-size:14px;
-    font-weight:600;
-    background-color:#6ce4a8;
-}
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 45px;
-  box-shadow: 0 1px 5px 3px rgba(46,50,52,0.1);
-  background-color: #ffffff;
-  color: #000000;
-  text-align: center;
-}
-.footer p
-{
-  padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #6ce4a8;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    box-shadow: 0 1px 5px 3px rgba(46, 50, 52, 0.1);
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+  }
+
+  .footer p {
+    padding: 13px 20px;
     color: #000000;
     font-weight: 500;
-}
-.book-now
-{
-  text-decoration: none !important;
+  }
+
+  .book-now {
+    text-decoration: none !important;
     padding: 14px 40px;
     color: #000000;
     background-color: #6ce4a8;
@@ -582,45 +605,50 @@ background-color: #F5737F !important;
     font-weight: 600;
     right: 0;
     cursor: pointer;
-}
-.book-now:hover
-{
-  background-color:#3ec280;
-  color:#ffffff;
-  font-weight:bold;
-}
-.daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
+  }
+
+  .book-now:hover {
+    background-color: #3ec280;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .daterangepicker .calendar-table th,
+  .daterangepicker .calendar-table td {
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
     min-width: 13px;
     width: 10px;
     height: 10px;
-    border:1px solid #f4f4f4;
+    border: 1px solid #f4f4f4;
     line-height: 10px !important;
     font-size: 12px;
     border-radius: 4px;
     white-space: nowrap;
     cursor: pointer;
-}
-.daterangepicker td.active, .daterangepicker td.active:hover
-{
-  background-color: #4e019f;
-  border-radius:0px !important;
-}
-.daterangepicker .drp-buttons
-{
-  border:none !important;
-}
-.btn-primary, .btn-primary:hover
-{
-  background-color:#4e019f;
-  outline:none !important;
-  border-radius:0px !important;
-}
-.mc-alert-box {
-  background-color: #ffffff;
-    box-shadow: 0 1px 5px rgba(0,0,0,.06);
+  }
+
+  .daterangepicker td.active,
+  .daterangepicker td.active:hover {
+    background-color: #4e019f;
+    border-radius: 0px !important;
+  }
+
+  .daterangepicker .drp-buttons {
+    border: none !important;
+  }
+
+  .btn-primary,
+  .btn-primary:hover {
+    background-color: #4e019f;
+    outline: none !important;
+    border-radius: 0px !important;
+  }
+
+  .mc-alert-box {
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .06);
     position: absolute !important;
     z-index: 20 !important;
     top: 63px !important;
@@ -629,82 +657,83 @@ background-color: #F5737F !important;
     max-width: 400px;
     height: 70px;
     width: 100%;
-    border: 1px solid #d0d9e2!important;
-}
-.mc-alert-box p
-{
-  vertical-align: middle;
+    border: 1px solid #d0d9e2 !important;
+  }
+
+  .mc-alert-box p {
+    vertical-align: middle;
     padding: 5px 20px;
     display: flex;
     align-items: center;
-}
-.myAlert_status
-{
-    margin-top:15px;
-}
-.color-red
-{
-    background-color:#f83f3f;
-    color:#000000;
-}
-.color-green
-{
-background-color:rgb(115, 230, 130);
-color:#000000;
-font-family: 'Montserrat', sans-serif;
-font-weight:700;
-font-size:18px;
-}
-.mc-alert-status {
+  }
+
+  .myAlert_status {
+    margin-top: 15px;
+  }
+
+  .color-red {
+    background-color: #f83f3f;
+    color: #000000;
+  }
+
+  .color-green {
+    background-color: rgb(115, 230, 130);
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .mc-alert-status {
     padding: 10px;
-}
-.mc-alert-desc
-{
-width:75%;
-padding:10px;
-}
-.booking-success h3 
-{
-  text-align:center;
-  color:#3ec280;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-.booking-success p 
-{
-  text-align: center;
-  color:#555;
-}
-.allocate-driver
-{
-  padding:5px 20px;
-    border:none;
+  }
+
+  .mc-alert-desc {
+    width: 75%;
+    padding: 10px;
+  }
+
+  .booking-success h3 {
+    text-align: center;
+    color: #3ec280;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .booking-success p {
+    text-align: center;
+    color: #555;
+  }
+
+  .allocate-driver {
+    padding: 5px 20px;
+    border: none;
     margin-top: 10px;
-    font-size:14px;
-    font-weight:600;
-    color:#000000;
-    background-color:#6ce4a8;
-}
-.allocate-btn
-{
-  padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    background-color: #6ce4a8;
+  }
+
+  .allocate-btn {
+    padding: 10px 20px;
     border: none;
     font-size: 14px;
     font-weight: 600;
     color: #000000;
     background-color: #6ce4a8;
-    outline:none;
-}
-.allocate-driver-card
-{
-  display:none;
-  box-shadow: 0 1px 5px 3px rgba(46,50,52,0.1);
-  padding:10px;
-}
-#allocated-table 
-{
-  display: none;
-}
+    outline: none;
+  }
+
+  .allocate-driver-card {
+    display: none;
+    box-shadow: 0 1px 5px 3px rgba(46, 50, 52, 0.1);
+    padding: 10px;
+  }
+
+  #allocated-table {
+    display: none;
+  }
 </style>
 
 </html>

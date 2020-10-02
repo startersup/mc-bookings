@@ -48,7 +48,7 @@ function DateSplitter() {
 
   if (myval !== '') {
     var dateVal = myval.split(' ')[0];
-    document.getElementById('date').value = dateVal.split('/')[2] + "-" + dateVal.split('/')[1] + "-" + dateVal.split('/')[0];
+    document.getElementById('date').value = dateVal.split('/')[2] + "-" + dateVal.split('/')[0] + "-" + dateVal.split('/')[1];
 
   }
 
@@ -64,6 +64,7 @@ function manual_alloc() {
   var fare = parseFloat($('#fare').val());
   var dfare = parseFloat((fare / 100) * percent).toFixed(2);
   dfare = parseFloat((fare - dfare)).toFixed(2);
+  $('#dfare').val(dfare);
   myData["new"] = dfare;
   if (myData["new"] == '' || myData["new"] == '0') {
     myAlert('Please enter fare for driver!!!');
@@ -93,7 +94,7 @@ function get_url_response(myGetUrl, mydata) {
 function manual_alloc_response(data) {
 
   myAlert(data.msg);
-  var temp = '<tr><td>' + $('#bookid').html() + '</td><td>' + $("#drvid option:selected").html() + ' - ' + $('#drvid').val() + '</td><td>' + $('#drvpercent').val() + '</td><td>Allocated</td></tr>';
+  var temp = '<tr><td>' + $('#bookid').html() + '</td><td>' + $("#drvid option:selected").html() + ' - ' + $('#drvid').val() + '</td><td>' + $('#drvpercent').val() + '</td><td>'+$('#dfare').val()+'</td><td>Allocated</td></tr>';
   $('#Allocate_Table').html(temp);
 
 }
@@ -289,6 +290,10 @@ function myAlert(msg) {
 
   $("#myAlert_class").addClass('color-red');
   $("#myAlert").fadeIn();
+
+  setTimeout(function(){ 
+    $("#myAlert").fadeOut();
+   }, 4000);
 
 }
 
