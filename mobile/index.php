@@ -619,20 +619,24 @@ background-color: #F5737F !important;
   border-radius:0px !important;
 }
 .mc-alert-box {
-    background-color: #ffffff;
+  background-color: #ffffff;
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
     position: absolute !important;
     z-index: 20 !important;
-    top: 46px !important;
+    top: 63px !important;
     display: flex;
     right: 30px !important;
     max-width: 400px;
+    height: 70px;
     width: 100%;
     border: 1px solid #d0d9e2!important;
 }
 .mc-alert-box p
 {
-    padding:5px 20px;
+  vertical-align: middle;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
 }
 .myAlert_status
 {
@@ -652,8 +656,7 @@ font-weight:700;
 font-size:18px;
 }
 .mc-alert-status {
-    width: 25%;
-    padding: 5px;
+    padding: 10px;
 }
 .mc-alert-desc
 {
