@@ -36,7 +36,7 @@ $(document).on('click','.allocate-btn',function () {
   $("#allocated-table").show()
 });
 
-$(document).on('click','#datetimepicker',function () {
+$(document).on('blur','#datetimepicker',function () {
 
     DateSplitter();
   });
