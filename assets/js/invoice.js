@@ -114,6 +114,8 @@ function setInvoiceTable(myData) {
 
     document.getElementById("BasicDriverInfo").innerHTML = myObj[0].dname + '<br>' + myObj[0].drvid + '<br>' + myObj[0].address;
     setDate(myTemp.no);
+    
+  $("#tickettable tbody tr").eq(2).show();
     $('#emptyPreview').hide();
   } else if (myObj.length == 0) {
     $('#emptyPreview').show();
