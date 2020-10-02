@@ -661,7 +661,7 @@ font-size:18px;
 .mc-alert-desc
 {
 width:75%;
-padding:20px;
+padding:10px;
 }
 .booking-success h3 
 {
