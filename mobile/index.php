@@ -26,7 +26,7 @@
   background-color: rgb(255, 255, 255);
   min-width: 1500px;
   top: 0px;
-  left: 65px;
+  left: 0px;
   border: none;">
     <div class="modal11-content">
       <div class="loader" style="max-width:100px;position:absolute;top:300px;left:650px;">
@@ -44,7 +44,7 @@
   </div>
  </nav> 
 
- <div class=" mc-alert-box alert-dismissible" id="myAlert" style="display: none;">
+ <div class=" mc-alert-box" id="myAlert" style="display: none;">
       <div class="mc-alert-status color-green" id="myAlert_color" ><p id="myAlert_status" ><svg height="40" viewBox="0 0 515.556 515.556" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 274.226l176.549 176.886L515.556 112.44l-48.67-47.997-290.337 290L47.996 225.891z"/></svg></p></div>
       <div class="mc-alert-desc " >     <a href="#" onclick="showStatusMessageClose();" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="myAlert_msg"> hII there</p></div>
     </div>
@@ -617,6 +617,51 @@ background-color: #F5737F !important;
   background-color:#4e019f;
   outline:none !important;
   border-radius:0px !important;
+}
+.mc-alert-box {
+  background-color: #ffffff;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    position: absolute !important;
+    z-index: 20 !important;
+    top: 63px !important;
+    display: flex;
+    right: 30px !important;
+    max-width: 400px;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #d0d9e2!important;
+}
+.mc-alert-box p
+{
+  vertical-align: middle;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+}
+.myAlert_status
+{
+    margin-top:15px;
+}
+.color-red
+{
+    background-color:#f83f3f;
+    color:#000000;
+}
+.color-green
+{
+background-color:rgb(115, 230, 130);
+color:#000000;
+font-family: 'Montserrat', sans-serif;
+font-weight:700;
+font-size:18px;
+}
+.mc-alert-status {
+    padding: 10px;
+}
+.mc-alert-desc
+{
+width:75%;
+padding:10px;
 }
 .booking-success h3 
 {
