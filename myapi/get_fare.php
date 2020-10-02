@@ -8,7 +8,7 @@ include($rootfolder."/connection/connect.php");
 
 $origin=$_POST["src"];
 $destination=$_POST["des"];
-
+$via=$_POST["via"];
 //$destination="Heathrow Airport London (LHR), Longford, UK";
 //$origin="Gatwick Airport, LGW (LGW), Horley, Gatwick, UK";
     
