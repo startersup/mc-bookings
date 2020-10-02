@@ -213,7 +213,7 @@
       </div>
       <div class="form-group">
                 <label for="lugg">Cab Type:</label>
-      <select name="cabType" id="cabType form-feild" onchange="setEstimate();" class="form-control" autocomplete="off">
+      <select name="cabType" id="cabType" onchange="setEstimate();" class="form-control form-feild" autocomplete="off">
               <option value="Saloon">Saloon</option>
               <option value="Estate">Estate</option>
               <option value="MPV-4">MPV 4</option>
