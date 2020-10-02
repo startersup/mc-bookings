@@ -15,9 +15,7 @@ var myFareObj={};
 $(document).on('click','.calculate-fare',function () {
 
     GetFare();
-$(".mc-booking-information").show()
-$(".d-second").css({"display":"flex"});
-$(".d-first").hide()
+
 });
 
 $(document).on('click','.book-now',function () {
@@ -25,6 +23,14 @@ $(document).on('click','.book-now',function () {
  
 });
 
+$(document).on('click', '#manual_alloc', function () {
+
+  // ActionDecision('allocate','manual_alloc');
+ 
+   manual_alloc();
+ 
+ 
+ });
 $(document).on('click','.allocate-driver',function () {
 
   $(".allocate-driver-card").show()
@@ -53,6 +59,48 @@ function DateSplitter()
     }
  
 
+}
+
+function manual_alloc() {
+  var myData={}
+  myData["id"]=$('#bookid').html();
+  myData["did"]=$('#drvid').val();
+  myData["drvpercent"]=  $('#drvpercent').val();
+  var percent =parseInt(myData["drvpercent"]);
+  var fare=parseFloat($('#fare').val());
+  var dfare = parseFloat((fare /10) *percent ).toFixed(2);
+ myData["new"]=dfare;
+  if(myData["new"]=='' || myData["new"]=='0')
+  {
+    alertData='{"response":"fail","msg":"Please enter fare for driver!!!"}';
+    showStatusMessage(alertData);
+    return;
+  }
+        var myGetUrl = myUrl + "myapi/driver_accept.php";
+        get_url_response(myGetUrl, myData);
+}
+function get_url_response(myGetUrl, mydata) {
+ 
+  $.ajax({
+    type: "POST",
+    url: myGetUrl,
+    data: mydata,
+    async: false,
+    success: function(data) {
+       Obj= JSON.parse(data);
+       manual_alloc_response(Obj);
+   
+    },
+    error: function(xhr) {
+      
+    }
+  });
+}
+
+function manual_alloc_response(data)
+{
+  
+    myAlert(data.msg)
 }
 function get_response(myGetUrl, mydata) {
  
@@ -123,6 +171,8 @@ function showStatus(data)
   var Obj =JSON.parse(data);
   if(Obj.status == 'success')
   {
+    $('#bookid').html(Obj.bookid);
+    $('#bookedAlert').trigger("click");
     $(".footer").hide()
   }else{
 
@@ -210,7 +260,9 @@ function setEstimate()
   //  document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
 	document.getElementById('fare').value=myObj[temp]["ofare"][0];
 	}
-
+  $(".mc-booking-information").show()
+  $(".d-second").css({"display":"flex"});
+  $(".d-first").hide()
 
     document.getElementById("spinnermodal").style.display = "none";
 }

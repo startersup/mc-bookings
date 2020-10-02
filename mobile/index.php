@@ -288,7 +288,7 @@
             <option value="20">20%</option>
             <option value="25">25%</option>
           </select>
-          <button class="allocate-btn">Allocate</button>
+          <button id="manual_alloc" class="allocate-btn">Allocate</button>
         </div>
         </div>
         <br><br>

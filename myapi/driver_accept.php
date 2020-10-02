@@ -15,9 +15,10 @@ if (!$conn) {
   $ref = $_POST['id'];
   $did = $_POST['did'];
   $bid = $_POST['new'];
+  $percent = $_POST['drvpercent'];
   $st = "comitted";
 
-  $update_qry="UPDATE `register` SET `status`='$st',`drvid`='$did',`dfare`='$bid' WHERE refid='$ref'";
+  $update_qry="UPDATE `register` SET `status`='$st',`drvid`='$did',`dfare`='$bid',`dpercent`='$percent' WHERE refid='$ref'";
   $result = mysqli_query($conn, $update_qry);
 
 
