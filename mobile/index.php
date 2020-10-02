@@ -297,12 +297,12 @@
               <tr style="border:1px solid #e4e4e4;">
                   <th>Id</th>
                   <th>Name</th>
-                  <th>Fare</th>
+                  <th>Percent</th>
                   <th>Action</th>
                   
               </tr>
           </thead>
-          <tbody id="Allocate_Table"><tr><td>BRT119</td><td>Apple cars</td><td>11.7</td><td>Allocated</td></tr></tbody>
+          <tbody id="Allocate_Table"></tbody>
         </table>
         </div>
         </div>

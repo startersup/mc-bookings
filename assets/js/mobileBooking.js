@@ -72,8 +72,7 @@ function manual_alloc() {
  myData["new"]=dfare;
   if(myData["new"]=='' || myData["new"]=='0')
   {
-    alertData='{"response":"fail","msg":"Please enter fare for driver!!!"}';
-    showStatusMessage(alertData);
+    myAlert('Please enter fare for driver!!!');
     return;
   }
         var myGetUrl = myUrl + "myapi/driver_accept.php";
@@ -100,7 +99,10 @@ function get_url_response(myGetUrl, mydata) {
 function manual_alloc_response(data)
 {
   
-    myAlert(data.msg)
+    myAlert(data.msg);
+    var temp ='<tr><td>'+$('#bookid').html()+'</td><td>'+$("#drvid option:selected").html()+' - '+$('#drvid').val();+'</td><td>'+ $('#drvpercent').val()+'</td><td>Allocated</td></tr>';
+  $('#Allocate_Table').html(temp);  
+
 }
 function get_response(myGetUrl, mydata) {
  
