@@ -30,9 +30,10 @@
   border: none;">
     <div class="modal11-content">
       <div class="loader" style="max-width:100px;position:absolute;top:300px;left:650px;">
-        <centre> <img width="80px;" src="./assets/images/icons/loader.svg"></centre>
+        <centre> <img width="80px;" src="../assets/images/icons/loader.svg"></centre>
       </div>
     </div>
+    
   </div>
  <nav class="mc-mobile-navbar d-flex">
   <div class="container-fluid">
@@ -42,6 +43,11 @@
    </div>   
   </div>
  </nav> 
+
+ <div class=" mc-alert-box alert-dismissible" id="myAlert" style="display: none;">
+      <div class="mc-alert-status color-green" id="myAlert_color" ><p id="myAlert_status" ><svg height="40" viewBox="0 0 515.556 515.556" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 274.226l176.549 176.886L515.556 112.44l-48.67-47.997-290.337 290L47.996 225.891z"/></svg></p></div>
+      <div class="mc-alert-desc " >     <a href="#" onclick="showStatusMessageClose();" class="close" data-dismiss="alert" aria-label="close">&times;</a><p id="myAlert_msg"> hII there</p></div>
+    </div>
 
 <br><br><br><br>
  <section class="booking-form">
@@ -53,24 +59,24 @@
       </div>
       <div class="form-group">
         <label for="usr">Dropoff postcode:</label>
-        <input type="text" class="form-control" name="destination-input" id="destination-input" placeholder="Enter Dropoff postcode" autocomplete="off">
+        <input type="text" class="form-control form-feild" name="destination-input" id="destination-input" placeholder="Enter Dropoff postcode" autocomplete="off">
       </div>
       <div class="form-group">
         <label for="usr">Via Point:</label>
-        <input type="text" class="form-control" name="via" placeholder="Enter Via Point" autocomplete="off">
+        <input type="text" class="form-control form-feild" id="via" name="via" placeholder="Enter Via Point" autocomplete="off">
       </div>
       <div class="row">
         <div class="col-xs-6">
           <div class="form-group">
             <label for="usr">Pickup Date:</label>
             <input type="text" class="form-control" id="datetimepicker" name="datepicker"  />
-            <input type="hidden" name="date" class="form-control" >
+            <input type="hidden" name="date" id="date" class="form-control form-feild" >
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label for="usr">Pickup Time:</label>
-            <select class="form-control" name="time">
+            <select class="form-control form-feild" name="time">
                 <option value="00:00">00:00</option>
                 <option value="00:15">00:15</option>
                 <option value="00:30">00:30</option>
@@ -173,7 +179,7 @@
           <div class="col-xs-6">
             <div class="form-group">
               <label for="usr">No of Passengers:</label>
-              <select class="form-control" name="np">
+              <select class="form-control form-feild" name="np">
                 <option value="01">1</option>
                 <option value="02">2</option>
                 <option value="03">3</option>
@@ -189,7 +195,7 @@
             <div class="col-xs-6">
               <div class="form-group">
                 <label for="lugg">No of Luggages:</label>
-                <select class="form-control" name="nl">
+                <select class="form-control form-feild" name="nl">
                   <option value="01">1</option>
                   <option value="02">2</option>
                   <option value="03">3</option>
@@ -207,7 +213,7 @@
       </div>
       <div class="form-group">
                 <label for="lugg">Cab Type:</label>
-      <select name="cabType" id="cabType" onchange="setEstimate();" class="form-control" autocomplete="off">
+      <select name="cabType" id="cabType form-feild" onchange="setEstimate();" class="form-control" autocomplete="off">
               <option value="Saloon">Saloon</option>
               <option value="Estate">Estate</option>
               <option value="MPV-4">MPV 4</option>
@@ -241,15 +247,15 @@
 
         <div class="form-group">
           <label for="usr">Passenger name:</label>
-          <input type="text" name="name" class="form-control" placeholder="Enter Passenger Name" autocomplete="off">
+          <input type="text" name="name" class="form-control form-feild" placeholder="Enter Passenger Name" autocomplete="off">
         </div>
         <div class="form-group">
           <label for="usr">Passenger Contact Number:</label>
-          <input type="text" name="mobile1" class="form-control" placeholder="Enter Contact Number" autocomplete="off">
+          <input type="text" name="mobile1" class="form-control form-feild" placeholder="Enter Contact Number" autocomplete="off">
         </div>
         <div class="form-group">
           <label for="usr">Payment Method:</label>
-          <select class="select form-control" required="" id="pay" name="pay">
+          <select class="select form-control form-feild" required="" id="pay" name="pay">
             <option value="card">Debit / Credit card </option>
             <option value="paypal">Paypal Transaction</option>
             <option value="cash">Cash on Ride</option>
@@ -257,19 +263,19 @@
         </div>
         <div class="form-group">
           <label for="usr">Special Info:</label>
-          <textarea rows="5" cols="50" name="info" class="form-control"></textarea>
+          <textarea rows="5" cols="50" name="info" class="form-control form-feild"></textarea>
         </div>
         <div class="form-group">
           <label for="usr">Total Fare:</label>
-          <input type="text" class="form-control" name="fare" id="fare" value=""  />
+          <input type="text" class="form-control form-feild" name="fare" id="fare" value=""  />
         </div>
         <br><br>
       </div>  
       </div>
       <div id="successpage" class="tab-pane fade">
         <div class="booking-success">
-         <h3>Booking Success!</h3> 
-         <p>Your Booking Reference Id: <b>MCE2435</b></p>
+         <h3>Booking Success!!</h3> 
+         <p>Your Booking Reference Id: <b id="bookid"></b></p>
          <br>
         <center> <a class="allocate-driver">Allocate Driver</a></center>
         <div class="allocate-driver-card">
@@ -314,7 +320,8 @@
 <div class="d-flex d-second">
  <p><span id="route_miles">12</span> Miles</p>   
  <p><span id="route_time" >1</span>  </p>   
- <a class="book-now" data-toggle="pill" href="#successpage">Book now</a>
+ <a class="" id="bookedAlert" style="display:none" data-toggle="pill" href="#successpage">Book now</a>
+ <a class="book-now" >Book now</a>
 </div>
   </div>
 

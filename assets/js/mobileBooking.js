@@ -21,8 +21,8 @@ $(".d-first").hide()
 });
 
 $(document).on('click','.book-now',function () {
-
-  $(".footer").hide()
+  bookNow();
+ 
 });
 
 $(document).on('click','.allocate-driver',function () {
@@ -47,8 +47,8 @@ function DateSplitter()
     if(myval !== '')
     {
       var myVals = myval.split(' ');
-      document.getElementById('date').value = myVals[0].replace("/","-");
-      document.getElementById('date').value = document.getElementById('date').value.replace("/","-");
+      var dateVal = myVals[0].replace("/","-");
+      document.getElementById('date').value = dateVal.split('-')[2]+"-"+dateVal.split('-')[1]+"-"+dateVal.split('-')[0];
      
     }
  
@@ -118,7 +118,16 @@ function get_response(myGetUrl, mydata) {
       }
     });
   }
+function showStatus(data)
+{
+  var Obj =JSON.parse(data);
+  if(Obj.status == 'success')
+  {
+    $(".footer").hide()
+  }else{
 
+  }
+}
   function setLoad()
   {
     
@@ -132,21 +141,19 @@ function get_response(myGetUrl, mydata) {
   function bookNow()
   {
 
-    if(checkSrc())
-    {
-        if(mandCheck())
-		{
-			var mydata ={};
-        for(var i=0;i<myId.length;i++)
-        {
-			var temp= myId[i];
-			mydata[temp]=document.getElementById(temp).value;
-        }
+   
+      var mydata ={};
+      var key="";
+      var val="";
+      $('.form-feild').each(function(){
+        key=$(this).attr("name");
+        val=$(this).val();
+        mydata[key]=val;
+      })
     var myGetUrl = myUrl + "myapi/book.php";
     
   		get_Booking(myGetUrl, mydata);
-		}
-    }
+		
   }
   function checkSrc()
   {
