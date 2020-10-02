@@ -282,7 +282,7 @@
           <div class="d-flex">
           <select name="drvid" id="drvid" class="selectit" autocomplete="off">
                       </select>
-                       <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="pay" name="pay">
+                       <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="drvpercent" name="pay">
             <option value="10">10% </option>
             <option value="15">15%</option>
             <option value="20">20%</option>
@@ -320,7 +320,7 @@
 <div class="d-flex d-second">
  <p><span id="route_miles">12</span> Miles</p>   
  <p><span id="route_time" >1</span>  </p>   
- <a class="" id="bookedAlert" style="display:none" data-toggle="pill" href="#successpage">Book now</a>
+ <button class="" id="bookedAlert" style="display:none" data-toggle="pill" href="#successpage">Book now</button>
  <a class="book-now" >Book now</a>
 </div>
   </div>
