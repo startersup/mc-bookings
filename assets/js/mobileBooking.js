@@ -42,19 +42,15 @@ $(document).on('click','.allocate-btn',function () {
   $("#allocated-table").show()
 });
 
-$(document).on('blur','#datetimepicker',function () {
 
-    DateSplitter();
-  });
 function DateSplitter()
 {
     var myval = document.getElementById('datetimepicker').value; 
    
     if(myval !== '')
     {
-      var myVals = myval.split(' ');
-      var dateVal = myVals[0].replace("/","-");
-      document.getElementById('date').value = dateVal.split('-')[2]+"-"+dateVal.split('-')[1]+"-"+dateVal.split('-')[0];
+      var dateVal = myval.split(' ')[0];
+      document.getElementById('date').value = dateVal.split('/')[2]+"-"+dateVal.split('/')[1]+"-"+dateVal.split('/')[0];
      
     }
  
@@ -197,6 +193,7 @@ function showStatus(data)
       var mydata ={};
       var key="";
       var val="";
+      DateSplitter();
       $('.form-feild').each(function(){
         key=$(this).attr("name");
         val=$(this).val();
@@ -261,11 +258,13 @@ function setEstimate()
     var temp=document.getElementById('cabType').value;
   //  document.getElementById('route_fare').innerHTML=myObj[temp]["ofare"][0];
 	document.getElementById('fare').value=myObj[temp]["ofare"][0];
-	}
+  }
+  if($('#fare').val() != '')
+  {
   $(".mc-booking-information").show()
   $(".d-second").css({"display":"flex"});
   $(".d-first").hide()
-
+  }
     document.getElementById("spinnermodal").style.display = "none";
 }
 
