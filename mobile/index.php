@@ -618,6 +618,48 @@ background-color: #F5737F !important;
   outline:none !important;
   border-radius:0px !important;
 }
+.mc-alert-box {
+    background-color: #ffffff;
+    box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    position: absolute !important;
+    z-index: 20 !important;
+    top: 46px !important;
+    display: flex;
+    right: 30px !important;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #d0d9e2!important;
+}
+.mc-alert-box p
+{
+    padding:5px 20px;
+}
+.myAlert_status
+{
+    margin-top:15px;
+}
+.color-red
+{
+    background-color:#f83f3f;
+    color:#000000;
+}
+.color-green
+{
+background-color:rgb(115, 230, 130);
+color:#000000;
+font-family: 'Montserrat', sans-serif;
+font-weight:700;
+font-size:18px;
+}
+.mc-alert-status {
+    width: 25%;
+    padding: 5px;
+}
+.mc-alert-desc
+{
+width:75%;
+padding:20px;
+}
 .booking-success h3 
 {
   text-align:center;
