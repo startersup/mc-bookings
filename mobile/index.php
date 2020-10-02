@@ -282,7 +282,7 @@
           <div class="d-flex">
           <select name="drvid" id="drvid" class="selectit" autocomplete="off">
                       </select>
-                       <select class="select form-control" style="width:75px;margin-left:-1px;"  required="" id="drvpercent" name="pay">
+                       <select class="select form-control" style="max-width:100px;width:100%;margin-left:-1px;"  required="" id="drvpercent" name="pay">
             <option value="10">10% </option>
             <option value="15">15%</option>
             <option value="20">20%</option>
@@ -701,9 +701,19 @@ padding:10px;
   box-shadow: 0 1px 5px 3px rgba(46,50,52,0.1);
   padding:10px;
 }
+.selectit
+{
+  border: 1px solid #ccc !important;
+  outline:none;
+}
 #allocated-table 
 {
   display: none;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td
+{
+  font-size: 11px;
+  color: #000000;
 }
 </style>
 
