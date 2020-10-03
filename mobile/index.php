@@ -274,10 +274,11 @@
           </div>
           <div class="form-group">
             <label for="SSr">Booking Website:</label>
-            <select class="select form-control form-feild" required="" id="website" name="">
-              <option value="Minicabee">Minicabee </option>
-              <option value="Gatwick Taxis">Gatwick Taxis</option>
-              <option value="Britannia Taxis">Britannia Taxis</option>
+            <select class="select form-control form-feild" required="" id="" name="booked_site">
+              <option value="Minicabee">Minicabee</option>
+              <option value="Gatwick Airport Taxi">Gatwick Taxis</option> 
+              <option value="Horsham Taxi">Horsham Taxis</option>
+              <option value="Britannia Taxi">Britannia Taxis</option>
             </select>
           </div>
           <div class="form-group">

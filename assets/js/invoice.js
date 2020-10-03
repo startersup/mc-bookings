@@ -3,8 +3,8 @@ var mySite = window.location.host;
 var myUrl = myProtocol + "//" + mySite + "/";
 var mydataInv = {};
 var InvoiceType = '';
-var minicabee_info = "Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk";
-var taxicode_info = "Britannia Travel Solution<br> britanniabooking@gmail.com <br> www.britannia-taxis.com";
+var minicabee_info = "Britannia<br> britanniabooking@gmail.com <br>www.gatwick-airporttaxis.com<br>01293 660 660/01293 344 804";
+var taxicode_info = "Britannia <br> britanniabooking@gmail.com <br>www.gatwick-airporttaxis.com<br>01293 660 660/01293 344 804";
 
 
 function get_response(myGetUrl, mydata) {

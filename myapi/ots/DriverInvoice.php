@@ -18,7 +18,7 @@ session_start();
    
    if(($for == "driver") && ($driverId == "e"))
   {
-    $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address as daddress FROM driver where id IN(select distinct drvid from oregister where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
+    $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address FROM driver where id IN(select distinct drvid from oregister where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
  
   }else  if(($for == "driver") && ($driverId !== "e"))
   {
@@ -31,7 +31,7 @@ session_start();
   
 }else if(($for == "provider") && ($driverId == "e"))
 {
-  $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address as daddress FROM provider where id IN(select distinct drvid from oregister where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
+  $sql = "Select id as drvid,name as dname, mobile as dnum1,mobile2 as dnum2, address FROM provider where id IN(select distinct drvid from oregister where status = 'completed' AND (dt>= '".$from."' AND dt<= '".$to."') )";
 
 }else  if(($for == "provider") && ($driverId !== "e"))
 {
