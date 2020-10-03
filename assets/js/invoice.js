@@ -112,7 +112,7 @@ function setInvoiceTable(myData) {
     document.getElementById("DrvTotalFare").innerHTML = '£' + total_dfare.toFixed(2);
     document.getElementById("DrvTotalPay").innerHTML = '£' + ((total_fare - total_dfare).toFixed(2));
 
-    document.getElementById("BasicDriverInfo").innerHTML = myObj[0].dname + '<br>' + myObj[0].drvid + '<br>' + myObj[0].address;
+    document.getElementById("BasicDriverInfo").innerHTML = myObj[0].dname + ' (' + myObj[0].drvid + ')<br>' + myObj[0].e_mail+'<br>'+myObj[0].mobile+'<br>'+myObj[0].address;
     setDate(myTemp.no);
     
   $("#tickettable tbody tr").eq(2).show();

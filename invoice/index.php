@@ -187,7 +187,7 @@ if($action =="")
                   <tr>
                     <td
                       style="border:1px solid #f4f4f4;padding:2px 10px;vertical-align:top;text-align:left;letter-spacing:0.5px;color:#000;line-height:22px;font-size:13px;font-weight:500;font-family:'Nunito', sans-serif;">
-                      Pay to Minicabee</td>
+                      Pay to Britannia</td>
                     <td
                       style="border:1px solid #f4f4f4;padding:2px 10px;vertical-align:top;text-align:left;letter-spacing:0.5px;color:#000;line-height:22px;font-size:13px;font-weight:500;font-family:'Nunito', sans-serif;"
                       id="DrvTotalPay">£145</td>
