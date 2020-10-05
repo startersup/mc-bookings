@@ -552,7 +552,7 @@ function setModalData(myData) {
       message1_data =
       message1_data +
       "Date & Time : " +
-      document.getElementById("modal_booking_dt").value +' / '+document.getElementById("modal_booking_time").value
+      document.getElementById("modal_booking_dt").value +' / '+document.getElementById("modal_booking_time").value+
       "\n";
       message1_data =
       message1_data +
