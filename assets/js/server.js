@@ -537,17 +537,27 @@ function setModalData(myData) {
     message1_data =
       message1_data +
       "Pick Up : " +
-      document.getElementById("modal_booking_address1").value +
+      document.getElementById("modal_booking_src").value +
       "\n";
     message1_data =
       message1_data +
       "Drop Off : " +
-      document.getElementById("modal_booking_address2").value +
+      document.getElementById("modal_booking_des").value +
       "\n";
     message1_data =
       message1_data +
       "Name : " +
       document.getElementById("modal_booking_name").value +
+      "\n";
+      message1_data =
+      message1_data +
+      "Date & Time : " +
+      document.getElementById("modal_booking_dt").value +' / '+document.getElementById("modal_booking_time").value
+      "\n";
+      message1_data =
+      message1_data +
+      "Passengers : " +
+      document.getElementById("modal_booking_passenger").value +
       "\n";
     message1_data =
       message1_data +
