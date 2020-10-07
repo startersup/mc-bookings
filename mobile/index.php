@@ -259,6 +259,10 @@
           <div class="form-group">
             <label for="usr">Passenger Contact Number:</label>
             <input type="text" name="mobile1" class="form-control form-feild" placeholder="Enter Contact Number" autocomplete="off">
+        
+            <input type="hidden" name="status" class="form-control form-feild" placeholder="" value="booked-confirmed" autocomplete="off">
+        
+        
           </div>
           <div class="form-group">
             <label for="usr">Payment Method:</label>
