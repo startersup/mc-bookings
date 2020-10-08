@@ -6,8 +6,10 @@ if(!$conn)
     echo("Conn Failed... <br> err".$conn);
 
 }
+
+echo "Failed to connect to MySQL: " . $conn -> connect_error;
+  
 if ($conn -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $conn -> connect_error;
-   
+  
   }
 ?>
