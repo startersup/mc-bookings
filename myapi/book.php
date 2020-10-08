@@ -24,7 +24,7 @@ session_start();
   $np2=$_POST['np2'];
   $time=$_POST['time'];
   $fare=$_POST['fare'];
-  $status=$status;
+  $status=$_POST['status'];
   $via=$_POST['via'];
   $dfare=$dfare;
   $meet=$_POST['meet'];
