@@ -192,7 +192,6 @@ function setRow(data) {
         { data: "des" },
         { data: "dt" },
         { data: "type" },
-        { data: "booked_time" },
         { data: "fare" },
         { data: "status" },
         { data: null, defaultContent: '<div class="mc-edit"></div>' }
@@ -452,6 +451,7 @@ function clearModal() {
   $("#modal_booking_dt").val('') ;
   $("#modal_booking_time").val('') ;
   $("#modal_booking_type").val('') ;
+  $("#modal_booking_booked_time").val('') ;
   $("#myModalBookId").innerHTML ;
   $("#myModalBookId").name ;
   
@@ -506,6 +506,8 @@ function setModalData(myData) {
     document.getElementById("modal_booking_dt").value = myObj["base"]["dt"];
     document.getElementById("modal_booking_time").value = myObj["base"]["time"];
     document.getElementById("modal_booking_type").value = myObj["base"]["type"];
+    
+    document.getElementById("modal_booking_booked_time").value = myObj["base"]["booked_time"];
     document.getElementById("myModalBookId").innerHTML =
       "Booking Information - ( " + myObj["base"]["refid"] + " )";
     document.getElementById("myModalBookId_temp").innerHTML = myObj["base"]["refid"];

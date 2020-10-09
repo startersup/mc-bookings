@@ -50,7 +50,7 @@ if($action =="")
                 <th style="width:15%;">Dropoff To</th>
                 <th>D&T</th>
                 <th>Type</th>
-                <th>Booked Time</th>
+               
                 <th>Fare</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -186,6 +186,10 @@ if($action =="")
                     <tr>
                       <td>Cab Type :</td>
                       <td><input type="text" class="text" name="num1" id="modal_booking_type" value=""></td>
+                    </tr>
+                    <tr>
+                      <td>Booked Time</td>
+                      <td><input type="text" class="text" name="num1" id="modal_booking_booked_time" value=""></td>
                     </tr>
                     <tr>
                       <td>Total Miles :</td>
