@@ -13,7 +13,7 @@ session_start();
     $check=$date;
 
    
-    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site ,date_format(tiktok,'%d-%m-%Y %H:%i:%S') as booked_time from register WHERE dt= '".$check."'  and status != 'cancelled'  ";
+    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site ,date_format(tiktok,'%Y-%m-%d %H:%i:%S') as booked_time from register WHERE dt= '".$check."'  and status != 'cancelled'  ";
   $result=  mysqli_query($conn,$sql);
   
   
