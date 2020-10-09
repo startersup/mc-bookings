@@ -192,6 +192,7 @@ function setRow(data) {
         { data: "des" },
         { data: "dt" },
         { data: "type" },
+        { data: "booked_time" },
         { data: "fare" },
         { data: "status" },
         { data: null, defaultContent: '<div class="mc-edit"></div>' }

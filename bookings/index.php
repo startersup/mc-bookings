@@ -49,7 +49,8 @@ if($action =="")
                 <th style="width:15%;">Pickup From</th>
                 <th style="width:15%;">Dropoff To</th>
                 <th>D&T</th>
-                  <th>Type</th>
+                <th>Type</th>
+                <th>Booked Time</th>
                 <th>Fare</th>
                 <th>Status</th>
                 <th>Action</th>
