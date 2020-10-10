@@ -32,7 +32,7 @@ if ($action == "")
 
 
         <!----custom-filter-modal-->
-        <div class="modal fade" id="customFiltersOts" role="dialog">
+        <div class="modal bg" id="customFiltersOts" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content max-width-300">
