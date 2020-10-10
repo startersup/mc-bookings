@@ -41,7 +41,7 @@ body
 }
 .max-width-300
 {
-    max-width:280px !important;
+    max-width:300px !important;
     width:100%;
 }
 .pad-0
@@ -1537,6 +1537,10 @@ font-size:18px;
 {
 width:75%;
 padding:20px;
+}
+#filterListOts
+{
+    padding:10px;
 }
 #filterListOts ul 
 {
