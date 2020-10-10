@@ -98,7 +98,7 @@ if ($action == "")
         <tbody>
 
         </tbody>
-      </table>
+      </table><br><br>
     </div>
 
   </div>
