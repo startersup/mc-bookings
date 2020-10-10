@@ -1,7 +1,6 @@
 
 
   <button type="button" style="display:none;" class="btn btn-info btn-lg" data-toggle="modal" data-target="#action_popup" data-backdrop="static" data-keyboard="false" id="action_popup_btn">Open cofirm Modal</button>
-  <button type="button" class="mc-close close" id="mc-close-modal" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
 <div class="modal bg" id="action_popup" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
