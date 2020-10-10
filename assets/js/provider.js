@@ -37,7 +37,7 @@ function loadProvider() {
           var myClass = "";
           var myDiv = '<div class="myClass">myStatus</div>';
           if (data.status == "0") {
-            myDiv = myDiv.replace("myStatus", "Not Active");
+            myDiv = myDiv.replace("myStatus", "Inactive");
             myDiv = myDiv.replace("myClass", "mc-Drv-Active");
           } else if (data.status == "1") {
             myDiv = myDiv.replace("myStatus", "Active");
