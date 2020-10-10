@@ -1549,6 +1549,11 @@ list-style-type: none;
 padding:0;
 margin:0;
 }
+#filterListOts ul li 
+{
+    font-size:11px;
+}
+
 .ui-widget-content, .ui-widget-dialog
 {
     position: absolute;
