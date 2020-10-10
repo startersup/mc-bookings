@@ -1538,6 +1538,12 @@ font-size:18px;
 width:75%;
 padding:20px;
 }
+#filterListOts ul 
+{
+list-style-type: none;
+padding:0;
+margin:0;
+}
 .ui-widget-content, .ui-widget-dialog
 {
     position: absolute;
