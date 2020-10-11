@@ -60,15 +60,15 @@ var router = {
         "js":""
     },
     "userSettings": {
-        "url": "settings/user",
+        "url": "settings/user/",
         "load": "",
-        "view": "settings/user",
+        "view": "settings/user/",
         "js":""
     },
     "site": {
-        "url": "settings/site",
+        "url": "settings/site/",
         "load": "",
-        "view": "settings/site",
+        "view": "settings/site/",
         "js":""
     }
     
