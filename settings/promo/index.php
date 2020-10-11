@@ -63,8 +63,13 @@ if($action =="")
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">New Promo</h4>
       </div>
-      <div class="modal-body pad-0">
+      <div class="modal-body pad-15">
       
+      <div id="promorange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span id="fromto" ></span> 
+        <i class="fa fa-caret-down"></i>
+        </div>
          
         <label for="name">Promo Code</label>
             <input class="controls" type="text" id="mail" placeholder="Enter Promo Code" autocomplete="off">
@@ -91,11 +96,6 @@ if($action =="")
                  <label for="name">Maximum Value</label>
                  <input class="controls" type="text" id="mail" placeholder="Enter Promo Name" autocomplete="off">
 
-                 <div id="promorange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span id="fromto" ></span> 
-        <i class="fa fa-caret-down"></i>
-        </div>
             <div class="mc-flex">
             <button class="button-style" data-dismiss="modal" id="filter_load" >Create</button>
             <button class="button-cancel-style" data-dismiss="modal">Cancel</button>

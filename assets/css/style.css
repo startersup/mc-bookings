@@ -48,11 +48,14 @@ body
 {
     max-width:500px !important;
     width:100%;
-    padding:15px;
 }
 .pad-0
 {
     padding:0px !important;
+}
+.pad-15
+{
+    padding:15px !important;
 }
 
 .navbar-brand
