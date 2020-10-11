@@ -65,6 +65,12 @@ var router = {
         "view": "settings/user",
         "js":""
     },
+    "site": {
+        "url": "settings/site",
+        "load": "",
+        "view": "settings/site",
+        "js":""
+    }
     
 }
 
