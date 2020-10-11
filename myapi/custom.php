@@ -34,7 +34,7 @@ session_start();
 {
    $temp=array();
 }
-
-  echo  json_encode($temp);
+$resp["sql"]=$sql;
+  echo  json_encode($resp);
 
   ?>
