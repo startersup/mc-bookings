@@ -31,7 +31,7 @@ if($action =="")
           <div class="mc-flex">
           <select class="select form-control siteDropDown" required="" id="siteId" >
         </select>  
-    <button type="submit" class="btn btn-success mc-edit" data-toggle="modal" data-target="#addPromo">Add Promo +</button>
+    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#addPromo">Add Promo +</button>
 </div>
             </div>
       </div>
@@ -48,7 +48,7 @@ if($action =="")
             </thead>
             <tbody id="Allocate_Table">
              <tr>
-              <td>Autumn100</td><td>December offer</td><td>New promo for decemeber attraction customers </td> <td>Active</td>
+              <td>Autumn100</td><td>December offer</td><td>New promo for decemeber attraction customers </td><td>Percentage <td>Active</td>
              </tr>      
             </tbody>
           </table>
@@ -58,17 +58,13 @@ if($action =="")
   <div class="modal-dialog">
   
     <!-- Modal content-->
-    <div class="modal-content max-width-300">
+    <div class="modal-content max-width-500">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">New Promo</h4>
       </div>
       <div class="modal-body pad-0">
-          <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
-            <i class="fa fa-calendar"></i>&nbsp;
-            <span id="fromto" ></span> 
-        <i class="fa fa-caret-down"></i>
-        </div>
+      
          
         <label for="name">Promo Code</label>
             <input class="controls" type="text" id="mail" placeholder="Enter Promo Code" autocomplete="off">
@@ -85,8 +81,21 @@ if($action =="")
                     <select name="promotype" id="nl" class="selectit" autocomplete="off">
                   <option value="Percentage">Percentage</option>
                   <option value="Flat fare">Flat Fare</option>
-</select>
+                 </select>
+                 <label for="name">Promo Value</label>
+                 <input class="controls" type="text" id="mail" placeholder="Enter Promo Name" autocomplete="off">
 
+                 <label for="name">Minimum Value</label>
+                 <input class="controls" type="text" id="mail" placeholder="Enter Promo Name" autocomplete="off">
+
+                 <label for="name">Maximum Value</label>
+                 <input class="controls" type="text" id="mail" placeholder="Enter Promo Name" autocomplete="off">
+
+                 <div id="promorange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span id="fromto" ></span> 
+        <i class="fa fa-caret-down"></i>
+        </div>
             <div class="mc-flex">
             <button class="button-style" data-dismiss="modal" id="filter_load" >Create</button>
             <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
@@ -104,5 +113,31 @@ if($action =="")
       <!---mainbar-starts----->
     </div>
 <!---modals-section------>
+<script type="text/javascript">
+$(function() {
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        $('#promorange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    }
+
+    $('#promorange').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    }, cb);
+
+    cb(start, end);
+});
+</script>
     
   
