@@ -5,7 +5,7 @@ session_start();
  $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
  
   include($rootfolder."/connection/connect.php"); 
-
+  include($rootfolder."/myapi/sessionCheck.php"); 
 
   
     $from=$_POST["from"];
@@ -15,7 +15,7 @@ session_start();
 // $to="2020-1-31";
 // $status="('temp','booked','booked-confirmed')";
    
-  $sql = "SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site ,date_format(tiktok,'%Y-%m-%d %H:%i:%S') as booked_time from register WHERE dt>= '".$from."' AND dt<= '".$to."'";
+  $sql = "SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site ,date_format(tiktok,'%Y-%m-%d %H:%i:%S') as booked_time from register WHERE dt>= '".$from."' AND dt<= '".$to."'".$_SESSION["registerClause"];
 
   if(!($status == "ALL"))
   {

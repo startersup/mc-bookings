@@ -119,6 +119,7 @@ function get_booking_response(myGetUrl, mydata) {
     async: false,
        
     success: function (data) {
+      sessionCheck(data);
       setRow(data);
      
     },
@@ -132,7 +133,15 @@ function get_booking_response(myGetUrl, mydata) {
 
 }
 
-
+function sessionCheck(data)
+{
+  var sesObj = JSON.parse(data);
+  if( ! sesObj.satus)
+  {
+    showStatusMessage(data)
+  }
+  window.location.href=myUrl+"login/"  ;
+}
 
 
 
