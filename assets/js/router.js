@@ -58,7 +58,14 @@ var router = {
         "load": "",
         "view": "emails/templates/",
         "js":""
-    }
+    },
+    "userSettings": {
+        "url": "settings/user",
+        "load": "",
+        "view": "settings/user",
+        "js":""
+    },
+    
 }
 
 
