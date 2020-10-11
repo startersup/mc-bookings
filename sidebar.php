@@ -14,7 +14,7 @@
             <span class="mc-controls">Taxicode</span>
             <span class="tooltiptext"> OTS Bookings</span>
              </div></a></li> 
-
+<!-- 
              <li><a class="li_sidebar" href="company"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/company.svg">
               <span class="mc-controls">Company</span>
               <span class="tooltiptext"> Company</span>
@@ -26,7 +26,7 @@
                  <li><a class="li_sidebar" href="emails"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/marketing.svg">
                   <span class="mc-controls">Marketing</span>
                   <span class="tooltiptext"> Marketing</span>
-                   </div></a></li> 
+                   </div></a></li>  -->
                      <li ><a class="li_sidebar" href="settings"><div class="tooltip-col text-center"><img class="mc-icons" src="../assets/images/icons/gear.svg"><br>
                       <span class="mc-controls">Settings</span>
                       <span class="tooltiptext"> App Settings</span>
