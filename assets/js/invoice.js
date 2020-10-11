@@ -14,6 +14,7 @@ function get_response(myGetUrl, mydata) {
     data: mydata,
     async: false,
     success: function (data) {
+      sessionCheck(data);
       if (InvoiceType == 'minicabee') {
         $('#minicabee_show').show();
         $('#taxicode_show').hide();
