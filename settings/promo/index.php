@@ -3,8 +3,7 @@
     <?php
    include('../../loadcurrentpage.php'); 
 if($action =="")
-  ?>
-<!----Sidebar-ends----->    
+  ?> 
 <!------secondary-sidebar------>
         <div class="mc-secondary-sidebar mc-top-rev">
         <h4>Settings</h4>
@@ -16,9 +15,8 @@ if($action =="")
             <li><a class="li_sidebar" href="promo">Promo Settings</a></li>
             <li><a class="li_sidebar" href="hellobar">Hellobar Settings</a></li>
             </ul>
-    </div>     
-     <!---mainbar-starts----->
-     
+    </div>  
+    <!------secondary-sidebar------>   
      <!---mainbar-starts----->
     <div class="mc-dash-sub-mainbar">
 <div class="mc-sub-mainbar-components">
@@ -30,9 +28,7 @@ if($action =="")
   <button class="btn btn-primary" >Add New Promo +</button>
     
 </div>    
-</div>
-      <!---mainbar-starts----->
-    </div>
-<!---modals-section------>
-    
+</div></div></div>
+
+         <!---mainbar-ends----->
   
