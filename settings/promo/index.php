@@ -5,12 +5,7 @@
 if($action =="")
   ?>
 <!----Sidebar-ends----->    
-    <div class="mc-flex">
 <!------secondary-sidebar------>
-     
-    
-<div class="mc-secondary-sidebar mc-top-rev">
-        <h4>Settings</h4>
         <div class="mc-secondary-sidebar mc-top-rev">
         <h4>Settings</h4>
         <ul>
