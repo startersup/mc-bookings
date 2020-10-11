@@ -5,6 +5,7 @@ session_start();
 
 foreach ($_SESSION as $param_name => $param_val) {
   $_SESSION[$param_name]="";
+}
  ?>
 
 
