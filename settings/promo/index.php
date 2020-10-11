@@ -31,7 +31,7 @@ if($action =="")
           <div class="mc-flex">
           <select class="select form-control siteDropDown" required="" id="siteId" >
         </select>  
-        <button type="submit" class="btn btn-success">Add Promo +</button>
+    <button type="submit" class="btn btn-success mc-edit" data-toggle="modal" data-target="#addPromo">Add Promo +</button>
 </div>
             </div>
       </div>
@@ -39,21 +39,67 @@ if($action =="")
         <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
             <thead class="mc-table-head" style="border:1px solid #e4e4e4;">
                 <tr style="border:1px solid #e4e4e4;">
-                    <th>Promo Id</th>
+                    <th>Promo Code</th>
                     <th>Promo Name</th>
                     <th>Promo Description</th>
-                    <th>Status</th>
-                    
+                    <th>Promo Type</th>
+                    <th>Status</th> 
                 </tr>
             </thead>
             <tbody id="Allocate_Table">
              <tr>
-              <td>P6748</td><td>December offer</td><td>New promo for decemeber attraction customers </td> <td>Active</td>
+              <td>Autumn100</td><td>December offer</td><td>New promo for decemeber attraction customers </td> <td>Active</td>
              </tr>      
             </tbody>
           </table>
-          <br>
-          <button type="submit" class="btn btn-primary">SAVE</button>
+
+          <!----custom-filter-modal-->
+<div class="modal modal-bg" id="addPromo" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content max-width-300">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Promo</h4>
+      </div>
+      <div class="modal-body pad-0">
+          <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+            <i class="fa fa-calendar"></i>&nbsp;
+            <span id="fromto" ></span> 
+        <i class="fa fa-caret-down"></i>
+        </div>
+         
+        <label for="name">Promo Code</label>
+            <input class="controls" type="text" id="mail" placeholder="Enter Promo Code" autocomplete="off">
+
+            <label for="name">Promo Name</label>
+            <input class="controls" type="text" id="mail" placeholder="Enter Promo Name" autocomplete="off">
+    
+            <label for="name">Promo description</label>
+            <textarea class="controls" rows="4"  name="message1"
+                    style="width:100%;min-height:200px;"></textarea>
+
+
+                    <label for="name">Promo Type</label>
+                    <select name="promotype" id="nl" class="selectit" autocomplete="off">
+                  <option value="Percentage">Percentage</option>
+                  <option value="Flat fare">Flat Fare</option>
+</select>
+
+            <div class="mc-flex">
+            <button class="button-style" data-dismiss="modal" id="filter_load" >Create</button>
+            <button class="button-cancel-style" data-dismiss="modal">Cancel</button>
+          </div>
+  </div>
+    </div>
+    
+  </div>
+</div>
+
+<!---end custom-filter-modal-->
+
+
 </div>
       <!---mainbar-starts----->
     </div>
