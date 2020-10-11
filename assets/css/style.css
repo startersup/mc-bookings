@@ -604,12 +604,13 @@ padding:20px 10px;
 }
 .mc-secondary-sidebar ul li a
 {
-       color: #2d2d52;
-    letter-spacing: 0.4px;
-    text-decoration: none; 
-     font-size: 14px;
+    color: #2d2d52;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 500;
 }
 .mc-secondary-sidebar ul li
 {
