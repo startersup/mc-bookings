@@ -46,9 +46,9 @@ if($action =="")
                     <th>Status</th> 
                 </tr>
             </thead>
-            <tbody id="Allocate_Table">
+            <tbody id="promo_Table" class="mc-promo-table">
              <tr>
-              <td>Autumn100</td><td>December offer</td><td>New promo for decemeber attraction customers </td><td>Percentage <td>Active</td>
+              <td>Autumn100</td><td>December offer</td><td>New promo for decemeber attraction customers </td><td>Percentage <td>Active <div class="mc-edit"></td>
              </tr>      
             </tbody>
           </table>
