@@ -894,6 +894,8 @@ function showStatusMessage(obj)
   
   $("#myAlert_status").html(myObj["status"]);
   $("#myAlert_msg").html(myObj["msg"]);
+  $("#myAlert_msg").attr("status-mc",myObj["status"]);
+  
   $("#myAlert_class").removeClass('color-green');
   $("#myAlert_class").removeClass('color-red');
   if( (myObj["response"].toLowerCase()) === 'success'  )

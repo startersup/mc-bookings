@@ -7,7 +7,7 @@ function loadSiteScripts() {
 
 function loadSiteInfo(data) {
     siteData = JSON.parse(data);
-    var optionData = '<option>--SELECT--</option>';
+    var optionData = '<option value="">--SELECT--</option>';
     for (var i = 0; i < siteData.length; i++) {
         optionData += '<option value="' + siteData[i].id + '">' + siteData[i].siteName + '</option>';
     }
@@ -16,25 +16,38 @@ function loadSiteInfo(data) {
 
 $(document).on('click', '#siteDetails', function () {
     var myData = {};
-    myData["headerScript"]=  $('#headerScript').val();
-    myData["footerScripts"]= $('#footerScripts').val();
-    myData["siteId"]= $('#siteId').val();
+    myData["headerScript"] = $('#headerScript').val();
+    myData["footerScripts"] = $('#footerScripts').val();
+    myData["siteId"] = $('#siteId').val();
     var myGetUrl = myUrl + "myapi/siteMaster.php";
     get_url_response(myGetUrl, myData, 'showStatusMessage');
+    if ($("#myAlert_msg").attr("status-mc").toLowerCase() == 'success') {
+        for (var i = 0; i < siteData.length; i++) {
+            if (siteData[i].id == myData["siteId"]) {
+
+                siteData[i].headerScript = myData["headerScript"];
+                siteData[i].footerScript = myData["footerScripts"];
+            }
+
+        }
+    }
 });
 
 $(document).on('change', '.siteDropDown', function () {
 
-    $('#headerScript').val('');
-    $('#footerScripts').val('');
-    for (var i = 0; i < siteData.length; i++) {
-        if (siteData[i].id == $(this).val()) {
+    if ($(this).val() == "") {
+        $('#headerScript').val('');
+        $('#footerScripts').val('');
+    } else {
 
-            $('#headerScript').val(siteData[i].headerScript);
-            $('#footerScripts').val(siteData[i].footerScript);
+        for (var i = 0; i < siteData.length; i++) {
+            if (siteData[i].id == $(this).val()) {
+
+                $('#headerScript').val(siteData[i].headerScript);
+                $('#footerScripts').val(siteData[i].footerScript);
+            }
+
         }
-
     }
-
 
 });

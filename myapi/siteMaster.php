@@ -14,11 +14,11 @@ $sql_query = "UPDATE `siteMaster` SET `headerScript` = '".$headerScript."', `foo
 $result= mysqli_query($conn,$sql_query);
 if($result)
 {
-    $row["response"]="Success";
+    $row["status"]="Success";
     $row["msg"]="Updated Successfully";
 }
 else{
-    $row["response"]="Failed";
+    $row["status"]="Failed";
     $row["msg"]="Failed to Update";
 }
 echo json_encode($row);
