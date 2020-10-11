@@ -1,6 +1,6 @@
 
     <?php
-   include('../loadcurrentpage.php'); 
+   include('../../loadcurrentpage.php'); 
 if($action =="")
   ?>
 <!----Sidebar-ends----->    
