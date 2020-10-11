@@ -34,16 +34,19 @@ if($action =="")
               <option value="Britannia Taxi">Britannia Taxis</option>
             </select>    
         
-        
+            <br><br>
             <div class="form-group">
           <label for="usr">Insert Header Scripts:</label>
           <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
         </div>
-         
+         <br><br>
         <div class="form-group">
           <label for="usr">Insert Footer Scripts:</label>
           <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
         </div>
+
+        <br><br>
+        <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
 
 </div>
