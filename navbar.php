@@ -36,10 +36,10 @@
         </li>
           <li class="dropdown">
             <a href="#"><img src="./assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar dropdown-toggle"></a>
-            <div class="mc-dropdown-content mc-bx-shdw">
+            <div class="mc-dropdown-content mc-bx-shdw" style="right:10px;">
                 <ul class="mc-drop-desc">
                     <li>Profile</li>
-                    <li><a href="https://bookings.minicabee.co.uk/login">Logout</a></li>
+                    <li><a href="http://bookings.minicabee.co.uk/login">Logout</a></li>
                 </ul>
                 </div>
           </li>
