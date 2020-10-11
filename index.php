@@ -10,7 +10,7 @@ if($q == "")
 
 $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
 
-include($rootfolder."/myapi/sessionCheck.php");
+include($rootfolder."/myapi/sessionCheck2.php");
 
 if(! $boolSession)
 {
