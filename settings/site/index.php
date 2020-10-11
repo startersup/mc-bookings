@@ -32,7 +32,20 @@ if($action =="")
               <option value="Gatwick Airport Taxi">Gatwick Taxis</option> 
               <option value="Horsham Taxi">Horsham Taxis</option>
               <option value="Britannia Taxi">Britannia Taxis</option>
-            </select>     </div>
+            </select>    
+        
+        
+            <div class="form-group">
+          <label for="usr">Insert Header Scripts:</label>
+          <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
+        </div>
+         
+        <div class="form-group">
+          <label for="usr">Insert Footer Scripts:</label>
+          <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
+        </div>
+        </div>
+
 </div>
       <!---mainbar-starts----->
     </div>
