@@ -16,7 +16,6 @@ if($action =="")
             <li><a  class="li_sidebar"href="fare">Fare Settings</a></li>
             <li><a class="li_sidebar" href="promo">Promo Settings</a></li>
             <li><a class="li_sidebar" href="hellobar">Hellobar Settings</a></li>
-            <li><a class="li_sidebar" href="notifications">Notifications Settings</a></li>
             </ul>
     </div>
     

@@ -70,7 +70,13 @@ var router = {
         "load": "loadSiteScripts",
         "view": "settings/site/",
         "js":""
-    }
+    },
+    "promo":{
+    "url": "settings/promo/",
+    "load": "",
+    "view": "settings/promo/",
+    "js":""
+},
     
 }
 
