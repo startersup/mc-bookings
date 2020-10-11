@@ -7,8 +7,7 @@ if($action =="")
     <div class="mc-flex">
 <!------secondary-sidebar------>
     
-    
-<div class="mc-secondary-sidebar mc-top-rev">
+    <div class="mc-secondary-sidebar mc-top-rev">
         <h4>Settings</h4>
         <ul>
             <li><a class="li_sidebar" href="settings">General</a></li>
