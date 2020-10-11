@@ -32,6 +32,7 @@ session_start();
   $distance=$_POST['distance'];
   $booked_site=$_POST['booked_site'];
   $drvid=$_POST['drvid'];
+  $prefix=$_POST["prefix"];
  if($_POST["drvid"]=="")
  {
 	 $dfare=$_POST["fare"]/100;    
@@ -48,7 +49,7 @@ session_start();
     $check=0;
 $ran=mt_rand(1000,99999);
 $ret="RET".$ran;
-$ran="MCE".$ran;
+$ran=$prefix.$ran;
 
 $result=mysqli_query($conn,"SELECT refid from register WHERE 1");
  while ($row= mysqli_fetch_array($result,MYSQLI_ASSOC))

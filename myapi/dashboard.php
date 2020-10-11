@@ -2,7 +2,7 @@
 
 $rootfolder= $_SERVER['DOCUMENT_ROOT']; 
 include($rootfolder."/connection/connect.php");
-
+include($rootfolder."/myapi/sessionCheck.php"); 
 date_default_timezone_set('Europe/London');  
 $date= date("Y-m-d");
 $time_from = date("H").":00";

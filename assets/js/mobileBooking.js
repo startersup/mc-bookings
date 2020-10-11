@@ -10,12 +10,22 @@ var myMandId = ["origin-input", "destination-input", "cabType", , "datetimepicke
 var myClearId = ["route_fare", "route_time", "route_miles", "origin-input", "destination-input", "cabType", "booked_site", "fare", "name", "mail", "mobile1", "mobile2", "address1", "address2", "np", "np2", "nl", "location", "info", "drvid", "dfare", "datetimepicker"];
 var myDataBook = {};
 var myFareObj = {};
-
+var prefixOBJ = {
+  "GAT": "Gatwick Airport Taxi",
+  "BRT": "Britannia Taxi",
+  "HRM": "Horsham Taxi",
+  "MCE": "Minicabee"
+}
 
 $(document).on('click', '.calculate-fare', function () {
 
   GetFare();
 
+});
+$(document).on('change', '#siteMaster', function () {
+  var key = $(this).val();
+  $('#prefix').val(key);
+  $('#booked_site').val(prefixOBJ[key]);
 });
 
 $(document).on('click', '.book-now', function () {
@@ -94,7 +104,7 @@ function get_url_response(myGetUrl, mydata) {
 function manual_alloc_response(data) {
 
   myAlert(data.msg);
-  var temp = '<tr><td>' + $('#bookid').html() + '</td><td>' + $("#drvid option:selected").html() + ' - ' + $('#drvid').val() + '</td><td>' + $('#drvpercent').val() + '</td><td>'+$('#dfare').val()+'</td><td>Allocated</td></tr>';
+  var temp = '<tr><td>' + $('#bookid').html() + '</td><td>' + $("#drvid option:selected").html() + ' - ' + $('#drvid').val() + '</td><td>' + $('#drvpercent').val() + '</td><td>' + $('#dfare').val() + '</td><td>Allocated</td></tr>';
   $('#Allocate_Table').html(temp);
 
 }
@@ -291,9 +301,9 @@ function myAlert(msg) {
   $("#myAlert_class").addClass('color-red');
   $("#myAlert").fadeIn();
 
-  setTimeout(function(){ 
+  setTimeout(function () {
     $("#myAlert").fadeOut();
-   }, 4000);
+  }, 4000);
 
 }
 
