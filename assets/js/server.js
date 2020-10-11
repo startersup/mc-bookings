@@ -898,7 +898,7 @@ function showStatusMessage(obj)
   
   $("#myAlert_class").removeClass('color-green');
   $("#myAlert_class").removeClass('color-red');
-  if( (myObj["response"].toLowerCase()) === 'success'  )
+  if( (myObj["response"].toLowerCase()) == 'success'  )
   {
     $("#myAlert_class").addClass('color-green');
     myret=true;
