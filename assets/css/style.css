@@ -44,9 +44,18 @@ body
     max-width:300px !important;
     width:100%;
 }
+.max-width-500
+{
+    max-width:500px !important;
+    width:100%;
+}
 .pad-0
 {
     padding:0px !important;
+}
+.pad-15
+{
+    padding:15px !important;
 }
 
 .navbar-brand
@@ -604,12 +613,13 @@ padding:20px 10px;
 }
 .mc-secondary-sidebar ul li a
 {
-       color: #2d2d52;
-    letter-spacing: 0.4px;
-    text-decoration: none; 
-     font-size: 14px;
+    color: #2d2d52;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 500;
 }
 .mc-secondary-sidebar ul li
 {
@@ -977,7 +987,7 @@ margin-left:-5px;
 .mc-sub-mainbar-components
 {
     padding-top:30px;
-    max-width:650px;
+    max-width:750px;
     width:100%;
     font-family: 'Montserrat', sans-serif;
     margin:0 auto;
@@ -994,7 +1004,7 @@ margin-left:-5px;
 }
 .mc-sub-mainbar-components h3
 {
-font-size:25px;
+font-size:22px;
 padding:20px 0px;
 font-weight:800;
 }
@@ -1002,6 +1012,26 @@ font-weight:800;
 {
     background-color:#f4f4f4;
 }
+.mc-promo-table td 
+{
+    position: relative;
+}
+.mc-promo-table .mc-edit {
+    display: none !important;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    background-color: #f5ecff;
+    padding: 10px 20px;
+}
+.mc-promo-table tr:hover {
+    background-color: #f5ecff;
+}
+.mc-promo-table tr:hover .mc-edit
+{
+    display:block !important;
+}
+
 .mc-sub-mainbar-components table tr{background-color:#ffffff;}
 /********dashboard-mainbar*******/
 #mc-datatables

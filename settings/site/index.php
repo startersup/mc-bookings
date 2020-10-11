@@ -16,7 +16,6 @@ if($action =="")
             <li><a  class="li_sidebar"href="fare">Fare Settings</a></li>
             <li><a class="li_sidebar" href="promo">Promo Settings</a></li>
             <li><a class="li_sidebar" href="hellobar">Hellobar Settings</a></li>
-            <li><a class="li_sidebar" href="notifications">Notifications Settings</a></li>
             </ul>
     </div>
     
@@ -30,20 +29,19 @@ if($action =="")
           <select class="select form-control siteDropDown" required="" id="siteId" >
         
             </select>    
-        
-            <br><br>
+            <br>
             <div class="form-group">
           <label for="usr">Insert Header Scripts:</label>
           <textarea style="width:100%;min-height:300px;" class="form-control" id="headerScript"></textarea>
         </div>
-         <br><br>
+         <br>
         <div class="form-group">
           <label for="usr">Insert Footer Scripts:</label>
           <textarea style="width:100%;min-height:300px;" class="form-control" id="footerScripts" ></textarea>
         </div>
 
-        <br><br>
-        <button type="submit" id="siteDetails" class="btn btn-primary">Save changes</button>
+        <br>
+        <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
 
 </div>
