@@ -6,7 +6,7 @@ session_start();
 $rootfolder = $_SERVER['DOCUMENT_ROOT'];
 
 include($rootfolder . "/connection/connect.php");
-$footerScript=addslashes($_POST["footerScript"]);
+$footerScript=addslashes($_POST["footerScripts"]);
 $headerScript=addslashes($_POST["headerScript"]);
 $siteId=$_POST["siteId"];
 $sql_query = "UPDATE `siteMaster` SET `headerScript` = '".$headerScript."', `footerScript` = '".$footerScript."' WHERE `siteMaster`.`id` = ".$siteId;
