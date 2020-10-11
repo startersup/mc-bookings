@@ -1,12 +1,12 @@
 
-    
+
     <?php
-    include('../loadcurrentpage.php'); 
- if($action =="")
-   ?>
- <!----Sidebar-ends----->    
-     <div class="mc-flex">
- <!------secondary-sidebar------>
+   include('../loadcurrentpage.php'); 
+if($action =="")
+  ?>
+<!----Sidebar-ends----->    
+    <div class="mc-flex">
+<!------secondary-sidebar------>
      
      <div class="mc-secondary-sidebar mc-top-rev">
          <h4>Settings</h4>
@@ -19,6 +19,8 @@
              <li><a href="/settings/notifications/">Notifications Settings</a></li>
              </ul>
      </div>
+     
+     <!---mainbar-starts----->
      
      <!---mainbar-starts----->
     <div class="mc-dash-sub-mainbar">
