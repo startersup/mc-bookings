@@ -1012,15 +1012,20 @@ font-weight:800;
 {
     background-color:#f4f4f4;
 }
-.mc-promo-table .mc-edit
+.mc-promo-table td 
 {
-display: none;
-position: absolute;
-
+    position: relative;
 }
-.mc-promo-table tr:hover
-{ 
-background-color:#f4f6f7;
+.mc-promo-table .mc-edit {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    background-color: #f5ecff;
+    padding: 10px 20px;
+}
+.mc-promo-table tr:hover {
+    background-color: #f5ecff;
 }
 .mc-promo-table tr:hover .mc-edit
 {
