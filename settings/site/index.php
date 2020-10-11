@@ -41,7 +41,7 @@ if($action =="")
         </div>
 
         <br>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" id="siteDetails" class="btn btn-primary">Save changes</button>
         </div>
 
 </div>
