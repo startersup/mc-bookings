@@ -37,6 +37,7 @@
   document.write('<script src="./assets/js/drivers.js?dev=' +version + '"\><\/script>');
   document.write('<script src="./assets/js/provider.js?dev=' +version + '"\><\/script>');
   document.write('<script src="./assets/js/otsBook.js?dev=' +version + '"\><\/script>');
+  document.write('<script src="./assets/js/settings.js?dev=' +version + '"\><\/script>');
   </script>
 
   

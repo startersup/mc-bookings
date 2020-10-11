@@ -67,7 +67,7 @@ var router = {
     },
     "site": {
         "url": "settings/site/",
-        "load": "",
+        "load": "loadSiteScripts",
         "view": "settings/site/",
         "js":""
     }
