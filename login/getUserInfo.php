@@ -36,7 +36,7 @@ if (strpos($prev_url, $host)) {
                     $_SESSION["registerClause"] .= " AND (";
                     $loopcount = count($tags);
                     for ($i = 0; $i < $loopcount; $i++) {
-                        $_SESSION["registerClause"].= " ( `register.refid` like '".$tags[$i]."%' ) ";
+                        $_SESSION["registerClause"].= " ( register.refid like '".$tags[$i]."%' ) ";
 
                         if($i == ($loopcount-1))
                         {

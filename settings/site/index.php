@@ -27,21 +27,18 @@ if($action =="")
 	  <div class="mc-general-form">
           <h3>Site Settings</h3>
         
-          <select class="select form-control form-feild" required="" id="" name="booked_site">
-              <option value="Minicabee">Minicabee</option>
-              <option value="Gatwick Airport Taxi">Gatwick Taxis</option> 
-              <option value="Horsham Taxi">Horsham Taxis</option>
-              <option value="Britannia Taxi">Britannia Taxis</option>
+          <select class="select form-control siteDropDown" required="" id="siteId" >
+        
             </select>    
             <br>
             <div class="form-group">
           <label for="usr">Insert Header Scripts:</label>
-          <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
+          <textarea style="width:100%;min-height:300px;" class="form-control" id="headerScript"></textarea>
         </div>
          <br>
         <div class="form-group">
           <label for="usr">Insert Footer Scripts:</label>
-          <textarea style="width:100%;min-height:300px;" class="form-control"></textarea>
+          <textarea style="width:100%;min-height:300px;" class="form-control" id="footerScripts" ></textarea>
         </div>
 
         <br>

@@ -14,7 +14,7 @@ else
 $prev_url=$_SERVER['HTTP_REFERER'];
 $host=$_SERVER['HTTP_HOST']; 
 date_default_timezone_set('Europe/London');
-if (strpos($prev_url, $host)) {
+// if (strpos($prev_url, $host)) {
     if($_SESSION["username"] != "")
     {
 
@@ -30,8 +30,6 @@ if (strpos($prev_url, $host)) {
     }else{
         $msg ="Please Login to proceed..";
     }
-}else{
-    $msg="UnAuthorized Access....";
-}
+//}
 
 ?>

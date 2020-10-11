@@ -5,7 +5,7 @@ session_start();
 if ($_SESSION["username"] == "") {
 
     $response["msg"] = "Please Login...";
-    $response["satus"] = false;
+    $response["status"] = false;
     echo json_encode($response);
     exit(0);
 }

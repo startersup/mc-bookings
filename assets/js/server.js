@@ -136,11 +136,12 @@ function get_booking_response(myGetUrl, mydata) {
 function sessionCheck(data)
 {
   var sesObj = JSON.parse(data);
-  if( ! sesObj.satus)
+  if( (! sesObj.status) && (sesObj.status) )
   {
-    showStatusMessage(data)
+    showStatusMessage(data);
+   // window.location.href=myUrl+"login/"  ;
   }
-  window.location.href=myUrl+"login/"  ;
+  
 }
 
 
@@ -886,6 +887,7 @@ function getWeekDates() {
 
 function showStatusMessage(obj)
 {
+
   myObj= JSON.parse(obj);
   var myret=false;
 	// alert(myObj["status"]+" "+myObj["message"]);
