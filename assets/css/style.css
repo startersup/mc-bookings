@@ -1561,12 +1561,13 @@ font-size:18px;
 }
 .mc-alert-status {
     width: 25%;
-    padding: 5px;
+    padding: 25px;
 }
 .mc-alert-desc
 {
 width:75%;
 padding:20px;
+text-align: center;
 }
 #filterListOts
 {
