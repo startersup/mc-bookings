@@ -1529,7 +1529,7 @@ width: 100%;
 .mc-alert-box {
     background-color: #ffffff;
     box-shadow: 0 1px 5px rgba(0,0,0,.06);
-    position: absolute !important;
+    position: fixed !important;
     z-index: 20 !important;
     top: 46px !important;
     display: flex;
