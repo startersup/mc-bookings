@@ -39,7 +39,7 @@ if($action =="")
           <label for="usr">Insert Footer Scripts:</label>
           <textarea style="width:100%;min-height:300px;" class="form-control" id="footerScripts" ></textarea>
         </div>
-
+    
         <br>
         <button type="submit" id="siteDetails" class="btn btn-primary">Save changes</button>
         </div>

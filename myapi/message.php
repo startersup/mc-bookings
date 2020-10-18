@@ -6,7 +6,13 @@ session_start();
  
   include($rootfolder."/connection/connect.php"); 
 
+  $sql="SELECT  `apiKey`, `apiUserId` FROM `thirdPartyApis` WHERE `name` ='twilio'";
+  $result=  mysqli_query($conn,$sql);
 
+  $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+  $acc_sid=$row["apiUserId"];
+  $acc_auth_token=$row["apiKey"];
   
 $to=$_POST['to'];
 $message=$_POST['msg'];
@@ -16,13 +22,13 @@ $fields="From=Taxi-Info&To=".$to."&Body=".$message;
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL,"https://api.twilio.com/2010-04-01/Accounts/AC093fdc747b395f0d5d0b7dce029ea20e/Messages.json");
+curl_setopt($ch, CURLOPT_URL,"https://api.twilio.com/2010-04-01/Accounts/".$acc_sid."/Messages.json");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$fields);
 
 $headers = array(
     'Content-Type:application/x-www-form-urlencoded',
-    'Authorization: Basic '. base64_encode("AC093fdc747b395f0d5d0b7dce029ea20e:018bfd680a1d220404b7543153db3487")
+    'Authorization: Basic '. base64_encode($acc_sid.":".$acc_auth_token)
 );
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
