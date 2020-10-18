@@ -17,6 +17,8 @@ var prefixOBJ = {
   "MCE": "Minicabee"
 }
 
+$('#prefix').val('MCE');
+$('#booked_site').val('Minicabee');
 $(document).on('click', '.calculate-fare', function () {
 
   GetFare();
