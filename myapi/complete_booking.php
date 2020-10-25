@@ -13,7 +13,7 @@
     if(!$conn)
     {
     
-     $row["response"]="Failed";
+     $row["status"]="Failed";
     $row["msg"]="DB Connection Failed";
     echo json_encode($row);
     
@@ -36,7 +36,7 @@ else
 if($result)
 {
    
-   $row["response"]="Success";
+   $row["status"]="Success";
     $row["msg"]=$ref." ..!!  Completed Sucessfully";
     $row["id"]=$ref;
     $row["opr"]=$st;
