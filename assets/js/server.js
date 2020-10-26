@@ -891,7 +891,10 @@ function showStatusMessage(obj)
   myObj= JSON.parse(obj);
   var myret=false;
 	// alert(myObj["status"]+" "+myObj["message"]);
-  
+  if(myObj.hasOwnProperty('response'))
+  {
+    myObj["status"]=myObj["response"];
+  }
   $("#myAlert_status").html(myObj["status"]);
   $("#myAlert_msg").html(myObj["msg"]);
   $("#myAlert_msg").attr("status-mc",myObj["status"]);
