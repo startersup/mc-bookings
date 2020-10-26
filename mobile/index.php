@@ -290,6 +290,19 @@
             </select>
           </div>
           <div class="form-group">
+            <label for="SSr">Agent Name:</label>
+            <input type="hidden" class="form-control form-feild" id="booked_site" name="booked_site">
+            <input type="hidden" class="form-control form-feild" id="prefix" name="prefix">
+
+            <select class="select form-control form-feild" required="" id="userMaster" name="userMaster" >
+              <option value="anand">Anand</option>
+              <option value="sai">Sai Charan</option> 
+              <option value="riyas">Riyas</option>
+              <option value="deepak">Deepak</option>
+             
+            </select>
+          </div>
+          <div class="form-group">
             <label for="usr">Total Fare:</label>
             <input type="text" class="form-control form-feild" name="fare" id="fare" value="" />
           </div>

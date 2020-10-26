@@ -16,9 +16,11 @@ var prefixOBJ = {
   "HRM": "Horsham Taxi",
   "MCE": "Minicabee"
 }
+$( document ).ready(function() {
+  $('#prefix').val('MCE');
+  $('#booked_site').val('Minicabee');
+});
 
-$('#prefix').val('MCE');
-$('#booked_site').val('Minicabee');
 $(document).on('click', '.calculate-fare', function () {
 
   GetFare();
@@ -310,3 +312,24 @@ function myAlert(msg) {
 }
 
 
+
+function getFromCookie(name)
+{
+var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+var ret = 'No Data';
+if (match) {
+  return(match[2])
+}
+else{
+      return ret;
+}
+
+}
+
+function dateTimeCookie(noOfDays)
+{
+    var d = new Date();
+  d.setTime(d.getTime() + (noOfDays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  return expires;
+}

@@ -33,6 +33,7 @@ session_start();
   $booked_site=$_POST['booked_site'];
   $drvid=$_POST['drvid'];
   $prefix=$_POST["prefix"];
+  $userMaster=$_POST['userMaster'];
  if($_POST["drvid"]=="")
  {
 	 $dfare=$_POST["fare"]/100;    
@@ -86,8 +87,8 @@ if($fare == "")
     $fare ="0";
 }
     
-$sql="INSERT INTO `register` (`refid`, `name`, `mail`, `num1`, `num2`, `location`, `info`, `pay`, `src`, `des`,`address1`,`address2`, `dt`, `time`, `passenger`, `luggage`, `type`, `infants`, `jtime`, `fare`, `status`, `via`, `dfare`, `mg`, `ceat`, `miles`,`booked_site`,`drvid`) 
-VALUES ('$ref', '$name', '$mail', '$mobile1', '$mobile2', '$location', '$info', '$pay', '$origin_input', '$destination_input','$address1','$address2', '$date', '$time', '$np', '$nl', '$cabType', '$np2', '$time', $fare, '$status', '$via', $dfare, $meet, $child, '$distance','$booked_site','$drvid')";
+$sql="INSERT INTO `register` (`refid`, `name`, `mail`, `num1`, `num2`, `location`, `info`, `pay`, `src`, `des`,`address1`,`address2`, `dt`, `time`, `passenger`, `luggage`, `type`, `infants`, `jtime`, `fare`, `status`, `via`, `dfare`, `mg`, `ceat`, `miles`,`booked_site`,`drvid`,`agent_name`) 
+VALUES ('$ref', '$name', '$mail', '$mobile1', '$mobile2', '$location', '$info', '$pay', '$origin_input', '$destination_input','$address1','$address2', '$date', '$time', '$np', '$nl', '$cabType', '$np2', '$time', $fare, '$status', '$via', $dfare, $meet, $child, '$distance','$booked_site','$drvid','$userMaster')";
 
  $user= mysqli_query($conn,$sql) ;
  

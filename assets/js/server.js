@@ -173,7 +173,7 @@ function updateRow()
 {
   var myTable = $("#mc-datatables").DataTable();
   mc_datatables_row.status = setStatusView(mc_datatables_row.status);
-  myTable.row( mc_datatables_row_num ).data( mc_datatables_row ).draw();
+  myTable.row( mc_datatables_row_num ).data( mc_datatables_row );  
   mc_datatables_row_num=-1;
   mc_datatables_row={};
 }
