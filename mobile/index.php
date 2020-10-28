@@ -292,10 +292,10 @@
           <div class="form-group">
             <label for="SSr">Agent Name:</label>
             <select class="select form-control form-feild" required="" id="userMaster" name="userMaster" >
-              <option value="anand">Anand</option>
-              <option value="sai">Sai Charan</option> 
-              <option value="riyas">Riyas</option>
-              <option value="deepak">Deepak</option>
+              <option value="MCU0005">Anand</option>
+              <option value="MCU0002">Sai Charan</option> 
+              <option value="MCU0003">Riyas</option>
+              <option value="MCU0001">Deepak</option>
              
             </select>
           </div>
