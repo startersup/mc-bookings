@@ -33,7 +33,7 @@ if (strpos($prev_url, $host)) {
 
                 if (!($row["booking_Rights"] == "" || strtoupper($row["booking_Rights"]) == "ALL")) {
                     $tags = explode(',', $row["booking_Rights"]);
-                    $_SESSION["registerClause"] .= " AND ( (agent_name = '"+$row["username"]+"') OR";
+                    $_SESSION["registerClause"] .= " AND ( (agent_name = '".$row["username"]."') OR";
                     $loopcount = count($tags);
                     for ($i = 0; $i < $loopcount; $i++) {
                         $_SESSION["registerClause"].= " ( register.refid like '".$tags[$i]."%' ) ";
