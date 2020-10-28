@@ -20,7 +20,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Bookings, Names, Passsengers....." title="Type in a name"></li>
-            <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
+            <!-- <li class="dropdown"><a href=""  class="dropdown-toggle custom-arrow">Help</a>
                 <div class="mc-dropdown-content mc-bx-shdw">
                 <ul class="mc-drop-desc">
                     <li>Help Docs</li>
@@ -33,7 +33,7 @@
         <li>
           <div class="mc-notify-badge">12</div>
           <a href="" data-toggle="modal" data-target="#notification-bar">Notifications</a>
-        </li>
+        </li> -->
           <li class="dropdown">
             <a href="#"><img src="./assets/images/mc-male-avathar.png" alt="Avatar" class="mc-avatar-bar dropdown-toggle"></a>
             <div class="mc-dropdown-content mc-bx-shdw" style="right:10px;">
