@@ -33,6 +33,27 @@ $(document).on('click', '#siteDetails', function () {
     }
 });
 
+$(document).on("submit", "#seoPageList", function () {
+    var formData = new FormData($(this)[0]);
+    var Url = myUrl + 'myapi/uploadSeoFile.php';
+    $.ajax({
+      url: Url,
+      type: 'POST',
+      data: formData,
+      async: false,
+      success: function (data) {
+        alert(data)
+      },
+      enctype: 'multipart/form-data',
+      cache: false,
+      contentType: false,
+      processData: false
+    });
+  
+    return false;
+  });
+  
+
 $(document).on('change', '.siteDropDown', function () {
 
     if ($(this).val() == "") {
