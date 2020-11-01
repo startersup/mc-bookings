@@ -6,6 +6,8 @@
  
   include($rootfolder."/connection/connect.php"); 
   include($rootfolder."/myapi/sessionCheck.php"); 
+  
+  include($rootfolder."/myapi/booking_cols.php"); 
     date_default_timezone_set('Europe/London');
    
   
@@ -14,7 +16,7 @@
     
     
    
-    $sql="SELECT refid,src,des,CONCAT (dt,' & ',time) as dt,time,type,fare,dfare,status,booked_site ,date_format(tiktok,'%Y-%m-%d %H:%i:%S') as booked_time from register WHERE dt= '".$check."' and status != 'cancelled' ".$_SESSION["registerClause"];
+    $sql="SELECT ".$view_cols." from register WHERE dt= '".$check."' and status != 'cancelled' ".$_SESSION["registerClause"];
   $result=  mysqli_query($conn,$sql);
   
   

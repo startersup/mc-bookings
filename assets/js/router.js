@@ -65,6 +65,12 @@ var router = {
         "view": "settings/user/",
         "js":""
     },
+    "seoPages": {
+        "url": "settings/seo/",
+        "load": "",
+        "view": "settings/seo/",
+        "js":""
+    },
     "site": {
         "url": "settings/site/",
         "load": "loadSiteScripts",

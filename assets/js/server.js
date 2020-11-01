@@ -198,6 +198,7 @@ function setRow(data) {
       columns: [
         { data: "refid" },
         { data: "booked_site" },
+        { data: "agent" },
         { data: "src" },
         { data: "des" },
         { data: "dt" },
@@ -887,7 +888,6 @@ function getWeekDates() {
 
 function showStatusMessage(obj)
 {
-
   myObj= JSON.parse(obj);
   var myret=false;
 	// alert(myObj["status"]+" "+myObj["message"]);

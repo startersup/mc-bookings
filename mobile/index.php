@@ -1,3 +1,12 @@
+<?php
+
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
+$country= $details->country;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" id="html">
 
@@ -77,6 +86,8 @@
               <label for="usr">Pickup Date:</label>
               <input type="text" class="form-control" id="datetimepicker" name="datepicker" />
               <input type="hidden" name="date" id="date" class="form-control form-feild">
+              <input type="hidden" value="<?php echo($ip) ?>" name="ip" id="ip" class="form-control form-feild">
+              <input type="hidden" value="<?php echo($country) ?>" name="country" id="country" class="form-control form-feild">
             </div>
           </div>
           <div class="col-xs-6">
@@ -297,6 +308,13 @@
               <option value="MCU0003">Riyas</option>
               <option value="MCU0001">Deepak</option>
              
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="SSr">Transfer Agent Name:</label>
+            <select class="select form-control form-feild"  id="transferAgent" name="transferAgent" >
+            <option value="">-select--</option>  
+            <option value="MCU0005">Anand</option>
             </select>
           </div>
           <div class="form-group">

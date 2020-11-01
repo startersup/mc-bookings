@@ -46,11 +46,11 @@ if($action =="")
             <tr style="border:1px solid #e4e4e4;">
                 <th>Id</th>
                 <th>Source</th>
+                <th>Agent</th>
                 <th style="width:15%;">Pickup From</th>
                 <th style="width:15%;">Dropoff To</th>
                 <th>D&T</th>
                 <th>Type</th>
-               
                 <th>Fare</th>
                 <th>Status</th>
                 <th>Action</th>
