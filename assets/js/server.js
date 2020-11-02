@@ -832,6 +832,29 @@ $(document).on('click', '#manual_alloc', function () {
 
 });
 
+$(document).on('click', '#tansfer_agent', function () {
+
+  // ActionDecision('allocate','manual_alloc');
+ 
+   Transferalloc();
+ 
+ 
+ });
+
+ function Transferalloc() {
+  var myData={}
+  myData["id"]=document.getElementById("myModalBookId_temp").innerHTML;
+  myData["agent"]=$('#agent').val();
+
+  if(myData["agent"]=='' || myData["new"]=='0')
+  {
+    alertData='{"response":"fail","msg":"Please enter valid agent!!!"}';
+    showStatusMessage(alertData);
+    return;
+  }
+        var myGetUrl = myUrl + "myapi/agentChange.php";
+        get_url_response(myGetUrl, myData, "manual_alloc_response");
+}
 
 function setBid(myObj_bid) {
   var temp = "";

@@ -299,7 +299,21 @@ if($action =="")
         </tr>
              </tbody> 
               </table>
-                                
+
+              <h3>Agent Transfer</h3>   
+              <table class="manalloc-table">
+               <tbody>
+
+                   <tr>
+          <td><select type="text" name="agent" id="agent"  class="selectit" > 
+		   <option value="">-select--</option>  
+            <option value="MCU0005">Anand</option>
+			</select></td>
+
+          <td><button class="buttongreen" id="tansfer_agent" >Change</button></td>
+        </tr>
+             </tbody> 
+              </table>
                      <h3>Drivers Bidded</h3>
                                 
                       <table id="mc-datatables-Alloc" class="table table-fixed dt-responsive nowrap" cellspacing="0" width="100%" style="border:1px solid #e4e4e4;">
