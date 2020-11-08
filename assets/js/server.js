@@ -288,6 +288,8 @@ function clearClass() {
    
 
   });
+  
+ 
 
   $(document).on('click','#filter_all',function () {
     filterCheckBox(this);

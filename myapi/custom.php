@@ -7,7 +7,7 @@ session_start();
   include($rootfolder."/connection/connect.php"); 
   include($rootfolder."/myapi/sessionCheck.php"); 
 
-  include($rootfolder."/myapi/booking_cols.php"); $view_cols
+  include($rootfolder."/myapi/booking_cols.php"); 
   
     $from=$_POST["from"];
     $to=$_POST["to"];
