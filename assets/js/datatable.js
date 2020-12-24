@@ -55,7 +55,7 @@ $(document).ready(function() {
     dom: "Bfrtip",
     colReorder: true,
     buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
-    lengthChange: false,
+    lengthChange: true,
     searching: false,
     fixedHeader: true,
     pageLength: 50,
