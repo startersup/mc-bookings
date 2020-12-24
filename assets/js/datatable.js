@@ -53,12 +53,12 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#mc-datatables").DataTable({
     dom: "Bfrtip",
+    pageLength: "50",
     colReorder: true,
     buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdfHtml5"],
     lengthChange: true,
     searching: false,
     fixedHeader: true,
-    pageLength: 50,
     scrollY: "700px",
     scrollX: true,
     ordering: false,
