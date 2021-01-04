@@ -197,9 +197,9 @@ $(document).on('change', '#all', function () {
 });
 
 $(document).on('click', '#print-btn', function () {
-  $('#tableHeader tr > *:nth-child(5)').hide();
+ /* $('#tableHeader tr > *:nth-child(5)').hide();
   $('#InvoiceTable tr > *:nth-child(5)').hide();
-  $("#tickettable tbody tr").eq(2).hide();
+  $("#tickettable tbody tr").eq(2).hide(); */
   printDiv('printDiv(divName)');
 });
 
