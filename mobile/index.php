@@ -521,7 +521,7 @@ $country= $details->country;
     setLoad();
   </script>
 
-  <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBauQAxB_oaAk4z-NQN2BkhmD4AxzA2l6M&amp;libraries=places&amp;callback=initAutocomplete" defer="" type="text/javascript"></script>
+  <script async="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlsEJCamuvtmPjhEcZaVs2-YSUKlylaC8&amp;libraries=places&amp;callback=initAutocomplete" defer="" type="text/javascript"></script>
 
 </body>
 <style>
