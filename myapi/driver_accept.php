@@ -34,8 +34,8 @@ if (!$conn) {
 
     // Always set content-type when sending HTML email
     $headers = "";
-    $headers .= "From: Minicabee <noreply-bookings@minicabee.co.uk> \r\n";
-    $headers .= "Reply-To: Minicabee <noreply-bookings@minicabee.co.uk> \r\n" . "X-Mailer: PHP/" . phpversion();
+    $headers .= "From: XendFleet <noreply-bookings@minicabee.co.uk> \r\n";
+    $headers .= "Reply-To: XendFleet <noreply-bookings@minicabee.co.uk> \r\n" . "X-Mailer: PHP/" . phpversion();
     $headers .= "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
 
@@ -124,7 +124,7 @@ if (!$conn) {
         </style>
 
 	<!-- MESSAGE SUBJECT -->
-	<title>Minicabee Taxi quote Comparison</title>
+	<title>XendFleet Taxi quote Comparison</title>
 
 </head>
 
@@ -151,7 +151,7 @@ if (!$conn) {
 			padding-top: 20px;" class="hero"><a target="_blank" style="text-decoration: none;"
 			href=""><img border="0" vspace="0" hspace="0"
 			src="https://startersup.github.io/minicabee/assets/images/driverdetails.jpg"
-			alt="Please enable images to view this content" title="Minicabee Banner"
+			alt="Please enable images to view this content" title="XendFleet Banner"
 			width="400" style="
 			width: 100%;
 			max-width: 560px;

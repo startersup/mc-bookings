@@ -32,7 +32,7 @@ vertical-align: top;" id="BasicDriverInfo">
         </td>
 
         <td style="float:right !important;padding:5px;vertical-align:top;">
-          Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk
+          XendFleet Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk
         </td>
       </tr>
     </table>

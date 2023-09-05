@@ -22,7 +22,7 @@ if($action =="")
             
             <li>
 </li>
-            <li><a href="http://bookings.minicabee.co.uk/mobile" target="_blank"><button class="mc-add-btn"> <img class="mc-button-icons" src="../assets/images/icons/add.svg"> Add Booking</button></li></a></ul>
+            <li><a href="https://xendfleet.com/mobile" target="_blank"><button class="mc-add-btn"> <img class="mc-button-icons" src="../assets/images/icons/add.svg"> Add Booking</button></li></a></ul>
     </div>
     
       <!----sub-navbar-ends----->

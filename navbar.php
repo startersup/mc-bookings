@@ -39,7 +39,7 @@
             <div class="mc-dropdown-content mc-bx-shdw" style="right:10px;">
                 <ul class="mc-drop-desc">
                     <li>Profile</li>
-                    <li><a href="http://bookings.minicabee.co.uk/login">Logout</a></li>
+                    <li><a href="https://xendfleet.com/login">Logout</a></li>
                 </ul>
                 </div>
           </li>

@@ -2,7 +2,7 @@
   <meta http-equiv='cache-control' content='no-cache'>
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
-  <title>Minicabee | Dashboard</title>
+  <title>XendFleet | Dashboard</title>
   <meta charset="utf-8">
   <link rel="icon" href="./assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

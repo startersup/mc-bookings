@@ -31,7 +31,7 @@ if($action =="")
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="../"><img class="mc-nav-logo" src="../assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
+        <a class="navbar-brand" href="../"><img class="mc-nav-logo" src="../assets/images/icons/fleet.svg"><span></span><div class="mc-buyer-name">XendFleet </div></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav mc-dash-mid">
@@ -198,7 +198,7 @@ if($action =="")
                         </td>
 
                         <td style="float:right !important;padding:5px;vertical-align:top;">
-                          Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk
+                          XendFleet Travel Solution<br> minicabee@gmail.com <br> www.minicabee.co.uk
                         </td>
                       </tr>
                     </table>

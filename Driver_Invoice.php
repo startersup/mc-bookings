@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Minicabee | Driver Invoice </title>
+<title>XendFleet | Driver Invoice </title>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="./assets/images/logo.png">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -58,7 +58,7 @@
                           </td>
 
                           <td style="float:right !important;padding:5px;vertical-align:top;">
-                           Minicabee Travel Solution<br> minicabee@gmail.com <br> www.minicabee.o.uk
+                           XendFleet Travel Solution<br> minicabee@gmail.com <br> www.minicabee.o.uk
                           </td>
                         </tr></table>
 </td>
@@ -73,7 +73,7 @@
         <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Date & Time</th>
          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Total Fare</th>
          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;">Driver Fare</th>
-          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> Minicabee Comission</th>
+          <th style="cursor:pointer;text-align:left;font-size:14px;line-height:22px;letter-spacing:0.5px;max-width:min-content;padding:8px 10px;white-space:nowrap;color:#000;font-family:'Nunito', sans-serif;background-color:#ebeef0 !important;border:1px solid #f4f4f4;font-weight:700;"> XendFleet Comission</th>
     </tr>
 
 <tr>

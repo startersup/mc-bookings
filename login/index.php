@@ -12,13 +12,13 @@ foreach ($_SESSION as $param_name => $param_val) {
 <!DOCTYPE html>
 <html lang="en" id="html">
 <head>
-  <title>App Login | Minicabee Travel Solutioms</title>
+  <title>App Login | XendFleet Travel Solutioms</title>
   <meta charset="utf-8">
   <link rel="icon" href="../assets/images/icons/fleet.png" type="image/x-icon" sizes="16x16" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://bookings.minicabee.co.uk/assets/css/style.css">
+  <link rel="stylesheet" href="https://xendfleet.com/assets/css/style.css">
 </head>
 <body>
 
@@ -26,7 +26,7 @@ foreach ($_SESSION as $param_name => $param_val) {
 <nav class="navbar navbar-default mc-dash-nav">
   <div class="container-fluid">
     <div class="navbar-header">
- <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"><div class="mc-buyer-name">Minicabee Travel Solutions</div></a>
+ <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"><div class="mc-buyer-name">XendFleet </div></a>
     </div>
   
   </div>
@@ -37,7 +37,6 @@ foreach ($_SESSION as $param_name => $param_val) {
     <!---mainbar-starts----->
     
       <div class="container">
-        <center><img class="mc-login-vector" src="../assets/images/login-vectors.svg"></center>
         <div class="mc-login-form">
           <h3>Welcome Back!</h3>
           <p>Have a nice and profitable day ahead 😀</p>

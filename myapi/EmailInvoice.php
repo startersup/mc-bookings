@@ -19,8 +19,8 @@ $subject = "Your Invoice (".$invno.")";
 
 // Always set content-type when sending HTML email
 $headers = "";
-$headers .= "From: Minicabee <bookings@minicabee.co.uk> \r\n";
-$headers .= "Reply-To: Minicabee   <bookings@minicabee.co.uk> \r\n"."X-Mailer: PHP/" . phpversion();
+$headers .= "From: XendFleet <bookings@minicabee.co.uk> \r\n";
+$headers .= "Reply-To: XendFleet   <bookings@minicabee.co.uk> \r\n"."X-Mailer: PHP/" . phpversion();
 $headers .= "MIME-Version: 1.0" . "\r\n"; 
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
 
