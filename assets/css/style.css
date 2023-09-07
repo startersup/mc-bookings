@@ -68,7 +68,6 @@ body
 }
 .mc-buyer-name
 {
-    margin-top:8px;
     font-size:14px;
     color:#ffffff;
     font-weight:500;
@@ -453,7 +452,7 @@ div.mc-sp-charts {
     position: absolute;
     font-size: 14px;
     width: 100%;
-    margin-top: 46px;
+    margin-top: 50px;
     position:fixed;
     display: inline-block;
       margin-left: 20px;
