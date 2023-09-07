@@ -22,17 +22,6 @@ foreach ($_SESSION as $param_name => $param_val) {
 </head>
 <body>
 
-    <!----navbar-starts----->
-<nav class="navbar navbar-default mc-dash-nav">
-  <div class="container-fluid">
-    <div class="navbar-header">
- <a class="navbar-brand" href="./"><img class="mc-nav-logo" src="/assets/images/icons/fleet.svg"><div class="mc-buyer-name">XendFleet </div></a>
-    </div>
-  
-  </div>
-</nav>  <!----navbar-ends----->
-    
-
     
     <!---mainbar-starts----->
     
